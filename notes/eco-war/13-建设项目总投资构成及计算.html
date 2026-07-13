@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第13章 建设项目总投资构成及计算 · 知识树</title>
+<style>
+  :root{ --accent:#2563ab; --accent-bg:#ecf3fa; --ink:#2b2b2b; --sub:#777; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.6;}
+  a.back{display:inline-block;font-size:.8rem;color:var(--sub);text-decoration:none;margin-bottom:8px;}
+  h1{font-size:1.15rem;margin:2px 0 4px;color:var(--accent);}
+  .meta{color:var(--sub);font-size:.78rem;margin-bottom:10px;}
+  .legend{background:#fff;border-radius:10px;padding:8px 12px;font-size:.75rem;color:#555;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;}
+  .score{background:#fff;border-radius:10px;padding:10px 12px;font-size:.8rem;margin-bottom:14px;}
+  .score b{font-size:.85rem;}
+  .score table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .score td,.score th{border:1px solid #eee;padding:3px 6px;font-size:.75rem;text-align:center;}
+  .score th{background:#fafafa;font-weight:600;}
+  details.sec{background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:4px solid var(--accent);}
+  details.sec>summary{list-style:none;cursor:pointer;padding:11px 13px;font-weight:700;font-size:.95rem;display:flex;gap:8px;align-items:center;}
+  details.sec>summary::-webkit-details-marker{display:none;}
+  .caret{margin-left:auto;color:#bbb;font-size:.75rem;transition:transform .2s;flex:none;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .sec .inner{padding:0 12px 12px;}
+  details.item{border:1px solid #eee;border-radius:9px;margin-bottom:8px;background:#fff;}
+  details.item>summary{list-style:none;cursor:pointer;padding:9px 11px;font-size:.88rem;font-weight:600;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+  details.item>summary::-webkit-details-marker{display:none;}
+  .stars{color:#e8a20c;font-size:.8rem;letter-spacing:1px;flex:none;}
+  .yr{background:var(--accent-bg);color:var(--accent);font-size:.68rem;padding:1px 6px;border-radius:4px;flex:none;}
+  .item .kp{padding:2px 12px 10px;border-top:1px dashed #f0f0f0;font-size:.85rem;}
+  .kp ul{margin:6px 0;padding-left:1.25em;}
+  .kp li{margin:4px 0;}
+  .kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem;}
+  .kp th,.kp td{border:1px solid #e8e8e8;padding:5px 7px;text-align:left;vertical-align:top;}
+  .kp th{background:#fafafa;font-weight:600;white-space:nowrap;}
+  .r{color:#c62828;font-weight:600;}
+  .b{color:#1d64c0;}
+  .formula{background:#faf7f2;border-radius:6px;padding:6px 10px;margin:6px 0;font-family:Georgia,serif;font-size:.9rem;overflow-x:auto;}
+  .trap{background:#fff8e6;border-left:3px solid #e8a20c;border-radius:0 8px 8px 0;padding:7px 10px;margin:8px 0;font-size:.8rem;color:#7a5c00;}
+  details.ex{background:#f4f8fd;border-radius:8px;margin:8px 0;font-size:.82rem;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:8px 10px;color:#2563ab;}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>div{padding:0 10px 9px;color:#444;}
+  .btns{display:flex;gap:8px;justify-content:center;margin:0 0 12px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
+  .tree{font-size:.82rem;background:#fbfaf8;border-radius:8px;padding:8px 10px;margin:6px 0;}
+  .tree ul{margin:2px 0;padding-left:1.15em;}
+  .tree li{margin:2px 0;}
+  .kw{background:var(--accent-bg);color:var(--accent);border-radius:4px;padding:0 5px;font-size:.75rem;}
+  footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
+</style>
+</head>
+<body>
+
+<a class="back" href="00-全书骨架.html">← 返回全书骨架</a>
+<h1>第13章 建设项目总投资构成及计算</h1>
+<div class="meta">第3篇 工程计价 · 共7节</div>
+
+<div class="legend">
+  <span><span class="stars">★</span>数=重要度</span>
+  <span class="r">红=重点/易考/高频</span>
+  <span class="b">蓝=次重点</span>
+  <span>⚠=易混陷阱</span>
+</div>
+
+<div class="score">
+  <b>本章分值：2024年10分 · 2025年10分 · 2026预测10分（全书重点章）</b>
+  <table>
+    <tr><th>知识点</th><th>题型</th><th>2024</th><th>2025</th><th>2026预测</th></tr>
+    <tr><td rowspan="2">13.1 建设项目总投资构成</td><td>单选</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td rowspan="2">13.2 设备及工器具购置费构成及计算</td><td>单选</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td rowspan="2">13.3 建筑安装工程费构成及计算</td><td>单选</td><td>2</td><td>3</td><td>2</td></tr>
+    <tr><td>多选</td><td>2</td><td>—</td><td>2</td></tr>
+    <tr><td rowspan="2">13.4 工程建设其他费构成及计算</td><td>单选</td><td>1</td><td>—</td><td>—</td></tr>
+    <tr><td>多选</td><td>2</td><td>2</td><td>2</td></tr>
+    <tr><td rowspan="2">13.5 预备费计算</td><td>单选</td><td>—</td><td>1</td><td>—</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td rowspan="2">13.6 增值税计算</td><td>单选</td><td>—</td><td>—</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>2</td><td>—</td></tr>
+    <tr><td rowspan="2">13.7 建设期利息与流动资金计算</td><td>单选</td><td>1</td><td>—</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td>合计</td><td></td><td><b>10</b></td><td><b>10</b></td><td><b>10</b></td></tr>
+  </table>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ═══════════ 13.1 ═══════════ -->
+<details class="sec" open>
+  <summary>13.1 建设项目总投资构成<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>13.1.1 建设项目总投资相关概念</span><span class="stars">★★★★</span><span class="yr">2016·2017·2021·2022·2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <div class="tree">
+          <b>建设项目总投资构成树（图13-1，必背）</b>
+          <ul>
+            <li><b>建设投资</b>
+              <ul>
+                <li>工程费用 <span class="kw">静态</span>
+                  <ul><li>设备及工器具购置费</li><li>建筑安装工程费</li></ul>
+                </li>
+                <li>工程建设其他费用 <span class="kw">静态</span></li>
+                <li>预备费
+                  <ul>
+                    <li>基本预备费 <span class="kw">静态</span></li>
+                    <li>价差预备费 <span class="kw">动态</span></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><b>建设期利息</b> <span class="kw">动态</span></li>
+            <li><b>流动资金</b>（铺底流动资金等，<span class="r">不属于静态也不属于动态投资</span>）</li>
+          </ul>
+        </div>
+        <ul>
+          <li><span class="r">静态投资 = 工程费用 + 工程建设其他费用 + 基本预备费</span></li>
+          <li><span class="r">动态投资 = 价差预备费 + 建设期利息</span></li>
+        </ul>
+        <div class="trap">⚠ 预备费"一分为二"：基本预备费归<b>静态</b>、价差预备费归<b>动态</b>——选项最爱把二者层级互换。</div>
+        <div class="trap">⚠ 流动资金（铺底流动资金）属于总投资，但<b>既不进建设投资、也不进静态/动态投资</b>；算动态投资时给出"铺底流动资金"就是干扰项。</div>
+        <details class="ex"><summary>【2025真题】工程费用20000、其他费5200、基本预备费1260、价差预备费800、建设期利息600、铺底流动资金700（万元），动态投资部分是（ ）</summary><div>答案 B：1400。动态投资=价差预备费800+建设期利息600=1400；铺底流动资金700为干扰项。</div></details>
+        <details class="ex"><summary>【2024真题】设备及工器具购置费10000、建筑工程费13000、安装工程费2000、其他费7000、基本预备费1600、价差预备费1700、建设期利息1500（万元），工程费用为（ ）</summary><div>答案 B：25000。工程费用=设备及工器具购置费+建筑工程费+安装工程费=10000+13000+2000=25000，其余均为干扰项。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.1.2 建设项目总投资构成表</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>第一部分<br>工程费用</th><td>建筑工程费 ／ 设备及工器具购置费（<span class="b">购置费、运杂费（含采购保管费）</span>）／ 安装工程费（<span class="b">主要材料费、安装费</span>）</td></tr>
+          <tr><th>第二部分<br>工程建设<br>其他费用</th><td>①土地使用费和其他补偿费 ②建设管理费 ③前期工作咨询费 ④专项评价费 ⑤研究试验费 ⑥勘察设计费 ⑦场地准备费和临时设施费 ⑧引进技术和进口设备材料其他费 ⑨特殊设备安全监督检验费 ⑩市政公用配套设施费 ⑪联合试运转费 ⑫工程保险费 ⑬生产准备费 ⑭专利及专有技术使用费 ⑮其他费用</td></tr>
+          <tr><th>第三部分<br>预备费</th><td>基本预备费 ／ 价差预备费</td></tr>
+          <tr><th>其后</th><td>建设期利息 ／ 铺底流动资金等</td></tr>
+        </table>
+        <ul>
+          <li>建设管理费包含：建设单位管理费（项目建设管理费）、工程监理费、设备监造费、招标投标费（招标代理费）、设计评审费、特殊项目定额研究及测定费、其他咨询费、印花税等</li>
+          <li>勘察设计费包含：勘察费、设计费、<span class="b">建筑信息模型（BIM）技术应用服务费</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.1.3 建设项目计价特点</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>建设项目投资需<b>多次单独计算</b></li>
+          <li>建设项目<b>计价依据复杂</b></li>
+          <li><b>分部组合计价</b>特点</li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 13.2 ═══════════ -->
+<details class="sec">
+  <summary>13.2 设备及工器具购置费构成及计算<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>13.2.1 国产设备及工器具原价</span><span class="stars">★★★</span><span class="yr">2017单选·2020多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>国产标准设备原价</th><td>一般指设备制造厂的交货价，即<span class="r">出厂价</span>；如设备由设备成套公司供应，以<span class="b">订货合同价</span>为设备原价；计算原价时一般按<span class="r">带有备件的出厂价</span>计算</td></tr>
+          <tr><th>国产非标准设备原价</th><td>计算方法：<span class="r">成本计算估价法、系列设备插入估价法、分部组合估价法、定额估价法</span>等；无论哪种方法，都应使非标准设备计价的<span class="r">准确度接近实际出厂价</span>，且计算方法要简便</td></tr>
+        </table>
+        <div class="trap">⚠ 标准设备＝出厂价（且是<b>带备件</b>的出厂价）；"订货合同价"仅限成套公司供应情形——三个价互为干扰项。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.2.2 进口设备抵岸价</span><span class="stars">★★★</span><span class="yr">2018·2024单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 进口设备的交货方式（表13-3）</b>
+        <table>
+          <tr><th>交货方式</th><th>卖方责任</th><th>买方责任</th></tr>
+          <tr><td><span class="b">内陆交货类</span></td><td>①及时提交合同规定的货物和有关凭证 ②承担<span class="b">交货前</span>的一切费用和风险</td><td>①<span class="b">按时接受货物</span> ②<span class="b">交付货款</span> ③承担<span class="b">接货后</span>的一切费用和风险 ④自行办理出口手续和装运出口</td></tr>
+          <tr><td><span class="b">装运港交货类</span><br>（FOB，常用）</td><td>①将货物装上买方指定的船只并及时通知买方 ②负责<span class="b">货物装船前</span>的一切费用和风险 ③负责办理出口手续 ④提供出口国政府或有关方面签发的证件 ⑤负责提供有关装运单据</td><td>①<span class="b">负责租船或订舱、支付运费</span>，并将船期、船名通知卖方 ②承担<span class="b">货物装船后</span>的一切费用和风险 ③负责办理保险及支付保险费，办理在目的港的进口和收货手续 ④接受卖方提供的装运单据，并按合同规定支付货款</td></tr>
+          <tr><td><span class="b">目的地交货类</span></td><td colspan="2">对卖方来说承担的风险较大，国际贸易中卖方一般不愿意采用</td></tr>
+        </table>
+        <div class="trap">⚠ 装运港交货（FOB）的分界线是"装船"：装船<b>前</b>费用风险归卖方，装船<b>后</b>归买方；<b>租船订舱付运费、办保险都是买方</b>的事——与内陆交货责任互换设坑。</div>
+        <b>2. 进口设备抵岸价的构成和计算（表13-4）</b>
+        <table>
+          <tr><th>货价</th><td>= 离岸价(FOB) × 人民币外汇牌价</td></tr>
+          <tr><th>国外运费</th><td>= <span class="r">离岸价(FOB)</span> × 运费费率，或 = 运量 × 单位运价</td></tr>
+          <tr><th>国外运输保险费</th><td>= [离岸价(FOB)＋国外运费] ÷ (1−国外运输保险费费率) × 保险费费率</td></tr>
+          <tr><th>到岸价 CIF</th><td><span class="r">= 离岸价(FOB) + 国外运费 + 国外运输保险费</span></td></tr>
+          <tr><th>银行财务费</th><td>= <span class="r">离岸价(FOB)</span> × 人民币外汇牌价 × 银行财务费费率</td></tr>
+          <tr><th>外贸手续费</th><td>= <span class="r">到岸价(CIF)</span> × 人民币外汇牌价 × 外贸手续费费率</td></tr>
+          <tr><th>进口关税</th><td>= <span class="r">到岸价(CIF)</span> × 人民币外汇牌价 × 进口关税税率</td></tr>
+          <tr><th>消费税</th><td>= [到岸价(CIF)×人民币外汇牌价＋关税] ÷ (1−消费税税率) × 消费税税率（题干未说明默认为0）</td></tr>
+          <tr><th>增值税</th><td>= 组成计税价格 × 增值税税率；<span class="r">组成计税价格 = 到岸价(CIF)×人民币外汇牌价 + 进口关税 + 消费税</span></td></tr>
+        </table>
+        <div class="formula"><span class="r">进口设备抵岸价 = 货价 + 国外运费 + 国外运输保险费 + 银行财务费 + 外贸手续费 + 进口关税 + 增值税 + 消费税</span></div>
+        <div class="trap">⚠ 计算基数三分法：<b>银行财务费按FOB</b>，<b>外贸手续费、关税按CIF</b>，<b>增值税按"CIF＋关税＋消费税"（组成计税价格）</b>——考试最常混淆的三个基数。</div>
+        <div class="trap">⚠ 国外运输保险费和消费税都是"除法公式"（基数÷(1−费率)×费率），不能直接乘费率。</div>
+        <details class="ex"><summary>【例】FOB价500万美元、1500吨、运费350美元/吨、保险费率0.27%、银行财务费率0.5%、外贸手续费率1.5%、关税8%、增值税13%、牌价7.01，求抵岸价</summary><div>货价3505；国外运费350×1500×7.01÷10⁴=368.03；保险费(3505+368.03)÷(1−0.27%)×0.27%=10.49；CIF=3883.52；银行财务费500×7.01×0.5%=17.53；外贸手续费3883.52×1.5%=58.25；关税3883.52×8%=310.68；增值税(3883.52+310.68)×13%=545.25；消费税0。抵岸价=3505+368.03+10.49+17.53+58.25+310.68+545.25=4815.23万元。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.2.3 设备运杂费</span><span class="stars">★★★</span><span class="yr">2016单选·2026修订</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>构成（6项）</b>
+        <ul>
+          <li>国产标准设备：由设备制造厂交货地点起至<b>工地仓库止</b>的运费和装卸费</li>
+          <li>进口设备：由我国<b>到岸港口、边境车站起</b>至工地仓库止的运费和装卸费</li>
+          <li>设备出厂价格中没有包含的<b>设备包装和包装材料器具费</b></li>
+          <li>供销部门的<b>手续费</b></li>
+          <li>建设单位（或工程承包公司）的<b>采购与仓库保管费</b></li>
+          <li>如设备由设备成套公司供应，<b>成套公司的服务费</b>也应计入</li>
+        </ul>
+        <div class="formula">设备运杂费 = 设备原价（或进口设备抵岸价）× 设备运杂费率</div>
+        <ul><li><span class="b">沿海和交通便利地区费率相对低，内地和交通不便地区相对高，边远省份更高</span></li></ul>
+        <div class="formula"><span class="r">设备购置费 = 设备原价（或进口设备抵岸价）+ 设备运杂费</span> <span class="yr">2023·2025单选</span></div>
+        <div class="trap">⚠ 进口设备运杂费从"到岸港口/边境车站"起算（国内段）；到岸前的国外运费已含在抵岸价里——两段运费不要重复或漏计。</div>
+        <details class="ex"><summary>【2025真题】进口机电设备：离岸价1700、国外运费80、国外运输保险费4.5、银行财务费7、外贸手续费25万元，关税8%、增值税13%、国内运杂费率3%，设备购置费为（ ）万元</summary><div>答案 D：2276.098。CIF=1700+80+4.5=1784.5；关税=1784.5×8%=142.76；增值税=(1784.5+142.76)×13%=250.544；抵岸价=1784.5+7+25+142.76+250.544=2209.804；购置费=2209.804×(1+3%)=2276.098。</div></details>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 13.3 ═══════════ -->
+<details class="sec">
+  <summary>13.3 建筑安装工程费构成及计算<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>13.3.1 建安费（按费用构成要素划分）</span><span class="stars">★★★★★</span><span class="yr">2016~2025单选·2017·2022·2023·2024多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <div class="formula"><span class="r">按费用构成要素划分 = 人工费 + 材料费（含工程设备）+ 施工机具使用费 + 企业管理费 + 利润 + 规费 + 税金</span><br>其中前五项（人材机管利）包含在<span class="b">分部分项工程费、措施项目费、其他项目费</span>中</div>
+        <table>
+          <tr><th>(1) 人工费<br><span class="kw">口诀：特班津计奖</span></th><td>①计时工资或计件工资 ②奖金（节约奖、劳动竞赛奖）③<span class="b">津贴补贴</span>（流动施工津贴、特殊地区施工津贴、高温(寒)作业临时津贴、高空津贴）④<span class="b">加班</span>加点工资 ⑤<span class="b">特殊</span>情况下支付的工资（<span class="r">因病、工伤、产假、计划生育假、婚丧假、事假、探亲假、定期休假、停工学习、执行国家或社会义务</span>）</td></tr>
+          <tr><th>(2) 材料费<br><span class="kw">口诀：二运原保</span></th><td>①材料<span class="b">原</span>价 ②<span class="b">运</span>杂费 ③<span class="b">运</span>输损耗费 ④采购及<span class="b">保</span>管费（采购费、仓储费、工地保管费、仓储损耗）</td></tr>
+          <tr><th>(3) 施工机具使用费</th><td><b>施工机械使用费（7项）</b>：折旧费、检修费、维护费、<span class="b">安拆及场外运费</span>、人工费、燃料动力费、税费；<b>仪器仪表使用费（4项）</b>：折旧费、维护费、校验费、动力费</td></tr>
+          <tr><th>(4) 企业管理费<br><span class="kw">口诀：检验雇(固)工捞(劳)财宝(保)，公差管税会教他</span></th><td><span class="b">管</span>理人员工资、办<span class="b">公</span>费、<span class="b">差</span>旅交通费、<span class="b">固</span>定资产使用费、<span class="b">工</span>具用具使用费、<span class="b">劳</span>动保险和职工福利费、<span class="b">劳</span>动保护费、<span class="b">检</span>验试验费、<span class="b">工会</span>经费、职<span class="b">工教育</span>经费、财产<span class="b">保</span>险费、<span class="b">财</span>务费、<span class="b">税</span>金、城市维护建设<span class="b">税</span>、<span class="b">教</span>育费附加、地方<span class="b">教</span>育附加、其<span class="b">他</span></td></tr>
+          <tr><th>(5) 规费<br><span class="kw">口诀：医生老失伤</span></th><td>①社会保险费（<span class="b">养老、失业、医疗、生育、工伤</span>五险）②住房公积金 ③其他应列而未列入的规费</td></tr>
+        </table>
+        <div class="trap">⚠ 生产工人津贴属于<b>人工费</b>，不是企业管理费（2020真题）；短期借款利息支出属企业管理费的<b>财务费</b>；已完工程保护费属<b>措施项目费</b>。</div>
+        <div class="trap">⚠ 施工机械使用费里也含"人工费""税费"——是机上司机等费用，别与要素中的人工费、税金混淆。</div>
+        <div class="trap">⚠ 五险一金：社保+公积金归<b>规费</b>；而"劳动保险和职工福利费""财产保险费"归<b>企业管理费</b>——凡带"保险"字样必辨归属。</div>
+        <details class="ex"><summary>【2020真题】下列费用项目中，属于施工企业管理费的是（ ）A.生产工人津贴 B.短期借款利息支出 C.劳动保护费 D.已完工程保护费</summary><div>答案 C。A属人工费；B属企业管理费中财务费（教材本题答案给C，劳动保护费是企业管理费典型项目）；D属措施项目费。</div></details>
+        <b>2. 企业管理费费率计算（三种基础）</b>
+        <table>
+          <tr><th>以人工费为基础</th><td>费率 = 生产工人年平均管理费 ÷（年有效施工天数 × 人工单价）× 100%</td></tr>
+          <tr><th>以人工费和机械费合计为基础</th><td>费率 = 生产工人年平均管理费 ÷ [年有效施工天数 ×（人工单价＋每一工日机械使用费）] × 100%</td></tr>
+          <tr><th>以分部分项工程费为基础</th><td>费率 = 生产工人年平均管理费 ÷（年有效施工天数 × 人工单价）× <span class="r">人工费占分部分项工程费比例(%)</span></td></tr>
+        </table>
+        <details class="ex"><summary>【经典例题】年平均管理费1.2万元、年有效施工240d、人工单价300元/d、人工费占分部分项工程费75%，以人工费为基础的费率应为（ ）</summary><div>答案 C：16.67%。12000÷(240×300)×100%=16.67%。若以分部分项工程费为基础则再乘75%=12.5%（选项A为此干扰）。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.3.2 建安费（按造价形成划分）</span><span class="stars">★★★★</span><span class="yr">2016·2020·2023·2024·2025单选·2018多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <div class="formula"><span class="r">按造价形成划分 = 分部分项工程费 + 措施项目费 + 其他项目费 + 规费 + 税金</span></div>
+        <table>
+          <tr><th>分部分项工程费</th><td>（内含人工费、材料费、施工机具使用费、企业管理费、利润）</td></tr>
+          <tr><th>措施项目费<br>（9项，全红高频）</th><td>①<span class="r">安全文明施工费</span>（环境保护费、文明施工费、安全施工费、临时设施费、<span class="r">建筑工人实名制管理费</span>）②<span class="r">夜间施工增加费</span> ③<span class="r">二次搬运费</span> ④<span class="r">冬雨期施工增加费</span> ⑤<span class="r">已完工程及设备保护费</span> ⑥<span class="r">工程定位复测费</span> ⑦<span class="r">特殊地区施工增加费</span> ⑧<span class="r">大型机械设备进出场及安拆费</span> ⑨<span class="r">脚手架工程费</span></td></tr>
+          <tr><th>其他项目费</th><td>暂列金额、计日工、总承包服务费</td></tr>
+          <tr><th>规费 / 税金</th><td>社会保险费（五险）、住房公积金 ／ 税金</td></tr>
+        </table>
+        <div class="trap">⚠ 安全文明施工费的第5小项是<b>建筑工人实名制管理费</b>（新增考点）；临时设施费在这里是安全文明施工费的子项，别与工程建设其他费中的"场地准备费和临时设施费"混淆。</div>
+        <div class="trap">⚠ 工程定位复测费属<b>措施项目费</b>（2025真题）；暂列金额、计日工、总承包服务费三兄弟才是其他项目费。</div>
+        <details class="ex"><summary>【2025真题】施工企业投标报价时，对施工过程中预计发生的工程定位复测费应计入（ ）</summary><div>答案 A：措施项目费。</div></details>
+        <b>2. 措施项目费的计算方法（表13-5）</b><span class="yr">2016单选</span>
+        <table>
+          <tr><th>可以计量的措施项目</th><td>措施项目费 = Σ（措施项目工程量 × 综合单价）</td></tr>
+          <tr><th>不宜计量的措施项目</th><td>①安全文明施工费 = 计算基数 × 费率，<span class="r">基数应为定额基价（定额分部分项工程费＋定额中可以计量的措施项目费）、定额人工费或（定额人工费＋定额机械费）</span><br>②夜间施工增加费 ③二次搬运费 ④冬雨季施工增加费 ⑤已完工程及设备保护费 均= 计算基数 × 相应费率，<span class="r">计费基数应为定额人工费或（定额人工费＋定额机械费）</span></td></tr>
+        </table>
+        <div class="trap">⚠ 安全文明施工费的基数比其余四项多一个"定额基价"选项——单选题考过这一差别。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 13.4 ═══════════ -->
+<details class="sec">
+  <summary>13.4 工程建设其他费构成及计算<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>13.4.1 土地使用费和其他补偿费</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>取得土地使用权的方式有<span class="b">出让、划拨和转让</span>三种（<span class="b">划拨方式不缴纳</span>土地使用权出让金）</li>
+          <li><b>土地使用费</b>：①<span class="r">建设用地费</span>（土地使用权出让金等有偿使用费＋其他费用：土地补偿费、安置补助费、征用耕地复垦费、地上附着物和青苗补偿费、耕地占用税、城镇土地使用税、契税等）②<span class="r">临时土地使用费</span>（租赁费、地上附着物和青苗补偿费、土地恢复费及其他税费）③<span class="r">其他有关费用</span>（水土保持补偿费）</li>
+          <li><b>其他补偿费</b>：不附属于建设用地的相关建(构)筑物或设施的拆除补偿、迁建补偿、搬迁运输补偿等费用</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.4.2 建设管理费</span><span class="stars">★★★</span><span class="yr">2020单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>构成：建设单位管理费（项目建设管理费）、工程监理费、设备监造费、招标投标费（招标代理费）、设计评审费、特殊项目定额研究及测定费（如发生，按实际需求列支）、其他咨询费、印花税</li>
+          <li>建设单位管理费：从项目<span class="r">筹建之日起至办理竣工验收财务决算之日止</span>发生的管理性质支出（工作人员工资及相关费用、办公费、办公场地租用费、差旅交通费、劳动保护费、工具用具使用费、固定资产使用费、招募生产工人费、技术图书资料费(含软件)、业务招待费、施工现场津贴、竣工验收费等）</li>
+        </ul>
+        <div class="trap">⚠ 起止时间"筹建之日→竣工验收财务决算之日"是单选考点；此处的"劳动保护费""固定资产使用费"归建设单位管理费，与施工企业管理费同名不同主体。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.4.3 前期工作咨询费</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp"><ul><li>指提供建设项目专题研究、编制和评估项目申请报告、项目建议书或者可行性研究报告，以及其他与建设项目前期工作有关的咨询等服务收取的费用</li></ul></div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.4.4 专项评价费</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp"><ul><li>包括：环境影响评价及验收费、安全预评价及验收费、职业病危害预评价及控制效果评价费、地震安全性评价费、地质灾害危险性评价费、水土保持评价及验收费、压覆矿产资源评价费、节能评估费、危险与可操作性分析及安全完整性评价费、社会稳定风险评估费、防洪评价咨询费、交通影响评价咨询费、文物影响评估费及文物保护专项经费以及其他专项评价及验收费等</li></ul></div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.4.5 研究试验费</span><span class="stars">★★★</span><span class="yr">2018·2021单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>包含</th><td>①项目所在地规定应由建设单位承担的<span class="b">工程检测费用</span> ②自行或委托其他部门的专题研究、试验所需的人工费、材料费、试验设备及仪器使用费等</td></tr>
+          <tr><th>不包括</th><td>①由<span class="b">科技三项费用</span>（新产品试制费、中间试验费和重要科学研究补助费）开支的费用 ②应在<span class="b">建安费</span>中列支的施工企业对建筑材料、构件和建筑物进行<span class="b">一般鉴定、检查</span>所发生的费用 ③应由<span class="b">勘察设计费或工程费用</span>中开支的费用</td></tr>
+        </table>
+        <div class="trap">⚠ 一般鉴定检查→建安费（企业管理费中检验试验费）；<b>破坏性试验、验证设计数据的必须试验</b>→研究试验费（2021真题）。</div>
+        <details class="ex"><summary>【2021真题】发包人为验证某结构构件的安全性，要求承包人对结构构件进行破坏性试验发生的费用属于（ ）</summary><div>答案 A：研究试验费。为验证设计数据、必须进行的破坏性试验属研究试验费；一般鉴定检查才是检验试验费。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.4.6 勘察设计费</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp"><ul><li>勘察费、设计费、<span class="b">建筑信息模型（BIM）技术应用服务费</span></li></ul></div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.4.7 场地准备费和临时设施费</span><span class="stars">★★★★</span><span class="yr">2018单选·2017多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>场地准备费</th><td>①为达到工程开工条件所发生的未列入工程费用的<span class="b">场地平整</span>费用 ②对建设场地余留的有碍施工建设的设施进行<span class="b">拆除清理</span>的费用<br><span class="r">建设场地的大型土石方工程应进入工程费用中的总图运输费用中</span></td></tr>
+          <tr><th>临时设施费</th><td>①建设单位为满足项目建设、生活、办公需要，用于临时设施建设、维修、租赁、使用所发生或摊销的费用 ②施工建设需要而提供给施工单位开界区的未列入工程费用的临时水、电、路、信、气等工程和临时仓库、办公、生活等(构)筑物的建设、维修、拆除、摊销或租赁费用，以及铁路、码头租赁等费用<br><span class="r">不包括已列入建筑安装工程费用中的施工单位临时设施费用</span><br>计算：按工程量计算；按工程费用比例计算——临时设施费＝工程费用×临时设施费费率</td></tr>
+        </table>
+        <ul><li><span class="b">应尽量与永久性工程统一考虑</span></li></ul>
+        <div class="trap">⚠ 大型土石方工程费→<b>工程费用（总图运输费）</b>，不进场地准备费；施工单位自己的临时设施→<b>建安费（安全文明施工费）</b>，不进本项——两处"划界"都是真题考点。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.4.8 引进技术和进口设备材料其他费</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul><li>图纸资料翻译复制费、出国人员费用、来华人员费用、银行担保及承诺费、进口设备材料国内检验费</li>
+        <li><span class="r">单独引进软件不计关税只计增值税</span></li></ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.4.9 特殊设备安全监督检验费</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>特殊设备安全监督检验费</th><td>对<span class="b">在施工现场组装的</span>锅炉及压力容器、压力管道、消防设备、燃气设备、起重设备、电梯等特殊设备和设施实施安全检验收取的费用</td></tr>
+          <tr><th>标定费</th><td>列入国家或所在省、自治区、直辖市计量标定范围的计量器具标定，以及进行系统工艺标定、能耗标定等所发生的费用</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.4.10 市政公用配套设施费</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp"><ul><li>（城市基础设施配套费）指政府及其所属部门依照国家有关规定征收、专项用于城市道路和桥梁等市政公用基础设施配套建设的<span class="b">政府性基金</span></li></ul></div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.4.11 联合试运转费</span><span class="stars">★★★★★</span><span class="yr">2017·2019·2024单选·2022·2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li><b>内容（8项）</b>：试运转所需材料、燃料及动力消耗、低值易耗品及其他物料消耗、工具用具使用费和机械使用费、联合试运转人员工资、非建设单位参加试运转人工费、专家指导费、必要的工业炉烘炉费</li>
+          <li><span class="r">不包括：应由设备安装工程费用开支的单机试车及空载试车费用，以及试运转中暴露出来的因施工原因或设备缺陷等发生的处理费用</span></li>
+          <li>计算：<span class="b">联合试运转费 = 联合试运转支出 − 联合试运转收入</span>；不发生试运转或试运转收入大于（或等于）费用支出的工程，不列此项费用</li>
+        </ul>
+        <div class="trap">⚠ 单机试车、空载试车→<b>设备安装工程费</b>；试运转暴露的施工/设备缺陷处理费→不列入。多选题按此二条排除选项（2025多选答案即据此）。</div>
+        <details class="ex"><summary>【2025真题·多选】属于联合试运转费的有：A.空载试车费 B.试运转专家指导费 C.非建设单位人员参加试运转人工费 D.试运转暴露的设备缺陷处理费 E.试运转所需机械使用费</summary><div>答案 B、C、E。A属设备安装工程费；D属缺陷处理费用，不列入。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.4.12 保险费</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul><li>包括建筑安装工程一切险、设备财产保险和人身意外伤害险等，不同项目可根据工程特点选择投保险种</li>
+        <li><span class="r">不包括已列入施工企业管理费中的施工管理用财产、车辆保险费</span></li></ul>
+        <div class="trap">⚠ 施工管理用财产、车辆保险→企业管理费；工程一切险等→工程建设其他费的保险费——按"谁的财产、保什么"区分。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.4.13 专利及专有技术使用费</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp"><ul><li>在建设期内为取得<span class="b">专利、专有技术、商标权、商誉、特许经营权、软件费</span>等发生的费用</li></ul></div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.4.14 生产准备费</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>生产人员培训费</th><td>培训费和学习资料费；异地培训发生的住宿费、伙食补助费、交通费等。<br>计算：培训费＝培训人员(人)×培训费指标(元/人)</td></tr>
+          <tr><th>生产人员提前进厂费</th><td>提前进厂参与工艺设备、电气、仪表安装调试等生产准备工作发生的人工费和社会保障费用。<br>提前进厂费＝提前进厂人员(人)×提前进厂指标(元/人·月)×提前进厂期(月)</td></tr>
+          <tr><th>办公及生活家具购置费</th><td>为保证建设项目初期正常生产（或营业、使用）所必须购置的生产、办公、生活用具等费用。<br>＝人员(人)×办公及生活家具购置费指标(元/人)</td></tr>
+          <tr><th>工器具及生产家具购置费</th><td>为保证初期正常生产所必须购置的<span class="b">第一套不够固定资产标准</span>的设备、仪器、工卡模具、器具、生产家具等费用。<br>①按不同项目人员指标法计算＝人员(人)×指标(元/人)；②以设备购置费为计算基数，按部门或行业规定的费率计算＝设备购置费×费率</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.4.15 其他费用</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp"><ul><li>专项配套设施费、房产测绘费、防空地下室易地建设费、声像档案制作费、建筑垃圾减量化措施费、全过程工程咨询服务费、工程总承包管理费</li></ul></div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 13.5 ═══════════ -->
+<details class="sec">
+  <summary>13.5 预备费计算<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>13.5.1 基本预备费</span><span class="stars">★★★</span><span class="yr">2016·2017单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>指项目实施中可能发生难以预料的支出，需要<span class="b">预先预留</span>的费用，又称<span class="b">不可预见费</span>；主要指<span class="b">设计变更及施工过程中可能增加工程量的费用</span></li>
+        </ul>
+        <div class="formula"><span class="r">基本预备费 =（工程费用 + 工程建设其他费用）× 基本预备费率</span></div>
+        <div class="trap">⚠ 基数只有"工程费用＋其他费用"两项，<b>不含预备费自身、不含利息</b>——选项常混入价差预备费或建设期利息。</div>
+        <details class="ex"><summary>【经典例题】建安费2000、设备及工器具购置费800、其他费300万元，基本预备费率8%，基本预备费为（ ）万元</summary><div>答案 C：248。(2000+800+300)×8%=248。工程费用=建安费+设备购置费。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.5.2 价差预备费</span><span class="stars">★★★</span><span class="yr">2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul><li>内容：人工、设备、材料、施工机具的价差费，建安费及其他费用调整，利率、汇率调整等增加的费用</li></ul>
+        <div class="formula">P = Σ<sub>t=1</sub><sup>n</sup> I<sub>t</sub>[(1+f)<sup>m</sup>(1+f)<sup>0.5</sup>(1+f)<sup>t−1</sup> − 1]</div>
+        <ul>
+          <li>P—价差预备费；n—建设期年份数</li>
+          <li>I<sub>t</sub>—建设期第t年的投资计划额，<span class="r">包括工程费用、工程建设其他费用及基本预备费，即第t年的静态投资计划额</span></li>
+          <li>f—投资价格指数；t—建设期第t年；m—<span class="b">建设前期年限（从编制概算到开工建设年数）</span></li>
+        </ul>
+        <div class="trap">⚠ 层级对照：基本预备费的基数<b>不含</b>预备费；价差预备费的基数 I<sub>t</sub> 却<b>含基本预备费</b>（=静态投资）——两者基数不同是本章第一大坑。</div>
+        <div class="trap">⚠ 指数三连乘：(1+f)<sup>m</sup>前期年限、(1+f)<sup>0.5</sup>当年均匀发生按半年、(1+f)<sup>t−1</sup>已过建设年份——漏乘0.5次方是计算题最常见错误。</div>
+        <details class="ex"><summary>【2025真题】静态投资60000万元、建设前期1年、建设期2年，两年分别完成24000和36000万元，均匀投入，涨价率4%，价差预备费为（ ）万元</summary><div>答案 C：5163.022。第1年=24000×[(1.04)×(1.04)<sup>0.5</sup>−1]=1454.3054；第2年=36000×[(1.04)×(1.04)<sup>0.5</sup>×(1.04)−1]=3708.7164；合计5163.022万元。</div></details>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 13.6 ═══════════ -->
+<details class="sec">
+  <summary>13.6 增值税计算<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>13.6.1 增值税税率</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul><li>纳税人兼营不同税率的项目，应当<span class="b">分别核算</span>不同税率项目的销售额；未分别核算销售额的，<span class="r">从高适用税率</span></li></ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.6.2 增值税应纳税额</span><span class="stars">★★★</span><span class="yr">2018·2025多选·2021单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 进项税额抵扣的规定（表13-7）</b>
+        <table>
+          <tr><th>准予抵扣</th><td>①从销售方取得的<span class="b">增值税专用发票</span>上注明的增值税额 ②从海关取得的<span class="b">海关进口增值税专用缴款书</span>上注明的增值税额 ③购进农产品，按买价和<span class="b">9%扣除率</span>计算的进项税额（取得专用发票或海关缴款书的除外，国务院另有规定的除外）④自境外购进劳务、服务、无形资产或境内不动产，从税务机关或扣缴义务人取得的<span class="b">代扣代缴税款完税凭证</span>上注明的增值税额</td></tr>
+          <tr><th>不得抵扣</th><td>①用于<span class="b">简易计税方法</span>计税项目、<span class="b">免征增值税</span>项目、<span class="b">集体福利或者个人消费</span>的购进货物、劳务、服务、无形资产和不动产 ②<span class="b">非正常损失</span>的购进货物及相关的劳务和交通运输服务 ③非正常损失的在产品、产成品所耗用的购进货物（<span class="r">不包括固定资产</span>）、劳务和交通运输服务 ④国务院规定的其他项目</td></tr>
+        </table>
+        <b>2. 建筑业增值税计算办法（图13-21）</b><span class="yr">2021单选</span>
+        <table>
+          <tr><th>一般计税</th><td><span class="r">增值税销项税额 = 税前造价 × 9%</span>；税前造价为人工费、材料费、施工机具使用费、企业管理费、利润和规费之和，各费用项目均<span class="r">不包含</span>增值税可抵扣进项税额的价格计算</td></tr>
+          <tr><th>简易计税</th><td><span class="r">增值税 = 税前造价 × 3%</span>；各费用项目均以<span class="r">包含</span>增值税进项税额的含税价格计算</td></tr>
+        </table>
+        <div class="trap">⚠ 一般计税9%配"不含税价"（裸价），简易计税3%配"含税价"——税率与价格口径成对出现，交叉搭配即是错项。</div>
+        <details class="ex"><summary>【经典例题】人工费3000、材料费6000、施工机具使用费1000、企业管理费400、利润800、规费300万元，均不含可抵扣进项税额，税率9%，销项税额为（ ）万元</summary><div>答案 B：1035。(3000+6000+1000+400+800+300)×9%=11500×9%=1035。</div></details>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 13.7 ═══════════ -->
+<details class="sec">
+  <summary>13.7 建设期利息与流动资金计算<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>13.7.1 建设期利息</span><span class="stars">★★★★</span><span class="yr">2017·2018·2020·2022·2024单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <div class="formula"><span class="r">各年应计利息 =（年初借款本息累计 + 本年借款额 ÷ 2）× 年利率</span></div>
+        <div class="trap">⚠ 本年新借款按<b>半年</b>计息（÷2，假设年内均匀使用）；上一年利息要滚入下一年"年初本息累计"（建设期内只计息不付息则复利滚算）。</div>
+        <details class="ex"><summary>【2024真题】建设期2年共借款30000万元、年利率4.5%，两年借款比例45%和55%，借款年内均衡使用、建设期只计息不付息，建设期利息总和为（ ）万元</summary><div>答案 C：1296.169。第1年借13500，利息=13500/2×4.5%=303.75；第2年借16500，利息=(13500+303.75+16500/2)×4.5%=992.419；合计303.75+992.419=1296.169。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>13.7.2 流动资金估算方法</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>扩大指标估算法</th><td>流动资金额 = 各种费用基数 × 相应的流动资金率占比例（或占营运资金的数额）；费用基数指<span class="b">年营业收入、年经营成本或年产量</span>等</td></tr>
+          <tr><th>分项详细估算法</th><td><span class="b">流动资金 = 流动资产 − 流动负债</span><br><span class="b">流动资产 = 应收账款 + 预付账款 + 存货 + 库存现金</span><br><span class="b">流动负债 = 应付账款 + 预收账款</span></td></tr>
+        </table>
+        <div class="trap">⚠ 流动资产是"应收＋预付"，流动负债是"应付＋预收"——收付、预字交叉互换是选择题惯用手法。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<footer>依据《建设工程经济四色笔记》第079~096页整理</footer>
+
+<script>
+function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>

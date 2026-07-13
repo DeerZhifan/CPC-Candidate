@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第15章 设计概算与施工图预算 · 知识树</title>
+<style>
+  :root{ --accent:#2563ab; --accent-bg:#ecf3fa; --ink:#2b2b2b; --sub:#777; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.6;}
+  a.back{display:inline-block;font-size:.8rem;color:var(--sub);text-decoration:none;margin-bottom:8px;}
+  h1{font-size:1.15rem;margin:2px 0 4px;color:var(--accent);}
+  .meta{color:var(--sub);font-size:.78rem;margin-bottom:10px;}
+  .legend{background:#fff;border-radius:10px;padding:8px 12px;font-size:.75rem;color:#555;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;}
+  .score{background:#fff;border-radius:10px;padding:10px 12px;font-size:.8rem;margin-bottom:14px;}
+  .score b{font-size:.85rem;}
+  .score table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .score td,.score th{border:1px solid #eee;padding:3px 6px;font-size:.75rem;text-align:center;}
+  .score th{background:#fafafa;font-weight:600;}
+  details.sec{background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:4px solid var(--accent);}
+  details.sec>summary{list-style:none;cursor:pointer;padding:11px 13px;font-weight:700;font-size:.95rem;display:flex;gap:8px;align-items:center;}
+  details.sec>summary::-webkit-details-marker{display:none;}
+  .caret{margin-left:auto;color:#bbb;font-size:.75rem;transition:transform .2s;flex:none;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .sec .inner{padding:0 12px 12px;}
+  details.item{border:1px solid #eee;border-radius:9px;margin-bottom:8px;background:#fff;}
+  details.item>summary{list-style:none;cursor:pointer;padding:9px 11px;font-size:.88rem;font-weight:600;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+  details.item>summary::-webkit-details-marker{display:none;}
+  .stars{color:#e8a20c;font-size:.8rem;letter-spacing:1px;flex:none;}
+  .yr{background:var(--accent-bg);color:var(--accent);font-size:.68rem;padding:1px 6px;border-radius:4px;flex:none;}
+  .item .kp{padding:2px 12px 10px;border-top:1px dashed #f0f0f0;font-size:.85rem;}
+  .kp ul{margin:6px 0;padding-left:1.25em;}
+  .kp li{margin:4px 0;}
+  .kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem;}
+  .kp th,.kp td{border:1px solid #e8e8e8;padding:5px 7px;text-align:left;vertical-align:top;}
+  .kp th{background:#fafafa;font-weight:600;white-space:nowrap;}
+  .r{color:#c62828;font-weight:600;}
+  .b{color:#1d64c0;}
+  .formula{background:#faf7f2;border-radius:6px;padding:6px 10px;margin:6px 0;font-family:Georgia,serif;font-size:.9rem;overflow-x:auto;display:block;}
+  .trap{background:#fff8e6;border-left:3px solid #e8a20c;border-radius:0 8px 8px 0;padding:7px 10px;margin:8px 0;font-size:.8rem;color:#7a5c00;}
+  details.ex{background:#f4f8fd;border-radius:8px;margin:8px 0;font-size:.82rem;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:8px 10px;color:#2563ab;}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>div{padding:0 10px 9px;color:#444;}
+  .btns{display:flex;gap:8px;justify-content:center;margin:0 0 12px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
+  footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
+</style>
+</head>
+<body>
+
+<a class="back" href="00-全书骨架.html">← 返回全书骨架</a>
+<h1>第15章 设计概算与施工图预算</h1>
+<div class="meta">第3篇 工程计价 · 共3节</div>
+
+<div class="legend">
+  <span><span class="stars">★</span>数=重要度</span>
+  <span class="r">红=重点/易考/高频</span>
+  <span class="b">蓝=次重点</span>
+  <span>⚠=易混陷阱</span>
+</div>
+
+<div class="score">
+  <b>本章分值：2024年7分 · 2025年6分 · 2026预测7分</b>
+  <table>
+    <tr><th>知识点</th><th>题型</th><th>2024</th><th>2025</th><th>2026预测</th></tr>
+    <tr><td rowspan="2">15.1 设计概算编制</td><td>单选</td><td>1</td><td>2</td><td>1</td></tr>
+    <tr><td>多选</td><td>2</td><td>—</td><td>2</td></tr>
+    <tr><td rowspan="2">15.2 施工图预算编制</td><td>单选</td><td>2</td><td>2</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>2</td></tr>
+    <tr><td rowspan="2">15.3 设计概算与施工图预算的审查</td><td>单选</td><td>2</td><td>2</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td colspan="2"><b>合计</b></td><td><b>7</b></td><td><b>6</b></td><td><b>7</b></td></tr>
+  </table>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ════════ 15.1 ════════ -->
+<details class="sec" open>
+  <summary>15.1 设计概算编制<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>15.1.1 设计概算定义和作用</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>定义</th><td>设计概算是在建设项目<span class="r">初步设计阶段</span>形成的设计概算成果文件——设计概算书，也简称设计概算或总概算书</td></tr>
+          <tr><th>作用</th><td>
+            ① 是<b>确定和控制建设项目全部投资</b>的文件；<br>
+            ② 是<span class="b">编制固定资产投资计划、实行建设项目投资包干、签订承发包合同</span>的依据；<br>
+            ③ 是<span class="b">签订贷款合同、项目实施全过程造价管理以及考核项目经济合理性</span>的依据；<br>
+            ④ 经投资主管部门或其他有关部门核定的设计概算是<span class="r">控制政府投资项目总投资</span>的依据
+          </td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>15.1.2 设计概算编制依据</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>国家、行业和地方有关规定</li>
+          <li>相应工程造价管理机构发布的<b>概算定额（或指标）</b></li>
+          <li>工程勘察与设计文件</li>
+          <li>拟定或常规的施工组织设计和施工方案</li>
+          <li>建设项目资金筹措方案</li>
+          <li>工程所在地编制同期的人工、材料、机械台班市场价格，以及设备供应方式及供应价格</li>
+          <li>建设项目的技术复杂程度，新技术、新材料、新工艺以及专利使用情况等</li>
+          <li>建设项目批准的相关文件、合同、协议等</li>
+          <li>政府有关部门、金融机构等发布的价格指数、利率、汇率、税率以及工程建设其他费用等</li>
+          <li>委托单位提供的其他技术经济资料</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>15.1.3 设计概算的编制工作程序</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p>收集原始资料 → 确定有关数据 → 各项费用计算 → <span class="r">单位工程概算书编制 → 单项工程综合概算书的编制 → 建设项目总概算的编制</span>（自下而上逐级汇总）</p>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>15.1.4 设计概算编制方法</span><span class="stars">★★★★★</span><span class="yr">2016~2025连年考</span><span class="caret">▶</span></summary>
+      <div class="kp">
+
+        <p><b>1. 设计概算编制形式</b> <span class="yr">2024多选</span></p>
+        <table>
+          <tr><th>二级形式</th><td>当<span class="b">只有一个单项工程</span>的建设项目时，应采用二级形式编制设计概算</td></tr>
+          <tr><th>三级形式</th><td>当<span class="b">包含两个及以上单项工程</span>的建设项目时，应采用三级编制形式。<span class="r">"三级概算"是指单位工程概算、单项工程综合概算和建设工程项目总概算</span></td></tr>
+        </table>
+        <div class="trap">⚠ 一个单项工程→二级；两个及以上→三级。"三级概算"三个层次的名称（单位→单项→总）常考多选，注意与施工图预算"三级预算"（单位工程预算→单项工程综合预算→建设项目总预算）对应区分。</div>
+
+        <p><b>2. 设计概算文件的组成内容</b> <span class="yr">2016·2020单选</span></p>
+        <table>
+          <tr><th>建设工程项目总概算</th><td>由 ①单项工程综合概算 ②工程建设其他费用概算 ③预备费概算 ④建设期利息概算 ⑤经营性项目铺底流动资金概算 组成</td></tr>
+          <tr><th>单位建筑工程概算</th><td>土建工程概算、给水排水采暖工程概算、通风空调工程概算、电气照明工程概算、弱电工程概算、特殊构筑物工程概算</td></tr>
+          <tr><th>单位设备及安装工程概算</th><td>机械设备及安装工程概算、电气设备及安装工程概算、热力设备及安装工程概算、工器具及生产家具购置费概算</td></tr>
+        </table>
+
+        <p><b>3. 单位工程概算的编制方法</b> <span class="yr">2016·2018~2025单选</span></p>
+        <table>
+          <tr><th>方法</th><th>适用条件</th><th>要点</th></tr>
+          <tr>
+            <td>概算定额法</td>
+            <td><span class="r">初步设计达到一定深度、建筑结构比较明确</span>（可以计算工程量）</td>
+            <td>五步：①按概算定额分部分项顺序列出各分项工程名称 ②确定概算定额单价（基价）③计算人、材、机费用 ④分别计算企业管理费、利润、规费和税金 ⑤计算单位工程概算造价</td>
+          </tr>
+          <tr>
+            <td>概算指标法</td>
+            <td>在<span class="r">初步设计、方案设计或概念性设计深度不够</span>，工程量无法准确提供或计算，行业和地方对应概算定额资料不足，而<span class="b">工程设计采用的技术比较成熟</span>，已有平台数据库存有<span class="b">建设地点、工程特征和结构特征、建设规模</span>等类似概算指标时采用。适用于一般附属、辅助和服务工程等项目，以及住宅和文化福利工程项目或投资比较小、比较简单的工程项目</td>
+            <td>结构特征与指标<span class="b">相同或相近→直接套用</span>；有局部差异→修正指标（两种：修正每m²造价 / 修正人、材、机数量）</td>
+          </tr>
+          <tr>
+            <td>类似工程预算法</td>
+            <td>拟建工程初步设计<span class="r">与已完工程或在建工程的设计相类似且没有可用的概算指标</span></td>
+            <td>但<span class="r">必须对建筑结构差异和价差进行调整</span></td>
+          </tr>
+        </table>
+        <span class="formula">单位工程概算造价 = 人、材、机费用 + 企业管理费 + 利润 + 规费 + 税金</span>
+        <span class="formula">结构变化修正概算指标(元/m²) = 原概算指标人材机费 + 换入结构的工程量×换入结构的人材机费用单价 − 换出结构的工程量×换出结构的人材机费用单价</span>
+        <span class="formula">结构变化修正概算指标的人、材、机数量 = 原概算指标人材机数量 + 换入结构件工程量×相应定额人材机消耗量 − 换出结构件工程量×相应定额人材机消耗量</span>
+        <div class="trap">⚠ 三法辨析：结构明确、可算工程量→概算定额法；设计深度不够、有类似指标库→概算指标法；与已完/在建工程类似且<b>无可用概算指标</b>→类似工程预算法（须调结构差异+价差）。</div>
+        <details class="ex"><summary>【2024真题】初步设计达到一定深度、建筑结构比较明确，可以计算工程量的建筑工程，编制设计概算宜采用（ ）</summary><div>答案 B：概算定额法。</div></details>
+        <details class="ex"><summary>【2025真题】按概算指标编制概算：土建含税单位造价1627元/m²（人材机1230元/m²），企业管理费率8%（以人材机为基数），利润率7%（以人材机+管理费为基数），结构构件部分变更使每100m²人材机费用增加4800元，增值税率9%，修正后含税单位造价为（ ）元/m²</summary><div>答案 B：1687.46。修正后含税单位造价 = 1627 + (4800÷100)×(1+8%)×(1+7%)×(1+9%) = 1687.46 元/m²。</div></details>
+
+        <p><b>4. 设备及安装工程概算编制方法</b> <span class="yr">2016单选 2018~2023多选</span></p>
+        <table>
+          <tr><th>方法</th><th>适用条件 / 要点</th></tr>
+          <tr><td>预算单价法</td><td>当<span class="r">初步设计有详细设备清单</span>时，可直接按预算单价（预算定额单价）编制。<b>计算比较具体，精确性较高</b></td></tr>
+          <tr><td>扩大单价法</td><td><span class="r">初步设计的设备清单不完备，或仅有成套设备的重量</span>时，可采用综合扩大安装单价编制</td></tr>
+          <tr><td>概算指标法</td><td>当<span class="r">初步设计的设备清单不完备，或安装预算单价及扩大综合单价不全</span>，无法采用前两法时。概算指标形式：<br>① 按设备价值的百分比（安装费率）：<span class="r">设备安装费=设备原价×设备安装费率</span><br>② 按每吨设备安装费：<span class="r">设备安装费=设备总吨数×每吨设备安装费(元/吨)</span><br>③ 按座、台、套、组、根或功率等为计量单位<br>④ 按设备安装工程每平方米建筑面积</td></tr>
+        </table>
+        <details class="ex"><summary>【例题】初步设计深度不够、设备清单不完善，只有主体设备或仅有成套设备重量时，编制设备安装工程概算应选用（ ）</summary><div>答案 B：扩大单价法。</div></details>
+
+        <p><b>5. 建设工程项目总概算的编制方法</b> <span class="yr">2024多选·2026修订</span></p>
+        <ul>
+          <li>以<span class="b">整个建设工程项目</span>为对象，是确定项目从筹建开始到竣工验收交付使用整个过程全部费用（即<b>建设项目总投资</b>）的文件</li>
+          <li>由<span class="b">工程费用、工程建设其他费用、预备费、建设期利息和经营性项目的铺底流动资金</span>组成</li>
+          <li>按概算编制工作顺序由<span class="b">各单项工程综合概算、工程建设其他费用、预备费、建设期利息和经营性项目的铺底流动资金</span>组成</li>
+          <li>总概算表编制步骤：①单项工程综合概算及其他工程和费用概算汇总列入总概算表 ②工程项目和费用名称及数值填入相应各栏 ③按费率标准计算预备费、建设期利息、铺底流动资金 ④计算总概算价值 ⑤计算技术经济指标 ⑥投资分析</li>
+        </ul>
+        <span class="formula">总概算价值 = 工程费用 + 工程建设其他费用 + 预备费 + 建设期利息 + 铺底流动资金</span>
+        <details class="ex"><summary>【例题】某项目工程费用6500万、其他费用1200万、预备费500万、建设期贷款利息370万、铺底流动资金700万，总概算为（ ）万元</summary><div>答案 A：9270。6500+1200+500+370+700=9270 万元（五项全加，一项不落）。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>15.1.5 设计概算编制成果文件</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p>设计概算成果文件——设计概算书（也简称设计概算或总概算书），一般应包括<b>七个部分</b>：</p>
+        <ul>
+          <li>(1) 封面、签署页及目录　(2) 编制说明　(3) 总概算表　(4) 工程建设其他费用概算表　(5) 单项工程综合概算表　(6) 单位工程概算表　(7) 附录：补充估价表</li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ════════ 15.2 ════════ -->
+<details class="sec">
+  <summary>15.2 施工图预算编制<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>15.2.1 施工图预算定义和作用</span><span class="stars">★★★</span><span class="yr">2018·2020·2023多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>对建设单位</th><td>① <span class="b">施工图设计阶段确定建设工程项目投资</span>的依据；② 施工期间<b>安排建设资金计划和使用建设资金</b>的依据；③ 确定项目<b>最高投标限价</b>的参考依据；④ 可以作为<span class="b">确定合同价款、拨付工程进度款及办理工程结算</span>的基础</td></tr>
+          <tr><th>对施工单位</th><td>① <span class="b">确定投标报价</span>的参考依据；② <span class="b">进行施工准备</span>的依据；③ 施工前<span class="b">组织材料、机具、设备及劳动力供应</span>的重要参考；④ <span class="b">编制进度计划、统计完成工作量、进行经济核算</span>的参考依据；⑤ <span class="b">控制工程成本</span>的依据；⑥ 进行<span class="r">"两算"对比</span>的依据（<span class="b">"两算"指施工图预算和施工预算</span>）</td></tr>
+          <tr><th>对工程咨询单位</th><td>尽可能客观、准确地为委托方做出施工图预算，是其业务水平、素质和信誉的体现</td></tr>
+          <tr><th>对造价管理部门</th><td>① 监督检查执行国家及行业标准的依据；② 合理确定工程造价、测算造价指数的依据；③ 审核最高投标限价的参考依据</td></tr>
+          <tr><th>其他</th><td>是有关仲裁、管理、司法机关按照法律程序处理、解决问题的依据</td></tr>
+        </table>
+        <div class="trap">⚠ "两算"对比 = <b>施工图预算 与 施工预算</b>（施工单位内部），不是"概算与预算"——多选常设此坑。另注意：确定最高投标限价对建设单位是"参考依据"，审核最高投标限价对造价管理部门也是"参考依据"。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>15.2.2 施工图预算编制依据</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>国家、行业和地方有关规定</li>
+          <li><b>预算定额或企业定额、单位估价表</b>等</li>
+          <li><b>施工图设计文件</b>及相关标准图集和规范</li>
+          <li>项目相关文件、合同、协议等</li>
+          <li>工程所在地的人工、材料、设备、施工机具单价，工程造价指标指数等</li>
+          <li>施工组织设计和施工方案</li>
+          <li>项目的管理模式、发包模式及施工条件</li>
+          <li>其他应提供的资料</li>
+        </ul>
+        <div class="trap">⚠ 对比记忆：概算依据用<b>概算定额（指标）</b>+勘察设计文件；施工图预算依据用<b>预算定额/企业定额</b>+施工图设计文件——两套依据别混。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>15.2.3 施工图预算的编制工作程序</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><span class="r">单位工程预算 → 单项工程综合预算 → 建设项目总预算</span>（逐级汇总）</p>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>15.2.4 施工图预算编制方法</span><span class="stars">★★★★★</span><span class="yr">2017~2025高频单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+
+        <p><b>1. 定额单价法</b> <span class="yr">2017·2019·2020·2022·2024·2025单选</span></p>
+        <table>
+          <tr><th>七步程序</th><td>① 准备资料，熟悉施工图纸 → ② <b>计算工程量</b> → ③ <b>套用定额单价，计算人、材、机费用</b> → ④ <b>编制工料分析表</b> → ⑤ <b>按计价程序计取其他费用，并汇总造价</b> → ⑥ 复核 → ⑦ 编制说明、填写封面</td></tr>
+          <tr><th>套用定额单价注意</th><td>
+            (1) 名称、规格、计量单位与定额单价中所列内容<b>完全一致</b>时，可以<span class="r">直接套用</span>定额单价；<br>
+            (2) <span class="r">主要材料品种与定额单价中规定材料不一致</span>时，<span class="r">不可以直接套用</span>定额单价，需要<span class="r">按实际使用材料价格换算定额单价</span>；<br>
+            (3) <span class="r">施工工艺条件与定额单价不一致</span>而造成人工、机械的<span class="r">数量增减时，一般调量不换价</span>；<br>
+            (4) 不能直接套用定额、不能换算和调整时，应<b>编制补充定额单价</b>
+          </td></tr>
+        </table>
+        <div class="trap">⚠ 助记口诀：<b>完全一致，直接套用；材料不一致，价格换算；数量增减，调量不换价</b>。选项常把"换价"与"换量"互换设坑。</div>
+        <details class="ex"><summary>【2025真题】定额单价法编制施工图预算，完成工程量计算后下一步应进行的工作是（ ）</summary><div>答案 D：套用定额单价，计算人、材、机费用。（顺序：工程量→套价算人材机→工料分析表→计取其他费用汇总→复核→说明封面）</div></details>
+        <details class="ex"><summary>【2024真题】套用定额单价计算人材机费用时，某分项工程主要材料品种与定额单价中规定材料不一致，处理方式是（ ）</summary><div>答案 B：按实际使用材料价格换算定额单价。</div></details>
+
+        <p><b>2. 实物量法</b> <span class="yr">2018·2019·2022·2023单选</span></p>
+        <table>
+          <tr><th>七步程序</th><td>① 准备资料，熟悉施工图纸 → ② 计算工程量 → ③ <b>套用消耗定额，计算人、材、机消耗量</b> → ④ <b>计算并汇总人工费、材料费、施工机具使用费</b> → ⑤ 计算其他各项费用，汇总造价 → ⑥ 复核 → ⑦ 编制说明、填写封面</td></tr>
+        </table>
+        <div class="trap">⚠ 两法第③④步区别：定额单价法③套<b>定额单价</b>直接算出人材机<b>费用</b>；实物量法③套<b>消耗定额</b>先算人材机<b>消耗量</b>、④再乘市场价格汇总费用。</div>
+        <details class="ex"><summary>【2024真题】实物量法编制施工图预算工作排序：①计算工程量 ②套用消耗定额计算人材机消耗量 ③计算其他各项费用并汇总造价 ④计算并汇总人材机费用 ⑤准备资料、熟悉施工图纸</summary><div>答案 D：⑤—①—②—④—③。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>15.2.5 施工图预算编制成果文件</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>三级预算编制</th><td><span class="b">多个单项工程</span>时：建设项目总预算、单项工程综合预算、单位工程预算。成果文件组成：(1)封面 (2)签署页及目录 (3)编制说明 (4)总预算表 (5)综合预算表 (6)单位工程预算表 (7)附件</td></tr>
+          <tr><th>二级预算编制</th><td><span class="b">一个单项工程</span>时：(1)封面 (2)签署页及目录 (3)编制说明 (4)总预算表 (5)单位工程预算表 (6)附件（<b>无综合预算表</b>）</td></tr>
+        </table>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ════════ 15.3 ════════ -->
+<details class="sec">
+  <summary>15.3 设计概算与施工图预算的审查<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>15.3.1 设计概算与施工图预算审查的意义</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>有助于促进编制人员提高编制质量</li>
+          <li>有助于促进设计的技术先进性与经济合理性的统一</li>
+          <li>可以使建设项目总投资力求做到准确、完整，<b>缩小概算与预算之间的差距，避免实际投资大幅突破概算</b></li>
+          <li>有利于核定建设项目的投资规模</li>
+          <li>有利于合理分配投资资金、加强投资计划管理</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>15.3.2 内部审核和外部审查或评审</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>内部审核</th><td>编制、审核、审定——<b>编制的项目负责人是第一责任人</b></td></tr>
+          <tr><th>外部审查或评审</th><td>第三方审核。内容包括：项目建设程序评审、建筑安装工程概算评审、设备投资概算评审、待摊投资概算评审、其他投资概算评审</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>15.3.3 设计概算的审查内容</span><span class="stars">★★★</span><span class="yr">2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>1. 审查设计概算的编制依据</b>：(1)定额和标准的时效性 (2)针对性 (3)合理性 (4)对影响造价或投资水平的主要因素或关键工程的必要说明 (5)适用性</p>
+        <p><b>2. 审查单位工程设计概算构成</b> <span class="yr">2025多选</span></p>
+        <ul>
+          <li>审查建筑工程概算，包括对<span class="b">工程量计算、概算定额选用、取费及材料价格</span>等的审查</li>
+          <li>采用的定额或指标的审查：审查定额或指标的使用范围、定额基价、指标的调整、定额或指标缺项的补充等</li>
+          <li>材料预算价格的审查</li>
+          <li>各项费用的审查</li>
+        </ul>
+        <p><b>3. 设备及安装工程概算的审查</b>（表15-4）</p>
+        <table>
+          <tr><th>标准设备原价</th><td>应根据设备被管辖的范围，审查各级规定的价格标准</td></tr>
+          <tr><th>非标准设备原价</th><td>除审查价格的估算依据、估算方法外，还要分析研究非标准设备估价准确度的有关因素及价格变动规律</td></tr>
+          <tr><th>设备运杂费</th><td>费率按主管部门或省、自治区、直辖市规定的标准执行；若设备价格中已包括包装费和供销部门手续费，不应重复计算，应相应降低设备运杂费率</td></tr>
+          <tr><th>进口设备费用</th><td>应根据设备费用各组成部分及国家设备进口、外汇管理、海关、税务等有关部门不同时期的规定进行</td></tr>
+          <tr><th>其他</th><td>采用预算单价或扩大综合单价计算安装费时，审查各种单价是否合适、工程量计算是否符合规则要求、是否准确无误；采用概算指标计算安装费时，审查概算指标是否合理、计算结果是否达到精度要求；审查所需计算安装费的设备数量及种类是否符合设计要求，避免将不需安装的设备安装费计入</td></tr>
+        </table>
+        <p><b>4. 综合概算和总概算的审查</b></p>
+        <ul>
+          <li>审查概算的编制是否符合国家经济建设方针、政策的要求，是否实事求是地确定项目总投资</li>
+          <li>工程建设其他费概算的审查</li>
+          <li>审查概算的投资规模、生产能力、设计标准、建设用地、建筑面积、主要设备、配套工程、设计定员等是否符合原批准可行性研究报告或立项批文的标准</li>
+          <li>审查其他具体项目：技术经济指标是否经济合理、费用项目是否按统一规定计列，有无随意列项、多列、交叉计列和漏项等</li>
+        </ul>
+        <div class="trap">⚠ 如概算总投资<span class="r">超过原批准投资估算 10% 以上</span>，应进一步审查超估算的原因——"10%"是高频数字考点。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>15.3.4 设计概算的审查方法</span><span class="stars">★★★</span><span class="yr">2016·2024单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>对比分析法</th><td>六个对比：①建设规模、标准与立项批文对比 ②工程数量与设计图纸对比 ③综合范围、内容与编制方法、规定对比 ④各项取费与规定标准对比 ⑤材料、人工单价与造价信息对比 ⑥技术经济指标与同类工程对比</td></tr>
+          <tr><th>查询核实法</th><td>对<span class="r">一些关键设备和设施、重要装置、引进工程图纸不全、难以核算的较大投资</span>采用（向设备供应商等询价核实）</td></tr>
+          <tr><th>联合会审法</th><td>①设计单位自审 → ②主管、建设、承包单位初审 → ③工程造价咨询公司评审 → ④邀请同行专家预审 → ⑤审批部门复审</td></tr>
+        </table>
+        <details class="ex"><summary>【2024真题】审查设计概算时，审查人对部分关键设备投资向设备供应部门征求意见的方法属于（ ）</summary><div>答案 D：查询核实法。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>15.3.5 施工图预算的审查内容</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>重点</b>：对<span class="b">工程量、资源要素价格、预算单价的套用、费率及计取</span>等进行审核。</p>
+        <p><b>主要内容</b>：</p>
+        <ul>
+          <li>审查施工图预算的编制是否符合现行国家、行业、地方政府有关法律、法规和规定要求</li>
+          <li>审查工程量计算的准确性、工程量计算规则与计量标准或定额规则的一致性</li>
+          <li>审查在施工图预算的编制过程中，各种计价依据使用是否恰当，各项费率计取是否正确</li>
+          <li>审查各种要素市场价格选用是否合理</li>
+          <li>审查施工图预算是否超过设计概算以及进行偏差分析</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>15.3.6 施工图预算的审查方法</span><span class="stars">★★★★★</span><span class="yr">2016~2024单选 2019多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>审查方法</th><th>特点</th><th>适用范围</th></tr>
+          <tr><td>逐项审查法<br>（全面审查法）</td><td>优点：<span class="r">全面、细致，审查质量高、效果好</span>；缺点：工作量大，时间较长</td><td><span class="r">工程量较小、工艺比较简单</span>的工程</td></tr>
+          <tr><td>标准预算审查法</td><td>优点：<span class="r">时间短、效果好、易定案</span>；缺点：适用范围小</td><td><span class="r">仅适用于采用标准图纸的工程</span></td></tr>
+          <tr><td>分组计算审查法</td><td><span class="r">审查速度快、工作量小</span></td><td>—</td></tr>
+          <tr><td>对比审查法</td><td>—</td><td>①拟建工程与已完或在建工程预算采用同一施工图，但基础部分和现场施工条件不同→相同部分对比审查；②工程设计相同但建筑面积不同→按分项工程量比例或每m²建筑面积造价对比；③两工程面积相同但设计图纸不完全相同→相同部分（柱子、屋架、屋面、砖墙等）对照审查</td></tr>
+          <tr><td>"筛选"审查法</td><td>优点：<span class="r">简单易懂，便于掌握，审查速度快，便于发现问题</span>；缺点：问题出现的原因尚需继续审查</td><td>审查<b>住宅工程</b>或<b>不具备全面审查条件</b>的工程</td></tr>
+          <tr><td>重点审查法</td><td><span class="r">突出重点，审查时间短、效果好</span></td><td>审查<b>工程量大或者造价较高</b>的各种工程、补充定额、计取的各种费用（计费基础、取费标准）等</td></tr>
+        </table>
+        <div class="trap">⚠ 适用范围最易混：工程量小、工艺简单→<b>逐项(全面)审查</b>；标准图纸→<b>标准预算审查</b>；住宅/不具备全面审查条件→<b>"筛选"审查</b>；工程量大、造价高→<b>重点审查</b>。特点关键词："全面细致质量高"=逐项；"易定案范围小"=标准；"速度快工作量小"=分组；"简单易懂便于发现问题"=筛选。</div>
+        <details class="ex"><summary>【2024真题】施工图预算审查时，对工程量小、工艺较简单的工程，按定额顺序或施工顺序对各项工程细目逐项详细审查的方法属于（ ）</summary><div>答案 B：全面审查法（逐项审查法）。</div></details>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<footer>依据《建设工程经济四色笔记》第111~122页整理</footer>
+
+<script>
+function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>

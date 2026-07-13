@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第8章 收入 · 知识树</title>
+<style>
+  :root{ --accent:#1a7f5a; --accent-bg:#eaf6f0; --ink:#2b2b2b; --sub:#777; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.6;}
+  a.back{display:inline-block;font-size:.8rem;color:var(--sub);text-decoration:none;margin-bottom:8px;}
+  h1{font-size:1.15rem;margin:2px 0 4px;color:var(--accent);}
+  .meta{color:var(--sub);font-size:.78rem;margin-bottom:10px;}
+  .legend{background:#fff;border-radius:10px;padding:8px 12px;font-size:.75rem;color:#555;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;}
+  .score{background:#fff;border-radius:10px;padding:10px 12px;font-size:.8rem;margin-bottom:14px;}
+  .score b{font-size:.85rem;}
+  .score table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .score td,.score th{border:1px solid #eee;padding:3px 6px;font-size:.75rem;text-align:center;}
+  .score th{background:#fafafa;font-weight:600;}
+  details.sec{background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:4px solid var(--accent);}
+  details.sec>summary{list-style:none;cursor:pointer;padding:11px 13px;font-weight:700;font-size:.95rem;display:flex;gap:8px;align-items:center;}
+  details.sec>summary::-webkit-details-marker{display:none;}
+  .caret{margin-left:auto;color:#bbb;font-size:.75rem;transition:transform .2s;flex:none;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .sec .inner{padding:0 12px 12px;}
+  details.item{border:1px solid #eee;border-radius:9px;margin-bottom:8px;background:#fff;}
+  details.item>summary{list-style:none;cursor:pointer;padding:9px 11px;font-size:.88rem;font-weight:600;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+  details.item>summary::-webkit-details-marker{display:none;}
+  .stars{color:#e8a20c;font-size:.8rem;letter-spacing:1px;flex:none;}
+  .yr{background:var(--accent-bg);color:var(--accent);font-size:.68rem;padding:1px 6px;border-radius:4px;flex:none;}
+  .item .kp{padding:2px 12px 10px;border-top:1px dashed #f0f0f0;font-size:.85rem;}
+  .kp ul{margin:6px 0;padding-left:1.25em;}
+  .kp li{margin:4px 0;}
+  .kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem;}
+  .kp th,.kp td{border:1px solid #e8e8e8;padding:5px 7px;text-align:left;vertical-align:top;}
+  .kp th{background:#fafafa;font-weight:600;white-space:nowrap;}
+  .r{color:#c62828;font-weight:600;}
+  .b{color:#1d64c0;}
+  .formula{background:#faf7f2;border-radius:6px;padding:6px 10px;margin:6px 0;font-family:Georgia,serif;font-size:.9rem;overflow-x:auto;}
+  .trap{background:#fff8e6;border-left:3px solid #e8a20c;border-radius:0 8px 8px 0;padding:7px 10px;margin:8px 0;font-size:.8rem;color:#7a5c00;}
+  details.ex{background:#f4f8fd;border-radius:8px;margin:8px 0;font-size:.82rem;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:8px 10px;color:#2563ab;}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>div{padding:0 10px 9px;color:#444;}
+  .btns{display:flex;gap:8px;justify-content:center;margin:0 0 12px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
+  footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
+</style>
+</head>
+<body>
+
+<a class="back" href="00-全书骨架.html">← 返回全书骨架</a>
+<h1>第8章 收入</h1>
+<div class="meta">第2篇 工程财务 · 共2节</div>
+
+<div class="legend">
+  <span><span class="stars">★</span>数=重要度</span>
+  <span class="r">红=重点/易考/高频</span>
+  <span class="b">蓝=次重点</span>
+  <span>⚠=易混陷阱</span>
+</div>
+
+<div class="score">
+  <b>本章分值：2024年4分 · 2025年4分 · 2026预测3分</b>
+  <table>
+    <tr><th>知识点</th><th>题型</th><th>2024</th><th>2025</th><th>2026预测</th></tr>
+    <tr><td rowspan="2">8.1 收入的分类、确认及计量</td><td>单项选择题</td><td>1</td><td>—</td><td>1</td></tr>
+    <tr><td>多项选择题</td><td>—</td><td>2</td><td>—</td></tr>
+    <tr><td rowspan="2">8.2 建造合同收入</td><td>单项选择题</td><td>1</td><td>2</td><td>—</td></tr>
+    <tr><td>多项选择题</td><td>2</td><td>—</td><td>2</td></tr>
+    <tr><td>合计</td><td></td><td>4</td><td>4</td><td>3</td></tr>
+  </table>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ══════ 8.1 ══════ -->
+<details class="sec" open>
+  <summary>8.1 收入的分类、确认及计量<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>8.1.1 收入的概念及特点</span><span class="stars">★★★</span><span class="yr">2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>收入从企业的<span class="b">日常活动</span>中产生</li>
+          <li>收入可能表现为企业<span class="b">资产的增加</span>，也可能表现为企业<span class="b">负债的减少</span>，或二者兼而有之</li>
+          <li>收入能导致企业<span class="b">所有者权益的增加</span></li>
+          <li>收入只<span class="r">包括本企业经济利益的流入，不包括为第三方或客户代收的款项</span></li>
+        </ul>
+        <div class="trap">⚠ 为第三方或客户代收的款项<b>不是</b>收入——多选常把"代收款项"混进选项设坑。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>8.1.2 收入的分类</span><span class="stars">★★★★</span><span class="yr">2021·2023·2024单选，2022多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p style="margin:6px 0 2px;"><b>① 按收入性质分（4类）</b></p>
+        <table>
+          <tr><th>建造合同收入</th><td>设计和建造<span class="b">房屋、道路、桥梁、水坝</span>等建筑物取得的收入；设计和建造<span class="b">船舶、飞机、大型机械设备</span>等而取得的收入</td></tr>
+          <tr><th>销售商品收入</th><td>产品销售——<span class="r">自行加工的碎石、商品混凝土</span>、各种门窗制品；材料销售——原材料、低值易耗品、周转材料、包装物</td></tr>
+          <tr><th>提供劳务收入</th><td><span class="r">机械作业、运输服务、设计业务</span>、产品安装、餐饮住宿等</td></tr>
+          <tr><th>让渡资产使用权收入</th><td><span class="r">金融企业发放贷款取得的收入</span>；企业让渡无形资产使用权取得的收入</td></tr>
+        </table>
+        <p style="margin:6px 0 2px;"><b>② 按企业营业的主次分（2类）</b></p>
+        <table>
+          <tr><th>主营业务收入<br>（基本业务收入）</th><td>企业从事主要营业活动所取得的收入；<span class="r">建筑业企业的主营业务收入主要是建造合同收入</span></td></tr>
+          <tr><th>其他业务收入</th><td>销售原材料、转让技术、代购代销、出租包装物等取得的收入；<span class="r">建筑业企业的其他业务收入主要包括产品销售收入、材料销售收入、机械作业收入、无形资产出租收入、固定资产出租收入</span></td></tr>
+        </table>
+        <div class="trap">⚠ 对建筑业企业：建造合同收入=主营；产品销售（碎石/混凝土）、材料销售、机械作业、出租均属<b>其他业务收入</b>——单选高频考点，勿把"机械作业收入"当主营。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>8.1.3 收入的确认和计量</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>确认和计量的原则<br>（5项）</th><td>（1）<span class="b">实现</span>原则　（2）<span class="b">关联</span>原则　（3）<span class="b">可靠性</span>原则　（4）<span class="b">一致性</span>原则　（5）<span class="b">主体</span>原则</td></tr>
+          <tr><th>确认和计量的过程<br>（8步）</th><td>（1）确定收入的来源 →（2）确定收入发生的时间 →（3）确定收入的金额 →（4）确定收入的确认时机 →（5）记账处理 →（6）核对与调整 →（7）确认收入 →（8）报告与披露</td></tr>
+        </table>
+        <div class="trap">⚠ "原则"5项 vs "过程"8步，多选易互相掺混：凡带"确定/记账/核对/报告"字样的是<b>过程</b>，带"原则"二字的才是原则。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ══════ 8.2 ══════ -->
+<details class="sec">
+  <summary>8.2 建造合同收入<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>8.2.1 建造合同的概念</span><span class="stars">★★★</span><span class="yr">2024多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p style="margin:6px 0 2px;">建造合同属于经济合同范畴，主要特征：</p>
+        <ul>
+          <li><span class="b">先有买主（及客户），后有标的（即资产）</span>——建造资产的工程范围、建设工期、工程质量和工程造价等内容在签订合同时已经确定</li>
+          <li>资产的<span class="b">建设期长</span></li>
+          <li>所建造的资产<span class="b">体积大，造价高</span></li>
+          <li>建造合同一般为<span class="b">不可取消</span>的合同</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>8.2.3 建造合同的分立与合并</span><span class="stars">★★★</span><span class="yr">2023多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>分立<br>（3条件）</th><td>① 每项资产均有<span class="b">独立的建造计划</span><br>② 与客户就每项资产<span class="b">单独进行谈判</span>，双方能够接受或拒绝与每项资产有关的合同条款<br>③ 每项资产的<span class="b">收入和成本可以单独辨认</span></td></tr>
+          <tr><th>合并<br>（3条件）</th><td>① 该组合同按<span class="b">一揽子交易</span>签订<br>② 该组合同<span class="b">密切相关</span>，每项合同实际上已构成一项综合利润率工程的组成部分<br>③ 该组合同<span class="b">同时或依次履行</span></td></tr>
+        </table>
+        <div class="trap">⚠ 分立看"独立/单独/单独辨认"，合并看"一揽子/密切相关/同时或依次履行"——多选常把两组条件交叉混编。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>8.2.4 建造合同收入的内容</span><span class="stars">★★★</span><span class="yr">2025单选，2017·2020多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>初始收入</th><td>合同收入的<span class="b">基本内容</span>（无附加条件）</td></tr>
+          <tr><th>因合同变更<br>形成的收入</th><td>条件：① <span class="b">客户能够认可</span>因变更而增加的收入；② 该收入能够<span class="b">可靠地计量</span></td></tr>
+          <tr><th>因索赔<br>形成的收入</th><td>条件：① 根据谈判情况，预计<span class="b">对方能够同意</span>该项索赔；② 对方同意接受的金额能够<span class="b">可靠地计量</span></td></tr>
+          <tr><th>因奖励等<br>形成的收入</th><td>条件：① 根据合同完成情况，足以判断<span class="b">工程进度和工程质量能够达到或超过规定的标准</span>；② 奖励金额能够<span class="b">可靠计量</span></td></tr>
+        </table>
+        <div class="trap">⚠ 变更/索赔/奖励三类附加收入都要求"金额可靠计量"+各自的认可条件；只有<b>初始收入</b>不附条件。注意区分：变更→客户认可，索赔→对方同意，奖励→达标判断。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>8.2.5 建造合同收入的确认</span><span class="stars">★★★★</span><span class="yr">2020·2022·2025单选，2021·2023·2024单选，2016多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+
+        <p style="margin:6px 0 2px;"><b>1. 合同结果能够可靠估计的标准（表8-2）</b></p>
+        <table>
+          <tr><th>固定造价合同<br>（4条）</th><td>（1）合同总收入能够可靠地计量<br>（2）与合同相关的经济利益很可能流入企业<br>（3）实际发生的合同成本能够清楚地区分和可靠计量<br>（4）合同完工进度和为完成合同尚需发生的成本能够可靠地确定</td></tr>
+          <tr><th>成本加成合同<br>（2条）</th><td>（1）与合同相关的经济利益很可能流入企业<br>（2）实际发生的合同成本能够清楚地区分和可靠地计量</td></tr>
+          <tr><th>二者的共性</th><td><span class="r">（1）收入、成本可靠地计量；（2）经济利益很可能流入企业</span></td></tr>
+        </table>
+        <div class="trap">⚠ 固定造价4条 vs 成本加成2条："合同总收入可靠计量""完工进度可确定"只属于<b>固定造价合同</b>——多选常给成本加成合同多安条件。</div>
+
+        <p style="margin:10px 0 2px;"><b>2. 完工百分比法</b>　<span class="yr">2020·2022·2025单选</span></p>
+        <ul>
+          <li><b>第一步：确定工程的完工进度，计算出完工百分比</b>（三种方法）
+            <ul>
+              <li>（1）按累计实际发生的合同成本占合同预计总成本的比例确定
+                <div class="formula"><span class="r">合同完工进度 = 累计实际发生的合同成本 ÷ 合同预计总成本 × 100%</span></div>
+                累计实际发生的合同成本<span class="b">不包括</span>施工中<span class="b">尚未安装或使用的材料成本</span>等与合同未来活动相关的合同成本，也<span class="b">不包括</span>在分包工程的工作量完成之前<span class="b">预付给分包单位的款项</span></li>
+              <li>（2）按已经完成的合同工作量占合同预计总工作量的比例确定
+                <div class="formula"><span class="r">合同完工进度 = 已经完成的合同工程量 ÷ 合同预计总工程量 × 100%</span></div></li>
+              <li>（3）根据已完成合同工作的<span class="b">技术测量</span>确定</li>
+            </ul>
+          </li>
+          <li><b>第二步：根据完工百分比确认和计量当期的合同收入</b></li>
+        </ul>
+        <div class="trap">⚠ 算完工进度时剔除两项：①尚未安装/使用的材料成本；②分包工作量完成前的预付款——计算题给这些数字就是干扰项。</div>
+        <details class="ex"><summary>【2025年真题】总工程量300万m³土石方合同，工期9个月。第1季度完成90万m³，第2季度完成120万m³，4月初因设计变更增加28万m³。第2季度末合同完工进度是（　）。A.35%　B.40%　C.64%　D.70%</summary><div>【答案】C。完工进度=(90+120)÷(300+28)×100%=210÷328≈64%。注意：设计变更后总工程量分母要加上28万m³。</div></details>
+
+        <p style="margin:10px 0 2px;"><b>3. 当期完成建造合同收入的确认</b></p>
+        <div class="formula"><span class="r">当期确认的合同收入 = 实际合同总收入 − 以前会计期间累计已确认的收入</span></div>
+
+        <p style="margin:10px 0 2px;"><b>4. 资产负债表日建造合同收入的确认</b>　<span class="yr">2021·2023·2024单选，2016多选</span></p>
+        <div class="formula"><span class="r">当期确认的合同收入 = 合同总收入 × 完工进度 − 以前会计期间累计已确认的收入</span></div>
+        <table>
+          <tr><th>（1）当年开工当年未完</th><td><span class="r">收入 = 零</span></td></tr>
+          <tr><th>（2）以前开工本年未完</th><td><span class="r">直接运用公式</span></td></tr>
+          <tr><th>（3）以前开工本年完工</th><td><span class="r">收入 = 合同总收入 − 以前会计年度累计已确认的合同收入</span></td></tr>
+          <tr><th>（4）当年开工当年完工</th><td><span class="r">收入 = 合同的总收入</span></td></tr>
+        </table>
+        <div class="trap">⚠ 四种开完工情形对号入座："当年开工当年未完"确认收入为<b>零</b>、"当年开工当年完工"确认<b>全部总收入</b>——两个极端情形最易考、也最易记反。</div>
+        <details class="ex"><summary>【2024年真题】某施工企业与业主签订总造价5000万元的固定造价合同，工期3年。第1年完工进度30%，第2年80%，第3年100%，则第2年应确认的合同收入为（　）万元。A.1000　B.1500　C.2500　D.4000</summary><div>【答案】C。第2年收入=5000×80%−5000×30%=4000−1500=2500万元（本期按累计进度算出累计收入，再减去以前期间已确认部分）。</div></details>
+
+        <p style="margin:10px 0 2px;"><b>5. 合同结果不能可靠地估计时的确认</b></p>
+        <ul>
+          <li>合同<span class="b">成本能够回收的</span>：合同收入根据<span class="b">能够收回的实际合同成本</span>来确认，合同<span class="b">成本在其发生的当期确认为费用</span></li>
+          <li>合同<span class="b">成本不能回收的</span>：应在发生时立即<span class="b">确认为费用</span>，<span class="b">不确认收入</span></li>
+        </ul>
+        <div class="trap">⚠ 结果不可靠估计时不用完工百分比法：成本<b>能</b>收回→按可收回成本确认收入（不赚利润）；成本<b>不能</b>收回→只确认费用、不确认收入。</div>
+
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<footer>依据《建设工程经济四色笔记》第047~050页整理</footer>
+
+<script>
+function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>

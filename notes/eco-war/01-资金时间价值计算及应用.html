@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1章 资金时间价值计算及应用 · 知识树</title>
+<style>
+  :root{ --accent:#e05d2d; --accent-bg:#fdf0ea; --ink:#2b2b2b; --sub:#777; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.6;}
+  a.back{display:inline-block;font-size:.8rem;color:var(--sub);text-decoration:none;margin-bottom:8px;}
+  h1{font-size:1.15rem;margin:2px 0 4px;color:var(--accent);}
+  .meta{color:var(--sub);font-size:.78rem;margin-bottom:10px;}
+  .legend{background:#fff;border-radius:10px;padding:8px 12px;font-size:.75rem;color:#555;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;}
+  .score{background:#fff;border-radius:10px;padding:10px 12px;font-size:.8rem;margin-bottom:14px;}
+  .score b{font-size:.85rem;}
+  .score table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .score td,.score th{border:1px solid #eee;padding:3px 6px;font-size:.75rem;text-align:center;}
+  .score th{background:#fafafa;font-weight:600;}
+  /* 节 */
+  details.sec{background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:4px solid var(--accent);}
+  details.sec>summary{list-style:none;cursor:pointer;padding:11px 13px;font-weight:700;font-size:.95rem;display:flex;gap:8px;align-items:center;}
+  details.sec>summary::-webkit-details-marker{display:none;}
+  .caret{margin-left:auto;color:#bbb;font-size:.75rem;transition:transform .2s;flex:none;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .sec .inner{padding:0 12px 12px;}
+  /* 目 */
+  details.item{border:1px solid #eee;border-radius:9px;margin-bottom:8px;background:#fff;}
+  details.item>summary{list-style:none;cursor:pointer;padding:9px 11px;font-size:.88rem;font-weight:600;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+  details.item>summary::-webkit-details-marker{display:none;}
+  .stars{color:#e8a20c;font-size:.8rem;letter-spacing:1px;flex:none;}
+  .yr{background:var(--accent-bg);color:var(--accent);font-size:.68rem;padding:1px 6px;border-radius:4px;flex:none;}
+  .item .kp{padding:2px 12px 10px;border-top:1px dashed #f0f0f0;font-size:.85rem;}
+  /* 知识点列表 */
+  .kp ul{margin:6px 0;padding-left:1.25em;}
+  .kp li{margin:4px 0;}
+  .kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem;}
+  .kp th,.kp td{border:1px solid #e8e8e8;padding:5px 7px;text-align:left;vertical-align:top;}
+  .kp th{background:#fafafa;font-weight:600;white-space:nowrap;}
+  .r{color:#c62828;font-weight:600;}     /* 书中红字：重点/易考/高频 */
+  .b{color:#1d64c0;}                      /* 书中蓝字：次重点 */
+  .formula{background:#faf7f2;border-radius:6px;padding:6px 10px;margin:6px 0;font-family:Georgia,serif;font-size:.9rem;overflow-x:auto;}
+  .trap{background:#fff8e6;border-left:3px solid #e8a20c;border-radius:0 8px 8px 0;padding:7px 10px;margin:8px 0;font-size:.8rem;color:#7a5c00;}
+  details.ex{background:#f4f8fd;border-radius:8px;margin:8px 0;font-size:.82rem;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:8px 10px;color:#2563ab;}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>div{padding:0 10px 9px;color:#444;}
+  .btns{display:flex;gap:8px;justify-content:center;margin:0 0 12px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
+  footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
+</style>
+</head>
+<body>
+
+<a class="back" href="00-全书骨架.html">← 返回全书骨架</a>
+<h1>第1章 资金时间价值计算及应用</h1>
+<div class="meta">第1篇 工程经济 · 共3节</div>
+
+<div class="legend">
+  <span><span class="stars">★</span>数=重要度</span>
+  <span class="r">红=重点/易考/高频</span>
+  <span class="b">蓝=次重点</span>
+  <span>⚠=易混陷阱</span>
+</div>
+
+<div class="score">
+  <b>本章分值：2024年6分 · 2025年6分 · 2026预测6分</b>
+  <table>
+    <tr><th>知识点</th><th>题型</th><th>2024</th><th>2025</th><th>2026预测</th></tr>
+    <tr><td rowspan="2">1.1 利息的计算</td><td>单选</td><td>—</td><td>1</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td rowspan="2">1.2 名义利率与有效利率计算</td><td>单选</td><td>2</td><td>1</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td rowspan="2">1.3 资金等值计算及应用</td><td>单选</td><td>2</td><td>2</td><td>2</td></tr>
+    <tr><td>多选</td><td>2</td><td>2</td><td>2</td></tr>
+    <tr><td colspan="2"><b>合计</b></td><td><b>6</b></td><td><b>6</b></td><td><b>6</b></td></tr>
+  </table>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ════════ 1.1 ════════ -->
+<details class="sec" open>
+  <summary>1.1 利息的计算<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>1.1.1 利息和利率</span><span class="stars">★★★</span><span class="yr">2022单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 利息和利率的概念</b>
+        <ul>
+          <li>利息是<b>债务人</b>支付给<b>债权人</b>的资金总额超过其最初从债权人所获资金数额的部分</li>
+          <li>利息最终只能来源于资金发挥运营职能而产生的<b>增值</b></li>
+          <li>利息是资金收益或使用代价的<span class="b">绝对数</span></li>
+          <li>利率是资金收益或使用代价的<span class="b">相对数，表示资金的增值程度</span></li>
+        </ul>
+        <div class="trap">⚠ 利息=绝对数，利率=相对数——选项常互换设坑。</div>
+        <b>2. 利率的影响因素</b>
+        <ul>
+          <li><span class="r">社会平均利润率的高低（社会平均利润率是利率的最高界限）</span></li>
+          <li>资金市场供求对比状况<span class="b">（供过于求，利率下降；求过于供，利率上升）</span></li>
+          <li>借出资金的用途和使用方式</li>
+          <li>借出资金期限的长短<span class="b">（期限越长，利率越高）</span></li>
+          <li>政府宏观调控政策</li>
+          <li>经济周期所处阶段<span class="b">（扩张期上升，收缩期下降）</span></li>
+        </ul>
+        <div class="trap">⚠ 社会平均利润率是利率的<b>最高界限</b>（不是最低界限）；供求关系与利率方向、经济周期与利率方向常反向设坑。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>1.1.2 利息的计算方法</span><span class="stars">★★★★</span><span class="yr">2017·2019·2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>利息</th><th>计算</th></tr>
+          <tr><th>单利</th><td>即通常所说的<span class="r">"利不生利"</span>的计息方法：
+            <div class="formula">I<sub>t</sub> = P × i</div>
+            I<sub>t</sub>=第t个计息周期的利息额；P=最初本金；i=计息周期利率。<br>
+            第n个计息周期末单利本利和F＝本金＋总利息：
+            <div class="formula">F = P + n×P×i = P(1 + n×i)</div></td></tr>
+          <tr><th>复利</th><td>即<span class="r">"利生利""利滚利"</span>的计息方式：
+            <div class="formula">I<sub>t</sub> = i × F<sub>t−1</sub></div>
+            F<sub>t−1</sub>=第(t−1)个计息周期末本利和。<br>
+            第t个计息周期末复利本利和：
+            <div class="formula">F<sub>t</sub> = F<sub>t−1</sub> × (1 + i)</div></td></tr>
+        </table>
+        <div class="trap">⚠ 单利本利和用 P(1+n×i)，复利本利和用 P(1+i)<sup>n</sup>——n 的位置（乘数 vs 指数）是区分点。</div>
+        <details class="ex"><summary>【2025年真题】某企业向银行借入1000万元，期限5年，年利率5%，按年计息，到期一次性还本付息。复利与单利两种计息方式的总利息差额是（ ）万元。</summary>
+        <div>答案 C：26.282。复利总利息 1000×(1.05<sup>5</sup>−1)=276.282，单利总利息 1000×5×5%=250，差额 26.282。</div></details>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ════════ 1.2 ════════ -->
+<details class="sec">
+  <summary>1.2 名义利率与有效利率计算<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>名义利率与有效利率的换算</span><span class="stars">★★★★★</span><span class="yr">2017·2018·2019·2020·2021·2022·2024·2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p>一个公式（年名义利率 r，年内计息 m 次）：</p>
+        <div class="formula"><span class="r">i = (1 + r/m)<sup>m</sup> − 1</span></div>
+        <ul>
+          <li>公式中 <b>r/m</b> 的 <b>m = 计息的次数</b></li>
+          <li><span class="r">指数中的 m ＝ 所求有效利率的时间单位 ÷ 计息周期的时间单位</span></li>
+        </ul>
+        <p>年名义利率 r 下的<b>年有效利率</b>（表1-2主线）：</p>
+        <table>
+          <tr><th>计息期</th><th>年计息次数 m</th><th>年有效利率</th></tr>
+          <tr><td>年</td><td>1</td><td>r</td></tr>
+          <tr><td>半年</td><td>2</td><td>(1 + r/2)<sup>2</sup> − 1</td></tr>
+          <tr><td>季</td><td>4</td><td>(1 + r/4)<sup>4</sup> − 1</td></tr>
+          <tr><td>月</td><td>12</td><td>(1 + r/12)<sup>12</sup> − 1</td></tr>
+        </table>
+        <ul>
+          <li>反过来求更短周期的有效利率时指数取分数，如年计息1次求半年有效利率：(1+r)<sup>1/2</sup> − 1；求季有效利率：(1+r)<sup>1/4</sup> − 1；求月有效利率：(1+r)<sup>1/12</sup> − 1</li>
+        </ul>
+        <div class="trap">⚠ 名义利率相同时，年内计息次数越多，年有效利率越高；计息周期＝1年时名义利率＝有效利率。指数 m 是"所求单位÷计息周期单位"，可为分数——别一律套 m=计息次数。</div>
+        <details class="ex"><summary>【2025年真题】拟存入1年期资金，复利计息、到期一次取出本息。方案一按年计息4%，方案二按半年计息4%，方案三按季计息3.5%，方案四按月计息3.5%。应选择的存款方案是（ ）。</summary>
+        <div>答案 B：方案二。年有效利率：A为4%；B为(1+4%/2)<sup>2</sup>−1=4.04%；C为(1+3.5%/4)<sup>4</sup>−1=3.55%；D为(1+3.5%/12)<sup>12</sup>−1=3.56%。存款应选有效利率最大的方案二。</div></details>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ════════ 1.3 ════════ -->
+<details class="sec">
+  <summary>1.3 资金等值计算及应用<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>1.3.1 资金时间价值的影响因素</span><span class="stars">★★★★</span><span class="yr">2019·2022单选，2020·2024多选</span><span class="yr">2026年修改</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>资金<span class="r">投入时机</span></li>
+          <li>资金<span class="r">投入时长</span>：时间越长，时间价值越大；时间越短，时间价值越小 →<span class="r">正比</span></li>
+          <li>投入<span class="r">资金数量</span>：投入越多，时间价值越大；投入越少，时间价值越小 →<span class="r">正比</span></li>
+          <li>资金<span class="r">周转速度</span>：次数越多，时间价值越大；次数越少，时间价值越小 →<span class="r">正比</span></li>
+        </ul>
+        <div class="trap">⚠ 时长、数量、周转速度三项均与时间价值成<b>正比</b>；"投入时机"只是影响因素、不谈正反比——多选题按此四项选。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>1.3.2 资金等值计算</span><span class="stars">★★★★★</span><span class="yr">2016~2025单选，2017·2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 现金流量图的绘制</b>［2017、2025年多选］
+        <ul>
+          <li>对<b>投资人</b>：上方箭线＝现金流入（收益）；下方箭线＝现金流出（费用）</li>
+          <li>横轴起点为 0（第1期期初），刻度1、2、…、n 为各期期末</li>
+          <li>现金流量<b>三要素</b>：<span class="r">大小、方向、作用点</span></li>
+          <li>箭线长短适当体现各时点现金流量数值的差异</li>
+        </ul>
+        <div class="trap">⚠ 流入/流出方向是站在<b>投资人</b>视角画的；换成借款人视角方向相反——题干先看立场。</div>
+
+        <b>2. 资金等值计算</b>［2016、2018、2020、2021、2022、2023、2024、2025年单选］
+        <ul>
+          <li>核心逻辑：资金随时间推移会产生增值，<b>不同时间点的等额资金实际价值不等</b>（今天存100元、年利率3%，明年拿103元，3元即时间价值）</li>
+          <li>等值计算的3个要素：
+            <ul>
+              <li><span class="b">现值（P）</span>：现在的资金金额（起点的钱）</li>
+              <li><span class="b">终值（F）</span>:未来某一时点的资金金额（终点的钱）</li>
+              <li><span class="b">年金（A）</span>：每隔相等时间发生的等额资金（如每年存1万元、每月还房贷）</li>
+            </ul></li>
+          <li>公式不要死记硬背，关键是理解<b>适用场景</b>，结合现金流量图判断用哪个公式</li>
+        </ul>
+
+        <b>（1）一次支付现金流量等值计算（2个公式）</b>
+        <table>
+          <tr><th>公式名称</th><th>已知→求</th><th>公式</th><th>系数名称</th><th>适用场景</th></tr>
+          <tr><td>一次支付终值</td><td>P → F</td><td><span class="r">F = P(1+i)<sup>n</sup></span></td><td>终值系数 (F/P, i, n)</td><td>一笔钱存入银行，计算未来本利和（今天存5万，5年后有多少）</td></tr>
+          <tr><td>一次支付现值</td><td>F → P</td><td><span class="r">P = F(1+i)<sup>−n</sup></span></td><td>现值系数 (P/F, i, n)</td><td>未来要拿到一笔钱，计算现在需要存多少（5年后要有10万，现在存多少）</td></tr>
+        </table>
+        <div class="trap">⚠ 两个系数<b>互为倒数</b>：(F/P,i,n)×(P/F,i,n)=1。</div>
+        <details class="ex"><summary>【2024年真题】某企业借入5000万元，期限4年，年利率4%，按年复利计息，第4年年末还本付息的总额为（ ）万元。</summary>
+        <div>答案 C：5849.293。一次支付终值 F=5000×(1+4%)<sup>4</sup>=5849.293。</div></details>
+
+        <b>（2）等额支付系列现金流量等值计算（4个公式）</b>
+        <table>
+          <tr><th>公式名称</th><th>已知→求</th><th>公式</th><th>系数名称</th><th>适用场景</th></tr>
+          <tr><td>等额支付终值</td><td>A → F</td><td><span class="r">F = A × [(1+i)<sup>n</sup> − 1] / i</span></td><td>年金终值系数 (F/A, i, n)</td><td>定期存钱求未来总额（每年存1万，5年后有多少钱）</td></tr>
+          <tr><td>等额支付偿债基金</td><td>F → A</td><td><span class="r">A = F × i / [(1+i)<sup>n</sup> − 1]</span></td><td>偿债基金系数 (A/F, i, n)</td><td>未来需达到固定金额，求每期存入多少（第3年末应偿还50万元债务，连续3年每年末存多少可正好还清）</td></tr>
+          <tr><td>等额支付现值</td><td>A → P</td><td><span class="r">P = A × [(1+i)<sup>n</sup> − 1] / [i(1+i)<sup>n</sup>]</span></td><td>年金现值系数 (P/A, i, n)</td><td>未来定期收钱，求现在投资多少（投资某项目3年，希望每年末等额回收50万，开始需要投资多少）</td></tr>
+          <tr><td>等额支付资金回收</td><td>P → A</td><td><span class="r">A = P × i(1+i)<sup>n</sup> / [(1+i)<sup>n</sup> − 1]</span></td><td>资金回收系数 (A/P, i, n)</td><td>现在借/投一笔钱，求每期还/收多少（50万元购置一商铺出租1年，每年末可等额回收多少）</td></tr>
+        </table>
+        <div class="trap">⚠ 互为倒数配对：(F/A)↔(A/F)、(P/A)↔(A/P)——只需记两个，另两个取倒数；别把 (A/F) 与 (A/P) 系数名称"偿债基金/资金回收"张冠李戴。</div>
+        <details class="ex"><summary>【2025年真题】某企业年初借入1200万元，期限5年，年利率4%，按年复利计息，每年末等额偿还本息。借款期内每年末应偿还的金额是（ ）万元。</summary>
+        <div>答案 A：269.553。资金回收公式 A=1200×[4%×1.04<sup>5</sup>]/[1.04<sup>5</sup>−1]≈269.553。</div></details>
+        <details class="ex"><summary>【2024年真题】某企业希望未来5年每年末等额投入一笔资金，用于偿还第5年末的借款本息和2000万元，年收益率4%，按年复利计算，每年末应投入的资金是（ ）万元。</summary>
+        <div>答案 A：369.254。偿债基金公式 A=2000×4%/[1.04<sup>5</sup>−1]≈369.254。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>1.3.3 等值计算公式应用要点</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>期数 <b>n 是现金流量的次数</b>，不是年份数的简单对应。例：从第3年末到第7年末，共5次收付，期数 n=5</li>
+          <li><b>P 与 A 的换算</b>：现值 P 的时点，即等额支付系列第1期的期初（与第1期 A <b>间隔一期</b>）</li>
+          <li><b>F 与 A 的换算</b>：终值 F 的时点，即等额支付系列最后一期的期末，与最后一期 A 时点<b>完全重合</b></li>
+        </ul>
+        <div class="trap">⚠ 三大边界条件：n＝收付次数≠年数差；P 在首期 A 之前一期；F 与末期 A 同时点——现金流量图题几乎必考其一。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<footer>依据《建设工程经济四色笔记》第001~006页整理</footer>
+
+<script>
+function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第10章 财务分析 · 知识树</title>
+<style>
+  :root{ --accent:#1a7f5a; --accent-bg:#eaf6f0; --ink:#2b2b2b; --sub:#777; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.6;}
+  a.back{display:inline-block;font-size:.8rem;color:var(--sub);text-decoration:none;margin-bottom:8px;}
+  h1{font-size:1.15rem;margin:2px 0 4px;color:var(--accent);}
+  .meta{color:var(--sub);font-size:.78rem;margin-bottom:10px;}
+  .legend{background:#fff;border-radius:10px;padding:8px 12px;font-size:.75rem;color:#555;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;}
+  .score{background:#fff;border-radius:10px;padding:10px 12px;font-size:.8rem;margin-bottom:14px;}
+  .score b{font-size:.85rem;}
+  .score table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .score td,.score th{border:1px solid #eee;padding:3px 6px;font-size:.75rem;text-align:center;}
+  .score th{background:#fafafa;font-weight:600;}
+  details.sec{background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:4px solid var(--accent);}
+  details.sec>summary{list-style:none;cursor:pointer;padding:11px 13px;font-weight:700;font-size:.95rem;display:flex;gap:8px;align-items:center;}
+  details.sec>summary::-webkit-details-marker{display:none;}
+  .caret{margin-left:auto;color:#bbb;font-size:.75rem;transition:transform .2s;flex:none;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .sec .inner{padding:0 12px 12px;}
+  details.item{border:1px solid #eee;border-radius:9px;margin-bottom:8px;background:#fff;}
+  details.item>summary{list-style:none;cursor:pointer;padding:9px 11px;font-size:.88rem;font-weight:600;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+  details.item>summary::-webkit-details-marker{display:none;}
+  .stars{color:#e8a20c;font-size:.8rem;letter-spacing:1px;flex:none;}
+  .yr{background:var(--accent-bg);color:var(--accent);font-size:.68rem;padding:1px 6px;border-radius:4px;flex:none;}
+  .item .kp{padding:2px 12px 10px;border-top:1px dashed #f0f0f0;font-size:.85rem;}
+  .kp ul{margin:6px 0;padding-left:1.25em;}
+  .kp li{margin:4px 0;}
+  .kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem;}
+  .kp th,.kp td{border:1px solid #e8e8e8;padding:5px 7px;text-align:left;vertical-align:top;}
+  .kp th{background:#fafafa;font-weight:600;white-space:nowrap;}
+  .r{color:#c62828;font-weight:600;}
+  .b{color:#1d64c0;}
+  .formula{background:#faf7f2;border-radius:6px;padding:6px 10px;margin:6px 0;font-family:Georgia,serif;font-size:.9rem;overflow-x:auto;display:block;}
+  .trap{background:#fff8e6;border-left:3px solid #e8a20c;border-radius:0 8px 8px 0;padding:7px 10px;margin:8px 0;font-size:.8rem;color:#7a5c00;}
+  details.ex{background:#f4f8fd;border-radius:8px;margin:8px 0;font-size:.82rem;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:8px 10px;color:#2563ab;}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>div{padding:0 10px 9px;color:#444;}
+  .mn{background:var(--accent-bg);border-radius:8px;padding:6px 10px;margin:8px 0;font-size:.8rem;color:#14664a;}
+  .btns{display:flex;gap:8px;justify-content:center;margin:0 0 12px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
+  footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
+</style>
+</head>
+<body>
+
+<a class="back" href="00-全书骨架.html">← 返回全书骨架</a>
+<h1>第10章 财务分析</h1>
+<div class="meta">第2篇 工程财务 · 共2节</div>
+
+<div class="legend">
+  <span><span class="stars">★</span>数=重要度</span>
+  <span class="r">红=重点/易考/高频</span>
+  <span class="b">蓝=次重点</span>
+  <span>⚠=易混陷阱</span>
+</div>
+
+<div class="score">
+  <b>本章分值：2024年5分 · 2025年5分 · 2026预测6分</b>
+  <table>
+    <tr><th>知识点</th><th>题型</th><th>2024</th><th>2025</th><th>2026预测</th></tr>
+    <tr><td rowspan="2">10.1 财务报告构成及列报基本要求</td><td>单选</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>2</td><td>2</td></tr>
+    <tr><td rowspan="2">10.2 财务分析方法</td><td>单选</td><td>2</td><td>2</td><td>1</td></tr>
+    <tr><td>多选</td><td>2</td><td>—</td><td>2</td></tr>
+    <tr><td>合计</td><td></td><td>5</td><td>5</td><td>6</td></tr>
+  </table>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ══════════ 10.1 ══════════ -->
+<details class="sec" open>
+  <summary>10.1 财务报告构成及列报基本要求<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>10.1.1 财务报告</span><span class="stars">★★★★★</span><span class="yr">2024·2025单选等高频</span><span class="caret">▶</span></summary>
+      <div class="kp">
+
+        <p><b>1. 财务报表的构成</b> <span class="yr">2024·2025单选</span></p>
+        <table>
+          <tr><th>资产负债表</th><td>反映企业在某一<span class="r">特定日期财务状况</span>（静态时点表）</td></tr>
+          <tr><th>利润表</th><td>反映企业在<span class="r">一定会计期间经营成果</span>（动态报表）</td></tr>
+          <tr><th>现金流量表</th><td>反映企业一定会计期间现金和现金等价物流入和流出（动态报表）</td></tr>
+          <tr><th>所有者权益（或股东权益）变动表</th><td>反映构成所有者权益（或股东权益）的各组成部分当期增减变动情况</td></tr>
+          <tr><th>附注</th><td>对在上述各报表中列示项目的文字描述或明细资料，以及对未能在这些报表中列示项目的说明</td></tr>
+        </table>
+        <div class="trap">⚠ 资产负债表=<b>特定日期</b>（时点、静态）；利润表、现金流量表=<b>一定会计期间</b>（动态报表）——"日期/期间"互换是常见选项坑。</div>
+
+        <p><b>2. 资产负债表的内容</b> <span class="yr">2018单选</span></p>
+        <ul>
+          <li>第一部分是资产类：按其"<span class="b">流动性</span>"（即把资产转换成现金所需要的时间）<span class="b">大小顺序</span>排列，分为流动资产和非流动资产列示</li>
+          <li>第二部分是负债类：按债务必须支付的时间顺序排列，分为流动负债和非流动负债列示</li>
+        </ul>
+
+        <p><b>3. 利润表的内容</b> <span class="yr">2026修订</span></p>
+        <ul>
+          <li>（1）营业收入 （2）营业利润 （3）利润总额 （4）净利润 （5）其他综合收益各项目分别扣除所得税影响后的净额 （6）综合收益总额</li>
+        </ul>
+
+        <p><b>4. 现金及现金等价物</b> <span class="yr">2016·2019多选 | 2026修订</span></p>
+        <table>
+          <tr><th>现金</th><td>库存现金、可以随时用于支付的存款、其他货币资金以及现金等价物。<span class="r">不能随时用于支付的存款不属于现金</span></td></tr>
+          <tr><th>现金等价物</th><td><span class="b">通常从购买日起三个月到期或清偿的国库券、货币市场基金、可转换定期存单、银行承兑汇票</span>等都可列为现金等价物</td></tr>
+        </table>
+
+        <p><b>5. 作为现金等价物的短期投资应满足的条件（四个条件）</b> <span class="yr">2022单选</span></p>
+        <ul>
+          <li>期限短 · 流动性强 · <span class="r">易于转换为已知金额的现金</span> · 价值变动风险小</li>
+        </ul>
+
+        <p><b>6. 现金流量表的内容（三类活动）</b> <span class="yr">2023单选 | 2018·2020·2025多选</span></p>
+        <table>
+          <tr><th>经营活动</th><td>①销售商品、提供劳务收到的现金；②<span class="r">收到的税费返还</span>；③收到其他与经营活动有关的现金；④<span class="r">购买商品、接受劳务支付的现金</span>；⑤<span class="r">支付给职工以及为职工支付的现金</span>；⑥支付的各项税费；⑦支付其他与经营活动有关的现金</td></tr>
+          <tr><th>投资活动</th><td>①收回投资收到的现金；②<span class="r">取得投资收益收到的现金</span>；③<span class="r">处置固定资产、无形资产和其他长期资产收回的现金净额</span>；④处置子公司及其他营业单位收到的现金净额；⑤收到其他与投资活动有关的现金；⑥<span class="r">购建固定资产、无形资产和其他长期资产支付的现金</span>；⑦投资支付的现金；⑧取得子公司及其他营业单位支付的现金净额；⑨支付其他与投资活动有关的现金</td></tr>
+          <tr><th>筹资活动</th><td>①<span class="r">吸收投资收到的现金</span>；②<span class="r">取得借款收到的现金</span>；③收到其他与筹资活动有关的现金；④<span class="r">偿还债务支付的现金</span>；⑤分配股利、利润或偿付利息支付的现金；⑥支付其他与筹资活动有关的现金</td></tr>
+        </table>
+        <div class="mn">口诀助记：经营活动关键词——商品、劳务、税费、职工、政府补助；投资活动关键词——投资、固定资产、无形资产、子公司；筹资活动关键词——吸收投资、取得借款、偿还债务、分配股利、利润、支付利息。</div>
+        <div class="trap">⚠ 归属易混：<b>取得投资收益收到的现金→投资活动</b>（不是筹资）；<b>偿还债务、支付利息、分配股利→筹资活动</b>；<b>处置/购建固定资产→投资活动</b>；<b>收到税费返还→经营活动</b>。</div>
+
+        <p><b>7. 资产负债表、利润表和现金流量表的作用</b></p>
+        <table>
+          <tr><th>资产负债表</th><td>①反映某一特定日期拥有的各种资源总量及分布情况，<span class="b">可以分析企业的资产构成，以便及时进行调整</span>；②提供某一日期的负债总额及其结构，<span class="b">表明企业未来需要用多少资产或劳务清偿债务以及清偿时间</span>；③反映特定日期所有者权益构成情况，可以<span class="b">判断资本保值、增值的情况以及对负债的保障程度</span></td></tr>
+          <tr><th>利润表</th><td>①<span class="b">反映企业在一定期间的收入和费用情况以及获得利润或发生亏损的数额</span>，表明企业投入与产出之间的关系；②可以分析判断企业损益发展变化的趋势，<span class="b">预测企业未来的盈利能力</span>；③可以<span class="b">考核企业的经营成果</span>及利润计划的执行情况，分析企业利润增减变化原因</td></tr>
+          <tr><th>现金流量表</th><td>①有助于使用者对企业整体财务状况做出客观评价；②有助于评价企业的<span class="b">支付能力、偿债能力和周转能力</span>；③有助于使用者预测企业未来的发展情况</td></tr>
+        </table>
+
+        <p><b>8. 所有者权益（或股东权益）变动表的内容及其作用</b></p>
+        <table>
+          <tr><th>内容</th><td>①综合收益总额（合并报表中还应单独列示归属于母公司所有者的和归属于少数股东的综合收益总额）；②会计政策变更和前期差错更正的累积影响金额；③所有者投入资本和向所有者分配利润等；④按照规定提取的盈余公积；⑤所有者权益各组成部分的期初和期末余额及其调节情况</td></tr>
+          <tr><th>作用</th><td>①全面反映了企业的所有者权益在年度内的变化情况；②便于会计信息使用者深入分析企业所有者权益的增减变化情况；③对企业的资本保值增值情况做出正确判断，从而提供对决策有用的信息</td></tr>
+        </table>
+
+        <p><b>9. 财务报表附注的内容和作用</b></p>
+        <ul>
+          <li>内容：①企业的基本情况；②财务报表的编制基础；③遵循企业会计准则的声明；④重要会计政策和会计估计；⑤会计政策和会计估计变更以及差错更正的说明；⑥报表重要项目的说明；⑦或有和承诺事项、资产负债表日后非调整事项、关联方关系及其交易等需要说明的事项；⑧有助于评价企业管理资本的目标、政策和程序的信息；⑨关于其他综合收益各项目的信息等</li>
+          <li>作用：<span class="b">是对财务报表的重要补充</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>10.1.2 财务报告列报基本要求</span><span class="stars">★★★★</span><span class="yr">2018·2021·2023单选 2020多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li><b>以持续经营为基础</b>：根据实际发生的交易和事项，按照《企业会计准则》的规定进行确认和计量，在此基础上编制财务报表</li>
+          <li><b>权责发生制编制</b>：除<span class="r">现金流量表</span>按照<span class="r">收付实现制</span>原则编制外，企业应当按照<span class="r">权责发生制</span>原则编制财务报表</li>
+          <li><b>各会计期间保持一致，不得随意变更</b>。<span class="r">两种除外情况</span>：①会计准则要求改变财务报表项目的列报；②企业经营业务的性质发生重大变化或对企业经营影响较大的交易或事项发生后，变更列报能够提供更可靠、更相关的会计信息</li>
+          <li><span class="r">重要项目单独列报</span>：从项目的<b>性质和金额</b>两方面予以判断；对各项目重要性的判断标准一经确定，不得随意变更</li>
+          <li><span class="r">报表列示项目不应相互抵销</span>。<span class="b">三种情形不属于抵销</span>：①一组类似交易形成的利得和损失以净额列示；②资产或负债项目按扣除备抵项目后的净额列示；③非日常活动产生的利得和损失，以同一交易形成的收益扣减相关费用后的净额列示更能反映交易实质的</li>
+          <li>当期报表列报项目与上期报表列报项目应当<span class="b">具有可比性</span></li>
+          <li>企业至少应当<span class="b">按年</span>编制财务报表：期间短于一年的，应当披露年度财务报表的涵盖期间、短于一年的原因以及报表数据不具可比性的事实</li>
+          <li>其他应披露的信息：<span class="b">编报企业的名称、资产负债表日或财务报表涵盖的会计期间、人民币金额单位、财务报表是合并财务报表的应予以标明</span></li>
+        </ul>
+        <div class="trap">⚠ 只有<b>现金流量表</b>用收付实现制，其余报表一律权责发生制——"所有报表均按权责发生制编制"为错误说法；重要性判断看<b>性质+金额</b>两方面，"仅以金额大小判断"为错误说法；抵销后净额列报（三种情形）不属于"相互抵销"。</div>
+        <details class="ex"><summary>【2023年真题】根据《企业会计准则》，关于财务报表列报要求的说法，正确的是（　）</summary><div>A.应以持续经营作为会计确认、计量和编制会计报表的基础　B.所有财务报表均应按照权责发生制编制　C.计入当期利润的利得和损失项目的金额应以抵消后的净额列报　D.重要项目单独列报，仅以项目金额大小为标准判断其重要性<br><b>答案：A</b>。B错在现金流量表按收付实现制；C净额列示的三种情形不属于抵销但并非普遍要求；D应从性质和金额两方面判断。</div></details>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ══════════ 10.2 ══════════ -->
+<details class="sec">
+  <summary>10.2 财务分析方法<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>10.2.1 财务分析方法的分类</span><span class="stars">★★★</span><span class="yr">2016·2019·2020单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>1. 比率分析法</b></p>
+        <table>
+          <tr><th>概念</th><td>通过计算各种比率来确定经济活动变动程度的分析方法</td></tr>
+          <tr><th>常用的比率</th><td>
+            ①<span class="b">构成比率</span>：反映部分与总体的关系，如流动资产占资产总额的比率；<br>
+            ②<span class="b">相关比率</span>：反映有关经济活动的相互联系、相互影响的关系，如资产净利率、存货周转率；<br>
+            ③<span class="b">动态比率</span>：简便、直观。<span class="formula">基期指数 = 分析期数额 / 基期数额 × 100%</span><span class="formula">环比指数 = 分析期数额 / 前一期数额 × 100%</span></td></tr>
+          <tr><th>特点</th><td><span class="b">计算简便，计算结果比较容易判断，而且可以使某些指标在不同规模企业之间进行比较</span></td></tr>
+        </table>
+        <div class="trap">⚠ 三种比率对号入座：部分/总体→构成比率；相互联系的不同指标相除（资产净利率、存货周转率）→相关比率；不同时期对比（基期指数、环比指数）→动态比率。</div>
+
+        <p><b>2. 因素分析法</b> <span class="yr">2016·2019·2020单选</span></p>
+        <table>
+          <tr><th>概念</th><td>依据分析指标与其驱动因素之间的关系，从数量上确定各因素对分析指标的影响方向及程度的分析方法</td></tr>
+          <tr><th>连环替代法</th><td>将分析指标分解为各个可以计量的因素，并根据各个因素之间的依存关系，顺次用<span class="b">各因素的比较值（通常为实际值）替代基准值（通常为标准值或计划值）</span>，据以测定各因素对指标的影响</td></tr>
+          <tr><th>差额计算法</th><td>利用各因素的实际数与基准值之间的差额，计算各因素对分析指标的影响</td></tr>
+        </table>
+        <details class="ex"><summary>【2020年真题】某企业产量（计划1000→实际1200件）、单位产品材料消耗量（8→7kg/件）、材料单价（50→55元/kg），用因素分析法（因素重要性按此顺序）计算材料费用总额的影响（　）　A.节约5万元 B.增加5万元 C.节约6.2万元 D.增加6万元</summary><div><b>答案：C</b>（书中标准答案）。连环替代过程：<br>①计划指标：1000×8×50=400000元；<br>②第一次替代（换产量）：1200×8×50=480000元；<br>③第二次替代（换单耗）：1200×7×50=420000元；<br>④第三次替代（换单价）：1200×7×55=462000元。<br>因素分析：产量增加的影响 ②−①=+8万元；<span class="r">材料消耗量节约的影响 ③−②=−6万元</span>；价格提高的影响 ④−③=+4.2万元；全部因素的影响：8−6+4.2=6.2万元。核心方法：顺次只换一个因素、与上一步相减。</div></details>
+        <div class="trap">⚠ 连环替代顺序不可乱：按因素重要性顺次用<b>实际值替代计划值</b>，每一步只换一个因素，与上一步相减得该因素影响额。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>10.2.2 财务比率分析</span><span class="stars">★★★★★</span><span class="yr">近十年单多选高频</span><span class="caret">▶</span></summary>
+      <div class="kp">
+
+        <p><b>1. 偿债能力比率</b> <span class="yr">2019·2020·2022·2023·2025单选 2016多选</span></p>
+        <table>
+          <tr><th>资产负债率</th><td>
+            <span class="formula">资产负债率 = 负债总额 / 资产总额 × 100%</span>
+            <span class="r">50%比较合适</span>（适度，并非越大或越小越好）。反映企业利用债权人提供资金进行经营活动的能力；反映企业经营风险的程度；<span class="r">综合反映企业长期偿债能力</span></td></tr>
+          <tr><th>权益乘数</th><td><span class="b">越大</span>，表明所有者投入企业的资本占全部资产的比重越小，企业负债的程度越高；<span class="b">越小</span>，所有者投入资本占比越大，<span class="b">负债程度越低，债权人权益受保护的程度就越高</span></td></tr>
+          <tr><th>流动比率</th><td>
+            <span class="formula">流动比率 = 流动资产 / 流动负债</span>
+            一般认为生产性企业合理的最低流动比率为<span class="r">2</span>；只适用于对<span class="r">短期</span>偿债能力的粗略估计（越大偿债保障越强）</td></tr>
+          <tr><th>速动比率</th><td>
+            <span class="formula">速动比率 = 速动资产 / 流动负债</span>
+            <span class="formula"><span class="r">速动资产 = 流动资产 − 存货</span></span>
+            <span class="formula"><span class="r">速动资产 = 货币资金 + 交易性金融资产 + 应收票据 + 应收账款 + 其他应收款</span></span>
+            反映企业的<span class="r">短期</span>偿债能力；速动比率为<span class="r">1</span>就说明企业有偿债能力，低于1则偿债能力不强；<span class="b">越低，偿债能力越差</span>（越大越好）</td></tr>
+          <tr><th>利息备付率</th><td>
+            <span class="formula">利息备付率 = 息税前利润 / 当期应付利息</span>
+            表明每1元当期应付利息支出有多少倍的息税前利润作为偿付保障；<span class="b">利息保障倍数越大，利息支付越有保障</span>（越大越好）；反映企业<span class="r">长期</span>偿债能力的指标；正常情况下应当<span class="r">大于1</span>，一般情况下<span class="r">不宜低于2</span></td></tr>
+          <tr><th>偿债备付率</th><td>
+            <span class="formula">偿债备付率 = 可用于还本付息的资金 / 当期应还本付息金额</span>
+            正常情况应当<span class="r">大于1</span>（越大越好）；指标小于1时，表示企业当年资金来源不足以偿付当期债务，需通过<span class="r">短期</span>借款偿付已到期债务；一般情况下<span class="r">不宜低于1.3</span>。<br>
+            <span class="b">可用于还本付息的资金</span>一般包括：未分配利润（提取了盈余公积、公益金并向股东支付完股利之后的未分配利润）、固定资产折旧、无形资产及其他资产摊销费；运营期内用于维持运营的投资应扣除；当期应还本付息金额包括当期应还贷款本金额及计入总成本费用的全部利息；<span class="b">融资租赁费用可视同借款偿还；运营期的短期借款本息也应纳入计算</span></td></tr>
+        </table>
+        <div class="trap">⚠ 流动比率 vs 速动比率：分母同为流动负债，区别在分子——速动资产要<b>剔除存货</b>；参考值也不同（流动比率≥2，速动比率≥1）。</div>
+        <div class="trap">⚠ 长短期指标别站错队：<b>资产负债率、权益乘数、利息备付率→长期</b>偿债能力；<b>流动比率、速动比率→短期</b>偿债能力。申请<b>短期贷款</b>时资产负债率不予考虑（2023真题考点）。</div>
+        <div class="trap">⚠ 底线数字：利息备付率正常&gt;1、不宜低于<b>2</b>；偿债备付率正常&gt;1、不宜低于<b>1.3</b>——两个"不宜低于"易互换设坑。资产负债率<b>50%</b>比较合适（适度型指标）。</div>
+        <details class="ex"><summary>【2025年真题】营业收入1100万，息税前利润500万，税前利润420万，税后利润315万，当期应付利息80万，利息备付率为（　）</summary><div><b>答案：C（6.25）</b>。利息备付率=息税前利润/当期应付利息=500/80=6.25。注意用息税前利润，不是税前或税后利润。</div></details>
+        <details class="ex"><summary>【2023年真题】运营期第6年：利息备付率5，息税前利润5000万，应偿还借款本金3000万，折旧3000万，摊销费100万，利润总额4000万（无需弥补前年度亏损），所得税率25%。第6年偿债备付率为（　）</summary><div><b>答案：A（1.78）</b>。当期应付利息=息税前利润/利息备付率=5000/5=1000万；可用于还本付息资金=未分配利润+折旧+摊销+利息=4000×(1−25%)+3000+100+1000=7100万；应还本付息=3000+1000=4000万；偿债备付率=7100/4000≈1.78。</div></details>
+        <details class="ex"><summary>【2023年真题】四家企业申请短期贷款：甲（流动2.3/速动1.2/资产负债率60%）、乙（2.1/1.4/65%）、丙（2.3/1.5/70%）、丁（1.9/1.3/50%），银行应优先贷给（　）</summary><div><b>答案：A（丙）</b>。申请短期贷款，资产负债率是长期偿债能力指标不予考虑，只比流动比率和速动比率。丙的流动比率和速动比率都比甲、乙、丁高，说明其短期偿债能力最强，应优先贷款给丙。</div></details>
+
+        <p><b>2. 营运能力比率</b> <span class="yr">2017·2018·2020·2024单选 2017·2020多选</span></p>
+        <table>
+          <tr><th>总资产周转率</th><td>
+            <span class="formula">总资产周转率（次数）= 营业收入 / [（期初资产总额 + 期末资产总额）÷ 2]</span>
+            <span class="b">指标越高，反映企业销售能力越强</span>（越大越好）</td></tr>
+          <tr><th>流动资产周转率</th><td>
+            <span class="formula">流动资产周转次数 = 营业收入 / [（期初流动资产 + 期末流动资产）÷ 2]</span>
+            <span class="formula">流动资产周转天数 = 计算期天数 / 流动资产周转次数</span>
+            周转次数表明1年中流动资产周转的次数，或说明1元流动资产支持的主营业务收入；周转天数表明流动资产周转1次需要的时间，即转换成现金平均需要的时间</td></tr>
+          <tr><th>存货周转率</th><td>
+            <span class="formula">存货周转次数 = 营业收入或营业成本 / [（期初存货 + 期末存货）÷ 2]</span>
+            <span class="formula">存货周转天数 = 计算期天数 / 存货周转次数</span>
+            <span class="b">周转次数越多、周转天数越短，说明该指标越好</span>；周转次数低或下降、周转天数长，可能意味着存货中残次品增加。<span class="r">存货周转天数也不是越短越好</span>——存货过少占用资金越多（影响生产供应），应基于企业的生产条件等确定合理的存货周转天数</td></tr>
+          <tr><th>应收账款周转率</th><td>
+            <span class="formula">应收账款周转率（周转次数）= 营业收入 / [（期初应收账款 + 期末应收账款）÷ 2]</span>
+            <span class="formula">应收账款周转天数 = 365 / 应收账款周转次数</span>
+            既反映应收账款的变现速度，又反映企业的管理效率；<span class="b">指标越高、周转天数越短越好</span>，表明收回速度快，可以节约资金，也说明企业信用状况好，不易发生坏账损失</td></tr>
+        </table>
+        <div class="mn">口诀助记：管理的好周转就快，关键词"周转"。分母都是（期初+期末）÷2 的平均占用额。</div>
+        <div class="trap">⚠ 存货周转天数<b>并非越短越好</b>（要结合生产条件确定合理水平）——与"越短越好"的绝对化说法区分；存货周转次数分子可用<b>营业收入或营业成本</b>，其他周转率分子只用营业收入。</div>
+        <details class="ex"><summary>【2024年真题】某企业2023年营业收入6000万元，年初应收账款600万元，年末800万元，应收账款周转率为（　）</summary><div><b>答案：C（8.57）</b>。应收账款周转率=6000/[(600+800)÷2]=6000/700≈8.57次。</div></details>
+
+        <p><b>3. 盈利能力比率</b> <span class="yr">2016单选 2018多选</span></p>
+        <table>
+          <tr><th>权益净利率</th><td>
+            <span class="r">也称净资产收益率，核心指标</span>
+            <span class="formula">权益净利率 = 净利润 / [（期初股东权益总额 + 期末股东权益总额）÷ 2 ] × 100%</span>
+            <span class="b">指标越高，表明股东权益的利用效率越高</span>，说明企业在增加收入和节约资金使用等方面取得了良好的效果（越大越好）</td></tr>
+          <tr><th>总资产净利率</th><td>
+            <span class="formula">总资产净利率 = 净利润 / [（期初资产总额 + 期末资产总额）÷ 2 ] × 100%</span>
+            <span class="b">指标越高，表明企业资产的利用效率越高，盈利能力越强</span>（越大越好）</td></tr>
+        </table>
+        <div class="trap">⚠ 盈利能力比率分子都是<b>净利润</b>；权益净利率=净资产收益率是<b>核心指标</b>——与总资产净利率的分母（股东权益 vs 资产总额）区分。</div>
+
+        <p><b>4. 发展能力比率</b> <span class="yr">2021·2023单选 2024多选</span></p>
+        <table>
+          <tr><th>营业收入增长率</th><td>
+            <span class="formula">营业增长率 = 本期营业收入增加额 / 上期营业收入总额 × 100%</span>
+            ①评价企业成长状况和发展能力的重要指标；②衡量企业经营状况和市场占有能力、预测企业经营业务拓展趋势的重要标志；③企业扩张资本的重要前提；④<span class="b">指标越高，表明营业收入增长速度越快，企业市场前景越好</span>（越大越好）</td></tr>
+          <tr><th>资本积累率</th><td>
+            <span class="formula">资本积累率 = 本年度所有者权益增长额 / 年初所有者权益 × 100%</span>
+            ①体现了企业资本的积累能力；②是评价企业发展潜力的重要指标，也是企业扩大再生产的源泉；③反映了投资者投入企业资本的保全性和增长性；④<span class="b">指标越高，表明企业的资本积累越多，企业资本保全性越强，应对风险、持续发展的能力越大</span>（越大越好）</td></tr>
+        </table>
+        <div class="mn">口诀助记：积累增长就能发展。（增长率分母是"上期总额"，积累率分母是"年初所有者权益"）</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<footer>依据《建设工程经济四色笔记》第056~065页整理</footer>
+
+<script>
+function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>

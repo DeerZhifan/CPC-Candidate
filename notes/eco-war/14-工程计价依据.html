@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第14章 工程计价依据 · 知识树</title>
+<style>
+  :root{ --accent:#2563ab; --accent-bg:#ecf3fa; --ink:#2b2b2b; --sub:#777; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.6;}
+  a.back{display:inline-block;font-size:.8rem;color:var(--sub);text-decoration:none;margin-bottom:8px;}
+  h1{font-size:1.15rem;margin:2px 0 4px;color:var(--accent);}
+  .meta{color:var(--sub);font-size:.78rem;margin-bottom:10px;}
+  .legend{background:#fff;border-radius:10px;padding:8px 12px;font-size:.75rem;color:#555;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;}
+  .score{background:#fff;border-radius:10px;padding:10px 12px;font-size:.8rem;margin-bottom:14px;}
+  .score b{font-size:.85rem;}
+  .score table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .score td,.score th{border:1px solid #eee;padding:3px 6px;font-size:.75rem;text-align:center;}
+  .score th{background:#fafafa;font-weight:600;}
+  details.sec{background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:4px solid var(--accent);}
+  details.sec>summary{list-style:none;cursor:pointer;padding:11px 13px;font-weight:700;font-size:.95rem;display:flex;gap:8px;align-items:center;}
+  details.sec>summary::-webkit-details-marker{display:none;}
+  .caret{margin-left:auto;color:#bbb;font-size:.75rem;transition:transform .2s;flex:none;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .sec .inner{padding:0 12px 12px;}
+  details.item{border:1px solid #eee;border-radius:9px;margin-bottom:8px;background:#fff;}
+  details.item>summary{list-style:none;cursor:pointer;padding:9px 11px;font-size:.88rem;font-weight:600;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+  details.item>summary::-webkit-details-marker{display:none;}
+  .stars{color:#e8a20c;font-size:.8rem;letter-spacing:1px;flex:none;}
+  .yr{background:var(--accent-bg);color:var(--accent);font-size:.68rem;padding:1px 6px;border-radius:4px;flex:none;}
+  .item .kp{padding:2px 12px 10px;border-top:1px dashed #f0f0f0;font-size:.85rem;}
+  .kp ul{margin:6px 0;padding-left:1.25em;}
+  .kp li{margin:4px 0;}
+  .kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem;}
+  .kp th,.kp td{border:1px solid #e8e8e8;padding:5px 7px;text-align:left;vertical-align:top;}
+  .kp th{background:#fafafa;font-weight:600;white-space:nowrap;}
+  .r{color:#c62828;font-weight:600;}
+  .b{color:#1d64c0;}
+  .formula{background:#faf7f2;border-radius:6px;padding:6px 10px;margin:6px 0;font-family:Georgia,serif;font-size:.9rem;overflow-x:auto;}
+  .trap{background:#fff8e6;border-left:3px solid #e8a20c;border-radius:0 8px 8px 0;padding:7px 10px;margin:8px 0;font-size:.8rem;color:#7a5c00;}
+  details.ex{background:#f4f8fd;border-radius:8px;margin:8px 0;font-size:.82rem;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:8px 10px;color:#2563ab;}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>div{padding:0 10px 9px;color:#444;}
+  .btns{display:flex;gap:8px;justify-content:center;margin:0 0 12px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
+  footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
+</style>
+</head>
+<body>
+
+<a class="back" href="00-全书骨架.html">← 返回全书骨架</a>
+<h1>第14章 工程计价依据</h1>
+<div class="meta">第3篇 工程计价 · 共5节</div>
+
+<div class="legend">
+  <span><span class="stars">★</span>数=重要度</span>
+  <span class="r">红=重点/易考/高频</span>
+  <span class="b">蓝=次重点</span>
+  <span>⚠=易混陷阱</span>
+</div>
+
+<div class="score">
+  <b>本章分值：2024年7分 · 2025年7分 · 2026预测6分</b>
+  <table>
+    <tr><th>知识点</th><th>题型</th><th>2024</th><th>2025</th><th>2026预测</th></tr>
+    <tr><td rowspan="2">14.1 工程造价管理标准体系与工程定额体系</td><td>单选</td><td>1</td><td>—</td><td>—</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td rowspan="2">14.2 人工、材料与施工机具台班消耗量确定</td><td>单选</td><td>—</td><td>2</td><td>1</td></tr>
+    <tr><td>多选</td><td>2</td><td>—</td><td>2</td></tr>
+    <tr><td rowspan="2">14.3 人工、材料与施工机具台班单价确定</td><td>单选</td><td>2</td><td>2</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td rowspan="2">14.4 预算定额、概算定额与概算指标</td><td>单选</td><td>2</td><td>—</td><td>2</td></tr>
+    <tr><td>多选</td><td>—</td><td>2</td><td>—</td></tr>
+    <tr><td rowspan="2">14.5 工程造价指标与指数</td><td>单选</td><td>—</td><td>1</td><td>—</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td>合计</td><td></td><td>7</td><td>7</td><td>6</td></tr>
+  </table>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ═══════════ 14.1 ═══════════ -->
+<details class="sec" open>
+  <summary>14.1 工程造价管理标准体系与工程定额体系<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>14.1.1 工程造价管理标准体系</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>基础标准</th><td>基础术语、费用构成等</td></tr>
+          <tr><th>管理规范</th><td>工程造价管理、项目划分和计算规则等</td></tr>
+          <tr><th>操作规程</th><td>各类工程造价成果文件编制</td></tr>
+          <tr><th>质量标准</th><td>造价咨询质量和档案质量</td></tr>
+          <tr><th>信息标准</th><td>工程造价指数发布、信息交换等</td></tr>
+        </table>
+        <div class="trap">⚠ 五类标准对号入座：术语费用→基础；项目划分计算规则→管理规范；成果文件编制→操作规程；咨询/档案质量→质量标准；指数发布信息交换→信息标准。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>14.1.2 工程计价定额体系</span><span class="stars">★★★</span><span class="yr">2024·2020单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 工程定额的分类（表14-1）</b><span class="yr">2024单选</span>
+        <table>
+          <tr><th>按生产要素</th><td>人工消耗定额、材料消耗定额、施工机具消耗定额</td></tr>
+          <tr><th><span class="r">按编制用途</span></th><td><span class="r">施工定额、预算定额、概算定额、概算指标、投资估算指标</span></td></tr>
+          <tr><th>按适用范围</th><td>全国统一定额、行业定额、地区统一定额、企业定额</td></tr>
+          <tr><th>按费用性质</th><td>建筑工程定额、设备安装工程定额、建筑安装工程费用定额、工器具定额、工程建设其他费用定额</td></tr>
+        </table>
+        <b>2. 按编制用途分类（表14-2）</b><span class="yr">2020单选</span>
+        <table>
+          <tr><th></th><th>编制对象</th><th>主要用途</th><th>项目划分</th><th>定额性质</th></tr>
+          <tr><td><b>施工定额</b></td><td>同一性质的施工过程——<span class="r">工序</span></td><td>是<span class="b">编制施工组织设计和施工作业计划</span>的依据；组织和指挥施工生产的有效工具；编制<span class="b">施工预算</span>、加强企业成本管理和经济核算的基础；<span class="b">计算工人劳动报酬</span>的依据、<span class="b">计件工资</span>和<span class="b">奖励工资</span>的基础</td><td>最细（基础性）</td><td><span class="b">企业定额的性质</span></td></tr>
+          <tr><td><b>预算定额</b></td><td><span class="b">合格分项工程和结构构件</span></td><td>以施工定额为基础综合扩大编制；编制<span class="b">施工图预算</span>的主要依据，也是编制<span class="b">概算定额</span>的基础；编制<span class="b">定额基价、确定工程造价、控制建设工程投资</span>的基础和依据</td><td>细</td><td rowspan="4"><span class="b">计价性定额</span></td></tr>
+          <tr><td><b>概算定额</b></td><td>合格<span class="b">扩大</span>分项工程或<span class="b">扩大</span>结构构件</td><td>一般以预算定额为基础综合扩大而成，主要用于<span class="b">设计概算</span>的编制</td><td>较粗</td></tr>
+          <tr><td><b>概算指标</b></td><td><span class="b">单位工程</span></td><td>是概算定额的扩大与合并；主要用于编制<span class="b">初步设计概算</span>，是设计单位编制<span class="b">设计概算</span>或建设单位编制<span class="b">年度投资计划</span>的依据，也可作为编制<span class="b">估算指标</span>的基础</td><td>粗</td></tr>
+          <tr><td><b>投资估算指标</b></td><td>建设项目、单项工程、单位工程</td><td>主要用于编制<span class="b">投资估算</span></td><td>很粗</td></tr>
+        </table>
+        <div class="trap">⚠ 编制对象逐级扩大：工序→分项工程→扩大分项工程→单位工程→建设项目；项目划分逐级变粗：最细→细→较粗→粗→很粗。只有施工定额是企业定额性质，其余四种均为计价性定额。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 14.2 ═══════════ -->
+<details class="sec">
+  <summary>14.2 人工、材料与施工机具台班消耗量确定<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>14.2.1 人工定额消耗量确定</span><span class="stars">★★★★★</span><span class="yr">2023单选等高频</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 人工定额编制的主要工作</b>
+        <ul>
+          <li>拟定正常的施工作业条件：拟定施工作业的<span class="b">内容</span>、<span class="b">方法</span>、<span class="b">地点的组织</span>、<span class="b">人员的组织</span></li>
+          <li>测定定额时间：通过计时观察、大数据分析等方法获得定额的各种必需消耗的时间</li>
+          <li>口诀：什么人、在什么地点、用什么方法、做什么事</li>
+        </ul>
+        <b>2. 人工定额的确定方法</b><span class="yr">2023单选</span>
+        <table>
+          <tr><th><span class="b">技术测定法</span></th><td>根据生产技术和施工组织条件，对施工过程中各工序采用测时法、写实记录法、工作日写实法，测出各工序的工时消耗等资料，再对所获得的资料进行科学的分析，制定出人工定额</td></tr>
+          <tr><th><span class="b">统计分析法</span></th><td>简单易行，适用于<span class="b">施工条件正常、产品稳定、工序重复量大和统计工作制度健全</span>的施工过程</td></tr>
+          <tr><th><span class="b">比较类推法</span></th><td>对于<span class="b">同类型产品规格多、工序重复、工作量小</span>的施工过程常用</td></tr>
+          <tr><th><span class="b">经验估计法</span></th><td>通常作为<span class="b">一次性定额</span>使用</td></tr>
+        </table>
+        <ul><li>口诀：比统经技</li></ul>
+        <b>3. 工人工作时间消耗的分类</b><span class="yr">2016~2025多年单/多选</span>
+        <table>
+          <tr><th colspan="2">必需消耗的时间（计入定额）</th></tr>
+          <tr><td><span class="r">有效工作时间</span></td><td><span class="r">基本工作时间</span>、<span class="r">准备与结束工作时间</span>、<span class="r">辅助工作时间</span></td></tr>
+          <tr><td>休息时间</td><td>计入定额</td></tr>
+          <tr><td>不可避免的中断时间</td><td>计入定额</td></tr>
+          <tr><th colspan="2">损失时间（不计入定额）</th></tr>
+          <tr><td>多余和偶然工作时间</td><td>—</td></tr>
+          <tr><td>停工时间</td><td>施工本身造成的停工时间 / 非施工本身造成的停工时间</td></tr>
+          <tr><td>违背劳动纪律损失时间</td><td>—</td></tr>
+        </table>
+        <div class="trap">⚠ 停工时间虽属损失时间，但编制定额时：<b>非施工本身造成的停工</b>（如水源、电源中断）应合理考虑并予以计算；施工本身造成的停工（组织不当、供料不及时等）不予计算。</div>
+        <details class="ex"><summary>【2025真题】编制人工定额时，应合理考虑并予以计算的停工时间是（ ）</summary><div>答案 B：由于水源或电源中断引起的停工时间（非施工本身造成）。A劳动组织不合理、C材料供应不及时、D技术人员和工人差错均为施工本身造成，不计算。</div></details>
+        <b>4. 确定人工定额消耗量</b>
+        <div class="formula"><span class="b">定额时间 = 基本工作时间 + 辅助工作时间 + 准备与结束工作时间 + 不可避免的中断时间 + 休息时间</span></div>
+        <b>5. 人工定额的形式（表14-3）</b>
+        <table>
+          <tr><th rowspan="2">按表现形式</th><td>时间定额</td><td><div class="formula">单位产品时间定额（工日）= 1 / 每工日产量<br>或 <span class="b">单位产品时间定额（工日）= 小组成员工日数总和 / 机械台班产量</span></div></td></tr>
+          <tr><td>产量定额</td><td><div class="formula">产量定额 = 1 / 时间定额</div></td></tr>
+          <tr><th rowspan="2">按定额的标定对象</th><td>单项工序定额</td><td><div class="formula">综合时间定额 = Σ各单项（工序）时间定额</div></td></tr>
+          <tr><td>综合定额</td><td><div class="formula">综合产量定额 = 1 / 综合时间定额（工日）</div></td></tr>
+        </table>
+        <div class="trap">⚠ 时间定额与产量定额<b>互为倒数</b>；综合时间定额是各工序时间定额之<b>和</b>（不是倒数相加），综合产量定额再取其倒数。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>14.2.2 材料定额消耗量的确定</span><span class="stars">★★★</span><span class="yr">2018·2021单选 2017多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 施工中的材料</b>
+        <ul>
+          <li>可分为：<b>必需的材料消耗</b>（直接用于建筑和安装工程的材料<span class="b">净用量</span> + 不可避免的施工废料 + 不可避免的材料损耗）与 <b>损失的材料</b></li>
+          <li>又可分为：<b>实体材料</b>（直接构成工程实体的材料，含工程直接性材料和辅助材料）与 <b>非实体材料</b>（施工中必须使用但不能构成工程实体的<span class="b">施工措施性材料</span>，主要指<span class="b">周转性材料</span>，如模板、脚手架、支撑等）</li>
+        </ul>
+        <b>2. 实体材料定额消耗量确定方法</b>
+        <table>
+          <tr><th>理论计算法</th><td>根据设计、施工验收规范和材料规格等，从理论上计算材料<b>净用量</b>。标准砖：<div class="formula">A = 1 / [墙厚 × (砖长+灰缝) × (砖厚+灰缝)] × K（块）<br>K = 墙厚的砖数 × 2（0.5砖墙、1砖墙、1.5砖墙……）</div><span class="b">标准砖（砂浆）总消耗量 = 净用量 × (1+损耗率)</span></td></tr>
+          <tr><th>实验室试验法</th><td>主要用于<b>编制材料净用量定额</b>；能更详细地研究各种因素对材料消耗的影响；缺点是无法估计施工现场因素对材料消耗量的影响</td></tr>
+          <tr><th>现场技术测定法</th><td>主要适用于<b>确定材料损耗量</b>，通过现场观察区分出哪些是可以避免的损耗、哪些是难以避免的损耗；定额中不应列入可以避免的损耗</td></tr>
+          <tr><th>现场统计法</th><td>以施工现场积累的分部分项工程使用材料数量、完成产品数量、完成工作原材料的剩余数量等统计资料为基础，经过整理分析获得材料消耗的数据</td></tr>
+        </table>
+        <b>3. 非实体材料（周转性材料）定额消耗量确定</b><span class="yr">2018单选 2017多选</span>
+        <ul>
+          <li><b>四个因素</b>：①第一次制造时的材料消耗（<span class="b">一次使用量</span>）②每周转使用一次材料的损耗（<span class="b">第二次使用时需要补充</span>）③<span class="b">周转使用次数</span> ④<span class="b">周转材料的最终回收及其回收折价</span></li>
+          <li><b>两个指标</b>：<span class="b">一次使用量</span>——供施工企业<span class="r">组织施工用</span>；<span class="r">摊销量</span>——供施工企业<span class="r">成本核算或投标报价使用</span></li>
+        </ul>
+        <b>4. 模板用量的计算（表14-4）</b><span class="yr">2016·2021单选</span>
+        <table>
+          <tr><th>现浇混凝土结构木模板</th><td>
+            <div class="formula">一次使用量 = 净用量 × (1+操作损耗率)</div>
+            <div class="formula">周转使用量 = 一次使用量 × [1+(周转次数−1)×补损率] / 周转次数</div>
+            <div class="formula">回收量 = 一次使用量 × (1−补损率) / 周转次数</div>
+            <div class="formula">摊销量 = 周转使用量 − 回收量 × 回收折价率</div>
+          </td></tr>
+          <tr><th>预制混凝土构件的模板</th><td>
+            <div class="formula">一次使用量 = 净用量 × (1+操作损耗率)</div>
+            <div class="formula">摊销量 = 一次使用量 / 周转次数</div>
+          </td></tr>
+        </table>
+        <div class="trap">⚠ 现浇模板摊销量 = 周转使用量 − 回收量×回收折价率（要扣回收）；预制构件模板<b>直接一次使用量÷周转次数</b>（不计补损率、不扣回收）。两套公式常互换设坑。</div>
+        <details class="ex"><summary>【2021真题】木模板一次净用量200m²，操作损耗2%，周转5次，每次补损率5%，周转使用量为（ ）m²</summary><div>答案 B：48.96。一次使用量=200×(1+2%)=204m²；周转使用量=[204×(1+4×5%)]/5=48.96m²。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>14.2.3 施工机具定额台班消耗量确定</span><span class="stars">★★★★</span><span class="yr">2016~2023多年单选 2019多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 机械工作时间消耗的分类</b>
+        <table>
+          <tr><th colspan="2">必需消耗的时间</th></tr>
+          <tr><td><span class="r">有效工作时间</span></td><td><span class="r">正常负荷下</span>的工作时间、<span class="r">有根据地降低负荷下</span>的工作时间</td></tr>
+          <tr><td>不可避免的无负荷工作时间</td><td>如筑路机在工作区末端调头</td></tr>
+          <tr><td>不可避免的中断时间</td><td>与工艺过程的特点有关、与机械有关、工人休息时间</td></tr>
+          <tr><th colspan="2">损失时间</th></tr>
+          <tr><td>多余工作时间</td><td>如工人没有及时供料而使机械空运转</td></tr>
+          <tr><td>停工时间</td><td>施工本身造成的停工时间 / 非施工本身造成的停工时间</td></tr>
+          <tr><td>违背劳动纪律时间</td><td>—</td></tr>
+          <tr><td>低负荷下工作的时间</td><td>如工人装车的砂石数量不足引起的降低负荷工作</td></tr>
+        </table>
+        <div class="trap">⚠ 机械比人工多两类：<b>不可避免的无负荷工作时间</b>（必需消耗）与<b>低负荷下的工作时间</b>（损失时间）。"有根据地降低负荷"（如货物轻而体积大不能满载）属于<b>有效工作时间</b>；"低负荷"（装料不足）属于<b>损失时间</b>——一字之差，年年设坑。</div>
+        <b>2. 机械工作时间消耗示例判定（表14-5）</b>
+        <table>
+          <tr><th>示例</th><th>时间归类</th></tr>
+          <tr><td>汽车运输重量轻而体积大的货物，不能充分利用载重吨位</td><td>有根据地降低负荷下的工作时间</td></tr>
+          <tr><td>筑路机在工作区末端调头</td><td>不可避免的无负荷工作时间</td></tr>
+          <tr><td>灰浆泵由一个工作地点转移到另一工作地点时的工作中断</td><td>与工艺过程的特点有关的不可避免中断工作时间</td></tr>
+          <tr><td>工人没有及时供料而使机械空运转的时间</td><td>机械的多余工作时间</td></tr>
+          <tr><td>由于未及时供给机械燃料而引起的停工</td><td>施工本身造成的停工时间</td></tr>
+          <tr><td>暴雨时压路机的停工</td><td>非施工本身造成的停工时间</td></tr>
+          <tr><td>工人装车的砂石数量不足引起的汽车降低负荷工作所延续的时间</td><td>低负荷下的工作时间</td></tr>
+        </table>
+        <details class="ex"><summary>【2021真题】筑路机在工作区末端调头所消耗的时间，属于施工机械工作时间中的（ ）</summary><div>答案 D：不可避免的无负荷工作时间。</div></details>
+        <b>3. 施工机具台班定额消耗量的确定（表14-6）</b>
+        <ul>
+          <li><b>确定机械1h纯工作正常生产率</b>：
+            <div class="formula">循环动作机械：一次循环的正常延续时间 = Σ循环各组成部分正常延续时间 − 交叠时间<br>机械纯工作1h循环次数 = 60×60(s) / 一次循环的正常延续时间<br>机械纯工作1h正常生产率 = 纯工作1h循环次数 × 一次循环生产的产品数量</div>
+            <div class="formula">连续动作机械纯工作1h正常生产率 = 工作时间内生产的产品数量 / 工作时间(h)</div></li>
+          <li><b>确定施工机械的时间利用系数</b>：
+            <div class="formula">机械时间利用系数 = 机械在一个工作班内纯工作时间 / 一个工作班延续时间(8h)</div></li>
+          <li><b>计算施工机械台班定额</b>：
+            <div class="formula"><span class="b">施工机械台班产量定额 = 机械1h纯工作正常生产率 × 工作班纯工作时间</span><br>或 <span class="b">= 机械1h纯工作正常生产率 × 工作班延续时间 × 机械时间利用系数</span></div></li>
+        </ul>
+        <details class="ex"><summary>【经典例题】斗容量1m³正铲挖掘机台班产量480m³，配备两名工人，机械利用系数0.8，正常条件下机械1h纯工作时间可挖土（ ）m³</summary><div>答案 D：75。1h纯工作生产率 = 480 / (8×0.8) = 75m³。</div></details>
+        <b>4. 施工机械台班使用定额的表现形式（表14-7）</b>
+        <table>
+          <tr><th>施工机械时间定额</th><td><div class="formula">单位产品机械时间定额（台班）= 1 / 台班产量<br><span class="r">单位产品机械时间定额（工日）= 小组成员总人数 / 台班产量</span></div></td></tr>
+          <tr><th>机械产量定额</th><td><div class="formula">机械台班产量定额 = 1 / 机械时间定额（台班）</div></td></tr>
+        </table>
+        <details class="ex"><summary>【经典例题】某机械台班产量4m³，配合的工人小组5人，则单位产品的人工时间定额为（ ）工日</summary><div>答案 A：1.25。人工时间定额 = 小组总人数/台班产量 = 5/4 = 1.25工日。</div></details>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 14.3 ═══════════ -->
+<details class="sec">
+  <summary>14.3 人工、材料与施工机具台班单价确定<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>14.3.1 人工日工资单价确定方法</span><span class="stars">★★★</span><span class="yr">2019多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li><b>确定年平均每月法定工作日</b>：
+            <div class="formula">年平均每月法定工作日 = (全年日历日 − 法定假日) / 12</div></li>
+          <li><b>计算人工日工资单价</b>：
+            <div class="formula">日工资单价 = [生产工人平均月工资(计时、计件) + 平均月(奖金+津贴补贴+特殊情况下支付的工资)] / 年平均每月法定工作日</div></li>
+          <li>确定日工资单价应根据<span class="b">工程项目的技术要求</span>，通过市场调查、参考实物工程量人工单价综合分析确定；最低日工资单价<span class="b">不得低于</span>工程所在地人力资源和社会保障部门发布的<span class="b">最低工资标准</span></li>
+          <li>工程计价定额<span class="b">不可只列一个综合工日单价</span>，应根据<span class="b">工程项目技术要求和工种差别</span>适当划分多种人工日工资单价，确保各分部工程人工费的合理构成</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>14.3.2 材料单价确定方法</span><span class="stars">★★★★</span><span class="yr">2016·2018·2024·2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>材料原价<br>（或供应价格）</th><td>国内采购材料的<b>出厂价格</b>；国外采购材料抵达买方边境、港口或车站并交纳完各种手续费、税费（<b>不含增值税</b>）后形成的价格。有几种价格（原价）时，采取<b>加权平均</b>：
+            <div class="formula">加权平均原价 = (K₁C₁+K₂C₂+…+KₙCₙ) / (K₁+K₂+…+Kₙ)<br>K——各不同供应地点的供应量或各不同使用地点的需要量；C——各不同供应地点的原价</div></td></tr>
+          <tr><th>材料运杂费</th><td>国内采购材料自来源地、国外采购材料自到岸港运至工地仓库或指定堆放地点发生的费用（不含增值税）。<span class="b">含外埠中转运输过程中所发生的一切费用和过境过桥费用，包括调车和驳船费、装卸费、运输费及附加工作费等</span>。<br>若运输费用为含税价格，按两种支付方式分别调整：<br><span class="r">"两票制"：材料销售价/(1+13%) 和 运输服务费/(1+9%)</span>；<br><span class="r">"一票制"：材料价格/(1+13%)</span></td></tr>
+          <tr><th>运输损耗</th><td><div class="formula">运输损耗 = (材料原价+运杂费) × 运输损耗率(%)</div></td></tr>
+          <tr><th>采购及保管费</th><td>组织采购、供应和保管材料过程中所需要的各项费用，包含：<b>采购费、仓储费、工地保管费和仓储损耗</b></td></tr>
+        </table>
+        <div class="formula"><span class="r">材料单价 = (材料原价+运杂费) × [1+运输损耗率(%)] × [1+采购保管费率(%)]</span></div>
+        <div class="trap">⚠ 两票制材料13%、运费9%分别除税；一票制整体按13%除税。运输损耗按（原价+运杂费）取率，采购保管费再在其外层连乘——顺序不能颠倒。</div>
+        <details class="ex"><summary>【2024真题】材料出厂价4000元/吨，运输费100元/吨，运输损耗率1%，采购保管费率2%（均不含税），该材料单价为（ ）元/吨</summary><div>答案 D：4223.82。(4000+100)×1.01×1.02 = 4223.82元/吨。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>14.3.3 施工机械台班单价确定方法</span><span class="stars">★★★★</span><span class="yr">2022·2023·2024·2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th><span class="b">折旧费</span></th><td><div class="formula"><span class="r">台班折旧费 = 机械预算价格 × (1−残值率) / 耐用总台班</span><br><span class="r">耐用总台班 = 折旧年限 × 年工作台班 = 检修间隔台班 × 检修周期</span><br><span class="r">检修周期 = 检修次数 + 1</span></div></td></tr>
+          <tr><th><span class="b">检修费</span></th><td><div class="formula">台班检修费 = (一次检修费 × 检修次数 / 耐用总台班) × 除税系数</div></td></tr>
+          <tr><th><span class="b">维护费</span></th><td><div class="formula">台班维护费 = [Σ(各级维护一次费用 × 除税系数 × 各级维护次数) + 临时故障排除费] / 耐用总台班</div>各项数值难以确定时：维护费 = 检修费 × K（K为维护费系数，指维护费占检修费的百分数）</td></tr>
+          <tr><th><span class="b">安拆费及场外运费</span></th><td>
+            <span class="r">(1) 计入台班单价</span>：<span class="r">安拆简单、移动需要起重机运输的轻型施工机械</span>
+            <div class="formula">台班安拆费及场外运费 = 一次安拆费及场外运费 × 年平均安拆次数 / 年工作台班</div>
+            <span class="r">(2) 单独计算</span>：①<span class="r">安拆复杂、移动需要起重机运输的重型施工机械</span> ②<span class="r">利用辅助设施移动的施工机械</span>（辅助设施如轨道和枕木等的折旧、搭设和拆除费用可单独计算）③<span class="r">自升式塔式起重机、施工电梯安拆费的超高起点及其增加费</span>，各地区、部门可根据具体情况确定<br>
+            <span class="r">(3) 不需计算</span>：①<span class="r">不需安拆的施工机械，不计算一次安拆费</span> ②<span class="r">不需相关机械辅助运输的自行移动机械，不计算场外运费</span> ③<span class="r">固定在车间的施工机械，不计算安拆费及场外运费</span></td></tr>
+          <tr><th>人工费</th><td><div class="formula">台班人工费 = 人工消耗量 × [1+(年制度工作日−年工作台班)/年工作台班] × 人工单价</div></td></tr>
+          <tr><th><span class="b">台班燃料动力费</span></th><td><div class="formula">台班燃料动力费 = Σ(台班燃料动力消耗量 × 燃料动力单价)<br>台班燃料动力消耗量 = (实测数×4 + 定额平均值 + 调查平均值) / 6</div></td></tr>
+          <tr><th>其他费用</th><td><div class="formula">台班其他费用 = (年车船税+年保险费+年检测费) / 年工作台班</div></td></tr>
+        </table>
+        <div class="trap">⚠ 检修周期 = 检修次数<b>+1</b>（不是检修次数）；折旧、检修、维护费分母都是<b>耐用总台班</b>，安拆费和其他费用分母是<b>年工作台班</b>。安拆费三档：轻型→计入台班单价、重型/辅助设施/塔机超高→单独计算、不需安拆/自行移动/固定车间→不计算。</div>
+        <details class="ex"><summary>【2024真题】机械预算价格48万元，使用年限10年，年平均工作220台班，净残值率5%，该机械台班折旧费为（ ）元</summary><div>答案 A：207.27。480000×(1−5%)/(10×220) = 207.27元。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>14.3.4 施工仪器仪表台班单价确定方法</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th><span class="b">折旧费</span></th><td><div class="formula">仪器仪表台班折旧费 = 施工仪器仪表原值 × (1−残值率) / 年工作台班</div></td></tr>
+          <tr><th><span class="b">维护费</span></th><td><div class="formula">仪器仪表台班维护费 = 年维护费 / 年工作台班</div></td></tr>
+          <tr><th><span class="b">校验费</span></th><td><div class="formula">仪器仪表台班校验费 = 年校验费 / 年工作台班</div></td></tr>
+          <tr><th><span class="b">动力费</span></th><td><div class="formula">仪器仪表台班动力费 = 台班耗电量 × 电价</div></td></tr>
+        </table>
+        <div class="trap">⚠ 仪器仪表台班单价只含4项：折旧费、维护费、校验费、动力费；且折旧费分母是<b>年工作台班</b>——区别于施工机械折旧费分母的<b>耐用总台班</b>。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 14.4 ═══════════ -->
+<details class="sec">
+  <summary>14.4 预算定额、概算定额与概算指标<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>14.4.1 预算定额及其基价</span><span class="stars">★★★★</span><span class="yr">2017·2019·2024单选 2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 预算定额的作用与编制原则</b>
+        <ul>
+          <li>作用：是编制<span class="b">施工图预算</span>、确定建筑安装工程<span class="b">造价</span>的基础；是编制<span class="b">最高投标限价</span>的基础；是编制<span class="b">施工组织设计</span>、进行经济分析的依据；是编制<span class="b">概算定额</span>的基础</li>
+          <li>编制原则：<b>按社会平均水平确定</b>；<b>简明适用</b></li>
+        </ul>
+        <b>2. 人工消耗量指标的确定</b><span class="yr">2017·2019单选</span>
+        <ul>
+          <li><b>基本用工</b>：完成分项工程的主要用工量</li>
+          <li><b>其他用工</b>：①<b>超运距用工</b>——超过人工定额规定的材料、半成品运距的用工 ②<b>辅助用工</b>——材料需在现场加工的用工 ③<b>人工幅度差用工</b>——施工定额中未包括的、正常施工情况下又不可避免的一些零星用工</li>
+          <li>人工幅度差用工内容：<span class="b">各种专业工种之间的工序搭接</span>及土建工程与安装工程的交叉、配合中<span class="b">不可避免的停歇时间</span>；施工机械在场内单位工程之间变换位置及移动临时水电线路引起的<span class="b">临时停水、停电所发生的不可避免的间歇时间</span>；施工过程中<span class="b">水电维修用工</span>；隐蔽工程验收等工程<span class="b">质量检查影响的操作时间</span>；现场内单位工程之间<span class="b">操作地点转移影响的操作时间</span>；施工过程中工种之间交叉作业造成的<span class="b">不可避免的剔凿、修复、清理等用工</span>；施工过程中不可避免地直接少量零星用工</li>
+          <li>计算（第一步综合取定工程量——预算定额是一项<span class="b">综合性定额</span>；第二步计算人工消耗量）：
+            <div class="formula">基本用工数量 = Σ(工序工程量 × 时间定额)<br>超运距用工数量 = Σ(超运距材料数量 × 时间定额)，超运距 = 预算定额规定的运距 − 劳动定额规定的运距<br>辅助用工数量 = Σ(加工材料数量 × 时间定额)<br><span class="r">人工幅度差用工数量 = (基本用工+超运距用工+辅助用工) × 人工幅度差系数</span><br><span class="r">人工消耗量 = (基本用工+辅助用工+超运距用工) × (1+人工幅度差系数)</span></div></li>
+        </ul>
+        <details class="ex"><summary>【2019真题】基本用工15工日，超运距用工3工日，辅助用工2工日，人工幅度差系数10%，人工幅度差用工数量为（ ）工日</summary><div>答案 D：2.0。(15+3+2)×10% = 2.0工日。</div></details>
+        <b>3. 材料耗用量指标的确定</b>
+        <ul><li>以<b>材料消耗定额</b>为基础，按预算定额的定额项目，综合材料消耗定额的相关内容，经汇总后确定</li></ul>
+        <b>4. 机械台班消耗指标的确定</b><span class="yr">2025多选</span>
+        <ul>
+          <li>以<b>台班</b>为单位计算，每一台班为<b>8h工作制</b>；按合理的施工方法取定并考虑增加了<b>机械幅度差</b></li>
+          <li>机械幅度差内容：①施工机械<span class="b">转移工作面及配套机械互相影响</span>损失的时间 ②正常施工情况下机械施工中<span class="b">不可避免的工序间歇</span> ③<span class="b">检查工程质量</span>影响机械操作的时间 ④<span class="b">临时水、电线路在施工中移动位置</span>所发生的机械停歇时间 ⑤工程结尾时，工作量不饱满所损失的时间</li>
+        </ul>
+        <b>5. 预算定额基价的确定</b><span class="yr">2024单选</span>
+        <ul>
+          <li>预算定额基价是预算定额分项工程或定额子目的单价，<span class="b">只包括人工费、材料费和施工机具使用费，即工料单价</span></li>
+          <li>编制本质上是编制人、材、机的消耗量和人、材、机的单价的综合过程；一般通过<span class="b">编制单位估价表</span>来确定单价，用于直接编制施工图预算</li>
+          <li>应是<b>地区</b>定额基价，应按当地的资源价格来编制；是<span class="b">动态变化的</span>，应随市场价格变化不断调整、修改和补充；以<span class="b">一个城市或一个地区为范围</span>进行编制，在该地区范围内适用</li>
+          <li>编制：①以<span class="b">全国统一或地区通用的预算定额或基础定额</span>确定人、材、机台班的<b>消耗量</b> ②以<span class="b">本地区或市场上的资源实际价格或市场价格</span>确定人、材、机台班<b>价格</b></li>
+          <li>项目的划分、名称、编号、计量单位和工程量计算规则上应尽量与预算定额保持一致；<span class="b">单价均为不含增值税进项税额的价格</span></li>
+        </ul>
+        <div class="trap">⚠ 预算定额基价 = 工料单价（人工费+材料费+施工机具使用费），<b>不含</b>企业管理费、利润、规费、税金——选项常混入"全费用单价"设坑。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>14.4.2 概算定额及其基价</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li><b>作用</b>：是编制<span class="b">初步设计阶段工程概算、扩大初步设计阶段修正概算</span>的主要依据；是对设计项目进行<span class="b">技术经济分析比较</span>的基础资料之一；是编制建设工程<span class="b">主要材料计划</span>的依据；是控制<span class="b">施工图预算和最高投标限价</span>的依据；是工程结束后进行<span class="b">竣工决算和项目评价</span>的依据；是编制<span class="b">概算指标</span>的依据</li>
+          <li><b>编制原则</b>：编制深度要<span class="b">适应设计深度</span>的要求；定额水平的确定应<span class="b">与全国统一或地区通用的预算定额或基础定额的水平基本一致</span></li>
+          <li><b>编制方法</b>：在<span class="b">预算定额的基础上综合而成</span>，每一项概算定额项目都包括了数项预算定额的定额项目</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>14.4.3 概算指标</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li><b>作用</b>：是初步设计阶段编制概算、确定工程概算造价的依据；可以作为编制<span class="b">投资估算的参考</span>；主要材料指标可以作为匡算主要材料用量的依据；是设计单位进行设计方案比较、设计技术经济分析的依据；是编制固定资产投资计划、确定投资额和主要材料计划的主要依据</li>
+          <li><b>分类</b>：建筑工程概算指标、设备及安装工程概算指标</li>
+          <li><b>编制方法</b>：是<span class="b">概算定额的扩大与合并</span>，以<span class="b">整个房屋或构筑物为对象、以更为扩大的计量单位来编制</span>；包括<span class="b">人工、材料和机械台班定额三个基本部分</span>；列出了各结构分部的工程量及单位工程（以体积计或以面积计）的造价</li>
+        </ul>
+        <div class="trap">⚠ 三者对象与用途梯度：预算定额→分项工程/结构构件→施工图预算；概算定额→扩大分项工程→设计概算（以预算定额为基础综合）；概算指标→单位工程/整个房屋构筑物→初步设计概算（概算定额的扩大与合并）。"谁是谁的编制基础"是高频考点：施工定额→预算定额→概算定额→概算指标。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 14.5 ═══════════ -->
+<details class="sec">
+  <summary>14.5 工程造价指标与指数<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>14.5.1 工程计价信息</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>工程计价信息体系分类（图14-14）</b>
+        <table>
+          <tr><th>工程造价指数</th><td>国家或地区的房建工程、市政工程造价指数；各行业、各专业工程造价指数</td></tr>
+          <tr><th>工程要素价格信息</th><td>工程<b>人工</b>价格信息、工程<b>设备</b>价格信息、工程<b>材料</b>价格信息、施工<b>机械租赁</b>价格信息</td></tr>
+          <tr><th>工程综合指标信息</th><td>建设项目综合造价指标、单项工程综合造价指标、单位工程造价指标、扩大分部分项工程造价指标、分部分项工程造价指标</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>14.5.2 工程造价指标</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>工程造价指标的应用（图14-15）</b>
+        <ul>
+          <li>作为国家、地方、行业以及企业编制<b>固定资产投资计划</b>、确定<b>基本建设投资规模</b>的参考依据</li>
+          <li>用作编制建设项目<b>投资估算</b>的重要依据</li>
+          <li>用作编制<b>初步设计概算</b>和审查<b>施工图预算</b>的重要依据</li>
+          <li>用作编制<b>最高投标限价</b>和<b>投标报价</b>的参考资料</li>
+          <li>用作编制和修订<b>各类工程计价定额</b>的基础资料</li>
+          <li>用以<b>测定调价系数、编制造价指数</b>的依据</li>
+          <li>用作<b>技术经济分析与研究</b>的基础资料</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>14.5.3 工程造价指数</span><span class="stars">★★★</span><span class="yr">2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>工程造价指数的分类（图14-16）</b>
+        <table>
+          <tr><th rowspan="2">按工程范围、类别、用途分类</th><td><span class="b">建设工程造价综合指数</span>：综合反映各类建设项目、单项工程、单位工程等报告期价格对基期价格变化而影响工程造价程度的指数；以建设项目、单项工程、单位工程为研究对象</td></tr>
+          <tr><td><span class="b">建设工程要素价格指数（单项价格指数）</span>：人工费价格指数、材料费价格指数、施工机具使用费价格指数、措施费指数</td></tr>
+          <tr><th rowspan="2">按基数不同划分</th><td><span class="b">定基指数</span>：以各时期价格与其<b>某固定时期</b>的价格对比后编制的指数；<span class="b">工程造价的价格指数大多以定基指数为主</span></td></tr>
+          <tr><td><span class="b">环比指数</span>：以各时期价格都以其<b>前一期</b>价格为基础计算的造价指数</td></tr>
+        </table>
+        <div class="trap">⚠ 定基指数=基期固定不变；环比指数=以前一期为基期、基期逐期后移。工程造价的价格指数<b>大多以定基指数为主</b>——2025年已考。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<footer>依据《建设工程经济四色笔记》第096~111页整理</footer>
+
+<script>
+function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第18章 工程总承包计价 · 知识树</title>
+<style>
+  :root{ --accent:#2563ab; --accent-bg:#ecf3fa; --ink:#2b2b2b; --sub:#777; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.6;}
+  a.back{display:inline-block;font-size:.8rem;color:var(--sub);text-decoration:none;margin-bottom:8px;}
+  h1{font-size:1.15rem;margin:2px 0 4px;color:var(--accent);}
+  .meta{color:var(--sub);font-size:.78rem;margin-bottom:10px;}
+  .legend{background:#fff;border-radius:10px;padding:8px 12px;font-size:.75rem;color:#555;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;}
+  .score{background:#fff;border-radius:10px;padding:10px 12px;font-size:.8rem;margin-bottom:14px;}
+  .score b{font-size:.85rem;}
+  .score table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .score td,.score th{border:1px solid #eee;padding:3px 6px;font-size:.75rem;text-align:center;}
+  .score th{background:#fafafa;font-weight:600;}
+  details.sec{background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:4px solid var(--accent);}
+  details.sec>summary{list-style:none;cursor:pointer;padding:11px 13px;font-weight:700;font-size:.95rem;display:flex;gap:8px;align-items:center;}
+  details.sec>summary::-webkit-details-marker{display:none;}
+  .caret{margin-left:auto;color:#bbb;font-size:.75rem;transition:transform .2s;flex:none;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .sec .inner{padding:0 12px 12px;}
+  details.item{border:1px solid #eee;border-radius:9px;margin-bottom:8px;background:#fff;}
+  details.item>summary{list-style:none;cursor:pointer;padding:9px 11px;font-size:.88rem;font-weight:600;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+  details.item>summary::-webkit-details-marker{display:none;}
+  .stars{color:#e8a20c;font-size:.8rem;letter-spacing:1px;flex:none;}
+  .yr{background:var(--accent-bg);color:var(--accent);font-size:.68rem;padding:1px 6px;border-radius:4px;flex:none;}
+  .item .kp{padding:2px 12px 10px;border-top:1px dashed #f0f0f0;font-size:.85rem;}
+  .kp ul{margin:6px 0;padding-left:1.25em;}
+  .kp li{margin:4px 0;}
+  .kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem;}
+  .kp th,.kp td{border:1px solid #e8e8e8;padding:5px 7px;text-align:left;vertical-align:top;}
+  .kp th{background:#fafafa;font-weight:600;white-space:nowrap;}
+  .r{color:#c62828;font-weight:600;}
+  .b{color:#1d64c0;}
+  .formula{background:#faf7f2;border-radius:6px;padding:6px 10px;margin:6px 0;font-family:Georgia,serif;font-size:.9rem;overflow-x:auto;}
+  .trap{background:#fff8e6;border-left:3px solid #e8a20c;border-radius:0 8px 8px 0;padding:7px 10px;margin:8px 0;font-size:.8rem;color:#7a5c00;}
+  details.ex{background:#f4f8fd;border-radius:8px;margin:8px 0;font-size:.82rem;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:8px 10px;color:#2563ab;}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>div{padding:0 10px 9px;color:#444;}
+  .btns{display:flex;gap:8px;justify-content:center;margin:0 0 12px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
+  footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
+</style>
+</head>
+<body>
+
+<a class="back" href="00-全书骨架.html">← 返回全书骨架</a>
+<h1>第18章 工程总承包计价</h1>
+<div class="meta">第3篇 工程计价 · 共5节</div>
+
+<div class="legend">
+  <span><span class="stars">★</span>数=重要度</span>
+  <span class="r">红=重点/易考/高频</span>
+  <span class="b">蓝=次重点</span>
+  <span>⚠=易混陷阱</span>
+</div>
+
+<div class="score">
+  <b>本章分值：2024年4分 · 2025年4分 · 2026预测3分</b>
+  <table>
+    <tr><th>知识点</th><th>题型</th><th>2024</th><th>2025</th><th>2026预测</th></tr>
+    <tr><td rowspan="2">18.1 工程总承包计价原理</td><td>单选</td><td>2</td><td>—</td><td>1</td></tr>
+    <tr><td>多选</td><td>2</td><td>2</td><td>—</td></tr>
+    <tr><td rowspan="2">18.2 工程总承包最高投标限价与投标报价编制</td><td>单选</td><td>—</td><td>1</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td rowspan="2">18.3 工程总承包合同价款约定</td><td>单选</td><td>—</td><td>1</td><td>—</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td rowspan="2">18.4 工程总承包合同价款调整与索赔</td><td>单选</td><td>—</td><td>—</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td rowspan="2">18.5 工程总承包项目结算与支付</td><td>单选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td>合计</td><td></td><td>4</td><td>4</td><td>3</td></tr>
+  </table>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ═══════════ 18.1 ═══════════ -->
+<details class="sec" open>
+  <summary>18.1 工程总承包计价原理<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>18.1.1 工程总承包模式的类型与适用情形</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>情形</th><td>适用判断</td></tr>
+          <tr><th>发包人未编制发包人要求，或发包人要求不能实现工程建设目标</th><td><span class="r">不宜采用工程总承包模式</span></td></tr>
+          <tr><th>发包人以施工图项目进行工程计量和计价</th><td><span class="b">宜采用施工总承包</span></td></tr>
+          <tr><th>投标人没有足够的时间或信息仔细审核发包人要求 / 没有足够的时间或信息进行设计、风险评估和估价 / 施工涉及实质性地下工程或投标人无法检查区域的工程</th><td><span class="r">不宜采用 EPC（设计采购施工总承包）</span>，<span class="b">可采用 DB（设计施工总承包）</span></td></tr>
+          <tr><th>发包人要密切监督或控制承包人的工作，或审查大部分施工图纸</th><td>不宜采用EPC，可采用DB</td></tr>
+        </table>
+        <ul>
+          <li>EPC：<span class="r">可行性研究报告批准后发包→宜采用</span>；<span class="b">方案设计批准后发包→可采用</span></li>
+          <li>DB：<span class="r">初步设计批准后发包→宜采用</span>；<span class="b">方案设计批准后发包→可采用</span></li>
+        </ul>
+        <div class="trap">⚠ 发包时点配对：可研批准后→宜EPC；初步设计批准后→宜DB；方案设计批准后→EPC、DB均"可采用"。选项常把"宜"与"可"互换设坑。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>18.1.2 工程总承包计价方式</span><span class="stars">★★★</span><span class="yr">2024单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>投资控制目标</th><td>①可研批准或方案设计后发包：按<span class="r">投资估算中与发包内容对应的总金额</span>；②初步设计批准后发包：按<span class="r">设计概算中与发包内容对应的总金额</span></td></tr>
+          <tr><th>材料设备采购原则</th><td>①发包人要提供部分材料设备的，应在<span class="b">发包人要求</span>中提出并在合同中明确约定，发包人按工程进度计划保质保量按期提供；②总承包范围的材料设备需加工定制的，承包人可以外包并负责采购策划、设计、招标、签约、催交、检验、运输、验收、入库等；③承包人应按合同约定的品牌、规格提供材料设备并满足约定质量标准；④发包人要求承包人在施工过程中更换相关材料或设备的，更换部分价格变化按合同约定执行，由此导致的费用增加和工期延误<span class="r">由发包人承担</span></td></tr>
+          <tr><th>建筑安装工程计价</th><td>除专用合同条件约定按应予计量的实际工程量结算支付的单价项目外，<span class="r">不得以项目的施工图为基础对合同价款进行重新计量或调整</span></td></tr>
+          <tr><th>预备费</th><td>①<span class="b">可调总价合同</span>：预备费由<span class="r">发包人掌握使用</span>，按合同约定支付后<span class="b">如有余额，应归发包人所有</span>；②<span class="b">固定总价合同</span>：预备费可作为风险包干费用，在合同专用条件中约定，预备费归<span class="r">承包人所有</span></td></tr>
+        </table>
+        <div class="trap">⚠ 预备费归属：可调总价→发包人掌握、余额归发包人；固定总价→风险包干、归承包人。两者互换是高频陷阱。</div>
+        <div class="trap">⚠ 与第16/17章施工承包的最大差异：总承包模式下不得以施工图为基础重新计量或调整合同价款（施工承包单价合同恰恰按图计量）。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>18.1.3 工程总承包费用项目构成</span><span class="stars">★★★</span><span class="yr">2024多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li><b>工程费用</b>：建筑工程费、安装工程费、设备购置费</li>
+          <li><b>工程总承包其他费</b>：
+            <ul>
+              <li>勘察费（如详细勘察费、施工勘察费）</li>
+              <li>设计费（如初步设计费、施工图设计费、专项设计费）</li>
+              <li>工程总承包管理费</li>
+              <li>研究试验费</li>
+              <li>临时用地及占道使用补偿费</li>
+              <li>场地准备及临时设施费</li>
+              <li>检验检测及试运转费</li>
+              <li>系统集成费</li>
+              <li>工程保险费</li>
+              <li>其他专项费（本工程专利及专有技术使用、引进技术和引进设备其他费、工程技术经济等咨询费、苗木迁移、测绘等发生的费用）</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="trap">⚠ 多选易错：勘察费、设计费在第16章属"工程建设其他费"，此处归入"工程总承包其他费"；工程费用只有"建筑、安装、设备购置"三项，不含其他费。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>18.1.4 工程总承包费用项目清单</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li><b>可行性研究或方案设计后</b>清单编制——<span class="b">四级编码</span>：第一级<span class="b">专业工程分类码</span>→第二级<span class="b">房屋类型分类码</span>→第三级<span class="b">单位工程分类码</span>→第四级<span class="b">可研/方案设计后自编码</span></li>
+          <li><b>初步设计后</b>清单编制——<span class="b">七级编码</span>：前四级同上，再加第五级<span class="b">扩大分部分类码</span>→第六级<span class="b">扩大分项分类码</span>→第七级<span class="b">初步设计后自编码</span></li>
+        </ul>
+        <div class="trap">⚠ 记"4级 vs 7级"：发包越晚（初步设计后）、设计越深，清单编码级数越多。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>18.1.5 工程总承包费用价格清单</span><span class="stars">★★★</span><span class="yr">2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>价格清单的编制</th><td>由具有编制能力的<span class="r">发包人或受其委托、具有相应资质的工程造价咨询人</span>编制</td></tr>
+          <tr><th>价格清单项目的价格</th><td>应包括<span class="r">成本和利润</span>。成本中的应纳税金由发包人按下列规定在发包人要求中明确并在合同中约定：①由<span class="b">承包人结合具体工程测算</span>，将应纳税金计入价格清单项目<span class="b">汇入合同总价</span>；②由<span class="b">承包人将应纳税金单列计算</span></td></tr>
+          <tr><th>价格清单列出的工程量</th><td>列出的建筑安装工程量<span class="r">仅为估算的工作量</span>，不得将其视为要求承包人实施工程的实际或准确的工作量；清单中列出的任何工作量及其价格，除专用合同条件中约定的单价项目外，<span class="b">应仅限于作为变更和支付的参考，不应作为结算依据</span></td></tr>
+        </table>
+        <div class="trap">⚠ 与第17章"已标价工程量清单"的本质区别：总承包价格清单工程量只是估算参考，不作为结算依据；施工承包单价合同则按实际计量结算。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 18.2 ═══════════ -->
+<details class="sec">
+  <summary>18.2 工程总承包最高投标限价与投标报价编制<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>18.2.1 工程总承包最高投标限价编制</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>建筑工程费、设备购置费、安装工程费</th><td><span class="b">直接按投资估算或设计概算中的费用计列</span></td></tr>
+          <tr><th>勘察费、设计费</th><td>根据不同阶段发包的勘察、设计工作内容，按投资估算或设计概算中对应的勘察、设计工作的<span class="b">部分金额计列</span></td></tr>
+          <tr><th>工程总承包管理等其他费用</th><td>估算/概算中<span class="b">有同类项目费用金额</span>的，可根据发包内容<span class="b">全部或部分计列</span>；<span class="b">没有项目</span>的，<span class="b">参照同类或类似工程</span>的此类费用计列</td></tr>
+          <tr><th>代办服务费</th><td>根据<span class="b">发包人委托代办所发生的费用</span>计列</td></tr>
+        </table>
+        <div class="trap">⚠ 限价编制依据是"投资估算/设计概算"，而非施工图预算——与第17章按工程量清单+市场价编制最高投标限价不同。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>18.2.2 工程总承包投标报价编制</span><span class="stars">★★★</span><span class="yr">2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>一般规定</th><td>自主确定工程费用和工程总承包其他费用的投标报价，<span class="r">投标报价不得低于成本</span></td></tr>
+          <tr><th>勘察费和设计费</th><td>①<span class="b">可研批准或方案设计后发包</span>：<span class="b">发包人</span>负责可行性研究勘察和初步勘察；<span class="b">承包人</span>负责详细勘察和施工勘察，以及初步设计和施工图设计、专项设计工作，按规定取得相关部门的批准；②<span class="b">初步设计后发包</span>：<span class="b">发包人</span>负责详细勘察；<span class="b">承包人</span>负责施工勘察及施工图设计、专项设计工作，按规定取得相关部门的批准，并符合专用合同条件的约定</td></tr>
+          <tr><th>项目清单</th><td>初步设计后发包时，发包人提供的工程费用项目清单<span class="b">应仅作为投标报价的参考</span>，投标人应依据发包人要求和初步设计文件、详细勘察文件：①项目清单内容<span class="b">可增加或减少</span>；②对项目应进行<span class="b">细化</span>，原项目下填写投标人认为需要的施工项目和工程数量及单价</td></tr>
+          <tr><th>预备费</th><td>①采用<span class="b">可调总价合同</span>的：预备费应按招标文件中列出的金额填写，<span class="r">不得变动，并应计入投标总价中</span>；②采用<span class="b">固定总价合同</span>的：预备费由<span class="b">投标人自主报价，合同价款不予调整</span></td></tr>
+        </table>
+        <div class="trap">⚠ 投标报价中的预备费：可调总价→按招标文件列出金额照抄、不得变动；固定总价→投标人自主报价。与18.1.2的预备费归属配套记忆。</div>
+        <div class="trap">⚠ 勘察分工口诀：发包越早，发包人管得越少——可研/方案后发包，发包人只管"可研勘察+初步勘察"；初步设计后发包，发包人管到"详细勘察"。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 18.3 ═══════════ -->
+<details class="sec">
+  <summary>18.3 工程总承包合同价款约定<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>18.3.1 合同价款约定的基本事项</span><span class="stars">★★★</span><span class="yr">2026修订</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>1. 合同价款约定的基本事项（9项）</b></p>
+        <ul>
+          <li>① 工程费用和工程总承包其他费的总额、结算与支付方式</li>
+          <li>② 预付款的支付比例或金额、支付时间及抵扣方式</li>
+          <li>③ 期中结算与支付的里程碑节点、进度款的支付比例</li>
+          <li>④ 合同价款的调整因素、方法、程序及支付时间</li>
+          <li>⑤ 竣工结算编制与核对、价款支付及时间</li>
+          <li>⑥ 提前竣工的奖励及误期赔偿的计算与支付</li>
+          <li>⑦ 质量保证金的比例或数额、采用方式及缺陷责任期</li>
+          <li>⑧ 违约责任以及争议解决方法</li>
+          <li>⑨ 与合同履行有关的其他事项</li>
+        </ul>
+        <p><b>2.《标准设计施工总承包招标文件》解释合同文件的优先顺序</b></p>
+        <div class="formula">合同协议书 → 中标通知书 → 投标函及投标函附录 → 专用合同条款 → 通用合同条款 → <span class="r">发包人要求</span> → <span class="r">承包人建议书</span> → <span class="r">价格清单</span> → 双方约定的其他合同文件</div>
+        <div class="trap">⚠ 与第17章施工合同顺序对比：总承包合同后三位是"发包人要求→承包人建议书→价格清单"（发包人要求优先于承包人建议书）；施工合同则是"技术标准和要求→图纸→已标价工程量清单"。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>18.3.2 合同价格形式及计价风险</span><span class="stars">★★★</span><span class="yr">2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>1. 工程总承包合同价格形式</b></p>
+        <ul>
+          <li>除工程特别复杂或抢险救灾工程宜采用成本加酬金合同外，<span class="b">工程总承包最适宜采用的合同方式应为</span><span class="r">总价合同</span></li>
+          <li>在总价合同中，<span class="r">除工程变更外，工程量不予调整</span></li>
+        </ul>
+        <p><b>2. 发包人承担造成合同工期和价格变化的情形</b></p>
+        <ul>
+          <li>国家法律发生变化</li>
+          <li>专用合同条款中约定的人工、主要材料等市场价格变化<span class="b">超过合同约定幅度</span></li>
+          <li>可研批准或方案设计后发包：<span class="b">发包人要求和方案设计</span>发生变更</li>
+          <li>初步设计后发包：<span class="b">发包人要求和初步设计</span>发生变更</li>
+          <li>不可预见的地质条件、地下掩埋物等变化</li>
+          <li>不可抗力</li>
+        </ul>
+        <p><b>3. 工程总承包合同的几类计价风险</b></p>
+        <table>
+          <tr><th colspan="2">发包人要求错误</th></tr>
+          <tr><th>EPC模式</th><td>（1）发包人做相应修改的，按合同约定进行调整；如确有错误，<span class="b">发包人坚持不改的，发包人应承担由此导致承包人增加的费用和（或）延误的工期，以及合理的利润</span>。（2）承包人未发现发包人要求中存在错误和（或）未通知发包人提交说明文件的，除专用合同条件另有约定外，<span class="r">承包人自行承担</span>由此导致的费用增加和（或）工期延误。（3）无论发包人要求与否，发包人要求中的下列错误导致承包人增加费用和（或）延误工期，由<span class="b">发包人承担</span>并向承包人支付合理利润：①发包人要求中或合同中约定由<span class="b">发包人负责的或不可变的数据和资料</span>；②对工程或其他任何部分的<span class="b">预期目的的说明</span>；③<span class="b">竣工工程的试验和性能的标准</span>；④除合同另有约定外，<span class="b">承包人不能核实的数据和资料</span></td></tr>
+          <tr><th>DB模式</th><td>承包人应<span class="r">复核发包人要求</span>，发现错误应<span class="b">书面通知发包人</span>；发包人要求中的错误导致承包人增加费用和（或）工期延误的，发包人应承担由此增加的费用和（或）延误的工期以及合理的利润</td></tr>
+          <tr><th colspan="2">发包人提供的数据错误</th></tr>
+          <tr><th>EPC模式</th><td>发包人除按合同约定或"发包人要求错误"的规定承担责任外，<span class="r">不对现场数据和参考数据的准确性、充分性和完整性承担责任</span></td></tr>
+          <tr><th>DB模式</th><td>承包人应及时将发现的参考数据中的错误通知发包人；如承包人因错误而遭受延误和（或）费用增加，承包人<span class="b">有权获得工期的延长和（或）额外费用的增加及合理的利润</span></td></tr>
+          <tr><th>设计优化和深化</th><td>承包人在合同约定承包范围内实施设计时，应在满足发包人要求的前提下进行<span class="b">优化设计</span>并选取最优设计方案；在满足设计文件技术标准的前提下进行<span class="b">深化设计</span>，实现合同目标，<span class="r">优化设计和深化设计导致的盈亏均由承包人享有或承担</span></td></tr>
+          <tr><th>承包人文件错误</th><td><span class="b">除发包人要求中的错误导致承包人文件出错外</span>，当承包人文件中存在错误、遗漏、含糊、不一致、不适当或其他缺陷时，<span class="r">即使发包人作出了同意或批准，承包人仍应</span>对前述问题带来的缺陷和工程问题进行改正，并应承担相应费用和工期延误</td></tr>
+        </table>
+        <div class="trap">⚠ EPC vs DB：EPC下发包人"不对现场数据和参考数据的准确性、充分性、完整性负责"（承包人风险大）；DB下承包人负复核义务，但发包人要求错误由发包人担费用+工期+利润。</div>
+        <details class="ex"><summary>【2025年真题】EPC模式下，因发包人要求的竣工工程性能标准存在错误导致承包人费用增加和工期延误，责任承担说法正确的是（ ）</summary><div>答案 A：发包人承担承包人由此增加的费用和延误的工期，并向承包人支付合理的利润。竣工工程的试验和性能的标准属于"无论承包人是否发现均由发包人担责"的四类错误之一。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>18.3.3 合同价款支付分解表</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>1. 里程碑节点的确定</b></p>
+        <ul>
+          <li>承包人应在<span class="b">合同生效后的</span><span class="r">14天内</span>，编制工程总进度计划和工程项目管理及实施方案并报送发包人；发包人如需审批，应在<span class="b">收到计划和方案的</span><span class="r">14天内</span>予以批准或提出修改建议</li>
+          <li>采用工程量清单及其单价计算的单价项目，应列入工程总进度计划，<span class="b">明确里程碑节点</span></li>
+        </ul>
+        <p><b>2. 支付分解表的审批</b></p>
+        <ul>
+          <li>承包人应在收到经发包人批复的工程总进度计划后的<span class="r">7天内</span>，将支付分解表以及支持性资料报<span class="b">发包人</span>审批；发包人应在收到后<span class="r">7天内</span>予以批复或提出修改意见；经发包人批准的支付分解表<span class="b">应具有合同约束力</span></li>
+        </ul>
+        <div class="trap">⚠ 时限数字串：进度计划报送14天、审批14天；支付分解表报审7天、批复7天。"计划14、分解7"，单选常考互换。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 18.4 ═══════════ -->
+<details class="sec">
+  <summary>18.4 工程总承包合同价款调整与索赔<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>18.4.1 工程变更引起的合同价款调整</span><span class="stars">★★★</span><span class="yr">2026修订</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>1. 发包人变更指示和承包人合理化建议</b></p>
+        <table>
+          <tr><th>发包人变更指示</th><td>经发包人同意，<span class="b">监理人可按变更程序向承包人作出有关发包人要求变化的变更指示，承包人应遵照执行；没有监理人的变更指示，承包人不得擅自变更</span>。<br>（1）因发包人变更发包人要求或初步设计文件，导致承包人施工图设计修改并造成成本、工期增加的，应按合同约定调整合同价款、工期，并应由<span class="b">承包人提出新的价格、工期报发包人确认后进行调整</span>；<br>（2）因发包人提出工程变更引起承包人施工方案改变并导致措施项目发生变化时，<span class="b">承包人应事先将拟实施的方案提交发包人确认</span>，并详细说明与原方案措施项目相比的变化情况；拟实施方案经发承包双方确认后执行，按规范确定措施项目费的调整；<span class="r">若承包人未事先将拟实施的方案提交发包人确认，应视为工程变更不引起措施项目费的调整</span>；<br>（3）当发包人提出的工程变更因非承包人原因删减了合同中某项原定工作或工程，致使承包人发生的费用或（和）得到的收益不能被包括在其他已支付或应支付的项目中，也未被包含在任何替代的工作或工程中时，承包人<span class="b">有权提出并应得到合理的费用及利润补偿</span></td></tr>
+          <tr><th>承包人合理化建议</th><td>合理化建议应包括<span class="b">建议的内容、理由、实施方案及预期效益</span>等；承包人需要对发包人要求作出修改的，应以<span class="b">书面形式</span>向发包人提出合理化建议；经发包人认为可以缩短工期、提高工程的经济效益或其他利益并指示变更的，发包人应对合理化建议形成的利益<span class="r">双方分享</span>，并应调整合同价款和（或）工期</td></tr>
+        </table>
+        <p><b>2. 变更估价的原则</b></p>
+        <ul>
+          <li>合同中<span class="r">未包含价格清单</span>：合同价格应按所执行的变更工程的<span class="r">成本加利润</span>进行调整</li>
+          <li>合同中<span class="r">包含价格清单</span>：①清单中<span class="r">有适用于</span>变更工程项目的，采用<span class="b">该项目的费率和价格</span>；②<span class="r">没有适用但有类似于</span>变更工程项目的，可在<span class="b">合理范围内参照类似项目的费率或价格</span>；③<span class="r">没有适用也没有类似</span>的，应按<span class="r">成本加利润</span>原则调整适用新的费率或价格</li>
+        </ul>
+        <div class="trap">⚠ 变更估价三步"有适用→类似→成本加利润"与第17章清单变更估价逻辑同源，但此处第三步直接"成本加利润"，没有"提交发包人确定单价"的提法差别，注意题干问的是总承包还是施工承包。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>18.4.2 物价波动引起的合同价款调整</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>投标函附录约定了<span class="b">价格指数和权重</span>的，根据投标函附录中的价格指数和权重表约定的数据，采用<span class="r">价格指数调差法</span>计算差额并调整合同价格</li>
+          <li><span class="r">除法律规定或专用合同条款另有约定外，合同价格不因市场价格波动进行调整</span></li>
+        </ul>
+        <div class="trap">⚠ 与施工承包相反的默认规则：总承包总价合同默认"不因物价波动调价"，约定了指数权重才调；施工承包合同物价波动调差是常规条款。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>18.4.3 索赔</span><span class="stars">★★★</span><span class="yr">2026修改</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>1. 工程总承包项目索赔</b></p>
+        <table>
+          <tr><th>情形</th><th>典型事由</th><th>可索赔内容</th></tr>
+          <tr><td>发包人自身原因</td><td><span class="r">发包人要求错误、发包人对竣工试验的干扰</span></td><td><span class="b">工期、费用、利润</span></td></tr>
+          <tr><td>发包人负责的其他原因</td><td><span class="b">审批延迟</span></td><td><span class="b">工期和费用，不能得到利润</span></td></tr>
+          <tr><td>不可抗力</td><td>个别客观原因</td><td>能得到<span class="r">工期的延长</span>，<span class="r">不能得到费用的补偿</span></td></tr>
+          <tr><td>发包人要求模糊</td><td><span class="r">施工中操作要求、采购操作要求不明确</span></td><td><span class="b">增加的费用</span></td></tr>
+          <tr><td>双方都可以索赔</td><td><span class="r">延长缺陷责任期</span></td><td><span class="b">增加的费用</span></td></tr>
+          <tr><td colspan="2">发包人增减合同中工作 / 发包人提供设计文件深度不够、设计不当</td><td>工期、费用、利润</td></tr>
+        </table>
+        <p><b>2. 工程总承包项目索赔的变化</b></p>
+        <ul>
+          <li>《标准设计施工总承包招标文件》明确规定：监理人在<span class="r">42天</span>内不予答复的，<span class="b">视为其认可索赔</span></li>
+          <li>《建设项目工程总承包合同（示范文本）》GF—2020—0216 将<span class="r">延长缺陷责任期</span>作为承包人可索赔的事项之一；<span class="b">发承包双方都可以索赔</span></li>
+        </ul>
+        <div class="trap">⚠ 索赔三件套辨析：发包人自身原因→工期+费用+利润全给；审批延迟→只给工期+费用（无利润）；不可抗力→只给工期（无费用无利润）。给什么不给什么是单选高频坑。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 18.5 ═══════════ -->
+<details class="sec">
+  <summary>18.5 工程总承包项目结算与支付<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>18.5.1 进度款结算与支付</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>1. 进度款结算和支付方式</b>：<span class="b">按月计量付款</span>、<span class="b">里程碑付款</span></p>
+        <p><b>2. 期中结算的要求</b></p>
+        <ul>
+          <li>根据完成进度计划的<span class="b">里程碑节点</span>办理期中价款结算</li>
+          <li>按照<span class="b">合同价款支付分解表</span>支付进度款</li>
+          <li>进度款支付比例<span class="r">不应低于80%</span></li>
+          <li>里程碑相邻节点之间超过一个月的，按月以约定比例<span class="b">预支付人工费</span></li>
+          <li>采用工程量清单计价的项目，按合同约定对完成的里程碑节点应予计算的工程量及单价进行结算、支付进度款，<span class="b">已预支付人工费的应予以扣减</span></li>
+          <li><b>支付申请的提交</b>：承包人应在实际完成进度计划的里程碑节点到期后的<span class="r">7天内</span>向发包人提出进度款支付申请，支付申请的内容应符合合同的约定</li>
+        </ul>
+        <div class="trap">⚠ 数字组合：进度款支付比例≥80%；里程碑到期后7天内提支付申请；相邻节点超1个月才按月预支人工费。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>18.5.2 竣工结算与支付</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>1. 竣工结算的编制方法</b></p>
+        <div class="formula">可调总价合同竣工结算价 = 签约合同价 <span class="r">− 预备费</span> ± 合同约定调整价款和索赔的金额</div>
+        <div class="formula">固定总价合同竣工结算价 = 签约合同价 ± 索赔金额</div>
+        <div class="formula">未支付的价款 = 竣工结算价格 − 已支付的合同价款</div>
+        <div class="trap">⚠ 只有可调总价合同结算时才"减预备费"（预备费归发包人掌握）；固定总价合同预备费是承包人的风险包干费，不减、也不调，只加减索赔金额。</div>
+        <p><b>2. 竣工结算的审核</b></p>
+        <table>
+          <tr><th>资料完备性审核</th><td>审查工程总承包合同及相关技术资料、报价资料、项目设计方案及概预算资料；对项目建设标准是否恰当、建筑材料和设备的选择是否合适、设计方案能否满足使用需要等进行客观综合的评价</td></tr>
+          <tr><th>差异性审核</th><td>总价合同：<span class="r">可仅对符合合同约定的可调整部分进行审核</span>，对按合同约定实施完成的总价部分<span class="b">不再另行开包审核</span></td></tr>
+          <tr><th>变更审核</th><td>重点关注工程总承包项目的变更事项；<span class="b">审查变更事项发生的真实性、各方对变更事项的签认意见、审批手续是否完备以及变更的内容对合同价格的影响</span></td></tr>
+          <tr><th>合同管理审核</th><td>对工程总承包合同内容的<span class="b">严谨性、完整性及规范性</span>的审查；<span class="b">对索赔条款进行审查</span></td></tr>
+          <tr><th>工程签证的审核</th><td>重点审核签证的<span class="b">必要性、时效性、真实性、完整性、合理性</span></td></tr>
+          <tr><th>材料与设备采购审核</th><td>重点审核建设项目的<span class="r">规模、标准及所用的主要材料、设备等是否符合合同条款的要求</span></td></tr>
+        </table>
+        <div class="trap">⚠ 差异性审核是总承包特色："总价部分不开包"，只审可调整部分——与施工承包全面审核工程量、单价不同。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<footer>依据《建设工程经济四色笔记》第162~171页整理</footer>
+
+<script>
+function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>

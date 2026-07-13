@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第2章 经济效果评价 · 知识树</title>
+<style>
+  :root{ --accent:#e05d2d; --accent-bg:#fdf0ea; --ink:#2b2b2b; --sub:#777; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.6;}
+  a.back{display:inline-block;font-size:.8rem;color:var(--sub);text-decoration:none;margin-bottom:8px;}
+  h1{font-size:1.15rem;margin:2px 0 4px;color:var(--accent);}
+  .meta{color:var(--sub);font-size:.78rem;margin-bottom:10px;}
+  .legend{background:#fff;border-radius:10px;padding:8px 12px;font-size:.75rem;color:#555;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;}
+  .score{background:#fff;border-radius:10px;padding:10px 12px;font-size:.8rem;margin-bottom:14px;}
+  .score b{font-size:.85rem;}
+  .score table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .score td,.score th{border:1px solid #eee;padding:3px 6px;font-size:.75rem;text-align:center;}
+  .score th{background:#fafafa;font-weight:600;}
+  details.sec{background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:4px solid var(--accent);}
+  details.sec>summary{list-style:none;cursor:pointer;padding:11px 13px;font-weight:700;font-size:.95rem;display:flex;gap:8px;align-items:center;}
+  details.sec>summary::-webkit-details-marker{display:none;}
+  .caret{margin-left:auto;color:#bbb;font-size:.75rem;transition:transform .2s;flex:none;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .sec .inner{padding:0 12px 12px;}
+  details.item{border:1px solid #eee;border-radius:9px;margin-bottom:8px;background:#fff;}
+  details.item>summary{list-style:none;cursor:pointer;padding:9px 11px;font-size:.88rem;font-weight:600;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+  details.item>summary::-webkit-details-marker{display:none;}
+  .stars{color:#e8a20c;font-size:.8rem;letter-spacing:1px;flex:none;}
+  .yr{background:var(--accent-bg);color:var(--accent);font-size:.68rem;padding:1px 6px;border-radius:4px;flex:none;}
+  .item .kp{padding:2px 12px 10px;border-top:1px dashed #f0f0f0;font-size:.85rem;}
+  .kp ul{margin:6px 0;padding-left:1.25em;}
+  .kp li{margin:4px 0;}
+  .kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem;}
+  .kp th,.kp td{border:1px solid #e8e8e8;padding:5px 7px;text-align:left;vertical-align:top;}
+  .kp th{background:#fafafa;font-weight:600;white-space:nowrap;}
+  .r{color:#c62828;font-weight:600;}
+  .b{color:#1d64c0;}
+  .formula{background:#faf7f2;border-radius:6px;padding:6px 10px;margin:6px 0;font-family:Georgia,serif;font-size:.9rem;overflow-x:auto;}
+  .trap{background:#fff8e6;border-left:3px solid #e8a20c;border-radius:0 8px 8px 0;padding:7px 10px;margin:8px 0;font-size:.8rem;color:#7a5c00;}
+  details.ex{background:#f4f8fd;border-radius:8px;margin:8px 0;font-size:.82rem;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:8px 10px;color:#2563ab;}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>div{padding:0 10px 9px;color:#444;}
+  .btns{display:flex;gap:8px;justify-content:center;margin:0 0 12px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
+  footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
+</style>
+</head>
+<body>
+
+<a class="back" href="00-全书骨架.html">← 返回全书骨架</a>
+<h1>第2章 经济效果评价</h1>
+<div class="meta">第1篇 工程经济 · 共3节</div>
+
+<div class="legend">
+  <span><span class="stars">★</span>数=重要度</span>
+  <span class="r">红=重点/易考/高频</span>
+  <span class="b">蓝=次重点</span>
+  <span>⚠=易混陷阱</span>
+</div>
+
+<div class="score">
+  <b>本章分值：2024年5分 · 2025年6分 · 2026预测7分</b>
+  <table>
+    <tr><th>知识点</th><th>题型</th><th>2024</th><th>2025</th><th>2026预测</th></tr>
+    <tr><td rowspan="2">2.1 经济效果评价内容</td><td>单选</td><td>1</td><td>1</td><td>—</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>2</td></tr>
+    <tr><td rowspan="2">2.2 经济效果评价指标体系</td><td>单选</td><td>1</td><td>2</td><td>2</td></tr>
+    <tr><td>多选</td><td>2</td><td>2</td><td>2</td></tr>
+    <tr><td rowspan="2">2.3 多方案比选</td><td>单选</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td colspan="2"><b>合计</b></td><td><b>5</b></td><td><b>6</b></td><td><b>7</b></td></tr>
+  </table>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ═══════════ 2.1 ═══════════ -->
+<details class="sec" open>
+  <summary>2.1 经济效果评价内容<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>2.1.1 经济效果评价分类和内容</span><span class="stars">★★★</span><span class="yr">2024单选·2022多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>财务评价<br>（财务分析）</th><td>经营性项目：分析项目<span class="r">盈利能力、偿债能力和财务生存能力（财务可持续能力）</span>，判断财务可接受性<br>非经营性项目：主要分析<span class="r">财务生存能力</span></td></tr>
+          <tr><th>经济分析</th><td>分析项目的经济效率、效果和对社会的影响</td></tr>
+        </table>
+        <div class="trap">⚠ 口诀"经营性三能力，非经营看生存"——非经营性项目只分析财务生存能力，选项若给非经营性项目配"盈利能力"即为坑。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>2.1.2 经济效果评价方法分类</span><span class="stars">★★★</span><span class="yr">2022·2024单选 | 2026修订</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>按评价结果的<br>肯定程度</th><td><b>确定性评价</b>：财务内部收益率分析、财务净现值分析、投资回收期分析、投资收益率分析、资产负债率分析——<span class="r">同一个方案必须同时进行</span><br><b>不确定性评价</b>：<span class="b">盈亏平衡分析、敏感性分析</span></td></tr>
+          <tr><th>按评价方法<br>的性质</th><td>定量分析——可度量因素；定性分析——无法精确度量</td></tr>
+          <tr><th>按是否考虑资金<br>时间价值</th><td>静态分析——不考虑资金时间价值因素；动态分析——考虑资金时间价值因素</td></tr>
+          <tr><th>按是否考虑<br>融资影响</th><td><b>融资前分析</b>：<span class="b">动态分析为主，静态分析为辅</span>；排除了融资方案变化的影响，从方案本身的总获利能力的角度，考察方案本身设计的合理性<br><b>融资后分析</b>：利用资金时间价值的原理进行折现，计算方案的财务内部收益率和财务净现值等指标</td></tr>
+        </table>
+        <div class="trap">⚠ 确定性评价5项（内部收益率/净现值/回收期/收益率/资产负债率）须对同一方案同时进行；盈亏平衡与敏感性分析属于"不确定性评价"，勿混入确定性。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>2.1.3 经济效果评价采用的计算期和价格体系</span><span class="stars">★★★</span><span class="yr">2016多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th rowspan="3">计算期</th><td><span class="r">建设期</span>：从资金正式投入开始到建成投产</td></tr>
+          <tr><td><span class="b">运营期</span>：投入生产，但未达到设计生产能力</td></tr>
+          <tr><td><span class="r">达产期</span>：达到设计预期水平</td></tr>
+          <tr><th>价格体系</th><td>以市场价格体系为基础的预测价格</td></tr>
+        </table>
+        <div class="trap">⚠ 运营期≠达产期：投入生产但"未达到设计生产能力"仍属运营期，达到设计预期水平才是达产期。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 2.2 ═══════════ -->
+<details class="sec">
+  <summary>2.2 经济效果评价指标体系<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>2.2.1 方案的比选（常用经济效果评价指标）</span><span class="stars">★★★★★</span><span class="yr">2020·2021单选 | 2017·2018·2023·2024·2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th></th><th>静态评价指标</th><th>动态评价指标</th></tr>
+          <tr><th>偿债能力评价指标</th><td>利息备付率、偿债备付率、资产负债率、流动比率、速动比率、权益乘数</td><td>—</td></tr>
+          <tr><th>时间型指标</th><td>静态投资回收期</td><td>动态投资回收期</td></tr>
+          <tr><th>盈利能力评价指标</th><td>投资收益率</td><td>价值型指标：<span class="r">财务净现值、费用现值、净年值、费用年值、财务内部收益率、净现值率、效益费用比</span></td></tr>
+        </table>
+        <ul>
+          <li>口诀（偿债能力指标）：<span class="r">负债偿还、两备付、两比率、一乘数</span></li>
+          <li>盈利能力评价指标 = 投资收益率 + 全部价值型指标（时间型指标不属于价值型）</li>
+        </ul>
+        <div class="trap">⚠ 多选高频坑：①偿债能力指标全部是静态指标；②"动态投资回收期"虽是动态指标，但属时间型而非价值型；③财务内部收益率属价值型（盈利能力）指标。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>2.2.2 投资回收期分析</span><span class="stars">★★★★</span><span class="yr">2017·2018·2019·2023单选 | 2022多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>若方案只有初始投资 I（发生在第1年初），且计算期内各年净现金流量 A 保持不变：
+            <div class="formula">P<sub>t</sub> = I / A</div></li>
+          <li>一般公式：
+            <div class="formula">P<sub>t</sub> = (累计净现金流量首次出现正值或零的年份数 − 1) + 上一年累计净现金流量的绝对值 / 出现正值年份的净现金流量</div></li>
+        </ul>
+        <table>
+          <tr><th>判别准则</th><td>（1）静态投资回收期 P<sub>t</sub> <span class="b">≤ 基准投资回收期 P<sub>c</sub>，则可以考虑接受</span><br>（2）P<sub>t</sub> &gt; <span class="b">基准投资回收期 P<sub>c</sub></span>，则方案是不可行的</td></tr>
+        </table>
+        <div class="trap">⚠ 公式分子是"上一年累计净现金流量的绝对值"，分母是"出现正值当年的（当年）净现金流量"——分子分母年份错位是常设选项坑。</div>
+        <details class="ex"><summary>【2023真题】现金流量表：流出第1~7年为560/270/80/150/220/230/250，流入第4~7年为130/260/450/480/550（第3年末流入130），求静态投资回收期</summary><div>答案 C：6.63年。逐年累计净现金流量在第7年首次转正，P<sub>t</sub> = (7−1) + 上年累计亏损绝对值/第7年净现金流量 ≈ 6.63。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>2.2.3 财务净现值分析</span><span class="stars">★★★★★</span><span class="yr">2018~2021·2023·2024单选 | 2022多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 财务基准收益率的确定</b>
+        <table>
+          <tr><th>本质</th><td>是投资资金应当获得的<span class="r">最低</span>盈利率水平</td></tr>
+          <tr><th>考虑因素</th><td>一定时期内国家和行业发展战略、发展规划、产业政策、资源供给、市场需求、自身的发展战略、经营策略、方案的特点与风险，<span class="r">资金成本、机会成本、投资风险和通货膨胀率</span></td></tr>
+        </table>
+        <b>2. 财务净现值（FNPV）分析</b>
+        <table>
+          <tr><th>概念</th><td>直接用货币单位表示的<span class="b">绝对指标</span>，是反映方案在计算期内的盈利能力的<span class="b">动态指标</span></td></tr>
+          <tr><th>计算</th><td><div class="formula">FNPV = <b>Σ</b><sub>t=0</sub><sup>n</sup> (CI − CO)<sub>t</sub> (1 + i<sub>c</sub>)<sup>−t</sup></div>(CI−CO)<sub>t</sub>——第 t 年净现金流量（注意"+""−"号）；i<sub>c</sub>——设定的折现率（一般采用财务基准收益率）；n——方案计算期</td></tr>
+          <tr><th>判别标准</th><td><span class="b">FNPV &gt; 0，方案在财务上可行；FNPV = 0，方案在财务上也是可行的；FNPV &lt; 0，方案在财务上不可行</span></td></tr>
+        </table>
+        <div class="trap">⚠ FNPV = 0 时方案"也是可行的"——不要误判为不可行；FNPV是"绝对指标+动态指标"，两属性常拆开考。</div>
+        <details class="ex"><summary>【2025真题】现金流量（年末）：流出第1~6年 2200/4000/2000/2500/2500/3000，流入第2~6年 1000/4500/3000/5500/5000，折现率8%，求FNPV</summary><div>答案 B：1045.131万元。净现金流量 −2200/−3000/2500/500/3000/2000，按8%逐年折现求和：FNPV = −2200/1.08 − 3000/1.08² + 2500/1.08³ + 500/1.08⁴ + 3000/1.08⁵ + 2000/1.08⁶ = 1045.131万元。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>2.2.4 财务内部收益率分析</span><span class="stars">★★★★★</span><span class="yr">2016·2019·2021·2024·2025单选 | 2018多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 财务内部收益率（FIRR）分析</b>
+        <table>
+          <tr><th>概念</th><td>使方案在计算期内<span class="r">各年净现金流量的现值累计等于零时</span>的折现率：
+            <div class="formula">FNPV(FIRR) = <b>Σ</b><sub>t=0</sub><sup>n</sup> (CI − CO)<sub>t</sub> × 1/(1 + i<sub>r</sub>)<sup>t</sup> = 0</div>
+            <span class="r">随着折现率的逐渐增大，财务净现值由大变小</span></td></tr>
+          <tr><th>判断</th><td>（1）FIRR ≥ 基准收益率 i<sub>c</sub>，方案在经济上可以接受<br>（2）FIRR &lt; 基准收益率 i<sub>c</sub>，方案在经济上应予拒绝</td></tr>
+        </table>
+        <b>2. 财务净现值与财务内部收益率的关系</b>
+        <div class="formula">FIRR ≈ i<sub>1</sub> + FNPV<sub>1</sub> / (FNPV<sub>1</sub> + |FNPV<sub>2</sub>|) × (i<sub>2</sub> − i<sub>1</sub>)</div>
+        <ul>
+          <li>i 增大，净现值减小；i 减小到净现值 = 0 时，i 值就是财务内部收益率</li>
+          <li><span class="r">基准收益率越大，财务净现值越小</span></li>
+        </ul>
+        <div class="trap">⚠ FIRR的取值区间：FNPV由正变负所夹的折现率区间内。如 i=7% 时 FNPV=+150，i=9% 时 FNPV=−80，则 8%附近需再判断：内插值更靠近净现值绝对值小的一端——考题只要求区间时选"正负变号"的两点之间。</div>
+        <details class="ex"><summary>【2025真题】折现率7%时FNPV=150万元，9%时FNPV=−80万元，FIRR取值范围？</summary><div>答案 C：大于8%，小于9%。内插：FIRR ≈ 7% + 150/(150+80) × 2% ≈ 8.3%，落在8%~9%之间。</div></details>
+        <details class="ex"><summary>【2024真题】原方案建设期2年、运营期10年，FIRR=17.67%；追加建设投资使建设期第1年年初现金流出增加40000万元，运营期前4年每年净流入增加10000万元，FIRR可能变为？</summary><div>答案 A：15.00%。按17.67%折现增量现金流：−40000 + 10000/(1.1767)³⁻⁶合计 = −23751.411万元 &lt; 0，说明追加投资后FIRR小于17.67%，只有A符合。</div></details>
+        <b>3. 经济效果评价指标的优劣</b> <span class="yr">2017·2019·2020单选</span>
+        <table>
+          <tr><th>指标</th><th>优点</th><th>缺点</th></tr>
+          <tr><th>静态投资回收期</th><td>（1）<span class="b">计算简单，容易理解</span>（2）反映方案原始投资的补偿速度和方案投资风险大小</td><td>（1）没有全面考虑方案整个计算期内的现金流量，只考虑回收之前的效果，<span class="b">无法准确衡量方案在整个计算期内的经济效果</span>（2）<span class="b">只能作为辅助评价指标</span>，或与其他评价指标结合应用</td></tr>
+          <tr><th>财务净现值</th><td>（1）<span class="r">考虑了资金的时间价值</span>，并全面考虑方案在整个计算期内现金流量的时间分布的状况（2）经济意义明确直观（3）能够直接以货币额表示方案的盈利水平</td><td>（1）<span class="r">必须首先确定一个符合经济现实的折现率或财务基准收益率</span>（2）不能直接反映方案单位投资的收益水平（3）不能反映方案投资回收的速度</td></tr>
+          <tr><th>财务内部收益率</th><td>（1）<span class="r">考虑了资金的时间价值</span>以及在整个计算期内的现金流量（2）大小完全取决于方案投资过程净现金流量系列的情况，<span class="b">不受外部参数影响</span></td><td>（1）<span class="b">计算麻烦</span>（2）<span class="r">值不存在或多解</span></td></tr>
+        </table>
+        <div class="trap">⚠ 优劣对比坑：FNPV需要"先定折现率"，FIRR"不受外部参数影响"——两者正好相反；FIRR的缺点是可能"不存在或多解"。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ═══════════ 2.3 ═══════════ -->
+<details class="sec">
+  <summary>2.3 多方案比选<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>2.3.1 方案之间的关系</span><span class="stars">★★★</span><span class="yr">2026修订</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>独立关系</th><td>各个方案的现金流量是独立的，各方案之间不具有相关性，其中任一方案的采用与否与自身的可行性有关，而与其他方案采用与否没有关系<br>分为<b>无约束条件</b>和<b>有约束条件</b>两种情况：无约束条件情况下，备选方案只需满足绝对效果分析的评判标准即可入选</td></tr>
+          <tr><th>互斥关系</th><td>在各个备选方案中只能选择一个，其余的均必须放弃，不能同时存在；要求备选方案可以相互替代</td></tr>
+          <tr><th>相关关系</th><td>某一方案的采用与否对其他方案的现金流量带来一定的影响，进而影响其他方案的采用或拒绝</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>2.3.2 方案比选方法的类型</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>划分标准</th><th>类型</th></tr>
+          <tr><td>按比选范围不同</td><td>局部比选、整体比选</td></tr>
+          <tr><td>按比选所应用模型工具不同</td><td>定性比选、定量比选</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>2.3.3 方案比选定量分析方法的选择</span><span class="stars">★★★</span><span class="yr">2024·2025单选 | 2026修订</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>独立方案</th><td colspan="2">实质是在"做"与"不做"之间做出选择</td></tr>
+          <tr><th rowspan="2">互斥方案</th><td><b>评价指标直接对比法</b></td><td>
+            要求所选用的指标是<span class="r">价值型</span><br>
+            ① <b>计算期相同</b>：常用财务净现值、净年值、费用现值、费用年值等。FNPV指标评价步骤：先分别计算各方案FNPV，剔除 FNPV&lt;0 的方案（绝对效果检验）；再对所有 FNPV≥0 的方案比较，<span class="r">选择财务净现值最大的方案为最佳方案</span>。判据：<span class="r">财务净现值不小于零且为最大的方案是最优可行方案</span>，可同时满足绝对效果评价和相对效果评价的要求<br>
+            ② <b>计算期不同</b>：处理方法包括<span class="b">年值法、最小公倍数法和研究期法</span>等。年值法：以 <span class="r">AW ≥ 0 且 AW 最大者为最优方案</span>；最小公倍数法（又称方案重复法）：<span class="b">以财务净现值较大的方案为优</span>；研究期法：<span class="b">以财务净现值较大的为优</span></td></tr>
+          <tr><td><b>增量指标分析法</b></td><td>
+            常用增量指标：<span class="r">增量财务净现值、增量投资财务内部收益率、增量静态投资回收期</span>等<br>
+            基本计算步骤：①将方案按照投资额<span class="r">从小到大的顺序排列</span>；②<span class="r">确定基础方案，即满足指标评判准则要求的投资额较小的方案</span>，也称临时最优方案，作为整个方案序列计算的基础；③<span class="b">计算相邻两个方案的增量现金流量的评价指标</span>，若满足评判准则的要求，则投资较大的方案优于投资较小的方案；若不满足，则投资较小的方案优于投资较大的方案，投资较大的方案被淘汰；④以确定的较优方案为基础方案，重复计算步骤；⑤最后确定最优方案优选序列</td></tr>
+          <tr><th>相关方案</th><td colspan="2">在没有资金约束时，只要各方案本身的 FNPV ≥ 0 或 FIRR ≥ i<sub>c</sub>，方案就可行。但在有资金限制时，可采用上述互斥方案比选方法进行比选</td></tr>
+        </table>
+        <div class="trap">⚠ 计算期不同的互斥方案不能直接比FNPV！须用年值法/最小公倍数法/研究期法；年值法判据是 AW≥0 且最大。</div>
+        <div class="trap">⚠ 增量分析法两个高频坑：①按投资额"从小到大"排列（不是从大到小）；②基础方案是满足判据的"投资额较小"的方案。</div>
+        <details class="ex"><summary>【2025真题】甲、乙为计算期不同的互斥方案，均可行；甲的FNPV大于乙、静态投资回收期长于乙、FIRR大于乙、等额年值小于乙。两方案比选说法正确的是？</summary><div>（答案在书第014页，超出本次整理页范围）解析要点：计算期不同的互斥方案应采用年值法比选，等额年值大者为优——乙的等额年值大于甲，故乙方案较优；不能因甲FNPV大而直接选甲。</div></details>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<footer>依据《建设工程经济四色笔记》第007~013页整理</footer>
+
+<script>
+function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>

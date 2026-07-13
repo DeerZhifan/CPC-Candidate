@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第17章 工程计量与支付 · 知识树</title>
+<style>
+  :root{ --accent:#2563ab; --accent-bg:#ecf3fa; --ink:#2b2b2b; --sub:#777; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.6;}
+  a.back{display:inline-block;font-size:.8rem;color:var(--sub);text-decoration:none;margin-bottom:8px;}
+  h1{font-size:1.15rem;margin:2px 0 4px;color:var(--accent);}
+  .meta{color:var(--sub);font-size:.78rem;margin-bottom:10px;}
+  .legend{background:#fff;border-radius:10px;padding:8px 12px;font-size:.75rem;color:#555;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;}
+  .score{background:#fff;border-radius:10px;padding:10px 12px;font-size:.8rem;margin-bottom:14px;}
+  .score b{font-size:.85rem;}
+  .score table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .score td,.score th{border:1px solid #eee;padding:3px 6px;font-size:.75rem;text-align:center;}
+  .score th{background:#fafafa;font-weight:600;}
+  details.sec{background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:4px solid var(--accent);}
+  details.sec>summary{list-style:none;cursor:pointer;padding:11px 13px;font-weight:700;font-size:.95rem;display:flex;gap:8px;align-items:center;}
+  details.sec>summary::-webkit-details-marker{display:none;}
+  .caret{margin-left:auto;color:#bbb;font-size:.75rem;transition:transform .2s;flex:none;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .sec .inner{padding:0 12px 12px;}
+  details.item{border:1px solid #eee;border-radius:9px;margin-bottom:8px;background:#fff;}
+  details.item>summary{list-style:none;cursor:pointer;padding:9px 11px;font-size:.88rem;font-weight:600;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+  details.item>summary::-webkit-details-marker{display:none;}
+  .stars{color:#e8a20c;font-size:.8rem;letter-spacing:1px;flex:none;}
+  .yr{background:var(--accent-bg);color:var(--accent);font-size:.68rem;padding:1px 6px;border-radius:4px;flex:none;}
+  .item .kp{padding:2px 12px 10px;border-top:1px dashed #f0f0f0;font-size:.85rem;}
+  .kp ul{margin:6px 0;padding-left:1.25em;}
+  .kp li{margin:4px 0;}
+  .kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem;}
+  .kp th,.kp td{border:1px solid #e8e8e8;padding:5px 7px;text-align:left;vertical-align:top;}
+  .kp th{background:#fafafa;font-weight:600;white-space:nowrap;}
+  .r{color:#c62828;font-weight:600;}
+  .b{color:#1d64c0;}
+  .formula{background:#faf7f2;border-radius:6px;padding:6px 10px;margin:6px 0;font-family:Georgia,serif;font-size:.9rem;overflow-x:auto;}
+  .trap{background:#fff8e6;border-left:3px solid #e8a20c;border-radius:0 8px 8px 0;padding:7px 10px;margin:8px 0;font-size:.8rem;color:#7a5c00;}
+  details.ex{background:#f4f8fd;border-radius:8px;margin:8px 0;font-size:.82rem;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:8px 10px;color:#2563ab;}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>div{padding:0 10px 9px;color:#444;}
+  .btns{display:flex;gap:8px;justify-content:center;margin:0 0 12px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
+  footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
+</style>
+</head>
+<body>
+
+<a class="back" href="00-全书骨架.html">← 返回全书骨架</a>
+<h1>第17章 工程计量与支付</h1>
+<div class="meta">第3篇 工程计价 · 共7节（全书最长章 · 案例题重镇）</div>
+
+<div class="legend">
+  <span><span class="stars">★</span>数=重要度</span>
+  <span class="r">红=重点/易考/高频</span>
+  <span class="b">蓝=次重点</span>
+  <span>⚠=易混陷阱</span>
+</div>
+
+<div class="score">
+  <b>本章分值：2024年7分 · 2025年8分 · 2026预测9分</b>
+  <table>
+    <tr><th>知识点</th><th>题型</th><th>2024</th><th>2025</th><th>2026预测</th></tr>
+    <tr><td rowspan="2">17.1 工程计量</td><td>单选</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>2</td><td>—</td></tr>
+    <tr><td rowspan="2">17.2 合同价格调整</td><td>单选</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>2</td></tr>
+    <tr><td>17.3 工程变更价款确定</td><td>单选</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td rowspan="2">17.4 工程索赔</td><td>单选</td><td>1</td><td>1</td><td>—</td></tr>
+    <tr><td>多选</td><td>2</td><td>—</td><td>2</td></tr>
+    <tr><td>17.5 合同价款期中支付</td><td>单选</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td>17.6 结算与支付</td><td>单选</td><td>—</td><td>1</td><td>—</td></tr>
+    <tr><td>17.7 合同价款争议的解决</td><td>单选</td><td>—</td><td>—</td><td>1</td></tr>
+    <tr><td colspan="2"><b>合计</b></td><td><b>7</b></td><td><b>8</b></td><td><b>9</b></td></tr>
+  </table>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ══════════ 17.1 ══════════ -->
+<details class="sec" open>
+  <summary>17.1 工程计量<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>17.1.1 工程计量的一般规定</span><span class="stars">★★★</span><span class="yr">2018·2024单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>合同工程需要计量的，应以承包人<span class="r">按合同要求已完成且应予计量的工程</span>进行计量</li>
+          <li>工程数量应按发承包双方约定的相关工程国家及行业工程量计算标准及补充的计算规则计算</li>
+          <li>发承包双方应在合同约定的<span class="b">时间节点、工程形象目标节点或工程进度节点</span>进行工程计量</li>
+        </ul>
+        <table>
+          <tr><th>不予计量或工作（全红）</th><td>
+            ① <span class="r">承包人为完成永久工程所实施的临时工程</span>（合同约定应予计量的临时工程除外）；<br>
+            ② <span class="r">承包人原因造成超出合同约定工程范围的工程</span>；<br>
+            ③ <span class="r">承包人所完成、但不符合施工图纸及合同规范要求的工程</span>；<br>
+            ④ <span class="r">承包人拆除及迁离不符合施工图纸及合同规范要求的工程或工作</span>；<br>
+            ⑤ <span class="r">承包人责任造成的其他返工</span>
+          </td></tr>
+          <tr><th>计量的确认和复核</th><td>
+            ① 承包人收到发包人核对结果后，应在约定时间内以书面形式确认或提交复核意见及详细计算资料；<br>
+            ② <span class="b">发包人未在约定时间内提供复查结果的，可视为承包人提交的复核结果意见已获得发包人认可</span>；<br>
+            ③ 承包人未在约定时间内对发包人核对的结果予以书面确认或提交复核意见的，可视为发包人核对的计量成果已获得承包人认可
+          </td></tr>
+        </table>
+        <div class="trap">⚠ 口诀「<b>临时超规不合格，承包人返工不算量</b>」——五类不予计量情形常以多选设坑；注意"合同约定应予计量的临时工程"是例外。</div>
+        <details class="ex"><summary>【经典例题】土方开挖清单量8000m³，施工中承包人放坡增1000m³、工作面增1600m³、操作不慎塌方增500m³，应予结算的开挖量为（ ）m³</summary><div>答案 A：8000。放坡、工作面属承包人施工方案（超出合同约定范围），塌方属承包人责任，均不予计量。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.1.2 分部分项工程计量</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>单价合同</th><td>① 单价计价项目依据发包人提供的<span class="b">工程实际使用施工图纸</span>及颁发和确认的变更指令，按约定的计算标准<b>重新计量</b>，工程变更按规定计算工程量并相应调整合同价格；<span class="b">招标清单出现缺陷引起的工程量增减应按规定作相应调整</span>，但清单项目中以项计价的清单项目不作调整；<br>② 以综合单价形式计价、在分部分项清单中所列属于措施项目的<span class="b">模板工程</span>及合同约定应予计量的其他措施项目，可按上款规定执行</td></tr>
+          <tr><th>总价合同</th><td>① 除清单中说明为<span class="b">暂定数量单价计价</span>的项目和工程变更外，分部分项清单<span class="r">不应重新计量</span>，存在工程量清单缺陷的，合同价格<span class="r">不应调整</span>；<br>② 约定为暂定数量的单价计价清单项目，应按单价合同的规定计量</td></tr>
+        </table>
+        <div class="trap">⚠ 单价合同=按实重新计量；总价合同=原则上不重新计量、清单缺陷也不调价（暂定数量项目除外）——两列内容常互换出题。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.1.3 措施项目计量</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>除合同另有约定或工程变更规定应予计量的措施项目外，<span class="r">已标价工程量清单的措施项目均不予计量调整</span>，安全生产措施费用应按合同约定执行</li>
+          <li>专业工程暂估价<span class="b">已包含其措施项目费用</span>，不另外计算</li>
+          <li>暂列金额的措施项目费已包含在已标价清单的措施项目中，<span class="b">不另外计量调整</span>（用于变更、新增、索赔的暂列金额按规定计量的除外）</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.1.4 工程变更计量</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>单价合同</th><td>按变更指令及双方确认的<span class="b">实际施工图纸重新计量</span>所有清单项目及其工程量，与合同图纸清单比较，计量差异的增减变更项目及其变更工程量</td></tr>
+          <tr><th>总价合同</th><td>按变更指令和发包人颁发或确认的实际施工图纸<span class="b">与合同图纸相比较</span>，差异部分的分部分项清单即为工程变更项目，按约定计算规则计算变更项目及其工程量</td></tr>
+          <tr><th>变更引致的措施项目变化</th><td>应按<span class="b">发包人批准的承包人专为工程变更拟定的实施方案或实际发生内容</span>，计算需增加投入的施工管理人员、增加搭设的临时设施及其他增加的施工措施工程（工作）量；变更引致合同工期变化的，应依据发包人批准的工期延长或缩短的时间计算调整，作为计算变更工程价格的依据</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.1.5 计日工计量</span><span class="stars">★★★</span><span class="yr">2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>采用计日工计量计价的情形：</b>
+        <ul>
+          <li>不能依据施工图纸、工程变更及合同约定计量规则计量的<span class="b">增加工程或替代工程</span></li>
+          <li>按发包人要求增加的<span class="b">短工期、零星、有限工程范围、工程数量少</span>的工程项目</li>
+          <li>极端变化的工作条件导致的非正常操作</li>
+          <li>进行紧急工程引致其他工程损坏的修复</li>
+          <li>按发包人要求打开已隐蔽的工程，但相关工程通过检测证明符合合同要求的</li>
+          <li>修复其他承包人完成工作后周边受影响工程的费用</li>
+          <li>因发包人暂缓（停）工程引致工程延期而必须更换的材料设备的费用</li>
+          <li>合同外发包人特殊要求的清扫和清场工作、发包人要求的测试运行</li>
+          <li>非承包人原因导致的修复和恢复被损坏的<span class="b">微小工程</span>（大规模的损坏恢复应按工程变更规定计量计价）</li>
+        </ul>
+        <b>报送给发包人核实的报表和有关凭证（蓝）：</b>
+        <ul>
+          <li><span class="b">工作名称、内容和数量</span>；<span class="b">投入该工作所有人员的姓名、工种、级别和耗用工时</span>；<span class="b">材料名称、类别、规格、品牌和数量</span>；<span class="b">施工机具型号、台数和耗用台班</span>；<span class="b">发包人要求提交的其他资料和凭证</span></li>
+        </ul>
+        <ul><li>结果核实：发包人未在约定时限内提供核实结果或复核结果的，应视为承包人提交的报表或计日工签证报告中的内容已获得发包人认可</li></ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.1.6 返工工程计量</span><span class="stars">★★★</span><span class="yr">2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>工程变更或发包人责任事件引致承包人已完成的部分或全部工程的返工，或引致承包人已采购及已加工的材料报损或报废的，承包人应在合同约定时间内<span class="b">以书面形式向发包人提出返工确认要求</span>，并提供相关证明资料</li>
+          <li><span class="b">承包人未在约定时间内提出相关的返工确认要求的，应视为相关工程变更指令或发包人责任事件未造成工程返工或已采购及已加工材料的报损或报废</span>，返工工程量<span class="r">不应计量</span>，相关的费用不应补偿</li>
+          <li>发包人应按约定时间参与返工工程的确认；如发包人未按约定参与且未提出异议的，承包人可与<span class="b">监理人共同完成</span>相关的确认，其确认结果应视为已获得发包人认可</li>
+          <li>属于工程变更或发包人责任原因的，返工确认单内的返工工程项目及其工程量、报损或报废的已采购及已加工材料及其数量，为相关返工工程的计量工程量；<span class="r">属于承包人责任原因的，返工相关工程量不应计量</span></li>
+        </ul>
+        <details class="ex"><summary>【2025年真题】下列承包人完成的返工工程中，监理人应予计量的是（ ）</summary><div>答案 A：发包人批准的工程变更或发包人责任事件导致的返工。B措施项目选择不当、C承包人自行变更、D承包人责任事件均不予计量。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.1.7 新增工程计量</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>完成新增工程可按<span class="b">单价合同的分部分项工程计量规定</span>计算其分部分项工程项目清单工程量，作为计算新增工程价格的依据</li>
+          <li>承包人为实施新增工程所发生的措施项目，可参照<span class="b">工程变更或发包人责任事件引起的措施项目变化规定</span>计量，作为计算新增工程价格的依据</li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ══════════ 17.2 ══════════ -->
+<details class="sec">
+  <summary>17.2 合同价格调整<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>17.2.1 一般规定</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>发包人收到承包人合同价格调整报告及相关资料后应在约定时间内核实，予以确认的应<span class="b">书面通知承包人</span>；不予确认的应将核对意见<span class="b">书面回复承包人</span>；<span class="r">未确认也未提出核对意见的，应视为承包人提交的调整报告已被发包人认可</span></li>
+          <li>通过核对、复核仍不能达成一致意见的，可按<span class="b">争议解决</span>相关规定处理</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.2.2 工程量清单缺陷</span><span class="stars">★★★★</span><span class="yr">2016·2017·2019·2021单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>单价合同</th><td>① 清单项目增加或减少——无论<span class="r">未超过15%（含15%）</span>还是<span class="r">超过15%</span>，均按单价合同工程变更的相应规定计算调整合同价格；<br>② 按规定完成清单缺陷修正的，除安全生产措施项目及以综合单价形式计价、分部分项清单中所列属于措施项目的模板工程及合同约定应予计量的其他措施项目外，<span class="b">合同清单的措施项目清单及合同工期均应不予调整</span></td></tr>
+          <tr><th>总价合同</th><td>① <span class="b">不因合同清单缺陷而调整</span>；② 合同约定的分部分项清单工程量为暂定数量单价计价的项目，应按相应规定调整</td></tr>
+        </table>
+        <b>提示（1）合同没有约定时，工程量偏差超过15%的调整公式：</b>
+        <div class="formula">当 Q<sub>1</sub> &gt; 1.15Q<sub>0</sub>：S = 1.15Q<sub>0</sub>×P<sub>0</sub> + (Q<sub>1</sub> − 1.15Q<sub>0</sub>)×P<sub>1</sub><br>当 Q<sub>1</sub> &lt; 0.85Q<sub>0</sub>：S = Q<sub>1</sub>×P<sub>1</sub></div>
+        <ul><li>S=调整后的分部分项工程费结算价；Q<sub>1</sub>=最终完成工程量；Q<sub>0</sub>=招标清单列出的工程量；P<sub>1</sub>=按最终完成工程量重新调整后的综合单价；P<sub>0</sub>=承包人清单中填报的综合单价</li></ul>
+        <b>提示（2）综合单价与招标控制价偏差超±15%时（P<sub>0</sub>=投报单价，P<sub>2</sub>=最高投标限价单价，L=报价浮动率）：</b>
+        <div class="formula">P<sub>0</sub> &lt; P<sub>2</sub>×(1−L)×(1−15%) → P<sub>1</sub> 按 P<sub>2</sub>×(1−L)×(1−15%) 调整<br>P<sub>0</sub> &gt; P<sub>2</sub>×(1+15%) → P<sub>1</sub> 按 P<sub>2</sub>×(1+15%) 调整<br>介于两者之间 → 可不调整</div>
+        <div class="trap">⚠ 量偏差看承包人报价单价P<sub>0</sub>自身；价偏差看与最高投标限价P<sub>2</sub>的比较。报低了向下限调、报高了向上限调（就低不就高、就高不就低的"限幅"逻辑）。</div>
+        <details class="ex"><summary>【2023年真题】场地平整清单量8000m²，综合单价11.3元/m²，约定超15%部分单价调整为10元/m²，实际完成10000m²，结算价款（ ）万元</summary><div>答案 D：11.196。8000×1.15=9200m² 按11.3元，(10000−9200)=800m² 按10元：9200×11.3+800×10=103960+8000=111960元=11.196万元。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.2.3 暂列金额</span><span class="stars">★★★</span><span class="yr">2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>由<span class="b">发包人掌握</span>，依据<span class="b">发包人</span>发出的指令使用</li>
+          <li>合同总价内的：用于<span class="b">未能完全预见或详细说明的工程</span>——按双方确认的施工图纸计算分部分项清单工程量，按合同单价计算调整价格；完成相应工程引起措施项目费变化的可按工程变更规定计算调整；合同总价应按所确定的调整价格与暂列金额的<span class="b">差异调整</span>；用于工程合同价格调整的——按计价标准规定计算调整价格后作差异调整</li>
+          <li>发生工程变更、工程索赔引致措施项目、合同工期变化的：<span class="b">分别调整措施项目费用和合同工期，合同总价应按所确定的调整价格与暂列金额的差异调整</span></li>
+          <li>发生其他暂列金额调整事件的：合同清单的措施项目费与合同工期均<span class="b">不作调整</span></li>
+          <li><span class="r">没有发生暂列金额调整事件的：合同总价包括的暂列金额应在结算时全部扣除</span></li>
+          <li>发生暂列金额调整事件的：发承包双方应按相关规定进行调整价格的申报、核实及确定，并支付相应的价款</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.2.4 暂估价</span><span class="stars">★★★</span><span class="yr">2026修订</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>属于依法必须招标的</th><td>应以<span class="b">招标确定的材料税前价格和（或）含税专业分包工程价格</span>取代暂估价，调整合同价格</td></tr>
+          <tr><th>材料不属于依法必须招标的</th><td>可由承包人进行<span class="b">市场采购询价或自主报价</span>（承包人自产自供的），经发包人确认价格后以<span class="b">税前价格取代暂估价</span>；或由发承包双方共同询价确认价格后以税前价格取代暂估价，并计算相应价格调整引致的增值税变化，调整合同价格。材料暂估价的价格调整应只调整<span class="b">综合单价中的材料暂估价价格</span>，合同清单中该清单项目综合单价的<span class="b">其他费用不作调整</span>；调整后的合同单价可用于计价规范规定的工程量清单缺陷、暂列金额、工程变更的计价</td></tr>
+          <tr><th>专业工程不属于依法必须招标的</th><td>可参照<span class="b">新增工程</span>的相关规定确定含增值税的专业工程价格，以此取代专业工程暂估价；或由发承包双方共同招标确定含税专业分包工程价格取代之，调整合同价格</td></tr>
+          <tr><th>承包人参加发包人作为招标人的暂估价专业工程投标并中标的</th><td>应按规定<span class="r">扣减该专业工程的总承包服务费</span></td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.2.5 总承包服务费</span><span class="stars">★★★</span><span class="yr">2026修订</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>发包人提供材料变更为承包人提供的</th><td>按规定调整相应分部分项清单综合单价，并<span class="b">扣除合同总价中计取的相应发包人提供材料的总承包服务费</span></td></tr>
+          <tr><th>承包人提供材料变更为发包人提供的</th><td>按规定<span class="b">计算新增发包人提供材料的总承包服务费</span>，调整合同总承包服务费</td></tr>
+          <tr><th>暂估价专业分包工程、发包人直接工程取消／确定由承包人负责完成／承包人按规定中标／在承包人的合同工程已竣工且撤场后进行</th><td>应<span class="b">扣除合同总价中计取的相应专业分包工程、直接发包工程的总承包服务费</span></td></tr>
+          <tr><th>以项计价的</th><td><span class="b">除可按规定扣减或调整外，应为风险包干，工程结算不作调整</span></td></tr>
+          <tr><th>以费率计价、合同未约定费率计价基础或约定不明的</th><td>除可按计价标准相关规定调整外，工程结算可按专业分包工程、直接发包工程的分包合同价、发包人提供材料的供货合同价进行计算</td></tr>
+          <tr><th>因发包人同意的专业分包工程变更或发包人原因引致实质性工期改变的</th><td><span class="b">总承包服务费调整价款＝受影响专业分包（或直接发包）工程延误的工期 × 该工程总承包服务费／受影响工程工期</span></td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.2.6 计日工</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>不适宜按合同约定和清单计价标准计价的</th><td>发承包双方可采用计日工方式计价</td></tr>
+          <tr><th>合同清单没有已标价计日工清单项目或没有适用综合单价的</th><td>① 人工费、材料费、施工机具费可按合同约定的市场价格信息来源所发布的工程价格信息确定，没有约定或约定不明的，可依据工程所在地造价管理部门或行业发布的<span class="b">不含税</span>价格信息，参考合同清单中<span class="b">类似清单项目综合单价分析表中的明细价格组成</span>等确定计日工综合单价；② 价格信息中没有相关市场价格信息的，可依据<span class="b">经发承包双方确认的承包人采购单价，并参考类似清单项目综合单价分析表明细价格组成</span>等确定</td></tr>
+          <tr><th>措施项目费的调整</th><td>计日工综合单价应视为已包括随机发生、少量发生等特点造成的额外增加费用和计日工项目发生的措施项目费用，<span class="b">合同总价中的措施项目费用不因计日工的发生而调整</span></td></tr>
+          <tr><th>工程结算时</th><td>按合同约定应予计算的计日工项目应全部计算在结算总价内，但合同总价包含的合同清单中计日工清单项目应从结算总价中<span class="b">扣除</span></td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.2.7 物价变化</span><span class="stars">★★★★★</span><span class="yr">2016·2018·2019·2021·2022·2024单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 物价变化合同价格调整原则（表17-5）</b>
+        <table>
+          <tr><th>合同工程出现工期延长</th><td>① 发包人原因延长：计划进度日期后续工程价格采用<span class="r">计划进度日期与实际进度日期两者的较高者</span>；<br>② 承包人原因延长：采用<span class="r">两者的较低者</span>；<br>③ 非发承包双方原因延长：可采用<span class="b">风险合理分担</span>的原则确定计划进度日期后续工程的价格，或据实调整合同价格</td></tr>
+          <tr><th>发包人提供材料的</th><td>可由发包人按实际变化调整，但<span class="r">不列入合同总价</span>；材料暂估价按计价标准暂估价条款规定执行</td></tr>
+          <tr><th>不因物价变化而调整合同总价和合同单价的价格（除另有约定外）</th><td>① 施工耗材费用；② 中小型工具使用费；③ 措施项目费用；④ 除按规定调整价格的施工机具使用费的燃料动力费外，其他的施工机具使用费用；⑤ 不属于合同约定调价项目的材料费（除规定的价格异常外）；⑥ 超出合同约定调价范围及幅度内的价格变化，或调价项目的物价变化幅度未超过规定的人工、材料、施工机具（燃料动力费）费用；⑦ <span class="b">管理费及利润</span>；⑧ 承包人自身原因产生的费用</td></tr>
+        </table>
+        <div class="trap">⚠ 工期延长的调价方向：<b>发包人原因→取较高者（罚发包人）；承包人原因→取较低者（罚承包人）</b>——两个"较×者"是历年单选高频互换坑。</div>
+        <b>2. 价格指数调差法</b>
+        <div class="formula">ΔP = P<sub>0</sub> [ A + ( B<sub>1</sub>×F<sub>t1</sub>/F<sub>01</sub> + B<sub>2</sub>×F<sub>t2</sub>/F<sub>02</sub> + B<sub>3</sub>×F<sub>t3</sub>/F<sub>03</sub> + … + B<sub>n</sub>×F<sub>tn</sub>/F<sub>0n</sub> ) − 1 ]</div>
+        <ul>
+          <li>ΔP=需调整的价格差额；P<sub>0</sub>=约定的计量周期中承包人应得到的<span class="b">不含税合同价金额</span>（不包括价格调整、不计质保金的扣留和支付、预付款的支付和扣回；已按现行价格计价的变更及其他金额也不计在内，但按中标价的人材机单价计算的变更及其他金额应计算在内）</li>
+          <li>A=定值权重（不调部分权重）；B<sub>1</sub>…B<sub>n</sub>=各可调因子变值占签约不含税合同价的权重；F<sub>t</sub>=各可调因子现行价格指数；F<sub>0</sub>=基准日期各可调因子基本价格指数</li>
+          <li>可调因子、定值和变值权重及基本价格指数来源在<span class="b">投标函附录价格指数和权重表</span>中约定</li>
+        </ul>
+        <details class="ex"><summary>【2024年真题】不参与调值部分占15%，当月已完工程1200万元，人工20%(100→115)、运输10%(105→120)、钢筋25%(102→110)、混凝土30%(110→125)，需调整的价格差额为（ ）万元</summary><div>答案 C：125.763。ΔP=1200×[15%+(20%×115/100+10%×120/105+25%×110/102+30%×125/110)−1]=125.763万元。</div></details>
+        <b>3. 价格信息调差法</b>
+        <div class="formula">ΔP = ( ΔC − C<sub>0</sub>×r ) × Q ，其中 |ΔC| &gt; |C<sub>0</sub>×r|，ΔC = C<sub>i</sub> − C<sub>0</sub></div>
+        <ul>
+          <li>ΔP=价差调整费用（按计量周期计算的当次调价费用）；ΔC=可调因子价差；C<sub>i</sub>=计量周期市场价格；<span class="r">C<sub>0</sub>=基准价，投标截止日前28天（非招标工程为合同签订前28天）的市场价格</span></li>
+          <li>Q=可调因子的数量（可调差因子的数量）；r=风险幅度系数，<span class="b">当ΔC&gt;0时r为正值，ΔC&lt;0时r为负值</span>；i=采购时间</li>
+        </ul>
+        <table>
+          <tr><th>条件</th><th>材料单价</th><th>计算基础</th><th>调整</th></tr>
+          <tr><td rowspan="2"><span class="b">投标报价中可调价因子单价 &lt; 基准价</span></td><td><span class="b">跌幅</span></td><td>以<span class="b">投标报价</span>为基础</td><td rowspan="5">超过部分按实调整</td></tr>
+          <tr><td><span class="b">涨幅</span></td><td>以<span class="b">基准价</span>为基础</td></tr>
+          <tr><td rowspan="2"><span class="b">投标报价中可调价因子单价 &gt; 基准价</span></td><td><span class="b">跌幅</span></td><td>以<span class="b">基准价</span>为基础</td></tr>
+          <tr><td><span class="b">涨幅</span></td><td>以<span class="b">投标报价</span>为基础</td></tr>
+          <tr><td>投标报价中可调价因子单价 = 基准价</td><td>跌幅或涨幅</td><td>以基准价为基础</td></tr>
+        </table>
+        <div class="trap">⚠ 口诀「<b>涨看高、跌看低</b>」：涨价时以两价中较高者为基础，跌价时以较低者为基础，超过部分按实调整（手写笔记：确认单价=投标价±基础价×(涨跌幅−风险系数)，涨跌幅=实际/基础−1）。基准价的<b>28天</b>（非招标为签订前28天）是标红考点。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ══════════ 17.3 ══════════ -->
+<details class="sec">
+  <summary>17.3 工程变更价款确定<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>17.3.1 工程变更</span><span class="stars">★★★</span><span class="yr">2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 采用单价合同的工程</b>
+        <p style="margin:4px 0;">（1）工程量变化不超过15%（含15%）时——变更估价三原则（表17-8）：</p>
+        <table>
+          <tr><th>条件</th><th>特征</th><th>价格调整方法</th></tr>
+          <tr><td>相同条件</td><td>相同特征</td><td><span class="r">合同单价</span></td></tr>
+          <tr><td>相同条件／类似条件</td><td>类似特征／相同特征</td><td><span class="r">类似清单合同价格换算调整</span></td></tr>
+          <tr><td>相同条件／不同条件</td><td>不同特征／相同特征</td><td><span class="r">结合类似项目协商确定市场合理的综合单价</span></td></tr>
+          <tr><td>不同条件</td><td>不同特征</td><td><span class="r">结合同类工程协商确定市场合理的综合单价</span></td></tr>
+          <tr><td colspan="2">工程变更显著改变了实施中的工程施工条件</td><td>根据市场价格报价水平等协商确定工程变更的综合单价</td></tr>
+        </table>
+        <p style="margin:4px 0;">（2）工程量变化超过15%（不含15%）时：</p>
+        <ul>
+          <li>变更或清单缺陷引致<span class="b">增加</span>清单项目或工程量的：考虑因增加工程数量引致的人工及材料采购价格优惠而合理<span class="b">下调</span>其合同单价及新增综合单价，计算相应清单项目价格，调整合同总价</li>
+          <li>引致<span class="b">减少</span>清单项目或工程量的：考虑因减少工程数量引致的采购价格失去优惠而合理<span class="b">上调</span>其合同单价及新增综合单价</li>
+          <li>计算合同工期影响的措施项目调增（减）价格：</li>
+        </ul>
+        <div class="formula">措施项目调增（减）价格 = 措施项目中期运行费用 × 延长（或缩短）工期 / 合同工期</div>
+        <div class="trap">⚠ 量增→单价下调、量减→单价上调（规模效应逻辑），方向常反着设坑。</div>
+        <details class="ex"><summary>【2025年真题】单价合同因工程变更引起清单项目变化，关于综合单价确定的说法正确的是（ ）</summary><div>答案 D：不同施工条件下实施不同项目特征的清单项目，发承包人可依据工程实施情况协商确定新的综合单价。A应直接采用合同单价；B应采用类似清单价格换算；C不能直接用合同单价。</div></details>
+        <b>2. 工程变更引致措施项目发生改变</b>
+        <ul>
+          <li>不利一方提出调整措施项目费的，应<span class="b">事先将拟实施的方案提交另一方审核</span>，方案经发承包双方确认后执行的，应按规定调整措施项目费</li>
+          <li>不利一方<span class="b">未在约定时间内提出</span>调整措施项目费用的，应视为工程变更不引起措施项目费用变化，或不利一方<span class="b">放弃</span>调整措施项目费用的权利</li>
+        </ul>
+        <b>3. 工程变更取消了合同中的某项原定工作或工程</b>
+        <ul>
+          <li>非承包人原因，发包人提出的变更取消了合同中某项原定工作或工程，且承包人发生的费用或（和）应得的收益没有包括在其他已支付或应支付的项目中、也无任何替代的工作或工程的，发包人应补偿承包人的<span class="b">损失费用及合理的预期收益</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.3.2 新增工程</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>承包人按发包人要求完成不属于合同约定工程范围的新增工程</th><td>可按合同约定的国家及行业工程量计算标准所规定的清单项目列项要求、工程量计算规则和补充的计算规则、<span class="b">合同单价及投标报价水平</span>计算新增工程价格，或<span class="b">重新协商确定</span>新增工程的计量计价规则计算价格，并签订相关新增工程合同或补充协议</td></tr>
+          <tr><th>新增工程的措施项目费用</th><td>应包括承包人完成新增工程所需发生的：① 增加的施工机具费（包括延期使用现有机具及新增机具的费用）；② 增加的临时设施费（包括延期使用现有临时设施及新增工程专用临时设施的费用）；③ 增加的安全生产、文明施工、环境保护等措施费用；④ 增加的与措施项目相关的现场管理人员费用；⑤ 新增工程其他必要的措施项目费用</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.3.3 工程变更价款调整方法的应用</span><span class="stars">★★★</span><span class="yr">2017单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li><span class="b">直接采用适用的项目单价的前提：其采用的材料、施工工艺和方法相同</span>，也不因此增加关键线路上工程的施工时间</li>
+          <li>采用类似的项目单价的前提：材料、施工工艺和方法<span class="b">基本类似</span>，不增加关键线路上工程的施工时间，可仅就其变更后的<span class="b">差异部分</span>，参考类似项目单价由发承包双方协商新的项目单价</li>
+          <li>无法找到适用和类似的项目单价时：应采用招标投标时的基础资料和工程造价管理机构发布的<span class="b">信息价格</span>，按<span class="b">成本加利润</span>的原则由双方协商新的综合单价</li>
+          <li>无法找到适用和类似的项目单价、造价管理机构也没有发布此类信息价格的：由发承包双方<span class="b">协商确定</span></li>
+        </ul>
+        <div class="trap">⚠ 适用单价="相同"；类似单价="基本类似"且只调差异部分；两者都要求不增加关键线路施工时间。选项常拿"基本类似可直接套用"设坑。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ══════════ 17.4 ══════════ -->
+<details class="sec">
+  <summary>17.4 工程索赔<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>17.4.1 因法律法规与政策变化事件导致的工程索赔</span><span class="stars">★★★</span><span class="yr">2020单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>范围：在<span class="b">合同基准日后</span>发生的——① 新增的法律法规及政策性规定；② 修改原有的法律法规及政策性规定；③ 废止原有的法律法规及政策性规定；④ 政府对相关法律法规的解释发生了变化。发承包双方应按合同约定和国家、省级或行业建设主管部门及其授权的工程造价管理机构据此发布的规定调整合同价格及（或）工期</li>
+        </ul>
+        <table>
+          <tr><th>因承包人原因导致工期延长，出现的</th><td><span class="r">合同价格调增的不予调整，合同价格调减的予以调整</span></td></tr>
+          <tr><th>因发包人原因导致工期延长，出现的</th><td><span class="r">合同价格调减的不予调整，合同价格调增的应予调整</span></td></tr>
+          <tr><th>因非发承包双方原因导致工期延长，出现的</th><td>合同价格应按实调整</td></tr>
+        </table>
+        <div class="trap">⚠ 谁的责任谁吃亏：承包人拖期→只调减不调增；发包人拖期→只调增不调减。与17.2.7"较高者/较低者"同一逻辑，常联合出题。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.4.2 因不可抗力事件导致的工程索赔</span><span class="stars">★★★★★</span><span class="yr">2017·2019·2020·2022·2023·2024单选，2021多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>发包人承担</th><td>① <span class="b">永久工程</span>；② <span class="r">运至施工现场的材料和工程设备的损坏</span>；③ 不可抗力引起施工场地内及工程损坏造成的<span class="b">第三方人员伤亡和财产损失</span>；④ 发包人人员伤亡和财产损失；⑤ <span class="r">照管、清理、修复工程的费用</span>；⑥ 发包人要求留在施工现场必要的管理与保卫人员工资；⑦ 发包人要求赶工的，由此增加的赶工费用</td></tr>
+          <tr><th>承包人承担</th><td>① <span class="r">承包人人员伤亡和财产损失</span>；② <span class="r">施工设备的损坏及停工损失</span>；③ 措施项目的损坏、清理、修复费用，以及因承包人原因发生的第三方人员伤亡和财产损失</td></tr>
+        </table>
+        <div class="trap">⚠ 口诀「<b>各自损失各自承担，工期顺延</b>」。最易混：<b>运至现场的材料/工程设备损坏→发包人</b>；<b>施工设备（机具）损坏及停工损失→承包人</b>——"设备"两字前缀不同归属不同！</div>
+        <details class="ex"><summary>【2023年真题】不可抗力造成：永久性工程损失55万、承包人受伤人员医药费6万、施工机具损失18万、复工前按发包人要求清理工程费用8万，发包人承担（ ）万元</summary><div>答案 C：63。永久工程55＋清理费8＝63万；承包人人员医药费6万、施工机具18万由承包人自担。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.4.3 因非承包人原因发生暂停施工事件导致的工程索赔</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>承包人可向发包人提出<span class="b">延长工期</span>，并根据工期延长和损失情况索赔：① 已进场无法进行施工的<span class="b">人员窝工费用</span>；② 已进场无法投入使用的<span class="b">材料损失费用</span>；③ 已进场无法进行施工的<span class="b">机械设备停滞费用</span>；④ 其他费用损失</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.4.4 因提前竣工（赶工）事件导致的工程索赔</span><span class="stars">★★★</span><span class="yr">2020·2022单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>发包人要求提前竣工的，应<span class="b">征得承包人同意后</span>与承包人商定采取加快工程进度的措施，并应修订合同工程进度计划。<span class="r">发包人应承担承包人由此增加的提前竣工（赶工）补偿费用</span></li>
+          <li>发包人未作要求，由承包人<span class="b">自行提前竣工</span>的，由此增加的费用应由<span class="b">承包人承担</span></li>
+          <li><span class="r">赶工费用主要包括：①人工费的增加；②材料费的增加；③机械费的增加</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.4.5 因工期延误导致的工程索赔</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>合同工程发生误期：承包人应<span class="b">赔偿发包人由此产生的损失</span>，并<span class="b">向发包人支付误期赔偿费</span>；即使已赔偿，也<span class="b">不能免除承包人应承担的责任和应履行的义务</span></li>
+          <li>工程竣工之前，合同工程内的某单项（位）工程已通过竣工验收且接收证书中表明的竣工日期并未延误，而是合同工程的其他部分产生了工期延误的：<span class="b">误期赔偿费按照已颁发工程接收证书的单项（位）工程造价占合同价格的比例幅度予以扣减</span></li>
+          <li>发承包一方原因导致工期延误、在延长的工期内遭遇不可抗力的：不可抗力事件造成的损失由<span class="b">责任方承担</span>；发承包双方对工期延误均有责任的：按双方过错比例另行协商承担责任</li>
+        </ul>
+        <div class="trap">⚠ 延误期内遇不可抗力≠"各自承担"，而是由<b>造成延误的责任方承担</b>——与17.4.2正常情形区分。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.4.6 承包人索赔的程序</span><span class="stars">★★★★</span><span class="yr">2023单选，2021多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>发生索赔事件后 <span class="r">28天内</span>：提交<span class="b">索赔意向通知</span>（第一步）</li>
+          <li>随后 <span class="r">28天内</span>：准备索赔资料，向发包人提交<span class="b">工程索赔报告</span>（涉及费用增加及工期延长的，<span class="b">一并提出</span>）</li>
+          <li>索赔事件具有连续影响的：按合同约定的期限（<span class="r">合同未约定的为28天</span>）提交<span class="b">延续索赔通知（中间索赔报告）</span>；索赔事件结束后 <span class="r">28天内</span>提交最终索赔报告</li>
+          <li>发包人查验承包人的记录和证明材料后 <span class="r">28天内</span>：将索赔处理结果答复承包人</li>
+          <li>达成一致：在<span class="b">当期进度款、施工过程结算款、竣工结算款</span>中支付；不能达成一致：按约定争议解决办法办理</li>
+        </ul>
+        <div class="trap">⚠ 四个"28天"：提意向28天→交报告28天→（连续影响未约定28天）→发包人答复28天。意向通知是第一步，直接交索赔报告不符合程序。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.4.7 发包人索赔</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>发包人要求赔偿时，可选择下列一项或几项方式获得赔偿：① <span class="b">延长质量缺陷修复期限</span>；② 要求承包人支付实际发生的额外费用；③ 要求承包人按合同的约定支付违约金</li>
+          <li>承包人应付给发包人的工程索赔金额可从<span class="b">拟支付给承包人的进度款、施工过程结算款或竣工结算款中扣除</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.4.8 提出索赔的期限</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>发承包双方在办理了<span class="b">竣工结算</span>后：应被认为承包人<span class="b">已无权再提出竣工结算前所发生的任何工程索赔</span></li>
+          <li>承包人在提交的<span class="b">最终结清申请</span>中：<span class="r">只限于提出竣工结算后的工程索赔</span>，提出工程索赔的期限应自发承包双方最终结清时终止</li>
+        </ul>
+        <div class="trap">⚠ 竣工结算=结算前索赔的"截止闸"；最终结清=全部索赔的"终止点"。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.4.9 索赔费用的组成与计算</span><span class="stars">★★★★★</span><span class="yr">2016·2019·2020·2022单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 索赔费用的组成（表17-10）</b>
+        <table>
+          <tr><th rowspan="2">人工费</th><td>增加工作内容：按照<span class="b">计日工费</span>计算</td></tr>
+          <tr><td>停工损失费和工作效率降低的损失费：按照<span class="b">窝工费</span>计算</td></tr>
+          <tr><th rowspan="3">设备费</th><td>工作内容增加：按照<span class="b">机械台班费</span>计算</td></tr>
+          <tr><td>窝工·施工企业自有：按照<span class="r">机械折旧费</span>计算</td></tr>
+          <tr><td>窝工·外部租赁：按照<span class="r">设备租赁费</span>计算</td></tr>
+          <tr><th>材料费</th><td>包括<span class="b">索赔事件引起的材料用量增加、材料价格大幅度上涨、非承包人原因造成的工期延误而引起的材料价格上涨和材料超期储存费用</span></td></tr>
+          <tr><th>管理费</th><td>分为<span class="b">现场管理费和企业管理费</span></td></tr>
+          <tr><th>利润</th><td><span class="b">工程范围、工作内容变更</span>等引起的索赔，可按<span class="b">原报价单中的利润百分比</span>计算</td></tr>
+          <tr><th>延迟付款利息</th><td>发包人未按约定时间付款的，应按约定利率支付延迟付款的利息</td></tr>
+        </table>
+        <div class="trap">⚠ 窝工计算三坑：① 人工窝工按<b>窝工费/补贴</b>，不按计日工费；② 自有设备按<b>台班折旧费</b>、租赁设备按<b>台班租金</b>，不按台班单价；③ 窝工期间不发生<b>燃料动力费</b>，不得计入。</div>
+        <details class="ex"><summary>【2022年真题】设计变更致停工：自有机械窝工10台班（台班单价400、折旧300），租赁机械窝工10台班（租金500、燃油动力费100/台班），人员窝工20工日（工资300、窝工补贴100/工日），可索赔（ ）元</summary><div>答案 A：10000。自有10×300=3000＋租赁10×500=5000＋人工20×100=2000，合计10000元。台班单价400、燃油费100、日工资300均为干扰项。</div></details>
+        <b>2. 《标准施工招标文件》中承包人索赔可引用的条款（表17-11）</b><span class="yr">2017·2021·2025单选，2017·2019·2022·2024多选</span>
+        <table>
+          <tr><th>可补偿内容</th><th>主要事件</th></tr>
+          <tr><td><span class="r">工期＋费用＋利润</span></td><td><span class="b">提供图纸延误</span>；<span class="b">延迟提供施工场地</span>；发包人提供材料和工程设备不符合合同要求；发包人提供资料错误导致承包人的返工或造成工程损失；发包人的原因造成工期延误；发包人原因引起的暂停施工；发包人原因造成暂停施工后无法按时复工；发包人原因造成工程质量达不到合同约定验收标准；<span class="b">监理人对隐蔽工程重新检查，经检验证明工程质量符合合同要求</span>；因发包人提供的材料、工程设备造成工程不合格；承包人应监理人要求对材料、工程设备和工程重新检验且检验结果合格；发包人在全部工程竣工前使用已接收的单位工程导致承包人费用增加；因发包人违约导致承包人暂停施工</td></tr>
+          <tr><td><span class="r">工期＋费用</span>（无利润）</td><td><span class="b">施工过程发现文物、古迹以及其他遗迹、化石、钱币或物品</span>；<span class="b">承包人遇到不利物质条件</span>；<span class="b">不可抗力</span>（费用为部分补偿）</td></tr>
+          <tr><td>费用＋利润</td><td>发包人的原因导致工程试运行失败；发包人原因导致的工程缺陷和损失</td></tr>
+          <tr><td>费用＋<span class="b">奖金</span></td><td><span class="b">发包人要求承包人提前竣工</span></td></tr>
+          <tr><td><span class="r">仅工期</span></td><td><span class="b">异常恶劣的气候条件</span></td></tr>
+          <tr><td><span class="r">仅费用</span></td><td>发包人要求向承包人提前交付材料和工程设备；采取合同未约定的安全作业环境及安全施工措施；因发包人原因造成承包人人员工伤事故；<span class="b">基准日后法律变化引起的价格调整</span>；工程移交后因发包人原因出现的缺陷修复后的试验和试运行</td></tr>
+        </table>
+        <div class="trap">⚠ 高频判别：文物古迹、不利物质条件、不可抗力→<b>可工期+费用，不可利润</b>；异常恶劣气候→<b>只有工期</b>；提前竣工→费用+<b>奖金</b>（不是利润）；基准日后法律变化→<b>只有费用</b>。</div>
+        <details class="ex"><summary>【2025年真题】可同时索赔工期和费用、但不能索赔利润的是（ ）</summary><div>答案 C：承包人遇到难以合理预见的不利物质条件。A、B可赔工期+费用+利润；D只可索赔费用。</div></details>
+        <b>3. 索赔费用的计算方法</b>
+        <table>
+          <tr><th>实际费用法</th><td><span class="b">最常用的一种方法</span></td></tr>
+          <tr><th>总费用法</th><td>对<span class="b">业主不利</span></td></tr>
+          <tr><th>修正总费用法</th><td>① 局限于受外界影响的时间，而不是整个施工期；② 只计算受到影响时段的损失；③ 对投标报价费用，按受影响时段的实际单价核算</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.4.10 现场签证</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 现场签证的范围</b>
+        <ul>
+          <li>非承包人原因类：适用于施工合同范围以外<span class="b">零星工程</span>的确认；<span class="b">非承包人原因</span>导致的人工、设备窝工及有关损失；符合施工合同规定的非承包人原因引起的工程量或费用增减</li>
+          <li>工程变更类：在工程施工过程中<span class="b">发生变更</span>后需要现场确认的工程量；确认<span class="b">修改施工方案</span>引起的工程量或费用增减；工程变更导致的工程施工措施费增减</li>
+        </ul>
+        <b>2. 现场签证的程序</b>
+        <ul>
+          <li>① 承包人在接受发包人要求的 <span class="r">7d内</span>向发包人提出签证；② 发包人收到签证报告 <span class="r">48h内</span>给予确认或提出修改意见；③ 发承包双方确认的签证费用与<span class="b">进度款同期支付</span></li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ══════════ 17.5 ══════════ -->
+<details class="sec">
+  <summary>17.5 合同价款期中支付<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>17.5.1 一般规定</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <div class="formula">当期应付进度款 = [累计已完成工程总值（包括已确认的合同价格调整款）× 支付比例 − 累计预付款扣回（包括当期扣回款）− 前期累计已支付进度款] − 发包人累计扣除的款项（不含预付款扣回）</div>
+        <ul>
+          <li>已完工程总值的支付额度、预付款的扣回价款应按合同约定的比例确定；合同没约定的，支付比例<span class="r">不宜低于累计完成工程总值的80%</span></li>
+          <li>前期累计已支付款项应按照<span class="b">上一期进度款支付证书所列明的累计应付进度款计算</span>，不应考虑发包人实际支付进度款的金额与支付证书所列应付金额的差异</li>
+          <li>工程价款支付证书中应按约定比例、合同未约定的按发承包双方商定的比例或按当期累计完成分部分项工程价款占合同工程分部分项工程总价款的比例，计算并<span class="b">单独列出当期应支付的建筑工人工资价款</span>；承包人应按合同及相关规定的时间、程序和方法支付建筑工人工资，<span class="b">不得挪作他用</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.5.2 预付款</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>发包人支付</th><td>发包人应按合同约定向承包人支付预付款，且<span class="b">不应向承包人收取预付款的利息</span>；发包人不按合同约定时间支付预付款的，<span class="r">承包人可催告发包人支付</span>；发包人在催告后的约定时间内仍不按要求支付的，<span class="r">承包人有权暂停施工</span>，并按规定向发包人提出索赔，<span class="r">发包人应承担违约责任</span></td></tr>
+          <tr><th>用途</th><td><span class="b">专用于合同工程</span>：可用于为履行合同而预先采购材料、租赁或采购相关施工机具、搭设现场临时设施、组织施工人员进场等工程施工前发生的必要费用</td></tr>
+          <tr><th>计算依据的合同价款</th><td><span class="r">应扣除合同总价所包含的暂列金额、计日工价款及专业工程暂估价</span></td></tr>
+          <tr><th>提供预付款保函的</th><td>发包人应在承包人提供预付款保函后支付预付款；预付款保函的保证金<span class="b">应与预付款金额一致</span>；<span class="b">提前解除合同的，尚未扣回的预付款应在合同终止结算时全部扣回</span></td></tr>
+          <tr><th>扣回</th><td>有约定：按合同约定在履行过程中扣回；没约定或约定不明：可选择<span class="b">当累计完成工程总值达到合同总价的一定比例后，一次扣回或分次扣回</span>的方式</td></tr>
+        </table>
+        <div class="trap">⚠ 预付款计算基数三扣除：<b>暂列金额、计日工价款、专业工程暂估价</b>——案例题起手第一步，漏扣直接错到底。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.5.3 安全生产措施费</span><span class="stars">★★★</span><span class="yr">2020·2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th rowspan="3">支付</th><td>时间：工程开工后 <span class="r">28天内</span>预支付，与工程进度款同期支付</td></tr>
+          <tr><td>额度：不低于安全生产措施费总额的 <span class="r">50%</span></td></tr>
+          <tr><td>预期：没有按时支付的，<span class="b">承包人可催告发包人支付</span>；发包人在催告后的约定时间内仍未支付的，<span class="r">承包人有权暂停施工，发包人应承担违约责任</span></td></tr>
+          <tr><th>使用</th><td><span class="r">专款专用</span>；在财务账目中<span class="b">单独列项备查</span>；<span class="b">不得挪作他用</span></td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.5.4 进度款</span><span class="stars">★★★</span><span class="yr">2018单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>单价合同的分部分项清单进度款</th><td><span class="b">重新计量确定累计完成的相应清单项目工程量，乘以合同单价</span>（合同单价发生调整的，以发承包双方确认的调整单价为准）计算累计进度价款</td></tr>
+          <tr><th>总价合同的分部分项清单进度款</th><td>依据发承包双方确认的清单项目累计已完成工程量与合同清单中相应清单项目工程量的<span class="b">比例</span>，乘以相应清单项目合价计算</td></tr>
+          <tr><th>措施项目清单的进度款</th><td>按发承包双方约定的<span class="b">支付分解方式</span>计算累计完成的措施项目进度款；约定不明的，可按累计完成分部分项清单工程量占分部分项清单总量的比例计算</td></tr>
+          <tr><th>其他项目清单的累计进度款</th><td>① 总承包服务费按服务事项的计价方式计算（总价计价的按当期发包人确认的专业分包工程累计进度款与分包合同价的比例乘以服务费总价；以费率计价的按当期确认的分包工程累计进度款乘以费率；发包人提供材料及独立分包工程可参照计算）；② 专业工程暂估价项目应按当期发包人确认的专业工程项目累计完成的进度款计算；③ <span class="b">计日工、暂列金额应按当期累计完成的进度款进行计算</span></td></tr>
+          <tr><th>已完工程进度款支付申请</th><td>（1）累计完成工程总值：① 累计完成合同价款；② 累计发生工程量清单缺陷调整价款；③ 累计发生暂列金额价款；④ 累计发生暂估价调整价款；⑤ 累计发生总承包服务费调整价款；⑥ 累计发生计日工价款；⑦ 累计发生物价变化调整价款；⑧ 累计发生法律法规及政策性变化调整价款；⑨ 累计发生工程变更价款；⑩ 累计发生新增工程价款；⑪ 累计发生工程索赔价款。（2）累计已扣回预付款（包括当期扣回价款）。（3）累计应付进度款。（4）前期累计已支付进度款。（5）发包人应扣除的价款。（6）本期应付进度款</td></tr>
+        </table>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ══════════ 17.6 ══════════ -->
+<details class="sec">
+  <summary>17.6 结算与支付<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>17.6.1 施工过程结算</span><span class="stars">★★★</span><span class="yr">2026修订</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>支付比例：应在合同中约定，<span class="r">不应低于当期施工过程结算价款总额的80%</span></li>
+          <li>措施项目费用：可按施工过程结算项目中的分部分项清单合价占合同工程分部分项清单项目总价的比例，乘以合同工程措施项目费用总价计算</li>
+          <li>总承包服务费：按施工过程结算时总承包服务事项已实施的工期占相应事项合同工期的比例，乘以按规定调整后的总承包服务费总价计算</li>
+          <li>施工过程结算款支付申请：① <span class="b">累计已完成的施工过程结算款</span>（累计已完成的分部分项工程项目费＋措施项目费＋其他项目费＋合同价款调整的金额＋应计算的增值税）；② <span class="b">累计已支付的施工过程结算款</span>；③ <span class="b">本期合计应扣减的金额</span>（本期应扣回的预付款＋应扣回的已支付进度款＋发包人应扣减的金额）；④ <span class="b">本期应支付的施工过程结算款</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.6.2 竣工结算</span><span class="stars">★★★</span><span class="yr">2020多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 竣工结算支付过程（表17-13）</b>
+        <table>
+          <tr><th>承包人提交竣工结算文件</th><td>工程完工后，应在经发承包双方确认的施工过程结算基础上，补充完善质量合格验收证明等资料，按合同及相关规定编制并向发包人提交完整的竣工结算文件；承包人未在约定时间内提交、经发包人催告后仍未按要求提交或没有明确答复的，<span class="b">发包人可根据已有资料编制竣工结算文件</span>，并提请承包人确认；承包人确认无异议或在约定时间内没有明确答复的，应视为发包人编制的结算文件已被承包人认可，可作为办理竣工结算和支付结算款的依据</td></tr>
+          <tr><th>发包人审核竣工结算文件</th><td>收到后应在约定时间内予以核对，经核对认为需进一步补充资料和修改的，应在约定时限内向承包人提出核对意见；承包人应在收到核对意见后按发包人提出的合理要求补充资料、修改竣工结算文件并再次提交复核确认；<span class="b">发包人在约定时间内未按合同约定核对竣工结算或未提出核对意见的，应视为承包人提交的竣工结算文件已被发包人认可，竣工结算确认完毕</span></td></tr>
+          <tr><th>竣工结算价款支付申请的内容</th><td>① <span class="b">工程竣工结算价款总额</span>；② <span class="b">累计已实际支付的金额</span>；③ <span class="b">应预留的质量保证金</span>（已提供其他工程质量担保方式的除外）；④ <span class="b">实际应支付的竣工结算款金额</span></td></tr>
+          <tr><th>签发竣工结算支付证书</th><td>发包人收到支付申请后，应在规定时间内予以核实，向承包人签发竣工结算支付证书</td></tr>
+          <tr><th>竣工结算款支付</th><td>发包人应在收到申请后的合理时间内按承包人提交的申请中列明的金额支付结算款；<span class="b">未按合同约定支付的，承包人可催告发包人支付，并有权按规定向发包人索赔</span></td></tr>
+        </table>
+        <b>2. 发包人对工程质量有异议的处理</b>
+        <table>
+          <tr><th>已竣工验收／已竣工未验收但发包人擅自使用的</th><td>质量争议应按<span class="b">工程保修合同或合同中有关保修条款执行</span>，竣工结算应按合同约定办理</td></tr>
+          <tr><th>已竣工未验收且未投入使用的／停工、停建工程</th><td>可就有关争议部分委托有工程质量检测鉴定能力的检测鉴定机构进行检测，根据检测结果确定解决方案，或按工程质量监督机构的处理决定执行后办理竣工结算；<span class="r">无质量异议部分的竣工结算应按合同约定办理</span></td></tr>
+        </table>
+        <details class="ex"><summary>【经典例题】发包人对工程质量有异议，竣工结算仍应按合同约定办理的情形有（ ）多选</summary><div>答案 A、B、D：A工程已竣工验收；B已竣工未验收但实际投入使用；D工程停建中无质量争议的部分。C（已竣工未验收且未使用）、E（停建有质量争议部分）需检测鉴定后办理。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.6.3 合同解除结算</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>因不可抗力导致合同无法履行</th><td>发承包双方按合同约定或法律法规规定解除合同的，双方应协商确认发包人应当支付的价款，包括：① 合同解除前承包人已完成工程的价款；② 承包人为工程订购并已交付的，或有责任接受交付的材料和其他物品的价款；③ 发包人要求承包人退货或解除订货合同而产生的费用，或因不能退货或解除合同而产生的损失；④ 承包人撤离施工现场以及遣散承包人施工人员的费用；⑤ 在合同解除前应支付给承包人的其他价款；⑥ 扣减承包人应向发包人支付的价款；⑦ 发承包双方协商确定的其他价款</td></tr>
+          <tr><th>因承包人违约解除合同</th><td>发包人<span class="b">有权暂停向承包人支付工程价款</span>；发包人应在合同解除后的合理时间内核对承包人提出的合同解除（中止）时承包人已完成的工程价款以及按施工进度计划已运至现场的材料货款，并核算承包人应支付的<span class="b">违约金以及给发包人造成损失或损害的索赔金额</span>，将结果通知承包人；发承包双方应在合理时间内予以确认或提出复核意见，并按规定要求办理工程结算</td></tr>
+          <tr><th>因发包人违约解除合同</th><td>发包人除应按规定向承包人支付各项价款以及退还已按合同约定的质量保证金外，还应核算发包人应支付的违约金以及给承包人造成损失或损害的索赔费用；索赔费用可由承包人提出，发包人核实并与承包人协商确认后，在规定时间内向承包人签发支付证书并支付；协商不能达成一致意见的，可按规定的<span class="b">争议解决方式处理</span></td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.6.4 质量保证金</span><span class="stars">★★★★★</span><span class="yr">2020·2025单选，2018~2022单选·2023多选（保修）</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 质量保证金的提供与扣留</b>
+        <table>
+          <tr><th>提供方式</th><td>① <span class="b">质量保证金保函（原则上采用这种方式）</span>；② 相应比例的工程款；③ 双方约定的其他方式</td></tr>
+          <tr><th>扣留方式</th><td>① <span class="b">在支付工程进度款时逐次扣留（原则上采用这种方式）</span>；② 工程竣工结算时一次性扣留质量保证金；③ 双方约定的其他扣留方式</td></tr>
+          <tr><th>额度</th><td><span class="r">不得超过工程价款结算总额的 3%</span></td></tr>
+        </table>
+        <b>2. 保修（表17-15）</b>
+        <table>
+          <tr><th>工程保修期</th><td>① 从工程<span class="r">竣工验收合格之日</span>起算，具体分部分项工程的保修期由合同当事人在专用合同条款中约定，但<span class="b">不得低于法定最低保修年限</span>；② <span class="r">发包人未经竣工验收擅自使用工程的，保修期自转移占有之日起算</span></td></tr>
+          <tr><th>修复费用</th><td>① 保修期内，因<span class="b">承包人原因</span>造成工程的缺陷、损坏，<span class="r">承包人应负责修复，并承担修复的费用</span>以及因工程的缺陷、损坏造成的人身伤害和财产损失；② 因<span class="r">发包人使用不当</span>造成工程的缺陷、损坏，可以<span class="r">委托承包人修复，但发包人应承担修复的费用</span>，并支付承包人合理利润；③ 因<span class="b">其他原因</span>造成工程的缺陷、损坏，可以<span class="r">委托承包人修复，发包人应承担修复的费用</span>，并支付承包人合理的利润，因工程的缺陷、损坏造成的人身伤害和财产损失由<span class="b">责任方承担</span></td></tr>
+          <tr><th>修复通知</th><td>保修期内发包人在使用过程中发现已接收的工程存在缺陷或损坏的，应<span class="b">书面通知承包人</span>予以修复，但情况紧急必须立即修复缺陷或损坏的，发包人可以<span class="b">口头通知</span>承包人并在口头通知后 <span class="r">48h内书面确认</span>，承包人应在专用合同条款约定的合理期限内到达工程现场并修复缺陷或损坏</td></tr>
+        </table>
+        <div class="trap">⚠ 三个易混数字/规则：质保金≤结算总额<b>3%</b>；擅自使用→保修期自<b>转移占有之日</b>起算（不是验收日）；紧急口头通知后<b>48h</b>书面确认。修复费用口诀：承包人原因自修自担；发包人使用不当或其他原因→可委托承包人修，发包人掏钱+付利润。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>17.6.5 最终结清</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li><span class="b">缺陷责任期终止后</span>，承包人应在约定时间内向发包人提交<span class="b">最终结清申请书</span>和相关证明材料，列明：<span class="b">预留的质量保证金或担保保函、缺陷责任期内发生的修复费用、最终结清款</span></li>
+          <li>发包人应在约定时间内完成核对并向承包人签发<span class="b">最终结清支付证书</span>；<span class="b">逾期未完成核对、又未提出修改意见的，视为发包人同意承包人提交的最终结清申请书，且视为已签发最终结清支付证书</span></li>
+          <li>发包人应在签发最终结清支付证书后，在约定时间内完成支付</li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ══════════ 17.7 ══════════ -->
+<details class="sec">
+  <summary>17.7 合同价款争议的解决<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>17.7 合同价款争议的解决（三途径）</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>争议评审</th><td>① 委员会（或机构）的评审人员：由具有良好职业道德、丰富造价管理经验、熟悉法律法规的工程造价咨询调解员、律师或相关工程专业人士担任，<span class="b">组成人数应为单数</span>；② 支付费用：可按合同约定或评审规则确定，或由发承包双方协商确定分担比例及费用，或依据争议评审委员会（或机构）的争议解决决定由相关争议责任人承担；通过评审解决争议引致发承包双方发生费用的，应由<span class="b">双方各自承担</span></td></tr>
+          <tr><th>调解</th><td>① <span class="b">合同履行期间，发承包双方可协议调换或终止任何调解人（或机构）</span>；② 调解人员应由具有良好职业道德、丰富造价管理经验、熟悉法律法规的工程造价调解员、律师或相关工程专业人士担任，其<span class="b">组成人数应为单数</span>；③ 处理争议发生需支付给调解人（或机构）的费用，可由发承包双方共同合理分担，或按照调解人（或机构）的调解书双方协商确定对相关争议承担责任的一方承担；④ 通过调解人（或机构）解决争议引致发承包双方发生费用的，应由双方各自承担</td></tr>
+          <tr><th>仲裁或诉讼</th><td>① <span class="b">仲裁或诉讼可在工程竣工之前或之后进行</span>；② 发承包双方各自的义务<span class="b">不应因在工程实施期间进行仲裁或诉讼而改变</span>；③ 仲裁或诉讼的最终决定，对发承包双方均有<span class="b">法定约束力</span>，应共同遵守</td></tr>
+        </table>
+        <div class="trap">⚠ 评审人员、调解人员组成人数均应为<b>单数</b>；仲裁/诉讼在竣工<b>之前或之后均可</b>进行，且不改变双方履约义务——判断型选项高频。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<footer>依据《建设工程经济四色笔记》第137~162页整理</footer>
+
+<script>
+function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>

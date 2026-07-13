@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第16章 工程量清单计价 · 知识树</title>
+<style>
+  :root{ --accent:#2563ab; --accent-bg:#ecf3fa; --ink:#2b2b2b; --sub:#777; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.6;}
+  a.back{display:inline-block;font-size:.8rem;color:var(--sub);text-decoration:none;margin-bottom:8px;}
+  h1{font-size:1.15rem;margin:2px 0 4px;color:var(--accent);}
+  .meta{color:var(--sub);font-size:.78rem;margin-bottom:10px;}
+  .legend{background:#fff;border-radius:10px;padding:8px 12px;font-size:.75rem;color:#555;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;}
+  .score{background:#fff;border-radius:10px;padding:10px 12px;font-size:.8rem;margin-bottom:14px;}
+  .score b{font-size:.85rem;}
+  .score table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .score td,.score th{border:1px solid #eee;padding:3px 6px;font-size:.75rem;text-align:center;}
+  .score th{background:#fafafa;font-weight:600;}
+  details.sec{background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:4px solid var(--accent);}
+  details.sec>summary{list-style:none;cursor:pointer;padding:11px 13px;font-weight:700;font-size:.95rem;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+  details.sec>summary::-webkit-details-marker{display:none;}
+  .caret{margin-left:auto;color:#bbb;font-size:.75rem;transition:transform .2s;flex:none;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .sec .inner{padding:0 12px 12px;}
+  details.item{border:1px solid #eee;border-radius:9px;margin-bottom:8px;background:#fff;}
+  details.item>summary{list-style:none;cursor:pointer;padding:9px 11px;font-size:.88rem;font-weight:600;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+  details.item>summary::-webkit-details-marker{display:none;}
+  .stars{color:#e8a20c;font-size:.8rem;letter-spacing:1px;flex:none;}
+  .yr{background:var(--accent-bg);color:var(--accent);font-size:.68rem;padding:1px 6px;border-radius:4px;flex:none;}
+  .item .kp{padding:2px 12px 10px;border-top:1px dashed #f0f0f0;font-size:.85rem;}
+  .kp ul{margin:6px 0;padding-left:1.25em;}
+  .kp li{margin:4px 0;}
+  .kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem;}
+  .kp th,.kp td{border:1px solid #e8e8e8;padding:5px 7px;text-align:left;vertical-align:top;}
+  .kp th{background:#fafafa;font-weight:600;white-space:nowrap;}
+  .r{color:#c62828;font-weight:600;}
+  .b{color:#1d64c0;}
+  .formula{background:#faf7f2;border-radius:6px;padding:6px 10px;margin:6px 0;font-family:Georgia,serif;font-size:.9rem;overflow-x:auto;}
+  .trap{background:#fff8e6;border-left:3px solid #e8a20c;border-radius:0 8px 8px 0;padding:7px 10px;margin:8px 0;font-size:.8rem;color:#7a5c00;}
+  details.ex{background:#f4f8fd;border-radius:8px;margin:8px 0;font-size:.82rem;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:8px 10px;color:#2563ab;}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>div{padding:0 10px 9px;color:#444;}
+  .btns{display:flex;gap:8px;justify-content:center;margin:0 0 12px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
+  footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
+</style>
+</head>
+<body>
+
+<a class="back" href="00-全书骨架.html">← 返回全书骨架</a>
+<h1>第16章 工程量清单计价</h1>
+<div class="meta">第3篇 工程计价 · 共5节</div>
+
+<div class="legend">
+  <span><span class="stars">★</span>数=重要度</span>
+  <span class="r">红=重点/易考/高频</span>
+  <span class="b">蓝=次重点</span>
+  <span>⚠=易混陷阱</span>
+</div>
+
+<div class="score">
+  <b>本章分值：2024年5分 · 2025年8分 · 2026预测6分</b>
+  <table>
+    <tr><th>知识点</th><th>题型</th><th>2024</th><th>2025</th><th>2026预测</th></tr>
+    <tr><td rowspan="2">16.1 工程量清单计价原理</td><td>单选</td><td>—</td><td>1</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>2</td><td>—</td></tr>
+    <tr><td rowspan="2">16.2 工程量清单编制</td><td>单选</td><td>1</td><td>1</td><td>—</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>2</td></tr>
+    <tr><td>16.3 最高投标限价编制</td><td>单选</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td rowspan="2">16.4 投标报价编制</td><td>单选</td><td>1</td><td>3</td><td>2</td></tr>
+    <tr><td>多选</td><td>2</td><td>—</td><td>—</td></tr>
+    <tr><td>16.5 合同价款约定</td><td>单/多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td colspan="2"><b>合计</b></td><td><b>5</b></td><td><b>8</b></td><td><b>6</b></td></tr>
+  </table>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ════════ 16.1 ════════ -->
+<details class="sec" open>
+  <summary>16.1 工程量清单计价原理<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>16.1.1 工程量清单的作用</span><span class="stars">★★★</span><span class="yr">2021·2022单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>为投标人的投标竞争<span class="b">提供了一个平等和共同的基础</span></li>
+          <li>是建设<span class="b">工程计价</span>的依据</li>
+          <li>是工程<span class="b">付款和结算</span>的依据</li>
+          <li>是<span class="b">调整工程价款、处理工程索赔</span>的依据</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.1.2 工程量清单计价过程与原理</span><span class="stars">★★★</span><span class="yr">2018·2021单选 2017多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>1. 工程量清单的编制程序</b>（依据《建设工程工程量清单计价标准》GB/T 50500—2024 及施工组织设计、施工规范、工程验收规范）：</p>
+        <div class="formula">招标文件 → 确定项目<b>名称</b> → 项目<b>编码</b> → 项目<b>特征</b> → <b>计量单位</b> → 计算<b>工程量</b> → 确定<b>工程内容</b> → 完成清单编制</div>
+        <p><b>2. 工程造价的计算（三种单价法）</b></p>
+        <table>
+          <tr><th>工料单价法</th><td>人工费＋材料费＋施工机具使用费</td></tr>
+          <tr><th>综合单价法</th><td>人工费＋材料费＋施工机具使用费＋<span class="b">管理费＋利润</span></td></tr>
+          <tr><th>全费用综合单价法</th><td>人工费＋材料费＋施工机具使用费＋管理费＋利润＋<span class="b">税金</span></td></tr>
+        </table>
+        <p><b>综合单价法汇总工程总造价：</b></p>
+        <ul>
+          <li><span class="b">分部分项工程费</span>＝Σ(分部分项工程量×综合单价)</li>
+          <li><span class="b">措施项目费</span>＝Σ(措施项目工程量×综合单价)＋Σ单项措施费</li>
+          <li><span class="b">其他项目费</span>＝暂列金额＋暂估价＋计日工＋总承包服务费＋其他</li>
+          <li>单位工程报价＝分部分项＋措施＋其他＋税金；单项工程报价＝Σ单位工程报价；总造价＝Σ单项工程报价</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.1.3 工程量清单计价的一般规定</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li><span class="r">使用财政资金或国有资金投资的建设工程，应采用工程量清单计价</span></li>
+          <li>综合单价及合价应为<b>税前（不含增值税）的全费用价格</b>，由<span class="r">人工费、材料费、施工机具使用费、管理费、利润</span>组成，包括约定（或合理）范围的风险费及一切不可或缺的辅助工作费用</li>
+          <li>清单项目的税金应填写在增值税中，但其他项目清单中的<b>专业工程暂估价已含增值税</b>，增值税中不应再计取其相应税金</li>
+        </ul>
+        <table>
+          <tr><th>合同类型</th><th>清单准确性、完整性责任</th></tr>
+          <tr><td>单价合同</td><td>分部分项清单由<span class="b">发包人</span>负责</td></tr>
+          <tr><td>总价合同</td><td>已标价分部分项清单由<span class="b">承包人</span>负责</td></tr>
+          <tr><td>措施项目清单</td><td>无论单价或总价合同，均由<span class="b">承包人</span>负责</td></tr>
+        </table>
+        <div class="trap">⚠ 责任归属易混：单价合同→<b>发包人</b>；总价合同→<b>承包人</b>；措施项目清单永远是<b>承包人</b>负责——三者常互换设坑。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.1.4 计价风险</span><span class="stars">★★★</span><span class="yr">2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>发包人承担</th><td>①单价合同下发包人提供的除措施清单外的清单存在<b>缺陷</b>；②发包人提供的原始数据和基准资料<b>错误</b>；③发包人批准的<b>工程变更</b>；④发包人要求的赶工/提前竣工/停工/暂缓施工；⑤<b>法律法规与政策性变化</b>；⑥超出承包人应承担风险范围幅度、超出约定物价变化范围和波动幅度的市场变动</td></tr>
+          <tr><th>承包人承担</th><td>①措施项目清单的准确性及完整性；②总价合同已标价清单缺陷（暂定数量单价清单项目除外）；③单价合同下完成清单及项目特征所说明工程、按计量标准工作内容所需费用；④承包人<b>自身原因</b>的方案变化、施工费用增加、赶工/停工/暂缓施工；⑤<b>未超出</b>约定物价变化范围和波动幅度的市场物价变动</td></tr>
+        </table>
+        <div class="trap">⚠ 市场物价变动看幅度：<b>未超出</b>约定范围→承包人；<b>超出</b>约定范围→发包人。法律法规政策性变化永远归发包人。</div>
+        <details class="ex"><summary>【2025真题·多选】依据GB/T 50500—2024，应由发包人承担的计量与计价风险有（ ）</summary><div>A.合同基准日后法律法规政策性变化 B.措施项目清单不完整 C.超出合同约定物价变化范围和波动幅度的市场物价变动 D.单价合同发包人提供的分部分项清单存在缺陷 E.发包人批准的工程变更。<b>答案：A、C、D、E</b>（B措施清单归承包人）。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.1.5 合同选择与要求</span><span class="stars">★★★</span><span class="yr">2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p>发包人可根据工程的<span class="b">招标图纸设计深度、技术难度、建设规模、项目实施计划及工程量清单编制时间、计价风险</span>等因素选择合同方式：</p>
+        <table>
+          <tr><th>单价合同</th><td>合同总价应包括按招标文件规定完成合同工程清单所需的<b>全部费用</b>；清单存在缺陷的，应按计价标准规定<b>调整合同价格</b>；已标价清单的单价可作为合同文件组成部分，用于合同价格调整的计价</td></tr>
+          <tr><th>总价合同</th><td>合同费用仅反映合同总价；出现工程量清单缺陷的，其价格<b>视为已包括在合同总价中</b>；已标价清单单价可作为合同文件组成部分，按约定适用于工程变更、新增工程等调整计价；暂定数量单价计价项目应按计价标准规定调整合同价款</td></tr>
+          <tr><th>成本加酬金合同</th><td><span class="r">紧急抢险、救灾或特别复杂</span>的工程宜采用；合同总价为<b>暂定总价</b>：按实际确定的工程项目及数量×综合单价确定工程成本，再加酬金计算及增值税后调整合同总价</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.1.6 发包人提供材料</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>因<b>承包人原因</b>实际领用数量超出合理数量及约定有效损耗率的，超出部分材料费由<span class="b">承包人</span>承担，发包人可按供货合同单价确定费用并在结算价款中<b>扣除</b></li>
+          <li>因发包人提供材料<b>规格型号与招标文件不同</b>导致损耗率超出的，超出部分应由<span class="b">发包人</span>承担</li>
+          <li>承包人应制定交货计划报发包人、协助协调供货、完成卸货，交货时<span class="b">承包人应与供货人办理交接验收手续</span>；承包人提供协助协调、材料保管等服务的费用由发包人承担，可在<span class="b">总承包服务费</span>中计取</li>
+          <li>发包人材料变更为<b>承包人负责采购</b>：应征得承包人<b>书面同意</b>，<span class="b">承包人有权对此等变更提出合理反对意见</span>；已计取的总承包服务费应予扣减；变更后综合单价：</li>
+        </ul>
+        <div class="formula">综合单价＝合同单价＋已确认材料价格×(1＋损耗率)×(1＋管理费率)×(1＋利润率)</div>
+        <div class="trap">⚠ 材料超耗归属易混：承包人超领→<b>承包人</b>承担；因发包人所供规格型号不同致损耗超标→<b>发包人</b>承担。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.1.7 承包人提供材料</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>发包人可对承包人材料进行检测：不符合质量标准的，承包人整改并承担检测费、损失及修复费，<b>工期不予延长</b>；<span class="b">若经检测材料符合约定质量标准，发包人应承担由此增加的费用和（或）工期延误</span>，并承担承包人的损失和修复费用</li>
+          <li>承包人材料变更为<b>发包人提供</b>：应征得承包人书面同意；相关清单项目综合单价中的<span class="b">材料费及其采购保管费等应予以扣除</span>，其他费用不作调整，扣除后的单价应为该项目的<b>安装综合单价</b>；发包人应支付需承包人协助协调、材料保管等服务的<span class="b">总承包服务费和税金</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.1.8 建筑信息模型应用</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul><li>建设工程计量计价活动可应用建筑信息模型（BIM）技术，数据格式应执行国家相关标准</li></ul>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ════════ 16.2 ════════ -->
+<details class="sec">
+  <summary>16.2 工程量清单编制<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>16.2.1 工程量清单编制依据</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>1. 编制主体：</b>工程量清单应由具有编制能力的<span class="b">招标人或受其委托的工程造价咨询人</span>编制。</p>
+        <p><b>2. 编制依据：</b></p>
+        <ul>
+          <li>《建设工程工程量清单计价标准》GB/T 50500—2024 和相关的国家及行业工程量计算标准</li>
+          <li>国家及省级、行业建设主管部门颁发的工程量计价规范，以及根据工程需要补充的工程量计算规则</li>
+          <li>招标文件、合同条款及其相关资料；工程招标图纸及其相关资料</li>
+          <li>与建设工程有关的技术标准规范；施工现场情况、地勘水文资料、工程特点及交付标准；其他相关资料</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.2.2 分部分项工程项目清单编制</span><span class="stars">★★★★★</span><span class="yr">2016~2019·2023单选 2019~2022多选 2026修订</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>清单五要素（项目编码、名称、特征、计量单位、工程量）：</b></p>
+        <table>
+          <tr><th>项目编码</th><td><b>五级编码设置，采用12位阿拉伯数字</b>表示；同一招标工程的项目编码<b>不得有重码</b></td></tr>
+          <tr><th>项目名称</th><td>根据《计算标准》的项目名称<span class="r">结合拟建工程的实际</span>确定；标准中规定的"项目名称"为<b>分项工程项目名称</b>，一般以<span class="r">工程实体命名</span></td></tr>
+          <tr><th>项目特征</th><td>意义：是<b>区分清单项目</b>的依据、是<b>确定综合单价</b>的前提、是<b>履行合同义务</b>的基础；必须进行<b>准确和全面</b>的描述；主要涉及自身特征（材质、型号、规格、品牌）、工艺特征及对施工方法可能产生影响的特征；<span class="b">对特征不同的项目应分别列项</span></td></tr>
+          <tr><th>计量单位</th><td><span class="r">有两个或两个以上时，应根据所编清单项目的特征要求，选择最适宜表述该项目特征并方便计量的单位</span></td></tr>
+          <tr><th>工程量</th><td>按《计算标准》的工程量计算规则计算；以<span class="r">实体工程量</span>为准，并以<span class="b">完成后的净值</span>来计算</td></tr>
+          <tr><th>补充项目</th><td>出现《计算标准》附录中未包括的项目应做补充；编码＝对应计算标准代码X（01~09）＋字母<b>B</b>＋三位阿拉伯数字</td></tr>
+        </table>
+        <p><b>项目编码12位分级结构：</b></p>
+        <div class="formula">01—01—01—001—×××<br>1、2位：相关工程国家计量标准代码｜3、4位：专业工程顺序码｜5、6位：分部工程顺序码｜7~9位：分项工程顺序码｜10~12位：清单项目名称顺序码</div>
+        <div class="trap">⚠ 前9位为标准统一设定，<b>10至12位</b>（清单项目名称顺序码）由清单编制人自行设置；投标阶段常考"哪几位可变"。</div>
+        <details class="ex"><summary>【经典例题】关于分部分项工程量清单中项目名称的说法，正确的是（ ）</summary><div><b>答案：B</b>——编制清单时，项目名称应根据《计价标准》的项目名称结合拟建工程实际确定。（A/C混淆"分项工程名称、以工程实体命名"；D项目名称可结合实际变化）</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.2.3 措施项目清单的编制</span><span class="stars">★★★★</span><span class="yr">2018·2020·2022单选 2016·2020多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li><b>列项：</b>根据<b>拟建工程的实际情况</b>列项</li>
+          <li><b>考虑因素：</b>①工程本身；②水文、气象、环境、安全和施工企业的实际情况；③参考拟建工程的<b>常规施工组织设计</b>；④参考拟建工程的<b>常规施工技术方案</b>；⑤参阅相关的<span class="b">施工规范与工程验收规范</span>；⑥确定设计文件中不足以写进施工方案、但要通过一定的<span class="b">技术措施</span>才能实现的内容；⑦确定招标文件中提出的某些需要通过一定的<span class="b">技术措施</span>才能实现的要求</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.2.4 其他项目清单的编制</span><span class="stars">★★★★</span><span class="yr">2016·2018·2021·2022·2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>暂列金额</th><td>用于招标时<b>尚未能确定或详细说明</b>的工程和工程实施中可能发生的<b>合同价款调整等预留</b>的费用</td></tr>
+          <tr><th>暂估价</th><td>包括<b>材料暂估价</b>和<b>专业工程暂估价</b>；用于支付设计图纸要求必需使用、但招标时暂不能确定其<b>材料标准、规格、价格</b>的材料费</td></tr>
+          <tr><th>计日工</th><td>承包人完成发包人提出的<span class="b">零星项目或工作</span>、不适宜按合同约定的计量计价规则进行计价时，依据发包人确认的实际消耗人工工日、材料数量、施工机具台班，按合同约定的计日工单价计价的一种方式；计日工表中<b>人工按工种</b>、<b>材料和机械按规格型号</b>详细列项</td></tr>
+          <tr><th>总承包服务费</th><td>①对发包人提供材料<b>履行保管</b>及其配套服务；②对<b>专业分包</b>工程提供采购、协调、施工现场管理、已有临时设施使用、竣工资料汇总整理等服务；③对<b>独立分包</b>工程履行协调及配合责任</td></tr>
+        </table>
+        <div class="trap">⚠ 暂列金额 vs 暂估价：暂列金额是发包人预留、<b>归招标人（发包人）掌控</b>的价款调整备用金；暂估价是给"定不下价"的材料/专业工程<b>先占位的价格</b>。前者"未定项"，后者"未定价"。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.2.5 增值税的编制</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>原规费中的工程排污费改征<b>环境保护税</b>，在<b>管理费</b>中计取</li>
+          <li>原规费中的<b>五险一金</b>随相关施工人员、管理人员分别计入<b>人工费、管理费</b></li>
+          <li>增值税应根据政府有关主管部门及计价标准的规定单独列项，按<b>增值税率</b>计量</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.2.6 工程量清单编制说明</span><span class="stars">★★★</span><span class="yr">2018·2022单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>工程概况</th><td>建设规模＝<span class="b">建筑面积</span>；工程特征＝基础及结构类型、层数、高度、门窗类型及各部位装饰装修做法；计划工期＝<b>按工期定额计算的施工天数</b>；施工现场实际情况＝<span class="b">施工场地的地表状况</span>；自然地理条件＝<span class="b">建筑场地所处地理位置的气候及交通运输条件</span>；环境保护要求</td></tr>
+          <tr><th>其余内容</th><td>招标（或合同）范围；工程量清单编制依据；工程质量、材料、施工等的特殊要求（质量达合格或优良标准、材料重要性/使用功能/装饰装修标准、单项工程施工顺序等）；其他需要说明的事项</td></tr>
+        </table>
+        <div class="trap">⚠ 对应关系常考选择：建设规模→建筑面积；计划工期→工期定额天数；现场实际情况→地表状况；自然地理条件→气候及交通运输条件。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.2.7 招标工程量清单汇总</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul><li>分部分项工程量清单、措施项目清单、其他项目清单、增值税编制完成后，经审查复核，与工程量清单封面及说明汇总并装订，由<span class="b">相关责任人签字和盖章</span>，形成完整的招标工程量清单文件</li></ul>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ════════ 16.3 ════════ -->
+<details class="sec">
+  <summary>16.3 最高投标限价编制<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>16.3.1 最高投标限价的编制依据</span><span class="stars">★★★</span><span class="yr">2021单选 2016·2022多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>1. 对最高投标限价的理解（高频红字）：</b></p>
+        <ul>
+          <li><span class="r">国有资金投资</span>的建设工程招标，招标人<span class="r">必须编制</span>最高投标限价</li>
+          <li>最高投标限价<span class="r">超过批准的概算</span>时，<span class="r">招标人应将其报原概算审批部门审核</span></li>
+          <li>投标人的<span class="r">投标报价高于最高投标限价</span>的，其投标应予以<span class="r">拒绝</span></li>
+          <li>应由<span class="r">具有编制能力的招标人</span>或受其委托<span class="r">具有相应资质的工程造价咨询人</span>编制和复核</li>
+          <li>应在招标文件中公布，<span class="r">不应上调或下浮</span></li>
+          <li>招标人应将最高投标限价及有关资料报送<span class="r">工程所在地工程造价管理机构</span>备查</li>
+          <li>最高投标限价<b>不同于标底，无需保密</b></li>
+          <li>招标人应在招标文件中<span class="r">如实公布最高投标限价各组成部分的详细内容</span>，不得只公布总价</li>
+        </ul>
+        <div class="trap">⚠ 限价 vs 标底：最高投标限价<b>公开、无需保密</b>；标底须<b>保密</b>。且限价一经公布不上调不下浮——"下浮5%"之类选项都是坑。</div>
+        <p><b>2. 编制依据：</b>《计价标准》GB/T 50500—2024；招标文件（含招标工程量清单、合同条款、招标图纸、技术标准规范等）及其补遗澄清或修改；相关国家及行业计量标准与补充计算规则；国家及省级、行业建设主管部门的有关规定；与招标工程相关的技术标准规范；工程特点及交付标准、地勘水文资料、现场情况；<b>合理施工工期及常规施工工艺、顺序</b>；工程价格信息及造价资讯、工程造价数据及指数；其他相关资料。</p>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.3.2 最高投标限价的编制内容</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>分部分项工程费</th><td>①采用<span class="b">综合单价</span>的方法编制；②招标文件提供了<span class="b">暂估单价的材料，应按暂估单价计入综合单价</span></td></tr>
+          <tr><th>措施项目费</th><td>①可以计算工程量的措施项目，按分部分项清单方式采用<b>综合单价</b>计价；②其余措施项目以<b>"项"为单位</b>计价，应包括除税金外的全部费用；③其中的<span class="r">安全生产措施费</span>应当按照国家或地方行业建设主管部门的<b>规定标准</b>计价</td></tr>
+          <tr><th>其他项目费</th><td><b>暂列金额</b>：按招标工程量清单中列出的金额填写；<b>暂估价</b>：材料、工程设备单价按清单列出的单价计入综合单价，专业工程暂估价按清单列出的金额填写；<b>计日工</b>：人工单价和机械台班单价可参考省级、行业主管部门或其授权机构公布的单价计算，材料可参考造价信息中的材料单价、未发布的按市场调查确定的单价计算；<b>总承包服务费</b>：按省级或行业建设主管部门的规定，并根据招标文件列出的内容和要求估算</td></tr>
+          <tr><th>增值税</th><td><span class="r">不得作为竞争性费用</span></td></tr>
+        </table>
+        <p><b>提示：总承包服务费计算标准（区分三个数据）：</b></p>
+        <ul>
+          <li>仅要求对分包专业工程<b>总承包管理和协调</b>：按发包的专业工程估算造价的 <span class="r">1.5%</span></li>
+          <li>要求管理协调<b>并同时提供配合服务</b>：按发包的专业工程估算造价的 <span class="r">3%~5%</span></li>
+          <li>招标人<b>自行供应材料、设备</b>：按供应材料、设备价值的 <span class="r">1%</span></li>
+        </ul>
+        <div class="trap">⚠ 1.5% / 3%~5% / 1% 三个比率必背；注意前两个的基数是"专业工程估算造价"，第三个基数是"材料设备价值"。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.3.3 最高投标限价的编制程序</span><span class="stars">★★★★</span><span class="yr">2019·2022·2024·2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>表16-4 发包人工程最高投标限价程序：</b></p>
+        <table>
+          <tr><th>序号</th><th>内容</th><th>计算方法</th></tr>
+          <tr><td>1</td><td>分部分项工程费</td><td>按计价规定计算</td></tr>
+          <tr><td>2</td><td>措施项目费（其中2.1安全生产措施费）</td><td>按计价规定计算 / 按规定标准计算</td></tr>
+          <tr><td>3</td><td>其他项目费（3.1暂列金额 3.2专业工程暂估价 3.3计日工 3.4总承包服务费）</td><td>按计价规定估算</td></tr>
+          <tr><td>4</td><td>税金</td><td><b>税前工程造价 × 税率（或征收率）</b></td></tr>
+        </table>
+        <div class="formula">最高投标限价合计 ＝ 1＋2＋3＋4</div>
+        <details class="ex"><summary>【2025真题】建筑面积80000㎡，建筑/安装/装饰分部分项指标1800/900/800元每㎡；措施费率5%（基数为分部分项工程费）；其他项目费950万元；增值税率9%。最高投标限价（含税）是（ ）万元</summary><div><b>答案：D 33081.5</b>。分部分项＝8万㎡×(1800+900+800)＝28000万；措施＝28000×5%＝1400万；税前＝28000+1400+950＝30350万；含税＝30350×1.09＝33081.5万元。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.3.4 异议和修正</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>投标人应在<b>规定时间内以书面形式</b>向招标人提出异议</li>
+          <li>最高投标限价经有关行政监督管理部门复查，结论与原公布的限价<b>偏差较大</b>的，招标人应做出说明并对其不合理内容进行<b>修订</b></li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ════════ 16.4 ════════ -->
+<details class="sec">
+  <summary>16.4 投标报价编制<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>16.4.1 投标报价编制的一般规定</span><span class="stars">★★★★</span><span class="yr">2025单选 2021·2023多选 2026修订</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>投标人可依据计价标准的规定<span class="r">自主确定投标报价</span>，并对已标价工程量清单填报价格的<b>一致性及合理性</b>负责，承担不合理报价及总价合同清单缺陷等风险</li>
+          <li><span class="r">严禁投标人的投标报价低于成本价、高于招标人公布的最高投标限价</span></li>
+          <li>接收招标文件后应在约定时间内复查<b>计划工期</b>的可行性及其风险与影响，有疑问或异议应按招标文件规定及时以<b>书面形式</b>提请招标人澄清或修正；并根据工程特点、合同要求及现场踏勘情况，复查<b>措施项目清单列项</b>是否完整和适用</li>
+          <li>单价合同：投标人应在约定时间内对分部分项清单进行复核，<span class="b">无论投标人是否已提出疑问或异议，分部分项工程项目清单的完整性和准确性由招标人负责</span></li>
+          <li>总价合同：投标人对已标价分部分项清单的<b>完整性和准确性负责</b>；有疑问异议的按规定书面提请澄清，核实修正后按修正后的清单报价；除清单说明为暂定数量的单价计价项目外，合同价格不因已标价清单存在工程量缺陷而调整</li>
+          <li>投标人的投标价应<span class="b">包括招标文件中规定的由承包人承担范围及幅度内的风险费用</span></li>
+          <li>每个清单项目<b>只填报一个报价</b>；未按要求填报（漏填或未填）的项目，按计价标准完成澄清说明后，相关清单项目报价<b>视为已包含在投标总价（或其他清单项目）中</b></li>
+          <li>投标总价应与分部分项工程项目清单、措施项目清单、其他项目清单和税金项目清单的<b>合价总额一致</b></li>
+        </ul>
+        <div class="formula">口诀助记：<b>自主确定，不低成本，不高限价，按单填报</b></div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.4.2 投标报价的编制依据</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>《计价标准》GB/T 50500—2024及相关国家行业计量标准；国家及省级、行业主管部门的计量计价规定及补充计算规则</li>
+          <li>招标文件（含招标工程量清单、合同条款、招标图纸、技术标准规范等）及其补遗、答疑、异议澄清或修正</li>
+          <li>与招标工程相关的技术、标准、规范等技术资料；工程特点及交付标准、地勘水文资料、现场踏勘情况</li>
+          <li>投标人的<b>工程实施方案及投标工期</b>；<b>投标人企业定额</b>、工程造价数据、市场价格信息及价格变动预期、装备及管理水平、造价资讯</li>
+          <li>其他相关资料</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>16.4.3 投标报价的编制方法</span><span class="stars">★★★★★</span><span class="yr">2016~2025年高频单选·多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <p><b>1. 对清单工程量复核的作用</b><span class="yr">2016多选</span>：是选择施工方法、安排人力和机械、准备材料必须考虑的因素；影响分项工程的单价。</p>
+
+        <p><b>2. 分部分项工程和措施项目计价表的编制</b><span class="yr">2016·2017·2020·2022·2024·2025单选 2023多选</span></p>
+        <table>
+          <tr><th>项目特征为依据</th><td>招投标过程中清单特征描述与设计图纸不符时，投标人应以<span class="r">招标工程量清单的项目特征描述</span>为准确定综合单价；施工中图纸或设计变更与清单特征描述不一致时，发承包双方应按<span class="r">实际施工的项目特征</span>，依据合同约定重新确定综合单价</td></tr>
+          <tr><th>暂估价的处理</th><td>招标文件中在其他项目清单中提供了<b>暂估单价的材料和工程设备</b>，应<span class="r">按其暂估的单价计入清单项目的综合单价中</span></td></tr>
+          <tr><th>考虑合理的风险</th><td>招标文件中要求投标人承担的风险费用，<span class="b">投标人应考虑计入综合单价</span></td></tr>
+        </table>
+        <p><b>综合单价确定的步骤和方法：</b>①确定计算基础 → ②分析每一清单项目的工程内容 → ③计算工程内容的工程数量与清单单位的含量 → ④计算分部分项工程人、材、机使用费 → ⑤计算综合单价（将<span class="r">人工费、材料费、施工机具使用费、企业管理费、利润</span>五项汇总，并考虑<span class="r">合理的风险费用</span>）</p>
+        <div class="formula">清单单位含量 ＝ 某工程内容的企业定额工程量 ÷ 清单工程量</div>
+        <details class="ex"><summary>【2025真题】清单挖土方6500m³，施工方案算得7000m³；完成人材机费用344000元，管理费取人材机的10%，利润取人材机与管理费之和的6%。应填报的综合单价是（ ）元/m³</summary><div><b>答案：D 61.71</b>。人材机+管理费＝344000×1.10＝378400；加利润＝378400×1.06＝401104元；综合单价按<b>清单工程量6500m³</b>摊：401104÷6500≈61.71元/m³。（陷阱：不能除以7000）</div></details>
+
+        <p><b>3. 总价措施项目清单与计价表</b><span class="yr">2022单选 2023·2024多选</span></p>
+        <ul>
+          <li>措施项目内容依据招标人提供的措施项目清单和投标人投标时<b>拟定的施工组织设计或施工方案</b>确定</li>
+          <li>措施项目费由投标人<span class="r">自主确定</span>，但其中<span class="b">安全生产措施费</span>必须按照国家或省级、行业建设主管部门的规定计价，<span class="r">不得作为竞争性费用</span></li>
+        </ul>
+        <div class="trap">⚠ 不可竞争费用两兄弟：<b>安全生产措施费</b> ＋ <b>税金（增值税）</b>——都必须按规定计取，不得让利竞争；其余措施费可自主报价。</div>
+
+        <p><b>4. 其他项目清单与计价表</b><span class="yr">2017·2018·2019·2023·2025单选 2018·2023·2024多选</span></p>
+        <table>
+          <tr><th>暂列金额</th><td>按招标工程量清单中列出的<b>金额填写</b>（不得变动）</td></tr>
+          <tr><th>暂估价</th><td><span class="r">不得变动和更改</span>：暂估价中的材料、工程设备暂估价<span class="r">必须按招标人提供的暂估单价计入清单项目的综合单价</span>；<span class="r">专业工程暂估价按招标工程量清单中列出的金额填写</span></td></tr>
+          <tr><th>计日工</th><td>按招标工程量清单列出的项目和数量，<span class="r">自主确定综合单价</span>并计算计日工金额</td></tr>
+          <tr><th>总承包服务费</th><td>根据招标文件中列出的服务范围、内容、要求及清单特征描述<span class="r">自主确定</span>，并列明相应的计算方法</td></tr>
+        </table>
+        <div class="trap">⚠ 投标报价四项口径：暂列金额、专业工程暂估价→<b>照抄金额</b>；材料暂估价→<b>计入综合单价</b>；计日工单价、总承包服务费→<b>自主确定</b>。"哪项直接填写金额/哪项自主定"是高频考点。</div>
+        <details class="ex"><summary>【2025真题】投标报价时，应按招标工程量清单列出金额直接填写的是（ ）A.计日工 B.材料暂估价 C.专业工程暂估价 D.总承包服务费</summary><div><b>答案：C</b>。专业工程暂估价按清单列出的金额直接填写；材料暂估价计入综合单价；计日工、总承包服务费自主确定。</div></details>
+
+        <p><b>5. 税金项目计价表</b><span class="yr">2022单选 2023多选</span>：<span class="r">税金</span>应按国家政府主管部门的规定计算，<span class="r">不得作为竞争性费用</span>。</p>
+
+        <p><b>6. 投标报价汇总</b><span class="yr">2018单选 2018·2023多选</span></p>
+        <ul>
+          <li>计价表中列明的所有需要填写单价和合价的项目，投标人均应填写且<b>只允许有一个报价</b></li>
+          <li>未填写单价和合价的项目，可视为此项费用<b>已包含在已标价清单其他相关项目的单价和合价之中</b></li>
+          <li><span class="r">不能进行投标总价优惠（或降价、让利），投标人对投标报价的任何优惠（或降价、让利）均应反映在相应清单项目的综合单价中</span></li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ════════ 16.5 ════════ -->
+<details class="sec">
+  <summary>16.5 合同价款约定 <span class="stars">★★★</span><span class="caret">▶</span></summary>
+  <div class="inner">
+    <div class="kp" style="padding:8px 2px 4px;">
+      <p>发承包双方应在合同中对下列事项进行约定（图16-15）：</p>
+      <ul>
+        <li><b>人工费</b>的金额或比例、支付方式、支付周期和<b>农民工工资专用账户</b></li>
+        <li><b>预付工程款</b>的比例或金额、支付时间和抵扣方式</li>
+        <li><b>过程结算</b>的节点和计量、计价、支付的依据、程序、比例、时限等</li>
+        <li><b>进度款</b>计量、计价、支付的依据、程序、方法、比例、时限等</li>
+        <li><b>工程质量保证</b>的方式和数额、扣留方式及其时限</li>
+        <li><b>工程保险</b>的类型、范围、投保责任、保险费用支付等</li>
+        <li><b>价格风险分担</b>的内容、范围（幅度）以及超出时的调整办法</li>
+        <li>工程量清单缺陷、工程变更、计日工、物价变化、工程索赔、暂列金额等<b>合同价格调整</b>的因素、方法、程序、支付及时限</li>
+        <li><b>违约责任</b>以及发生合同价款争议的解决方法、时间、授权解决争议的工程师及其权限</li>
+        <li><b>竣工结算</b>计量、计价、支付的依据、程序、方法、时限等</li>
+        <li>与履行合同、工程价款相关的<b>其他事项</b></li>
+      </ul>
+    </div>
+  </div>
+</details>
+
+<footer>依据《建设工程经济四色笔记》第123~137页整理</footer>
+
+<script>
+function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>

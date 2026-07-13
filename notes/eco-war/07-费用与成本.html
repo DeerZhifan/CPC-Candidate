@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第7章 费用与成本 · 知识树</title>
+<style>
+  :root{ --accent:#1a7f5a; --accent-bg:#eaf6f0; --ink:#2b2b2b; --sub:#777; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.6;}
+  a.back{display:inline-block;font-size:.8rem;color:var(--sub);text-decoration:none;margin-bottom:8px;}
+  h1{font-size:1.15rem;margin:2px 0 4px;color:var(--accent);}
+  .meta{color:var(--sub);font-size:.78rem;margin-bottom:10px;}
+  .legend{background:#fff;border-radius:10px;padding:8px 12px;font-size:.75rem;color:#555;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;}
+  .score{background:#fff;border-radius:10px;padding:10px 12px;font-size:.8rem;margin-bottom:14px;}
+  .score b{font-size:.85rem;}
+  .score table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .score td,.score th{border:1px solid #eee;padding:3px 6px;font-size:.75rem;text-align:center;}
+  .score th{background:#fafafa;font-weight:600;}
+  details.sec{background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:4px solid var(--accent);}
+  details.sec>summary{list-style:none;cursor:pointer;padding:11px 13px;font-weight:700;font-size:.95rem;display:flex;gap:8px;align-items:center;}
+  details.sec>summary::-webkit-details-marker{display:none;}
+  .caret{margin-left:auto;color:#bbb;font-size:.75rem;transition:transform .2s;flex:none;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .sec .inner{padding:0 12px 12px;}
+  details.item{border:1px solid #eee;border-radius:9px;margin-bottom:8px;background:#fff;}
+  details.item>summary{list-style:none;cursor:pointer;padding:9px 11px;font-size:.88rem;font-weight:600;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+  details.item>summary::-webkit-details-marker{display:none;}
+  .stars{color:#e8a20c;font-size:.8rem;letter-spacing:1px;flex:none;}
+  .yr{background:var(--accent-bg);color:var(--accent);font-size:.68rem;padding:1px 6px;border-radius:4px;flex:none;}
+  .item .kp{padding:2px 12px 10px;border-top:1px dashed #f0f0f0;font-size:.85rem;}
+  .kp ul{margin:6px 0;padding-left:1.25em;}
+  .kp li{margin:4px 0;}
+  .kp h4{margin:10px 0 4px;font-size:.85rem;color:var(--accent);}
+  .kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem;}
+  .kp th,.kp td{border:1px solid #e8e8e8;padding:5px 7px;text-align:left;vertical-align:top;}
+  .kp th{background:#fafafa;font-weight:600;white-space:nowrap;}
+  .r{color:#c62828;font-weight:600;}
+  .b{color:#1d64c0;}
+  .formula{background:#faf7f2;border-radius:6px;padding:6px 10px;margin:6px 0;font-family:Georgia,serif;font-size:.88rem;overflow-x:auto;display:block;}
+  .trap{background:#fff8e6;border-left:3px solid #e8a20c;border-radius:0 8px 8px 0;padding:7px 10px;margin:8px 0;font-size:.8rem;color:#7a5c00;}
+  details.ex{background:#f4f8fd;border-radius:8px;margin:8px 0;font-size:.82rem;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:8px 10px;color:#2563ab;}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>div{padding:0 10px 9px;color:#444;}
+  .btns{display:flex;gap:8px;justify-content:center;margin:0 0 12px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
+  footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
+</style>
+</head>
+<body>
+
+<a class="back" href="00-全书骨架.html">← 返回全书骨架</a>
+<h1>第7章 费用与成本</h1>
+<div class="meta">第2篇 工程财务 · 共4节</div>
+
+<div class="legend">
+  <span><span class="stars">★</span>数=重要度</span>
+  <span class="r">红=重点/易考/高频</span>
+  <span class="b">蓝=次重点</span>
+  <span>⚠=易混陷阱</span>
+</div>
+
+<div class="score">
+  <b>本章分值：2024年3分 · 2025年4分 · 2026预测4分</b>
+  <table>
+    <tr><th>知识点</th><th>题型</th><th>2024</th><th>2025</th><th>2026预测</th></tr>
+    <tr><td rowspan="2">7.1 费用与成本的关系</td><td>单项选择题</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td>多项选择题</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td rowspan="2">7.2 施工企业费用确认及计量</td><td>单项选择题</td><td>1</td><td>—</td><td>1</td></tr>
+    <tr><td>多项选择题</td><td>—</td><td>2</td><td>—</td></tr>
+    <tr><td rowspan="2">7.3 工程成本核算</td><td>单项选择题</td><td>1</td><td>1</td><td>—</td></tr>
+    <tr><td>多项选择题</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td rowspan="2">7.4 施工企业期间费用核算</td><td>单项选择题</td><td>—</td><td>—</td><td>1</td></tr>
+    <tr><td>多项选择题</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td>合计</td><td></td><td>3</td><td>4</td><td>4</td></tr>
+  </table>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ══════════ 7.1 ══════════ -->
+<details class="sec" open>
+  <summary>7.1 费用与成本的关系<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>7.1.1 支出与费用</span><span class="stars">★★★★</span><span class="yr">2023·2024·2025单选 · 2021多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <h4>企业支出分类（图7-1）</h4>
+        <table>
+          <tr><th>支出类别</th><th>包含内容</th></tr>
+          <tr><td><span class="r">资本性支出</span></td><td>企业购置和建造固定资产、无形资产支出、长期待摊费用支出、建造厂房/购买机械设备/修建道路等生产用设施的支出、建造办公楼/购买小汽车等非生产用设施的支出</td></tr>
+          <tr><td><span class="r">收益性支出</span></td><td>企业外购材料、支付劳动报酬、管理费用、销售（营业）费用、财务费用（含消费税、城市维护建设税、资源税、教育费附加及房产税、土地使用税、车船使用税、印花税）</td></tr>
+          <tr><td><span class="r">营业外支出</span></td><td>公益性捐赠支出、非常损失、盘亏损失、非流动资产毁损报废损失</td></tr>
+          <tr><td>利润分配支出</td><td>股利分配支出</td></tr>
+          <tr><td>企业对外投资支出</td><td>以现金、实物、无形资产方式；购买股票、债券等有价证券方式</td></tr>
+          <tr><td>缴纳所得税费用支出</td><td>企业所得税等</td></tr>
+        </table>
+        <div class="trap">⚠ 建造办公楼、购买小汽车虽是"非生产用"，仍属<b>资本性支出</b>；而消费税、房产税、印花税等税金属<b>收益性支出</b>——选项常把"税金"混入营业外支出设坑。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>7.1.2 费用与成本</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>联系</th><td>
+            ① 两者都是<span class="b">资产的耗费</span>；<br>
+            ② 两者都要确认所属<span class="b">会计期间</span>；<br>
+            ③ 成本是按照成本核算对象进行的费用归集，由费用转化而来；<br>
+            ④ 成本可以转化为费用
+          </td></tr>
+          <tr><th>区别</th><td>
+            <span class="r">费用是针对特定会计期间而言的；成本不仅是针对特定会计期间而言的，而且是针对特定成本核算对象而言的，成本是对象化了的费用</span>。<br>
+            <span class="r">并非所有的费用均计入成本核算对象进行成本核算</span>，哪些费用计入成本与成本核算方法相关
+          </td></tr>
+        </table>
+        <div class="trap">⚠ 口径易混：费用→<b>会计期间</b>；成本→会计期间＋<b>核算对象</b>（对象化的费用）。"所有费用都计入成本"是错误说法。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ══════════ 7.2 ══════════ -->
+<details class="sec">
+  <summary>7.2 施工企业费用确认及计量<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>7.2.1 费用确认</span><span class="stars">★★★</span><span class="yr">2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <h4>表7-1 费用确认</h4>
+        <table>
+          <tr><th>费用确认条件</th><td><span class="r">同时满足</span>下列条件才能确认：<br>
+            (1) 与费用相关的经济利益<span class="b">很可能流出企业</span>；<br>
+            (2) 经济利益流出的结果会导致企业<span class="b">资产的减少或者负债的增加</span>；<br>
+            (3) 经济利益的流出额能够<span class="b">可靠地计量</span></td></tr>
+          <tr><th>费用所属会计期间确认</th><td>(1) 划分资本性支出和收益性支出原则；<br>(2) 权责发生制原则；<br>(3) 配比原则</td></tr>
+        </table>
+        <div class="trap">⚠ 三个确认条件必须<b>同时满足</b>；注意与收入确认条件（利益"流入"）对照，多选题易混"流入/流出"方向。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>7.2.2 费用计量</span><span class="stars">★★★★</span><span class="yr">2024单选 · 2021单选 · 2017多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+
+        <h4>1. 存货的特点【2024单选】</h4>
+        <ul>
+          <li>是<span class="b">有形资产</span>（区别于无形资产）</li>
+          <li>具有<span class="b">较强的流动性</span>（相对于固定资产），存货处于不断销售、耗用、购买或重置的循环中</li>
+          <li>具有时效性和发生潜在损失的可能性（<span class="b">减值可能性</span>）</li>
+        </ul>
+
+        <h4>2. 固定资产计量（表7-2）</h4>
+        <table>
+          <tr><th colspan="2">固定资产初始计量</th></tr>
+          <tr><th>外购</th><td>一笔款项购入多项没有单独标价的固定资产：按<span class="b">各项固定资产公允价值比例对总成本进行分配</span>，分别确定各项成本</td></tr>
+          <tr><th>自行建造</th><td>由建造该项资产达到预定可使用状态前所发生的必要支出构成</td></tr>
+          <tr><th>投资者投入</th><td>按投资合同或协议约定的价值确定，但约定价值不公允的除外</td></tr>
+          <tr><th>非货币性资产交换、债务重组、企业合并和融资租赁取得</th><td>分别按照相应会计准则确定</td></tr>
+          <tr><th colspan="2">固定资产后续计量（折旧计提 / 减值损失 / 后续支出）</th></tr>
+          <tr><th>三种调整</th><td>(1) 使用寿命预计数与原先估计数有差异→<b>调整使用寿命</b>；<br>(2) 预计净残值与原先估计数有差异→<b>调整预计净残值</b>；<br>(3) 与固定资产有关的经济利益预期实现方式有重大改变→<b>改变折旧方法</b></td></tr>
+        </table>
+
+        <h4>3. 固定资产折旧方法【2021单选 · 2017多选】（图7-4）</h4>
+        <table>
+          <tr><th>年限平均法</th><td>
+            <span class="formula r">年折旧额 = 应计折旧额 ÷ 预计使用年限</span>
+            应计折旧额 = 原价 − 预计净残值 − 已计提的减值准备累计金额<br>
+            年折旧率 = 年折旧额/原价×100% = [(1−预计净残值率)/使用年限]×100%<br>
+            月折旧额 = 年折旧额/12；月折旧率 = 年折旧率/12
+          </td></tr>
+          <tr><th>工作量法</th><td>
+            单位工作量折旧额 = 应计折旧额 ÷ 预计总工作量；月折旧额 = 当月完成工作量×单位工作量折旧额<br>
+            <span class="b">行驶里程法——适用于车辆、船舶等运输设备</span>；<span class="b">工作台班法——适用于机械、设备等</span>
+          </td></tr>
+          <tr><th>双倍余额递减法</th><td>
+            <span class="r">双倍是指折旧率，余额指计算每期折旧额的基数</span>；每期折旧额的基数逐年减小。<br>
+            年折旧额 = 年初账面净值（原价−累计折旧）× 年折旧率（不扣残值）<br>
+            <span class="r">最后两年</span>：年折旧额 =（应计折旧额−累计折旧）÷2；年内各月按12个月平均分摊
+          </td></tr>
+          <tr><th>年数总和法</th><td>
+            <span class="r">年折旧率逐年减小</span>：第n年折旧率 = (N−n+1)/[(1+N)×N÷2]×100%<br>
+            第n年折旧额 = 应计折旧额×第n年折旧率；年内各月按12个月平均分摊
+          </td></tr>
+        </table>
+
+        <h4>表7-3 折旧方法对比记忆</h4>
+        <table>
+          <tr><th>折旧方法</th><th>折旧基数</th><th>折旧率变化</th><th>折旧额变化</th><th>说明</th></tr>
+          <tr><td>年限平均法</td><td rowspan="2" style="text-align:center">不变</td><td rowspan="2" style="text-align:center">不变</td><td rowspan="2" style="text-align:center">不变</td><td rowspan="2">平均折旧</td></tr>
+          <tr><td>工作量法</td></tr>
+          <tr><td>双倍余额递减法</td><td>逐年减少</td><td>不变</td><td rowspan="2">逐年减少</td><td rowspan="2">逐年减小（属加速折旧法）</td></tr>
+          <tr><td>年数总和法</td><td>不变</td><td>逐年减少</td></tr>
+        </table>
+        <div class="trap">⚠ 双倍余额递减法：<b>基数减、率不变</b>，且前期<b>不扣</b>净残值（最后两年才扣）；年数总和法：<b>基数不变、率逐年减</b>，基数始终扣残值——两法特征互为镜像，单选高频设坑。</div>
+
+        <details class="ex"><summary>【2021年真题】某施工企业购入一台施工机械，原价60000元，预计残值率3%，使用年限8年，按年限平均法计提折旧，每年应计提的折旧额为（ ）元。A.5820 B.7275 C.6000 D.7500</summary><div>答案 B：60000×(1−3%)÷8 = 7275 元。</div></details>
+
+        <h4>4. 无形资产计量（表7-4）</h4>
+        <table>
+          <tr><th colspan="2">无形资产初始计量</th></tr>
+          <tr><th>外购</th><td>成本以购买价款的现值为基础确定</td></tr>
+          <tr><th>自行开发（含已作为无形资产确认的正在进行中的研发项目）</th><td>企业内部研究开发项目<b>开发阶段</b>的支出，<b>同时满足</b>下列条件才能确认为无形资产：<br>
+            (1) 完成该无形资产以使其能够使用或出售在技术上<span class="b">具有可行性</span>；<br>
+            (2) 具有完成该无形资产并<span class="b">使用或出售的意图</span>；<br>
+            (3) 无形资产产生经济利益的方式（产品存在市场或无形资产自身存在市场；内部使用的应当证明有用性）；<br>
+            (4) 有足够的技术、财务资源和其他资源支持，以<span class="b">完成该无形资产的开发，并有能力使用或出售该无形资产</span>；<br>
+            (5) 归属于该无形资产开发阶段的支出能够<span class="b">可靠地计量</span></td></tr>
+          <tr><th>投资者投入</th><td>按投资合同或协议约定的价值确定，但约定价值不公允的除外</td></tr>
+          <tr><th>非货币性资产交换、债务重组、政府补助和企业合并取得</th><td>分别按照相应会计准则确定</td></tr>
+          <tr><th>后续计量</th><td>无法预见无形资产为企业带来经济利益期限的，应当视为<b>使用寿命不确定</b>的无形资产</td></tr>
+        </table>
+        <div class="trap">⚠ 可确认为无形资产的是<b>开发阶段</b>符合条件的支出；研究阶段支出计入当期损益（费用化），不得资本化。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ══════════ 7.3 ══════════ -->
+<details class="sec">
+  <summary>7.3 工程成本核算<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>7.3.1 施工成本构成</span><span class="stars">★★★</span><span class="yr">2021·2024·2025单选 · 2019多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+
+        <h4>1. 施工成本构成【2021单选】（图7-5）</h4>
+        <table>
+          <tr><th>直接成本</th><td>消耗的原材料、备品配件、外购半成品；生产工人计件工资</td></tr>
+          <tr><th>间接成本</th><td><span class="b">生产车间管理人员的工资</span>、<span class="b">车间房屋建筑物和机器设备的折旧、租赁费、修理费</span>、机物料消耗、水电费、办公费</td></tr>
+        </table>
+
+        <h4>2. 成本核算方法【2024·2025单选】（图7-6）</h4>
+        <table>
+          <tr><th>制造成本法</th><td><span class="r">制造成本 = 直接材料成本 + 直接人工成本 + 制造费用</span><br>
+            制造费用包括设备折旧费用、维修费用、能源消耗费用、生产管理人员工资、福利费、差旅交通费、劳动保护费、折旧费、租赁费、物料消耗、低值易耗品摊销、检测费、水电费、办公费、装卸费等费用</td></tr>
+          <tr><th>完全成本法</th><td><span class="r">完全成本 = 直接材料成本 + 直接人工成本 + 制造费用 + 管理费用 + 销售费用 + 财务费用</span></td></tr>
+          <tr><th>作业成本法</th><td>基于"作业"计算成本的方法。作业量的计量和分配的3种方式：<br>
+            ① <b>业务动因</b>：<span class="r">以执行作业的次数作为作业量分配依据</span>，假定执行每次作业的成本（耗用的时间和单位时间耗用的资源）相等；<br>
+            ② <b>持续动因</b>：执行一项作业所需的时间标准，当不同产品所需作业量差异较大时，采用持续动因作为分配的基础。<span class="r">假设前提是，执行作业的单位时间内耗用的资源是相等的</span>；<br>
+            ③ <b>强度动因</b>：某些特殊情况下，<span class="r">将作业执行中实际耗用的全部资源单独归集</span>，并将该项单独归集的作业成本直接计入某一特定的产品</td></tr>
+        </table>
+        <div class="trap">⚠ 制造成本 vs 完全成本：差在<b>期间费用（管理+销售+财务）</b>是否计入。制造成本法下期间费用不进成本、直接计入当期损益——公式记混必错。</div>
+
+        <h4>3. 施工成本项目划分【2019多选】（图7-7）</h4>
+        <table>
+          <tr><th>直接人工</th><td>施工过程中直接从事建筑安装工程施工的工人的职工薪酬；在施工现场直接为工程制作构件和运料、配料等工人的职工薪酬</td></tr>
+          <tr><th>直接材料</th><td>所耗用的、构成工程实体的材料、结构件、机械配件；有助于工程形成的其他材料；周转材料的租赁费和摊销</td></tr>
+          <tr><th>机械使用费</th><td><span class="b">使用自有施工机械所发生的机械使用费</span>；<span class="b">使用外单位施工机械的租赁费</span>；<span class="b">按照规定支付的施工机械进出场费</span></td></tr>
+          <tr><th>其他直接费用</th><td><span class="b">材料搬运费、装卸保管费、燃料动力费、临时设施摊销、生产工具用具使用费、检验试验费、工程定位复测费、工程点交费、场地清理费</span>；能够单独区分和可靠计量的为订立建造承包合同而发生的差旅费、投标费</td></tr>
+          <tr><th>间接费用</th><td>施工企业下属施工单位或生产单位的临时设施摊销费用；管理人员工资、奖金；职工福利费；固定资产折旧费及修理费；物料消耗；低值易耗品摊销；取暖费、水电费；办公费、差旅费；检验试验费、工程保修费；财产保险费；劳动保护费及其他费用</td></tr>
+          <tr><th>分包成本</th><td>分包工程发生的成本</td></tr>
+        </table>
+        <div class="trap">⚠ 同名费用按发生地点分口径：现场发生的检验试验费→<b>其他直接费用</b>；下属单位/管理层面的检验试验费、临时设施摊销→<b>间接费用</b>。多选题常拿"机械进出场费（机械使用费）""周转材料摊销（直接材料）"设坑。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>7.3.2 工程成本核算过程</span><span class="stars">★★★</span><span class="yr">2014·2023年单选 · 2022多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>核算对象</th><td><span class="r">单项合同</span>。单项合同包括建造多项资产的，按照企业会计准则规定的合同分立原则确定；为建造一项或数项资产而签订一组合同的，按合同合并的原则确定</td></tr>
+          <tr><th>核算范围和成本项目</th><td>直接人工、直接材料、机械使用费、其他直接费用、间接费用。<br>
+            企业为履行合同发生的成本，<b>同时满足</b>下列条件的，应当作为合同履约成本确认为一项资产：<br>
+            (1) 该成本与一份当前或预期取得的合同直接相关（包括直接人工、直接材料、制造费用或类似费用、明确由客户承担的成本以及仅因该合同而发生的其他成本）；<br>
+            (2) 该成本增加了企业未来用于履行履约义务的资源；<br>
+            (3) 该成本预期能够收回</td></tr>
+          <tr><th>成本归集、分配和结转</th><td>
+            ① <b>直接计入成本</b>：某一个成本核算对象承担的费用；<br>
+            ② <b>分配计入成本</b>：几个成本核算对象承担的费用，分配方法有<span class="b">直接费用比例（定额比例）、职工薪酬比例</span>等；<br>
+            ③ <b>结转产品成本</b>：企业为生产产品、提供劳务等发生的可归属于产品成本、劳务成本等的费用，应当<span class="r">在确认产品销售收入、劳务收入等时</span>，将已销售产品、已提供劳务的成本（与收入配比的费用）等计入当期损益；与合同成本有关的资产，应当采用与该资产相关的商品收入确认相同的基础进行摊销，计入当期损益</td></tr>
+        </table>
+        <div class="trap">⚠ 成本结转时点：不是发生时、不是完工时，而是<b>确认销售收入/劳务收入时</b>才计入当期损益——"计入成本"与"计入当期损益"的边界是高频陷阱。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ══════════ 7.4 ══════════ -->
+<details class="sec">
+  <summary>7.4 施工企业期间费用核算<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>7.4.1 期间费用构成</span><span class="stars">★★★</span><span class="yr">2016·2018·2020单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <h4>期间费用构成（图7-9）</h4>
+        <table>
+          <tr><th>销售费用</th><td>保险费、包装费、展览费和广告费、商品维修费、运输费、装卸费；为销售本企业商品而专设的销售机构（含销售网点、售后服务网点等）的职工薪酬、业务费、折旧费等经营费用；企业发生的与专设销售机构相关的固定资产修理费用等后续支出</td></tr>
+          <tr><th>管理费用</th><td>企业在筹建期间发生的开办费、董事会和行政管理部门在企业的经营管理中发生的或者应由企业统一负担的公司经费；行政管理部门职工工资、修理费、物料消耗、低值易耗品摊销、办公费、差旅费等；工会经费、董事会费（包括董事会成员津贴、会议费和差旅费等）；聘请中介机构费、咨询费（含顾问费）、诉讼费、业务招待费、技术转让费、矿产资源补偿费、研究费用、排污费；行政管理部门等发生的固定资产修理费用等后续支出</td></tr>
+          <tr><th>财务费用</th><td><span class="r">利息支出（减利息收入）、汇兑损失（减汇兑收益）以及相关的手续费</span>；<span class="r">因借入资金所付出的不符合资本化条件的借款费用</span>；除外币专门借款之外的其他外币借款本金及其利息所产生的汇兑差额</td></tr>
+        </table>
+        <div class="trap">⚠ 借款利息去向三分法：不符合资本化条件→<b>财务费用</b>；符合资本化条件→<b>资本化计入资产成本</b>，不进财务费用。银行手续费也在财务费用，不是管理费用。</div>
+        <div class="trap">⚠ 易混归属：开办费、业务招待费、研究费用、诉讼费→<b>管理费用</b>；广告费、专设销售机构职工薪酬→<b>销售费用</b>——单选常互换设坑。</div>
+        <details class="ex"><summary>【2020年真题】施工企业支付给银行的短期借款利息应计入企业的（ ）。A.管理费用 B.生产费用 C.财务费用 D.销售费用</summary><div>答案 C：短期借款利息属于不符合资本化条件的借款费用，计入财务费用。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>7.4.2 期间费用的核算</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <h4>表7-5 期间费用的核算</h4>
+        <table>
+          <tr><th>销售费用</th><td>企业应设置"销售费用"科目进行销售费用核算，"销售费用"科目可按费用项目（如广告费、包装费等）进行明细核算</td></tr>
+          <tr><th>财务费用</th><td>企业应设置"财务费用"科目进行财务费用核算，"财务费用"科目可按费用项目（如利息、汇兑损益等）进行明细核算</td></tr>
+          <tr><th>管理费用</th><td>企业应设置"管理费用"科目进行管理费用核算，"管理费用"科目可按费用项目（如办公费、招待费等）进行明细核算</td></tr>
+        </table>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<footer>依据《建设工程经济四色笔记》第040~046页整理</footer>
+
+<script>
+function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>建设工程经济 · 全书骨架</title>
+<style>
+  :root{
+    --c1:#e05d2d; --c1-bg:#fdf0ea; --c1-line:#f3c9b6;
+    --c2:#1a7f5a; --c2-bg:#eaf6f0; --c2-line:#bfe3d3;
+    --c3:#2563ab; --c3-bg:#ecf3fa; --c3-line:#c2d8ee;
+    --ink:#2b2b2b; --sub:#777; --trap:#c22;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.55;}
+  h1{font-size:1.25rem;text-align:center;margin:6px 0 2px;}
+  .meta{text-align:center;color:var(--sub);font-size:.78rem;margin-bottom:14px;}
+  /* 顶层逻辑链 */
+  .chain{background:#fff;border-radius:12px;padding:12px 14px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.06);font-size:.85rem;}
+  .chain b{display:block;margin-bottom:6px;font-size:.9rem;}
+  .chain .flow{display:flex;flex-direction:column;gap:4px;}
+  .flow .step{display:flex;align-items:baseline;gap:8px;}
+  .flow .tag{flex:none;font-weight:700;padding:1px 8px;border-radius:6px;font-size:.8rem;color:#fff;}
+  .t1{background:var(--c1);} .t2{background:var(--c2);} .t3{background:var(--c3);}
+  .flow .arrow{color:var(--sub);text-align:center;font-size:.8rem;margin:-2px 0;}
+  /* 篇 */
+  .part{border-radius:12px;margin-bottom:14px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06);}
+  .part>summary{list-style:none;cursor:pointer;padding:12px 14px;color:#fff;font-weight:700;font-size:1rem;display:flex;justify-content:space-between;align-items:center;}
+  .part>summary::-webkit-details-marker{display:none;}
+  .p1>summary{background:var(--c1);} .p2>summary{background:var(--c2);} .p3>summary{background:var(--c3);}
+  .part .body{padding:10px 10px 12px;}
+  .p1 .body{background:var(--c1-bg);} .p2 .body{background:var(--c2-bg);} .p3 .body{background:var(--c3-bg);}
+  .plogic{font-size:.82rem;color:#555;background:rgba(255,255,255,.75);border-radius:8px;padding:8px 10px;margin-bottom:10px;}
+  .plogic b{color:var(--ink);}
+  /* 章 */
+  .chap{background:#fff;border-radius:10px;margin-bottom:8px;overflow:hidden;}
+  .p1 .chap{border-left:4px solid var(--c1);} .p2 .chap{border-left:4px solid var(--c2);} .p3 .chap{border-left:4px solid var(--c3);}
+  .chap>summary{list-style:none;cursor:pointer;padding:10px 12px;display:flex;align-items:center;gap:8px;font-size:.92rem;}
+  .chap>summary::-webkit-details-marker{display:none;}
+  .chap .no{flex:none;font-weight:700;color:var(--sub);font-size:.8rem;min-width:2.6em;}
+  .chap .nm{font-weight:600;flex:1;}
+  .caret{flex:none;color:#bbb;transition:transform .2s;font-size:.75rem;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .secs{padding:2px 12px 10px 12px;border-top:1px dashed #eee;}
+  .sec{font-size:.85rem;padding:4px 0 4px 1.8em;text-indent:-1.8em;color:#444;}
+  .sec .sn{color:var(--sub);font-size:.78rem;margin-right:6px;}
+  .clogic{font-size:.8rem;color:#666;background:#fafafa;border-radius:6px;padding:6px 9px;margin:6px 0 4px;}
+  .pending{font-size:.72rem;color:#aaa;border:1px solid #ddd;border-radius:4px;padding:0 5px;flex:none;}
+  a.mounted{font-size:.72rem;color:#fff;background:#3aa06b;border-radius:4px;padding:1px 7px;flex:none;text-decoration:none;font-weight:600;}
+  .btns{display:flex;gap:8px;justify-content:center;margin-bottom:14px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:6px 16px;font-size:.82rem;color:#555;}
+  footer{text-align:center;color:#bbb;font-size:.72rem;margin-top:24px;}
+</style>
+</head>
+<body>
+
+<h1>《建设工程经济》全书骨架</h1>
+<div class="meta">四色笔记 · 3篇 20章 · 全部已挂载，点"打开 ▸"进入各章知识树</div>
+
+<div class="chain">
+  <b>全书一条逻辑链</b>
+  <div class="flow">
+    <div class="step"><span class="tag t1">第1篇</span><span><b>工程经济</b>——投资前先回答"这钱值不值得花"：钱有时间价值 → 用指标评价方案 → 考虑不确定性 → 落到设备与功能层面</span></div>
+    <div class="arrow">↓ 决定投了，企业内部就要"把账算清"</div>
+    <div class="step"><span class="tag t2">第2篇</span><span><b>工程财务</b>——从会计基础出发：费用成本(花的) → 收入(挣的) → 利润与税(剩的) → 分析 → 缺钱怎么筹、日常怎么管</span></div>
+    <div class="arrow">↓ 账的规则清楚了，落到具体项目"这价怎么定"</div>
+    <div class="step"><span class="tag t3">第3篇</span><span><b>工程计价</b>——按项目全生命周期走：总投资构成 → 计价依据 → 概算预算 → 清单招投标 → 计量支付结算 → 总承包/国际工程 → 数字化</span></div>
+  </div>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ===================== 第1篇 ===================== -->
+<details class="part p1" open>
+  <summary><span>第1篇 工程经济（第1~5章）</span><span class="caret">▶</span></summary>
+  <div class="body">
+    <div class="plogic"><b>组织原则：</b>一切围绕"方案值不值"。第1章给工具（钱的时间价值），第2章用工具建评价体系，第3章处理"估不准"，第4、5章把评价用到两个具体对象——设备和功能。前章是后章的地基，顺序不可倒。</div>
+
+    <details class="chap"><summary><span class="no">第1章</span><span class="nm">资金时间价值计算及应用</span><a class="mounted" href="01-资金时间价值计算及应用.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">全篇的"数学地基"：后面所有指标（NPV、内部收益率…）都建立在等值计算上。</div>
+        <div class="sec"><span class="sn">1.1</span>利息的计算</div>
+        <div class="sec"><span class="sn">1.2</span>名义利率与有效利率计算</div>
+        <div class="sec"><span class="sn">1.3</span>资金等值计算及应用</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第2章</span><span class="nm">经济效果评价</span><a class="mounted" href="02-经济效果评价.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">全篇核心：先定评价内容，再建指标体系，最后多方案之间怎么选。</div>
+        <div class="sec"><span class="sn">2.1</span>经济效果评价内容</div>
+        <div class="sec"><span class="sn">2.2</span>经济效果评价指标体系</div>
+        <div class="sec"><span class="sn">2.3</span>多方案比选</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第3章</span><span class="nm">不确定性分析</span><a class="mounted" href="03-不确定性分析.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">第2章的评价基于预测值，本章回答"预测不准怎么办"：产量变了看盈亏平衡，参数变了看敏感性。</div>
+        <div class="sec"><span class="sn">3.1</span>盈亏平衡分析</div>
+        <div class="sec"><span class="sn">3.2</span>敏感性分析</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第4章</span><span class="nm">设备更新分析</span><a class="mounted" href="04-设备更新分析.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">评价方法落到"设备"这个对象：为什么旧（磨损）→ 该用多久（经济寿命）→ 换不换（更新）→ 买还是租（租赁）。</div>
+        <div class="sec"><span class="sn">4.1</span>设备磨损与补偿</div>
+        <div class="sec"><span class="sn">4.2</span>设备经济寿命确定</div>
+        <div class="sec"><span class="sn">4.3</span>设备更新方案经济分析</div>
+        <div class="sec"><span class="sn">4.4</span>设备租赁方案经济分析</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第5章</span><span class="nm">价值工程</span><a class="mounted" href="05-价值工程.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">评价方法落到"功能"这个对象：V=F/C，用最低寿命周期成本实现必要功能。</div>
+        <div class="sec"><span class="sn">5.1</span>价值工程原理</div>
+        <div class="sec"><span class="sn">5.2</span>价值工程实施步骤</div>
+      </div>
+    </details>
+  </div>
+</details>
+
+<!-- ===================== 第2篇 ===================== -->
+<details class="part p2">
+  <summary><span>第2篇 工程财务（第6~12章）</span><span class="caret">▶</span></summary>
+  <div class="body">
+    <div class="plogic"><b>组织原则：</b>沿"一张利润表"展开——第6章定记账规则，7~9章按 <b>费用成本 → 收入 → 利润与税</b> 走完利润表主线，第10章回头分析报表，11~12章解决钱的来源（筹资）与日常周转（营运资金）。</div>
+
+    <details class="chap"><summary><span class="no">第6章</span><span class="nm">财务会计基础</span><a class="mounted" href="06-财务会计基础.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">本篇的"语法书"：会计要素、假设、等式，后面每章都用这套语言说话。</div>
+        <div class="sec"><span class="sn">6.1</span>会计要素组成及计量</div>
+        <div class="sec"><span class="sn">6.2</span>财务会计工作基本内容</div>
+        <div class="sec"><span class="sn">6.3</span>会计假设与会计基础</div>
+        <div class="sec"><span class="sn">6.4</span>会计核算过程与会计等式</div>
+        <div class="sec"><span class="sn">6.5</span>会计监督</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第7章</span><span class="nm">费用与成本</span><a class="mounted" href="07-费用与成本.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">利润表主线第一步：花出去的钱。注意"费用"与"成本"口径不同——易混高发区。</div>
+        <div class="sec"><span class="sn">7.1</span>费用与成本的关系</div>
+        <div class="sec"><span class="sn">7.2</span>施工企业费用确认及计量</div>
+        <div class="sec"><span class="sn">7.3</span>工程成本核算</div>
+        <div class="sec"><span class="sn">7.4</span>施工企业期间费用核算</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第8章</span><span class="nm">收入</span><a class="mounted" href="08-收入.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">利润表主线第二步：挣进来的钱，重点是建造合同收入的确认。</div>
+        <div class="sec"><span class="sn">8.1</span>收入的分类、确认及计量</div>
+        <div class="sec"><span class="sn">8.2</span>建造合同收入</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第9章</span><span class="nm">利润与所得税费用</span><a class="mounted" href="09-利润与所得税费用.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">主线第三步：收入减费用剩下的，以及要交的税。至此利润表走完。</div>
+        <div class="sec"><span class="sn">9.1</span>利润</div>
+        <div class="sec"><span class="sn">9.2</span>所得税费用</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第10章</span><span class="nm">财务分析</span><a class="mounted" href="10-财务分析.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">账记完了，回头看报表：报表怎么构成、用什么方法分析。</div>
+        <div class="sec"><span class="sn">10.1</span>财务报告构成及列报基本要求</div>
+        <div class="sec"><span class="sn">10.2</span>财务分析方法</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第11章</span><span class="nm">筹资管理</span><a class="mounted" href="11-筹资管理.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">钱从哪来：谁来筹 → 怎么筹 → 筹的钱多贵（资金成本）→ 结构怎么配。⚠ 扫描件缺书页070~071，11.3/11.4正文待补。</div>
+        <div class="sec"><span class="sn">11.1</span>筹资主体</div>
+        <div class="sec"><span class="sn">11.2</span>筹资方式</div>
+        <div class="sec"><span class="sn">11.3</span>资金成本分析</div>
+        <div class="sec"><span class="sn">11.4</span>资金结构分析</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第12章</span><span class="nm">营运资金管理</span><a class="mounted" href="12-营运资金管理.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">钱来了怎么周转：现金 → 应收 → 存货 → 短期负债，按流动性排列。</div>
+        <div class="sec"><span class="sn">12.1</span>现金管理</div>
+        <div class="sec"><span class="sn">12.2</span>应收账款管理</div>
+        <div class="sec"><span class="sn">12.3</span>存货管理</div>
+        <div class="sec"><span class="sn">12.4</span>短期负债管理</div>
+      </div>
+    </details>
+  </div>
+</details>
+
+<!-- ===================== 第3篇 ===================== -->
+<details class="part p3">
+  <summary><span>第3篇 工程计价（第13~20章）</span><span class="caret">▶</span></summary>
+  <div class="body">
+    <div class="plogic"><b>组织原则：</b>按项目从立项到结算的时间轴排布——先搞清钱由什么构成（13），拿什么依据算（14），设计阶段算概算预算（15），招投标阶段用清单计价（16），施工阶段计量支付（17），再扩展到总承包（18）、国际工程（19）、数字化工具（20）。分值大头、案例题主产区。</div>
+
+    <details class="chap"><summary><span class="no">第13章</span><span class="nm">建设项目总投资构成及计算</span><a class="mounted" href="13-建设项目总投资构成及计算.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">全篇总纲：总投资这棵"费用构成树"是后面一切计价的对象。层级易混点密集（如基本预备费 vs 价差预备费的归属）。</div>
+        <div class="sec"><span class="sn">13.1</span>建设项目总投资构成</div>
+        <div class="sec"><span class="sn">13.2</span>设备及工器具购置费构成及计算</div>
+        <div class="sec"><span class="sn">13.3</span>建筑安装工程费构成及计算</div>
+        <div class="sec"><span class="sn">13.4</span>工程建设其他费构成及计算</div>
+        <div class="sec"><span class="sn">13.5</span>预备费计算</div>
+        <div class="sec"><span class="sn">13.6</span>增值税计算</div>
+        <div class="sec"><span class="sn">13.7</span>建设期利息与流动资金计算</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第14章</span><span class="nm">工程计价依据</span><a class="mounted" href="14-工程计价依据.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">算价的"尺子"：定额体系 → 消耗量怎么定 → 单价怎么定 → 各类定额与指标。</div>
+        <div class="sec"><span class="sn">14.1</span>工程造价管理标准体系与工程定额体系</div>
+        <div class="sec"><span class="sn">14.2</span>人工、材料与施工机具台班消耗量确定</div>
+        <div class="sec"><span class="sn">14.3</span>人工、材料与施工机具台班单价确定</div>
+        <div class="sec"><span class="sn">14.4</span>预算定额、概算定额与概算指标</div>
+        <div class="sec"><span class="sn">14.5</span>工程造价指标与指数</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第15章</span><span class="nm">设计概算与施工图预算</span><a class="mounted" href="15-设计概算与施工图预算.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">时间轴·设计阶段：概算 → 预算 → 审查。</div>
+        <div class="sec"><span class="sn">15.1</span>设计概算编制</div>
+        <div class="sec"><span class="sn">15.2</span>施工图预算编制</div>
+        <div class="sec"><span class="sn">15.3</span>设计概算与施工图预算的审查</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第16章</span><span class="nm">工程量清单计价</span><a class="mounted" href="16-工程量清单计价.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">时间轴·招投标阶段：清单原理 → 编清单 → 招标人定最高限价 → 投标人报价 → 写进合同。</div>
+        <div class="sec"><span class="sn">16.1</span>工程量清单计价原理</div>
+        <div class="sec"><span class="sn">16.2</span>工程量清单编制</div>
+        <div class="sec"><span class="sn">16.3</span>最高投标限价编制</div>
+        <div class="sec"><span class="sn">16.4</span>投标报价编制</div>
+        <div class="sec"><span class="sn">16.5</span>合同价款约定</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第17章</span><span class="nm">工程计量与支付</span><a class="mounted" href="17-工程计量与支付.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">时间轴·施工阶段：计量 → 调价 → 变更 → 索赔 → 期中支付 → 结算 → 争议。案例题重镇。</div>
+        <div class="sec"><span class="sn">17.1</span>工程计量</div>
+        <div class="sec"><span class="sn">17.2</span>合同价格调整</div>
+        <div class="sec"><span class="sn">17.3</span>工程变更价款确定</div>
+        <div class="sec"><span class="sn">17.4</span>工程索赔</div>
+        <div class="sec"><span class="sn">17.5</span>合同价款期中支付</div>
+        <div class="sec"><span class="sn">17.6</span>结算与支付</div>
+        <div class="sec"><span class="sn">17.7</span>合同价款争议的解决</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第18章</span><span class="nm">工程总承包计价</span><a class="mounted" href="18-工程总承包计价.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">把16~17章的流程在"总承包"模式下再走一遍：原理 → 限价与报价 → 合同约定 → 调整与索赔 → 结算。</div>
+        <div class="sec"><span class="sn">18.1</span>工程总承包计价原理</div>
+        <div class="sec"><span class="sn">18.2</span>工程总承包最高投标限价与投标报价编制</div>
+        <div class="sec"><span class="sn">18.3</span>工程总承包合同价款约定</div>
+        <div class="sec"><span class="sn">18.4</span>工程总承包合同价款调整与索赔</div>
+        <div class="sec"><span class="sn">18.5</span>工程总承包项目结算与支付</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第19章</span><span class="nm">国际工程投标报价</span><a class="mounted" href="19-国际工程投标报价.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">场景扩展到国际工程：构成及程序 → 编制 → 技巧。</div>
+        <div class="sec"><span class="sn">19.1</span>国际工程投标报价构成及程序</div>
+        <div class="sec"><span class="sn">19.2</span>国际工程投标报价编制</div>
+        <div class="sec"><span class="sn">19.3</span>国际工程投标报价技巧</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第20章</span><span class="nm">工程计价数字化与智能化</span><a class="mounted" href="20-工程计价数字化与智能化.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">工具层收尾：BIM、AI、大数据在计价中的应用。</div>
+        <div class="sec"><span class="sn">20.1</span>BIM在工程计价中的应用</div>
+        <div class="sec"><span class="sn">20.2</span>人工智能在工程计价中的应用</div>
+        <div class="sec"><span class="sn">20.3</span>大数据在工程计价中的应用</div>
+      </div>
+    </details>
+  </div>
+</details>
+
+<footer>骨架依据《建设工程经济四色笔记》目录 · 20章知识树已全部挂载</footer>
+
+<script>
+function setAll(open){
+  document.querySelectorAll('details').forEach(d=>d.open=open);
+}
+</script>
+</body>
+</html>

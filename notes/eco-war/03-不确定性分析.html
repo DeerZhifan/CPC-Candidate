@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第3章 不确定性分析 · 知识树</title>
+<style>
+  :root{ --accent:#e05d2d; --accent-bg:#fdf0ea; --ink:#2b2b2b; --sub:#777; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.6;}
+  a.back{display:inline-block;font-size:.8rem;color:var(--sub);text-decoration:none;margin-bottom:8px;}
+  h1{font-size:1.15rem;margin:2px 0 4px;color:var(--accent);}
+  .meta{color:var(--sub);font-size:.78rem;margin-bottom:10px;}
+  .legend{background:#fff;border-radius:10px;padding:8px 12px;font-size:.75rem;color:#555;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;}
+  .score{background:#fff;border-radius:10px;padding:10px 12px;font-size:.8rem;margin-bottom:14px;}
+  .score b{font-size:.85rem;}
+  .score table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .score td,.score th{border:1px solid #eee;padding:3px 6px;font-size:.75rem;text-align:center;}
+  .score th{background:#fafafa;font-weight:600;}
+  /* 节 */
+  details.sec{background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:4px solid var(--accent);}
+  details.sec>summary{list-style:none;cursor:pointer;padding:11px 13px;font-weight:700;font-size:.95rem;display:flex;gap:8px;align-items:center;}
+  details.sec>summary::-webkit-details-marker{display:none;}
+  .caret{margin-left:auto;color:#bbb;font-size:.75rem;transition:transform .2s;flex:none;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .sec .inner{padding:0 12px 12px;}
+  /* 目 */
+  details.item{border:1px solid #eee;border-radius:9px;margin-bottom:8px;background:#fff;}
+  details.item>summary{list-style:none;cursor:pointer;padding:9px 11px;font-size:.88rem;font-weight:600;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+  details.item>summary::-webkit-details-marker{display:none;}
+  .stars{color:#e8a20c;font-size:.8rem;letter-spacing:1px;flex:none;}
+  .yr{background:var(--accent-bg);color:var(--accent);font-size:.68rem;padding:1px 6px;border-radius:4px;flex:none;}
+  .item .kp{padding:2px 12px 10px;border-top:1px dashed #f0f0f0;font-size:.85rem;}
+  /* 知识点列表 */
+  .kp ul{margin:6px 0;padding-left:1.25em;}
+  .kp li{margin:4px 0;}
+  .kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem;}
+  .kp th,.kp td{border:1px solid #e8e8e8;padding:5px 7px;text-align:left;vertical-align:top;}
+  .kp th{background:#fafafa;font-weight:600;white-space:nowrap;}
+  .r{color:#c62828;font-weight:600;}     /* 书中红字：重点/易考/高频 */
+  .b{color:#1d64c0;}                      /* 书中蓝字：次重点 */
+  .formula{background:#faf7f2;border-radius:6px;padding:6px 10px;margin:6px 0;font-family:Georgia,serif;font-size:.9rem;overflow-x:auto;}
+  .trap{background:#fff8e6;border-left:3px solid #e8a20c;border-radius:0 8px 8px 0;padding:7px 10px;margin:8px 0;font-size:.8rem;color:#7a5c00;}
+  details.ex{background:#f4f8fd;border-radius:8px;margin:8px 0;font-size:.82rem;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:8px 10px;color:#2563ab;}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>div{padding:0 10px 9px;color:#444;}
+  .btns{display:flex;gap:8px;justify-content:center;margin:0 0 12px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
+  footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
+</style>
+</head>
+<body>
+
+<a class="back" href="00-全书骨架.html">← 返回全书骨架</a>
+<h1>第3章 不确定性分析</h1>
+<div class="meta">第1篇 工程经济 · 共2节</div>
+
+<div class="legend">
+  <span><span class="stars">★</span>数=重要度</span>
+  <span class="r">红=重点/易考/高频</span>
+  <span class="b">蓝=次重点</span>
+  <span>⚠=易混陷阱</span>
+</div>
+
+<div class="score">
+  <b>本章分值：2024年4分 · 2025年4分 · 2026预测3分</b>
+  <table>
+    <tr><th>知识点</th><th>题型</th><th>2024</th><th>2025</th><th>2026预测</th></tr>
+    <tr><td rowspan="2">3.1 盈亏平衡分析</td><td>单项选择题</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td>多项选择题</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td rowspan="2">3.2 敏感性分析</td><td>单项选择题</td><td>1</td><td>1</td><td>—</td></tr>
+    <tr><td>多项选择题</td><td>2</td><td>2</td><td>2</td></tr>
+    <tr><td colspan="2"><b>合计</b></td><td><b>4</b></td><td><b>4</b></td><td><b>3</b></td></tr>
+  </table>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ══════════ 3.1 ══════════ -->
+<details class="sec" open>
+  <summary>3.1 盈亏平衡分析<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>3.1.1 盈亏平衡分析的概念和分类</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>盈亏平衡分析<span class="r">只用于财务分析</span></li>
+          <li>可分为<span class="r">线性盈亏平衡分析（也称量本利分析）</span>和非线性盈亏平衡分析</li>
+        </ul>
+        <div class="trap">⚠ 适用范围对比：盈亏平衡分析<b>只用于财务分析</b>；敏感性分析对<b>财务分析和经济分析同样适用</b>（3.2.1）——多选常拿这两句互设干扰项。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>3.1.2 线性盈亏平衡分析</span><span class="stars">★★★★★</span><span class="yr">2025单选·2021多选</span><span class="yr">2016~2020·2022·2024单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 假设条件（三要点：产销相等、总成本和收入均线性）</b>
+        <ul>
+          <li><span class="r">产量等于销售量</span>，即当年生产的产品当年全部销售</li>
+          <li><span class="r">产量发生变化时，单位可变成本不变</span>，即总成本费用是产量的线性函数</li>
+          <li><span class="r">产量发生变化时，产品售价不变</span>，即销售收入是销售量（产量）的线性函数</li>
+        </ul>
+
+        <b>2. 盈亏平衡点的计算（三个口径）</b>
+        <div class="formula">盈亏平衡状态：P × Q = C<sub>f</sub> + (C<sub>u</sub> + T<sub>u</sub>) × Q</div>
+        <div class="formula">① 产销量表示：<b>BEP(Q) = C<sub>f</sub> / (P − C<sub>u</sub> − T<sub>u</sub>)</b></div>
+        <div class="formula">② 生产能力利用率表示：<b>BEP(%) = BEP(Q) / Q<sub>d</sub> × 100%</b></div>
+        <div class="formula">③ 产品售价表示：<b>BEP(P) = C<sub>f</sub> / Q<sub>d</sub> + C<sub>u</sub> + T<sub>u</sub></b></div>
+        <ul>
+          <li>C<sub>f</sub>——<span class="b">年固定成本</span>；C<sub>u</sub>——<span class="b">单位产品可变成本</span>；P——<span class="b">单位产品售价</span></li>
+          <li>T<sub>u</sub>——<span class="b">单位产品税金及附加（不包括增值税）</span></li>
+          <li>Q<sub>d</sub>——<span class="b">正常产销量，一般用设计生产能力（年）表示</span></li>
+        </ul>
+
+        <b>3. 盈亏平衡点的评价</b>
+        <ul>
+          <li>盈亏平衡点<span class="r">越低</span>，达到盈亏平衡越容易，项目<span class="r">抗风险能力越强</span></li>
+          <li>经验判据：若 <span class="r">BEP(%) ≤ 70%</span>，方案的运营是基本安全的，可以承受较大风险</li>
+        </ul>
+        <div class="trap">⚠ 方向易反：BEP 是"保本门槛"——<b>平衡点低 = 能力强</b>（口诀"低强"）。选"抗风险能力最强的方案"时选 BEP(%) <b>最小</b>者，别选最大。</div>
+
+        <details class="ex"><summary>【2023真题】四个互斥方案，设计生产能力分别为甲1000/乙900/丙800/丁700（万吨/年），盈亏平衡点产量为甲600/乙650/丙500/丁500。仅从抗风险能力角度，应选（ ）</summary><div>答案 D（甲）。BEP(%)：甲=600/1000=60%；乙=650/900=72.2%；丙=500/800=62.5%；丁=500/700=71.4%。甲的生产能力利用率表示的盈亏平衡点最低，抗风险能力最强（且≤70%基本安全）。</div></details>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ══════════ 3.2 ══════════ -->
+<details class="sec">
+  <summary>3.2 敏感性分析<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>3.2.1 敏感性分析的概念和分类</span><span class="stars">★★★</span><span class="yr">2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>敏感性分析可分为<span class="b">单因素敏感性分析和多因素敏感性分析</span></li>
+          <li>敏感性分析方法对<span class="b">方案财务分析和经济分析</span>同样适用</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>3.2.2 敏感性分析的方法与步骤</span><span class="stars">★★★★★</span><span class="yr">2017单选</span><span class="yr">2016·2019·2021·2022·2024·2025单选</span><span class="yr">2024·2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 方法与步骤（五步）</b>
+        <table>
+          <tr><th>① 确定分析指标</th><td>一般应<span class="b">与方案经济效果评价选用的指标一致</span></td></tr>
+          <tr><th>② 选取不确定因素</th><td>只对<span class="b">数据准确性把握不大</span>的、或对评价指标<span class="b">影响较大</span>的不确定性因素进行分析（不必全选）</td></tr>
+          <tr><th>③ 计算影响</th><td>计算不确定因素的变化对分析指标的影响</td></tr>
+          <tr><th>④ 确定敏感性因素</th><td>目的：寻找敏感因素。方法：相对测定法（主要通过<span class="r">敏感度系数</span>确定）和绝对测定法（主要通过<span class="r">临界点</span>确定）</td></tr>
+          <tr><th>⑤ 对结果进行分析</th><td>一般应选择<span class="b">敏感程度小、承受风险能力强、可靠性大</span>的方案</td></tr>
+        </table>
+
+        <b>2. 敏感度系数（相对测定法）</b>
+        <div class="formula"><b>S<sub>AF</sub> = (ΔA/A) / (ΔF/F)</b>　　ΔF/F——不确定因素 F 的变化率(%)；ΔA/A——F 变化 ΔF 时分析指标 A 的相应变化率(%)</div>
+        <ul>
+          <li><span class="r">S<sub>AF</sub>＞0：分析指标与不确定因素同方向变化；S<sub>AF</sub>＜0：反方向变化</span></li>
+          <li><span class="r">|S<sub>AF</sub>| 越大，分析指标对该不确定因素的敏感度越高</span>（该因素越敏感）</li>
+          <li><span class="r">计算结果可能受不确定因素变化率取值不同的影响，数值会有所变化</span></li>
+          <li>敏感度系数提供的是变动率之间的比例，但<span class="r">不能直接显示变化后分析指标的值</span></li>
+        </ul>
+        <div class="trap">⚠ 三个高频坑：① 比较敏感程度看 |S<sub>AF</sub>| 绝对值大小，符号只表方向；② 敏感度大 ⇒ 抗风险能力弱（口诀"大弱"），选方案要选敏感程度<b>小</b>的；③ 敏感度系数≠变化后指标值，不能直接读出新 NPV。</div>
+
+        <b>3. 临界点（绝对测定法）</b>
+        <ul>
+          <li>临界点是指不确定因素的<span class="b">变化极限值</span>，即使方案由可行变为不可行的临界数值</li>
+          <li>例：当产品价格下降到某一值时，财务内部收益率刚好等于财务基准收益率，此点即产品价格下降的临界点</li>
+          <li>临界点可用<span class="r">临界点百分比或临界值</span>分别表示；超过临界点，方案的经济效果指标将从可行转变为不可行</li>
+          <li>临界点的确定可以<span class="r">通过敏感性分析图求得临界点的近似值</span>（单因素敏感性分析图上直线斜率越大越敏感）</li>
+        </ul>
+        <div class="trap">⚠ 口诀总纲："平衡点低能力强、敏感度大能力弱（低强、大弱）；斜率越大越敏感；过临界点不可行。"</div>
+
+        <details class="ex"><summary>【2025真题】单因素敏感性分析：基本方案 FNPV=18000万元；建设投资 −10%→35182、+10%→818；销售收入 −10%→−4000、+10%→40000。正确说法是（ ）</summary><div>答案 B（销售收入的敏感度系数是12.22）。A：建设投资 S=(35182−18000)/18000÷(−10%)=−9.55；B：销售收入 S=(−4000−18000)/18000÷(−10%)=12.22 ✓；C：销售收入降低 18000/(18000+4000)×10%=8.18% 时 FNPV 为零（非2.22%）；D：|12.22|＞|−9.55|，FNPV 对建设投资的敏感度<b>小于</b>销售收入。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>3.2.3 敏感性分析的局限性</span><span class="stars">★★★</span><span class="yr">2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>局限性：可以找出方案分析指标对之敏感的不确定因素，并估计其对方案分析指标的影响程度，却并<span class="b">不能得知这些影响发生的可能性有多大</span>，还要借助于<span class="b">概率分析</span>等方法</li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<footer>依据《建设工程经济四色笔记》第014~018页整理</footer>
+
+<script>
+function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>

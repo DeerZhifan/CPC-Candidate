@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第4章 设备更新分析 · 知识树</title>
+<style>
+  :root{ --accent:#e05d2d; --accent-bg:#fdf0ea; --ink:#2b2b2b; --sub:#777; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.6;}
+  a.back{display:inline-block;font-size:.8rem;color:var(--sub);text-decoration:none;margin-bottom:8px;}
+  h1{font-size:1.15rem;margin:2px 0 4px;color:var(--accent);}
+  .meta{color:var(--sub);font-size:.78rem;margin-bottom:10px;}
+  .legend{background:#fff;border-radius:10px;padding:8px 12px;font-size:.75rem;color:#555;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;}
+  .score{background:#fff;border-radius:10px;padding:10px 12px;font-size:.8rem;margin-bottom:14px;}
+  .score b{font-size:.85rem;}
+  .score table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .score td,.score th{border:1px solid #eee;padding:3px 6px;font-size:.75rem;text-align:center;}
+  .score th{background:#fafafa;font-weight:600;}
+  details.sec{background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:4px solid var(--accent);}
+  details.sec>summary{list-style:none;cursor:pointer;padding:11px 13px;font-weight:700;font-size:.95rem;display:flex;gap:8px;align-items:center;}
+  details.sec>summary::-webkit-details-marker{display:none;}
+  .caret{margin-left:auto;color:#bbb;font-size:.75rem;transition:transform .2s;flex:none;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .sec .inner{padding:0 12px 12px;}
+  details.item{border:1px solid #eee;border-radius:9px;margin-bottom:8px;background:#fff;}
+  details.item>summary{list-style:none;cursor:pointer;padding:9px 11px;font-size:.88rem;font-weight:600;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+  details.item>summary::-webkit-details-marker{display:none;}
+  .stars{color:#e8a20c;font-size:.8rem;letter-spacing:1px;flex:none;}
+  .yr{background:var(--accent-bg);color:var(--accent);font-size:.68rem;padding:1px 6px;border-radius:4px;flex:none;}
+  .item .kp{padding:2px 12px 10px;border-top:1px dashed #f0f0f0;font-size:.85rem;}
+  .kp ul{margin:6px 0;padding-left:1.25em;}
+  .kp li{margin:4px 0;}
+  .kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem;}
+  .kp th,.kp td{border:1px solid #e8e8e8;padding:5px 7px;text-align:left;vertical-align:top;}
+  .kp th{background:#fafafa;font-weight:600;white-space:nowrap;}
+  .r{color:#c62828;font-weight:600;}
+  .b{color:#1d64c0;}
+  .formula{background:#faf7f2;border-radius:6px;padding:6px 10px;margin:6px 0;font-family:Georgia,serif;font-size:.9rem;overflow-x:auto;display:block;}
+  .trap{background:#fff8e6;border-left:3px solid #e8a20c;border-radius:0 8px 8px 0;padding:7px 10px;margin:8px 0;font-size:.8rem;color:#7a5c00;}
+  .tip{background:#eef6ff;border-left:3px solid #1d64c0;border-radius:0 8px 8px 0;padding:7px 10px;margin:8px 0;font-size:.8rem;color:#1a4c86;}
+  details.ex{background:#f4f8fd;border-radius:8px;margin:8px 0;font-size:.82rem;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:8px 10px;color:#2563ab;}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>div{padding:0 10px 9px;color:#444;}
+  .btns{display:flex;gap:8px;justify-content:center;margin:0 0 12px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
+  footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
+</style>
+</head>
+<body>
+
+<a class="back" href="00-全书骨架.html">← 返回全书骨架</a>
+<h1>第4章 设备更新分析</h1>
+<div class="meta">第1篇 工程经济 · 共4节</div>
+
+<div class="legend">
+  <span><span class="stars">★</span>数=重要度</span>
+  <span class="r">红=重点/易考/高频</span>
+  <span class="b">蓝=次重点</span>
+  <span>⚠=易混陷阱</span>
+</div>
+
+<div class="score">
+  <b>本章分值：2024年4分 · 2025年4分 · 2026预测4分</b>
+  <table>
+    <tr><th>知识点</th><th>题型</th><th>2024</th><th>2025</th><th>2026预测</th></tr>
+    <tr><td rowspan="2">4.1 设备磨损与补偿</td><td>单选</td><td>1</td><td>—</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td rowspan="2">4.2 设备经济寿命确定</td><td>单选</td><td>—</td><td>2</td><td>1</td></tr>
+    <tr><td>多选</td><td>2</td><td>—</td><td>—</td></tr>
+    <tr><td rowspan="2">4.3 设备更新方案经济分析</td><td>单选</td><td>1</td><td>—</td><td>—</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>2</td></tr>
+    <tr><td rowspan="2">4.4 设备租赁方案经济分析</td><td>单选</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td>多选</td><td>—</td><td>2</td><td>—</td></tr>
+    <tr><td>合计</td><td></td><td>4</td><td>4</td><td>4</td></tr>
+  </table>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ══════════ 4.1 ══════════ -->
+<details class="sec" open>
+  <summary>4.1 设备磨损与补偿<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>4.1.1 设备磨损的类型</span><span class="stars">★★★★</span><span class="yr">2024单选 · 2016·2018·2020·2021多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>类型</th><th>产生原因</th><th>结果</th></tr>
+          <tr><td rowspan="2"><b>有形磨损</b><br>（物质磨损）<br>第Ⅰ类</td><td>外力作用下（使用中）</td><td><span class="r">实体产生磨损、变形和损坏</span></td></tr>
+          <tr><td colspan="2" style="display:none"></td></tr>
+          <tr><td><b>有形磨损</b><br>第Ⅱ类</td><td>自然力的作用（闲置中）</td><td><span class="r">实体磨损（生锈、腐蚀、橡胶件老化）</span></td></tr>
+          <tr><td><b>无形磨损</b><br>（精神、经济磨损）<br>第Ⅰ类</td><td><span class="r">技术进步、工艺改进、劳动生产率水平提高、设备制造成本和价格不断降低</span></td><td>现有设备原始价值部分贬值；设备本身的技术特性和功能<b>不影响</b>现有设备的使用</td></tr>
+          <tr><td><b>无形磨损</b><br>第Ⅱ类</td><td><span class="r">科学技术的进步</span>：出现结构更先进、性能更完善、生产效率更高的新型设备；出现耗费原材料和能源更少的新型设备</td><td><span class="r">原有设备价值降低；原有设备生产精度和能耗达不到新的标准和要求</span></td></tr>
+          <tr><td><b>综合磨损</b></td><td colspan="2">同时存在有形磨损和无形磨损的损坏与贬值的综合情况</td></tr>
+        </table>
+        <div class="tip">口诀助记：第Ⅰ类有形磨损是<b>用</b>的，第Ⅱ类有形磨损是<b>放</b>的；无形磨损都是<b>技术进步</b>引起的。</div>
+        <div class="trap">⚠ 第Ⅰ种无形磨损：同种设备变便宜→原值贬值，但<b>不影响使用</b>；第Ⅱ种无形磨损：出现更先进的新设备→旧设备<b>价值降低且性能落后</b>（精度、能耗达不到新标准）。选项常互换设坑。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>4.1.2 设备磨损的补偿方式</span><span class="stars">★★★</span><span class="yr">2021单选 · 2022多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>磨损形式</th><th>局部补偿</th><th>完全补偿</th></tr>
+          <tr><td>有形磨损</td><td><span class="r">大修理</span></td><td rowspan="2"><span class="r">更新</span></td></tr>
+          <tr><td>无形磨损</td><td><span class="r">现代化改装</span></td></tr>
+        </table>
+        <div class="trap">⚠ 大修理只是<b>有形磨损的局部补偿</b>；现代化改装是<b>无形磨损的局部补偿</b>；<b>更新</b>是有形磨损和无形磨损的<b>完全补偿</b>——三者不能混。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ══════════ 4.2 ══════════ -->
+<details class="sec">
+  <summary>4.2 设备经济寿命确定<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>4.2.1 设备寿命的类型</span><span class="stars">★★★</span><span class="yr">2016·2025单选 · 2017多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>设备寿命</th><th>时间</th><th>决定因素</th><th>相关规定</th></tr>
+          <tr><td>自然寿命</td><td>投入使用开始→不能继续使用、报废的全部时间</td><td><span class="b">有形磨损</span></td><td><span class="b">不能成为更新的主要决策依据</span></td></tr>
+          <tr><td>技术寿命</td><td>投入使用开始→因技术落后而被淘汰的持续时间</td><td><span class="b">无形磨损</span></td><td><span class="r">比自然寿命短，技术进步越快，技术寿命越短</span></td></tr>
+          <tr><td>经济寿命</td><td>投入使用开始→经济上不合理被更新的时间</td><td><span class="b">设备维护费用的提高和使用价值的降低</span></td><td><span class="r">平均使用成本最小的使用年限为经济寿命</span></td></tr>
+        </table>
+        <div class="tip">口诀助记：设备三条命——自然报废、技术落后、经济不合理。</div>
+        <div class="trap">⚠ 设备更新决策的主要依据是<b>经济寿命</b>，自然寿命<b>不能</b>成为更新的主要决策依据。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>4.2.2 设备经济寿命的估算</span><span class="stars">★★★★</span><span class="yr">2017·2020·2025单选 · 2024多选 · 2026修订</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li><b>价值与成本的关系：</b><span class="r">随着使用年限的延长，平均每年分摊的实际价值减少的效果会被运行成本的增加抵销，直至实际价值减少不足以抵消运行成本的增加</span></li>
+          <li><b>设备年平均使用成本组成：</b>
+            <ul>
+              <li>平均年度<b>资产消耗成本</b>——随使用年限延长而逐渐<span class="b">减少</span></li>
+              <li>平均年度<b>运行成本</b>——随使用年限延长而逐渐<span class="b">增加</span></li>
+            </ul>
+          </li>
+          <li><b>经济寿命：</b>第 N<sub>0</sub> 年时设备年平均使用成本达到最低值，从开始使用到年平均使用成本最小（或年盈利最高）的使用年限 N<sub>0</sub> 即为经济寿命</li>
+          <li><b>原则：</b>（1）平均每年净收益（纯利润）<b>最大</b>；（2）年平均资产消耗成本和年平均运行成本<b>总和最小</b>　<span class="b">口诀：成本最小、收益最大</span></li>
+        </ul>
+        <b>静态模式（年平均使用成本）：</b>
+        <span class="formula">C̄<sub>N</sub> = (P − L<sub>N</sub>) / N ＋ (1/N)·ΣC<sub>i</sub>　（年平均资产消耗成本＋年平均运行成本）</span>
+        <b>简化计算（低劣化数值法）：</b>
+        <span class="formula"><span class="r">N<sub>0</sub> = √[ 2(P − L<sub>N</sub>) / λ ]</span></span>
+        <ul>
+          <li>N<sub>0</sub>——设备的经济寿命</li>
+          <li>P——设备目前实际价值：<span class="r">新设备包括购置费和安装费；旧设备包括旧设备现在的市场价值和继续使用旧设备追加的投资</span></li>
+          <li>L<sub>N</sub>——第 N 年末的设备预计净残值</li>
+          <li>λ——设备的低劣化值</li>
+        </ul>
+        <details class="ex"><summary>【2025真题】原始价值4万元的设备，预计使用10年，净残值0.4万元，第1年运行成本1万元，以后每年劣化值均为0.2万元，其经济寿命为（ ）年</summary><div>答案 C：6.00。N<sub>0</sub> = √[2×(4−0.4)/0.2] = √36 = 6 年。</div></details>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ══════════ 4.3 ══════════ -->
+<details class="sec">
+  <summary>4.3 设备更新方案经济分析<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>4.3.1 设备更新策略</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>凡修复比较合理的，<b>不要过早更新</b></li>
+          <li>可以修中有改进、通过改装能使设备满足生产技术要求的，可<b>不急于更新</b></li>
+          <li>更新个别关键零部件后性能可达到要求的，<b>不必更换整台设备</b></li>
+          <li>更换单机后性能满足要求的，<b>不必更换整条生产线</b></li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>4.3.2 设备更新方案的比选原则</span><span class="stars">★★★★</span><span class="yr">2019·2022·2023·2024单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li><b>只考虑现在和未来发生的现金流量</b>（不考虑沉没成本）
+            <span class="formula"><span class="r">沉没成本＝旧设备账面价值−当前市场价值＝（旧设备原值−历年折旧费）−当前市场价值</span></span>
+          </li>
+          <li>设备更新分析应站在<b>咨询者（第三方）</b>的视角分析问题</li>
+          <li>设备更新分析以<b>费用年值法</b>为主</li>
+        </ul>
+        <div class="trap">⚠ 沉没成本是过去决策已发生的、更新决策<b>不予考虑</b>；计算时先求账面价值（原值−累计折旧）再减当前市场价值，别把"原值−市场价值"当沉没成本。</div>
+        <details class="ex"><summary>【2024真题】原值30万元设备，预计使用10年，净残值3万元，年折旧额2.7万元，已计提折旧6年。若现以10万元价格售出，沉没成本为（ ）万元</summary><div>答案 C：3.8。账面价值 = 30 − 2.7×6 = 13.8 万元；沉没成本 = 13.8 − 10 = 3.8 万元。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>4.3.3 设备更新的技术经济分析</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>项目</th><th>内容</th></tr>
+          <tr><td>原型设备更新分析</td><td>更新时机应选择<span class="b">在原设备经济寿命期结束的时间</span></td></tr>
+          <tr><td>新型设备更新分析</td><td>
+            <b>（1）无限期情况下（年值法）：</b>
+            ① 分别计算现有旧设备和新型设备的经济寿命；<br>
+            ② 旧设备的年平均使用成本<b>大于</b>新型设备的年平均使用成本→旧设备应该<b>现在更新</b>；否则不应现在更新；<br>
+            ③ 何时更新？连续计算旧设备再保留使用一年的成本（<b>边际分析法</b>），与新型设备的年平均使用成本比较，直到某一年旧设备的年成本高于新型设备的年平均使用成本，则在<b>该年年初或上一年年末</b>更新现有设备。<br>
+            <b>（2）有限研究期：</b>对所有方案建立合理的<b>共同研究期</b>，根据研究期内的<b>总使用成本</b>做出合理的选择
+          </td></tr>
+        </table>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ══════════ 4.4 ══════════ -->
+<details class="sec">
+  <summary>4.4 设备租赁方案经济分析<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>4.4.1 设备租赁方式</span><span class="stars">★★★</span><span class="yr">2026修订</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <table>
+          <tr><th>方式</th><th>要点</th></tr>
+          <tr><td><b>经营租赁</b></td><td>
+            <ul style="margin:0;padding-left:1.1em;">
+              <li>出租人：提供租赁设备、<b>承担设备的维修保养</b></li>
+              <li>承租人：不需要获得该设备的所有权，只是支付相应的租金来取得该设备的<b>使用权</b></li>
+              <li><span class="b">任何一方都可以随时以一定方式在通知对方的规定时间内取消或终止租赁</span></li>
+              <li>特点：<span class="b">可撤销性、短期性、租金高</span></li>
+              <li>适用于技术进步快、用途较广泛、使用具有季节性的设备</li>
+              <li><span class="b">经营租赁设备的租赁费计入企业成本，可以减少企业所得税纳税基数</span></li>
+            </ul>
+          </td></tr>
+          <tr><td><b>融资租赁</b></td><td>
+            <ul style="margin:0;padding-left:1.1em;">
+              <li>出租人对设备的维修保养等<b>不承担责任</b></li>
+              <li><span class="b">适用于大型设备、专有技术设备等</span></li>
+            </ul>
+          </td></tr>
+        </table>
+        <div class="trap">⚠ 维修保养责任：经营租赁由<b>出租人</b>承担；融资租赁出租人<b>不承担</b>。可撤销、短期、租金高是<b>经营租赁</b>的特点。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>4.4.2 设备租赁优缺点</span><span class="stars">★★★★</span><span class="yr">2017·2021单选 · 2019·2021·2025多选 · 2026修订</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>优越性（与购买相比）：</b>
+        <ul>
+          <li>用较少资金获得生产急需的设备</li>
+          <li>引进先进设备，减少企业因设备陈旧、技术落后而带来的风险</li>
+          <li>提高设备的利用率，避免设备购置带来的闲置</li>
+          <li>保持资金的流动状态</li>
+          <li>可避免通货膨胀和利率波动的冲击，减少投资风险</li>
+          <li>设备租金可在所得税前扣除，能享受税费上的利益</li>
+        </ul>
+        <div class="tip">口诀助记：省投资、快更新、高利用、抵税费、保流动、抗风险。</div>
+        <b>不足：</b>
+        <ul>
+          <li>对设备只有使用权，无所有权</li>
+          <li><span class="r">无权</span>随意对设备改造、处置，不能用于担保、抵押贷款</li>
+          <li>资金成本<span class="r">高</span></li>
+          <li>融资租赁合同规定严格，<span class="r">毁约</span>要赔偿损失，罚款较多</li>
+        </ul>
+        <div class="tip">口诀助记：无所权、成本高、合同严。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>4.4.3 影响设备租赁与购置的主要因素</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>熟悉设备租赁与设备购置需考虑的因素，以及设备租赁或购置<b>都需要考虑</b>的影响因素</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>4.4.4 设备租赁费用</span><span class="stars">★★★★</span><span class="yr">组成2021单选·2023多选 / 租金2016·2018·2020单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 设备租赁费用组成</b>
+        <ul>
+          <li><span class="r">租赁保证金</span>：当租赁合同结束时，<span class="b">租赁保证金将退还给承租人或在支付最后一期租金时加以抵销</span></li>
+          <li><span class="r">担保费</span></li>
+          <li><span class="r">租金</span>：影响因素有——<span class="b">设备的价格、融资的利息及费用、各种税金、租赁保证金、运费、租赁利差、各种费用的支付时间，以及租金采用的计算公式等</span></li>
+        </ul>
+        <b>2. 租金的计算</b>
+        <table>
+          <tr><th>方法</th><th>公式与说明</th></tr>
+          <tr><td>附加率法</td><td>
+            <span class="formula"><span class="r">R ＝ P·(1 ＋ N×i)/N ＋ P×r</span></span>
+            P——租赁资产的价格；N——租赁期数（可按月、季、半年、年计）；i——与租赁期数相对应的利率；r——附加率
+          </td></tr>
+          <tr><td>年金法·期末支付租金</td><td>
+            <span class="formula"><span class="r">R<sub>a</sub> ＝ P · i(1+i)<sup>N</sup> / [(1+i)<sup>N</sup> − 1]</span></span>
+            R<sub>a</sub>——每期期末支付的租金额；i——与租赁期数相对应的利率或折现率
+          </td></tr>
+          <tr><td>年金法·期初支付租金</td><td>
+            <span class="formula"><span class="r">R<sub>b</sub> ＝ P · i(1+i)<sup>N−1</sup> / [(1+i)<sup>N</sup> − 1]</span></span>
+            R<sub>b</sub>——每期期初支付的租金额
+          </td></tr>
+        </table>
+        <div class="trap">⚠ 期初支付比期末支付分子少乘一个 (1+i)，即指数为 N−1；附加率法用<b>利率i＋附加率r</b>，年金法只用利率/折现率——公式选择看题干给的是"附加率"还是"折现率"。</div>
+        <details class="ex"><summary>【2020真题】租赁设备价格240万元，寿命期10年，租期8年，每年末支付租金，折现率8%，附加率3%。采用附加率法，每年租金为（ ）万元</summary><div>答案 C：56.4。R = 240×(1＋8×8%)/8 ＋ 240×3% = 49.2 ＋ 7.2 = 56.4 万元。（注意用租期8年，不是寿命期10年）</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>4.4.5 设备租赁与购置方案的比较</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <ul>
+          <li>如果设备带来的收入相同，则<span class="r">只需要比较租赁费用和购置费用</span></li>
+          <li>当设备寿命<b>相同</b>时，一般可以采用<span class="b">净现值法</span></li>
+          <li>设备寿命<b>不同</b>时，可以采用<span class="b">年值法</span></li>
+          <li>无论采用净现值法还是年值法，都以<span class="r">收益效果最大或成本较少的方案为优</span></li>
+          <li>计算设备租赁方案的现值时应<b>扣除租金产生的免税金额</b></li>
+          <li>借款购置设备时，企业可以将所支付的<b>利息和折旧</b>计入成本从而抵扣所得税，同时可以<b>回收预计净残值</b></li>
+        </ul>
+        <div class="trap">⚠ 寿命相同→净现值法；寿命不同→年值法。方向别记反。</div>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<footer>依据《建设工程经济四色笔记》第019~025页整理</footer>
+
+<script>
+function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>
