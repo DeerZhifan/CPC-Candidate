@@ -100,6 +100,8 @@
   .result.ok .rhead{background:var(--green-bg);color:var(--green);}
   .result.no .rhead{background:var(--red-bg);color:var(--red);}
   .result.info .rhead{background:#eef4ff;color:var(--primary);}
+  .result.half .rhead{background:#fef3c7;color:#b45309;}
+  .result .rpts{float:right;font-weight:800;}
   .result .rans{padding:12px 16px 4px;font-size:14.5px;}
   .result .rans b{color:var(--primary);}
   .result .analysis{padding:6px 16px 16px;font-size:14.5px;color:#374151;white-space:pre-wrap;}
@@ -131,6 +133,7 @@
   .gcell.ok{background:var(--green-bg);border-color:var(--green);color:var(--green);}
   .gcell.no{background:var(--red-bg);border-color:var(--red);color:var(--red);}
   .gcell.seen{background:#f3f4f6;color:var(--muted);}
+  .gcell.half{background:#fef3c7;border-color:var(--amber);color:#b45309;}
   .sheet .secttl{font-size:13px;color:var(--muted);margin:16px 0 8px;font-weight:600;}
 
   .summary{background:#fff;margin:14px 16px;border-radius:14px;box-shadow:var(--shadow);padding:26px 20px;text-align:center;display:none;}
@@ -139,7 +142,7 @@
   .summary .score small{font-size:16px;color:var(--muted);font-weight:500;}
   .summary .sgrid{display:flex;justify-content:center;gap:26px;margin:18px 0;}
   .summary .sgrid div b{display:block;font-size:22px;}
-  .summary .sgrid .g{color:var(--green);} .summary .sgrid .r{color:var(--red);}
+  .summary .sgrid .g{color:var(--green);} .summary .sgrid .r{color:var(--red);} .summary .sgrid .h{color:var(--amber);}
 
   /* ---------- 弹窗 ---------- */
   .modal{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:50;display:none;align-items:center;justify-content:center;padding:16px;}
@@ -226,6 +229,7 @@
   <h3>答题卡</h3>
   <div class="legend">
     <span><i class="dot" style="background:var(--green)"></i>答对</span>
+    <span><i class="dot" style="background:var(--amber)"></i>部分得分</span>
     <span><i class="dot" style="background:var(--red)"></i>答错</span>
     <span><i class="dot" style="background:#d1d5db"></i>已看答案</span>
     <span><i class="dot" style="background:#fff;border:1.5px solid var(--border)"></i>未答</span>
@@ -319,6 +323,9 @@
 <script src="bank_2023.js"></script>
 <script src="bank_2024.js"></script>
 <script src="bank_2025.js"></script>
+<script src="bank_c1.js"></script>
+<script src="bank_c2.js"></script>
+<script src="bank_c3.js"></script>
 <script>
 (function(){
   "use strict";
@@ -562,6 +569,23 @@
   }
   function stats(){ var done=0,ok=0,no=0; state.forEach(function(s){ if(s.confirmed){done++; s.correct?ok++:no++;} }); return {done:done,ok:ok,no:no}; }
   function arrEq(a,b){ if(a.length!==b.length) return false; return a.slice().sort().join("")===b.slice().sort().join(""); }
+  /* ===== 计分规则：单选每题1分；多选每题2分，全对2分，错选0分，少选每个所选正确项0.5分 ===== */
+  function qMax(q){ return q.type==="multiple"?2:1; }
+  function scoreOf(q,sel){
+    sel=sel||[];
+    if(q.type!=="multiple"){ return arrEq(sel,q.answer)?1:0; }
+    if(!sel.length) return 0;
+    for(var i=0;i<sel.length;i++){ if(q.answer.indexOf(sel[i])<0) return 0; } // 错选：本题0分
+    if(sel.length===q.answer.length) return 2;                                // 全对
+    return 0.5*sel.length;                                                    // 少选
+  }
+  function fmtPts(x){ return (Math.round(x*100)/100).toString(); }
+  function scoreTotals(){
+    var d=DATA(), earned=0, max=0, ansMax=0;
+    for(var i=0;i<d.length;i++){ max+=qMax(d[i]); var st=state[i];
+      if(st&&st.confirmed){ ansMax+=qMax(d[i]); earned+=scoreOf(d[i],st.sel); } }
+    return {earned:earned, max:max, ansMax:ansMax};
+  }
   function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
 
   function renderHeader(){
@@ -593,9 +617,12 @@
     }else{ html+='<button class="btn btn-primary" id="redoBtn">重做本题</button>'; }
     html+='</div>';
     if(locked){
-      var rcls="result show "+(st.confirmed?(st.correct?"ok":"no"):"info");
-      var head=st.confirmed?(st.correct?"✓ 回答正确":"✗ 回答错误"):"ℹ 已查看答案";
-      html+='<div class="'+rcls+'"><div class="rhead">'+head+'</div>'+
+      var earned=st.confirmed?scoreOf(q,st.sel):0, mx=qMax(q);
+      var state3=st.confirmed?(st.correct?"ok":(earned>0?"half":"no")):"info";
+      var rcls="result show "+state3;
+      var head=st.confirmed?(state3==="ok"?"✓ 回答正确":(state3==="half"?"◐ 部分得分":"✗ 回答错误")):"ℹ 已查看答案";
+      var pts=st.confirmed?'<span class="rpts">得分 '+fmtPts(earned)+'/'+mx+'</span>':'';
+      html+='<div class="'+rcls+'"><div class="rhead">'+head+pts+'</div>'+
         '<div class="rans">正确答案：<b>'+q.answer.join("")+'</b>'+
         (st.confirmed?"　你的选择："+(st.sel.length?st.sel.slice().sort().join(""):"（未选）"):"")+'</div>'+
         '<div class="analysis"><span class="lbl">解析</span><br>'+esc(q.analysis||"（暂无解析）")+'</div></div>';
@@ -605,7 +632,9 @@
     bindCard(q,st,locked);
     renderHeader();
     $("#prevBtn").disabled=(pos===0);
-    $("#nextBtn").disabled=(pos>=order.length-1);
+    var atEnd=(pos>=order.length-1);
+    $("#nextBtn").disabled=(order.length===0);
+    $("#nextBtn").textContent=atEnd?"查看成绩":"下一题";
   }
 
   function bindCard(q,st,locked){
@@ -654,7 +683,7 @@
       var h='<div class="secttl">'+title+'</div><div class="grid">';
       arr.forEach(function(i){
         var st=state[i],cls="gcell";
-        if(st.confirmed) cls+=st.correct?" ok":" no"; else if(st.viewed) cls+=" seen";
+        if(st.confirmed) cls+=st.correct?" ok":(scoreOf(d[i],st.sel)>0?" half":" no"); else if(st.viewed) cls+=" seen";
         if(order[pos]===i) cls+=" cur";
         h+='<div class="'+cls+'" data-goto="'+i+'">'+d[i].id+'</div>';
       });
@@ -673,12 +702,14 @@
   }
 
   function showSummary(){
-    var s=stats(), d=DATA(), pct=d.length?Math.round(s.ok/d.length*100):0;
+    var s=stats(), d=DATA(), pct=d.length?Math.round(s.ok/d.length*100):0, sc=scoreTotals();
+    var half=0; d.forEach(function(q,i){ var st=state[i]; if(st&&st.confirmed&&!st.correct&&scoreOf(q,st.sel)>0) half++; });
     $("#quizArea").style.display="none"; var sm=$("#summary"); sm.classList.add("show");
-    sm.innerHTML='<div class="score">'+s.ok+'<small>/'+d.length+' 题正确</small></div>'+
-      '<div class="sgrid"><div class="g"><b>'+s.ok+'</b>答对</div><div class="r"><b>'+s.no+'</b>答错</div>'+
+    sm.innerHTML='<div class="score">'+fmtPts(sc.earned)+'<small>/'+fmtPts(sc.max)+' 分</small></div>'+
+      '<div class="sgrid"><div class="g"><b>'+s.ok+'</b>答对</div><div class="h"><b>'+half+'</b>部分</div><div class="r"><b>'+(s.no-half)+'</b>答错</div>'+
       '<div><b>'+(d.length-s.done)+'</b>未答</div></div>'+
-      '<p style="color:var(--muted)">正确率 '+pct+'%（按全部题目计）</p>'+
+      '<p style="color:var(--muted)">得分率 '+(sc.max?Math.round(sc.earned/sc.max*100):0)+'%　·　题目正确率 '+pct+'%</p>'+
+      '<p style="color:var(--muted);font-size:12.5px">计分规则：单选每题1分；多选每题2分，全对2分、少选每个所选正确项0.5分、错选0分</p>'+
       '<div class="actions" style="justify-content:center">'+
       '<button class="btn btn-primary" id="reviewWrong" style="flex:0 0 auto">查看错题</button>'+
       '<button class="btn btn-ghost" id="restart">重新开始</button></div>';
