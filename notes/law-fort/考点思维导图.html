@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>建设工程法规及相关知识 · 四板块考点思维导图</title>
+<style>
+  :root{
+    --ink:#2b2b2b; --sub:#6b6b6b; --bg:#f2f4f7; --card:#ffffff;
+    --zc:#2563ab; --hc:#1a7f5a; --aq:#d9683a; --ly:#7a4fb0;
+    --line:#bfc6cf; --amber:#e0a020; --amberbg:#fff7e6; --red:#c62828;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;height:100%;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);overflow:hidden;}
+  header{position:fixed;top:0;left:0;right:0;height:52px;background:#fff;border-bottom:1px solid #e2e6ea;display:flex;align-items:center;gap:8px;padding:0 12px;z-index:20;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+  header h1{font-size:.95rem;margin:0;font-weight:700;white-space:nowrap;}
+  header h1 .badge{color:var(--sub);font-weight:400;font-size:.72rem;margin-left:6px;}
+  .tabs{display:flex;gap:4px;margin-left:6px;flex-wrap:nowrap;overflow-x:auto;}
+  .tab{border:1px solid #ddd;background:#fafafa;border-radius:16px;padding:5px 12px;font-size:.78rem;cursor:pointer;color:#555;white-space:nowrap;font-weight:600;}
+  .tab.zc.on{background:var(--zc);border-color:var(--zc);color:#fff;}
+  .tab.hc.on{background:var(--hc);border-color:var(--hc);color:#fff;}
+  .tab.aq.on{background:var(--aq);border-color:var(--aq);color:#fff;}
+  .tab.ly.on{background:var(--ly);border-color:var(--ly);color:#fff;}
+  .spacer{flex:1;}
+  .tools{display:flex;gap:5px;align-items:center;}
+  .tools button{border:1px solid #cfd5db;background:#fff;border-radius:7px;width:30px;height:30px;font-size:.9rem;color:#555;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .tools button.wide{width:auto;padding:0 10px;font-size:.75rem;font-weight:600;}
+  .tools button:active{background:#eef1f4;}
+  #stage{position:absolute;inset:52px 0 0 0;overflow:hidden;cursor:grab;touch-action:none;}
+  #stage.drag{cursor:grabbing;}
+  #world{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform;}
+  svg.links{position:absolute;top:0;left:0;overflow:visible;pointer-events:none;}
+  .node{position:absolute;background:var(--card);border:1px solid #e0e4e8;border-radius:10px;padding:7px 10px;font-size:.8rem;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06);cursor:pointer;transition:box-shadow .12s,border-color .12s;}
+  .node:hover{box-shadow:0 2px 10px rgba(0,0,0,.12);}
+  .node .t{font-weight:600;}
+  .node.lv0{color:#fff;font-weight:800;font-size:1rem;border:none;text-align:center;}
+  .node.lv0 .sc{display:block;font-size:.68rem;font-weight:500;opacity:.9;margin-top:3px;}
+  .zc .node.lv0{background:linear-gradient(135deg,#3a79bd,#245a94);}
+  .hc .node.lv0{background:linear-gradient(135deg,#22a074,#137450);}
+  .aq .node.lv0{background:linear-gradient(135deg,#e27a4c,#c14e22);}
+  .ly .node.lv0{background:linear-gradient(135deg,#8f63c4,#653f96);}
+  .node.lv1{font-weight:700;font-size:.9rem;border-left-width:5px;}
+  .zc .node.lv1{border-left-color:var(--zc);} .hc .node.lv1{border-left-color:var(--hc);} .aq .node.lv1{border-left-color:var(--aq);} .ly .node.lv1{border-left-color:var(--ly);}
+  .node.lv1 .sc{display:block;font-size:.66rem;color:var(--sub);font-weight:500;margin-top:2px;}
+  .node.lv2{font-weight:600;border-left:4px solid #ccd2d9;}
+  .node.lv3{border-left:3px solid #dde1e6;}
+  .node.lv3 .meta{display:block;margin-top:3px;font-size:.66rem;color:var(--sub);}
+  .stars{color:var(--amber);letter-spacing:1px;}
+  .yr{background:#eef1f4;color:#5f7288;border-radius:4px;padding:0 5px;margin-left:4px;font-size:.62rem;}
+  .node.leaf{font-weight:400;font-size:.78rem;color:#3a3a3a;border-left:3px solid #e6eaee;max-width:360px;cursor:default;}
+  .node.leaf.trap{background:var(--amberbg);border-left-color:var(--amber);color:#6f5406;}
+  .node .caret{display:inline-block;width:14px;height:14px;line-height:14px;text-align:center;color:#aaa;font-size:.7rem;margin-right:4px;vertical-align:middle;transition:transform .15s;}
+  .node.collapsed .caret{transform:rotate(-90deg);}
+  .node .cnt{font-size:.62rem;color:#bbb;margin-left:5px;font-weight:500;}
+  .legend{position:fixed;left:10px;bottom:10px;background:rgba(255,255,255,.94);border:1px solid #e2e6ea;border-radius:10px;padding:8px 11px;font-size:.68rem;color:#666;z-index:15;line-height:1.7;max-width:44vw;}
+  .legend b{color:var(--ink);}
+  .hint{position:fixed;right:10px;bottom:10px;background:rgba(255,255,255,.9);border:1px solid #e2e6ea;border-radius:8px;padding:6px 9px;font-size:.66rem;color:#999;z-index:15;}
+  @media(max-width:640px){
+    header h1 .badge{display:none;} header h1{font-size:.78rem;}
+    .tab{padding:5px 8px;font-size:.68rem;} .legend{max-width:58vw;font-size:.62rem;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>建设工程法规及相关知识<span class="badge">四板块考点思维导图</span></h1>
+  <div class="tabs">
+    <div class="tab zc on" data-part="总则与准入">总则与准入</div>
+    <div class="tab hc" data-part="发承包合同">发承包合同</div>
+    <div class="tab aq" data-part="安全质量环保">安全质量环保</div>
+    <div class="tab ly" data-part="劳动与争议">劳动与争议</div>
+  </div>
+  <div class="spacer"></div>
+  <div class="tools">
+    <button class="wide" id="expand">展开</button>
+    <button class="wide" id="collapse">收起</button>
+    <button id="zin">＋</button>
+    <button id="zout">－</button>
+    <button id="fit" title="适应屏幕">⤢</button>
+  </div>
+</header>
+<div id="stage"><div id="world"><svg class="links"></svg></div></div>
+<div class="legend">
+  <b>★</b> 重要度（1–5星） &nbsp; <b style="color:var(--amber)">⚠ 琥珀块</b>=易混陷阱 &nbsp; <b>年份</b>=历年考情<br>
+  点击节点<b>展开/收起</b>分支 · 拖拽<b>平移</b> · 滚轮/双指<b>缩放</b>
+</div>
+<div class="hint" id="hint">总则与准入板块</div>
+<script>
+const DATA=[
+{part:"总则与准入",num:1,chapter:"建设工程基本法律知识",score:"26预测18分·重点",sections:[
+ {title:"1.1 法律基础",items:[
+  {title:"1.1.1 法律部门和法律体系",stars:3,years:"2017·2020单选",points:["以宪法为统帅，法律、行政法规、地方性法规多层次构成"]},
+  {title:"1.1.2 法的形式和效力层级",stars:5,years:"2016~2023单选，2024·2025多选",points:["法律=全国人大及常委会；行政法规=国务院；部门规章=国务院各部委","⚠ '条例'未必是行政法规——地方性法规也可叫条例","上位法>下位法；特别法>一般法；新法>旧法","地方性法规>本级和下级地方政府规章","法律新一般VS旧特别不一致→全国人大常委会裁决","地方性法规VS部门规章→国务院裁决（倾向部门规章再提请人大常委会）"]}]},
+ {title:"1.2 物权制度",items:[
+  {title:"1.2.1 物权设立变更转让消灭和保护",stars:5,years:"2016~2022单选/多选",points:["物权种类口诀'占用益处'：所有权/用益物权/担保物权","不动产物权登记生效；动产交付生效","⚠ 登记影响物权变动，不影响合同效力（合同成立即生效）","船舶航空器机动车未登记不得对抗善意第三人"]},
+  {title:"1.2.2 所有权",stars:4,years:"2016单选，2019·2020·2024·2025多选",points:["处分权是所有权核心；占有是使用的前提","⚠ 只能国家所有：矿藏、水流、海域、无居民海岛、城市土地","森林草原滩涂可集体所有"]},
+  {title:"1.2.3 用益物权",stars:5,years:"2016~2023单选，2017·2018多选",points:["建设用地使用权：出让或划拨，自登记时设立","转让期限不得超过剩余期限，房地一并处分","住宅用地期满自动续期","地役权：利用他人不动产提高自己不动产效益，合同生效时设立"]},
+  {title:"1.2.4 担保物权",stars:5,years:"多年单选/多选",points:["抵押不转移占有（动产/不动产、约定）","质押转移占有（动产/权利、约定）","留置转移占有（仅动产、法定、债务人本人财产）","抵押已登记先于未登记受偿；未登记按债权比例","留置给债务人60日以上履行期限（鲜活易腐除外）"]},
+  {title:"1.2.5 占有",stars:3,years:"2024·2025单选",points:["施工企业对施工场地属他主占有","返还原物请求权自侵占之日起1年内未行使即消灭"]}]},
+ {title:"1.3 知识产权制度",items:[
+  {title:"1.3.1 著作权制度",stars:3,years:"2017·2021单选，2023多选",points:["署名权/修改权/保护作品完整权不受限制","发表权等保护期为作者终生及死后50年","软件著作权属于软件开发者"]},
+  {title:"1.3.2 专利权制度",stars:5,years:"2016~2025单选",points:["⚠ 保护期口诀'发20、用10、外15'，均自申请日起算","发明含产品/方法；实用新型仅限产品形状构造","授予条件：新颖性+创造性+实用性"]},
+  {title:"1.3.3 商标权制度",stars:3,years:"2021·2022·2023单选，2016多选",points:["有效期10年，自核准注册日起算","续展期满前12个月；宽展期满后6个月"]},
+  {title:"1.3.4 商业秘密",stars:3,years:"2024单选",points:["盗窃贿赂欺诈胁迫电子侵入获取属侵犯","赔偿先按实际损失，难计算按侵权获利","恶意情节严重可1~5倍惩罚性赔偿"]}]},
+ {title:"1.4 侵权责任制度",items:[
+  {title:"1.4.1 侵权责任主体和损害赔偿",stars:3,years:"2022单选/多选",points:["归责原则：过错、无过错、过错推定、公平责任","过错推定：不能证明无过错即担责"]},
+  {title:"1.4.2 产品责任",stars:3,years:"2024·2025单选",points:["受害人可向生产者或销售者任一求偿","第三人过错致缺陷，赔偿后可向第三人追偿","明知缺陷仍产销致严重损害可惩罚性赔偿"]},
+  {title:"1.4.3 建筑物和物件损害责任",stars:4,years:"2024·2025单选",points:["⚠ 唯一连带责任：倒塌塌陷→建设单位+施工单位","脱落坠落→所有人/管理人/使用人","抛掷物→侵权人；堆放物倒塌→堆放人"]}]},
+ {title:"1.5 税收制度",items:[
+  {title:"1.5.1 企业所得税",stars:5,years:"2018·2020单选，2019·2022多选",points:["个人独资企业、合伙企业不适用","财政拨款、行政事业性收费、政府性基金属不征税收入"]},
+  {title:"1.5.2 企业增值税",stars:4,years:"2019~2025单选，2018多选",points:["最本质特征：不重复计税；实行价外税","应税：销售货物、服务、无形资产、不动产","⚠ 非正常损失、简易计税、免税、集体福利项目进项税不得抵扣","存款利息收入不属于应税交易"]},
+  {title:"1.5.3 环境保护税",stars:4,years:"2019单选",points:["大气/水污染物按污染当量数；固废按排放量；噪声按超标分贝数","流动污染源、达标排放集中处理场所暂免征"]},
+  {title:"1.5.4 其他相关税种",stars:4,years:"2017~2025单选，2018~2022多选",points:["综合所得3%~45%；经营所得5%~35%；财产租赁/转让20%","教育费附加率3%；房产税产权人缴纳","车辆购置税一次性征收，税率10%；契税3%~5%"]}]},
+ {title:"1.6 行政法律制度",items:[
+  {title:"1.6.1 行政法特征和基本原则",stars:3,years:"原则类",points:["依法行政：职权法定、法律优先、法律保留","诚信原则含信赖保护"]},
+  {title:"1.6.2 行政许可",stars:3,years:"2019·2020多选",points:["⚠ 部门规章不能设定行政许可","法律/行政法规/地方性法规/省级政府规章可设定","省级政府规章只能设临时性许可"]},
+  {title:"1.6.3 行政处罚",stars:4,years:"2016·2024·2025单选，2016·2022多选",points:["⚠ 行政处罚：罚款/拘留/没收违法所得；刑罚：罚金/拘役/没收财产","限制人身自由的处罚只能由法律设定","记大过是行政处分（非处罚）"]},
+  {title:"1.6.4 行政强制",stars:4,years:"2020·2025单选，2022·2024多选",points:["⚠ 措施=静态（查封扣押冻结限制人身自由）","执行=动态（加处罚款、划拨、拍卖、代履行）","限制人身自由、冻结存款汇款只能由法律设定强制措施"]}]},
+ {title:"1.7 刑事法律制度",items:[
+  {title:"1.7.1 刑法特征和基本原则",stars:3,years:"原则类",points:["罪刑法定、适用刑法人人平等、罪责相适应"]},
+  {title:"1.7.2 犯罪概念和犯罪构成",stars:3,years:"构成要件",points:["四要件：犯罪客体、客观方面、主体、主观方面"]},
+  {title:"1.7.3 刑罚种类和刑罚裁量",stars:4,years:"2021·2024·2025单选，2020多选",points:["⚠ 主刑：管制/拘役/有期/无期/死刑；'罚金'是附加刑","附加刑：罚金/剥夺政治权利/没收财产/驱逐出境","累犯5年内再犯应从重；自首可从轻减轻"]},
+  {title:"1.7.4 常见犯罪行为及罪名",stars:5,years:"2016~2025单选，2017·2021多选",points:["⚠ 违反安全管理规定+生产作业→重大责任事故罪","降低工程质量标准→工程重大安全事故罪","强令违章冒险作业罪处5年以下","串通投标罪处3年以下，并处或单处罚金"]}]}
+]},
+{part:"总则与准入",num:2,chapter:"建筑市场主体制度",score:"26预测10分",sections:[
+ {title:"2.1 建筑市场主体一般规定",items:[
+  {title:"2.1.1 自然人、法人和非法人组织",stars:5,years:"2018~2023单选/多选",points:["法人分营利法人、非营利法人、特别法人","完全民事行为能力18周岁；16~18周岁以自己劳动收入为主要生活来源视为完全","8周岁以上为限制民事行为能力人"]},
+  {title:"2.1.2 建设工程委托代理",stars:3,years:"2016~2025单选，2016多选",points:["表见代理：相对人有理由相信有代理权，代理行为有效","无权代理经被代理人追认才有效","滥用代理权、自己代理、双方代理禁止"]}]},
+ {title:"2.2 建筑业企业资质制度",items:[
+  {title:"2.2.1 资质条件和等级",stars:4,years:"2017·2019单选，2018·2021多选",points:["序列：施工总承包、专业承包、专业作业","资质证书分正本和副本，具同等法律效力"]},
+  {title:"2.2.2 资质申请、许可、延续和变更",stars:4,years:"2016~2025单选/多选",points:["资质证书有效期5年","期满需延续应在有效期届满前3个月申请","名称地址等变更应办理资质证书变更手续"]},
+  {title:"2.2.3 违法行为的法律责任",stars:4,years:"2018·2020·2024·2025单选",points:["未取得资质/超越资质承揽：责令停止违法、没收违法所得、罚款","以欺骗手段取得资质：撤销资质证书","允许他人以本企业名义承揽（挂靠）：处罚"]}]},
+ {title:"2.3 建造师注册执业制度",items:[
+  {title:"2.3.1 建造师考试",stars:3,years:"考试制度",points:["实行全国统一大纲、统一命题、统一组织的考试制度"]},
+  {title:"2.3.2 建造师注册和受聘",stars:4,years:"2018~2025单选，2023多选",points:["注册有效期3年","注册建造师只能受聘于一个具有资质的单位","初始/延续/变更/增项注册"]},
+  {title:"2.3.3 建造师执业范围",stars:4,years:"2016·2017·2018·2022单选",points:["大中型工程项目负责人必须由本专业注册建造师担任","一级注册可担任大中型；二级只能担任中小型项目负责人"]},
+  {title:"2.3.4 建造师基本权利和义务",stars:4,years:"2019~2025单选，2024多选",points:["有权保管和使用本人注册证书、执业印章","不得允许他人以本人名义执业","不得同时在两个及以上单位受聘执业"]}]},
+ {title:"2.4 建筑市场主体信用体系",items:[
+  {title:"2.4.1 信用信息分类",stars:3,years:"2022单选",points:["基本信息、优良信息、不良信息"]},
+  {title:"2.4.2 信用信息公开和应用",stars:5,years:"2016~2025单选，2023多选",points:["基本信息、优良信息长期公开","不良信息公开期限届满后转入后台保存"]},
+  {title:"2.4.3 不良行为记录认定标准",stars:5,years:"2017~2023单选，2024·2025多选",points:["不良行为记录信息公布期限一般为6个月","涉及资质、市场准入、质量安全违法违规行为"]}]},
+ {title:"2.5 营商环境制度",items:[
+  {title:"2.5.1 营商环境优化",stars:3,years:"2023·2025单选",points:["坚持市场化、法治化、国际化原则","保障各类市场主体平等使用生产要素"]},
+  {title:"2.5.2 中小企业款项支付保障",stars:4,years:"2024单选，2020·2022·2023多选",points:["机关事业单位从中小企业采购货物工程30日内付款","大型企业向中小企业采购60日内付款","不得以审计结算等作为拒付延付理由"]}]}
+]},
+{part:"总则与准入",num:3,chapter:"建设工程许可法律制度",score:"26预测5分",sections:[
+ {title:"3.1 建设工程规划许可",items:[
+  {title:"3.1.1 规划许可证的申请",stars:3,years:"2024单选，2025多选",points:["建设用地规划许可证、建设工程规划许可证","在城市镇规划区内建设需申请建设工程规划许可证"]},
+  {title:"3.1.2 规划条件的变更",stars:3,years:"2025单选，2024多选",points:["确需变更规划条件的须依法办理变更手续","涉及利害关系人合法权益的应听取意见"]}]},
+ {title:"3.2 建设工程施工许可",items:[
+  {title:"3.2.1 施工许可证和开工报告适用范围",stars:4,years:"2020单选，2019·2021多选",points:["工程投资额30万元以下或建筑面积300m²以下可不办施工许可证","抢险救灾、临时性建筑、农民自建低层住宅不适用"]},
+  {title:"3.2.2 施工许可证的申请条件",stars:5,years:"2016~2025单选，2020·2022·2023多选",points:["已办用地批准手续、取得规划许可证","需要拆迁的拆迁进度符合施工要求","已确定施工企业、有施工图及技术资料、有保证质量安全措施","建设资金已落实"]},
+  {title:"3.2.3 延期开工、核验和重新办理批准",stars:5,years:"2016~2025单选，2016·2018多选",points:["领证3个月内开工；不能按期开工应申请延期","延期以2次为限，每次不超过3个月","中止施工1个月内向发证机关报告","中止满1年恢复施工前应报核验施工许可证"]}]}
+]},
+{part:"发承包合同",num:4,chapter:"建设工程发承包法律制度",score:"26预测11分",sections:[
+ {title:"4.1 发承包一般规定",items:[
+  {title:"4.1.1 建设工程总承包",stars:3,years:"2021·2022·2023单选/多选",points:["总承包单位对全部工程质量负责、承包范围内安全负总责","分包不免除总承包单位质量安全责任","分包单位不服从管理致事故承担主要责任"]},
+  {title:"4.1.2 建设工程共同承包",stars:3,years:"高频",points:["同一专业按资质等级较低者确定（就低不就高）","各方对承包合同履行承担连带责任"]},
+  {title:"4.1.3 建设工程分包",stars:5,years:"2016~2025单选，2016多选",points:["主体结构施工必须由承包人自行完成（钢结构除外）","禁止分包给个人、再分包","⚠ 违法分包（自己干部分）/转包（全部给他人）/挂靠区分","除约定外分包须经建设单位认可"]}]},
+ {title:"4.2 招标投标制度",items:[
+  {title:"4.2.1 法定招标范围方式和交易场所",stars:4,years:"2022·2023·2025单选，2020·2022·2024多选",points:["规模标准口诀'421'：施工400万、货物200万、服务100万","公开招标不特定对象；邀请招标3个以上特定对象"]},
+  {title:"4.2.2 建设工程招标",stars:5,years:"2020单选",points:["招标文件发售期≥5日；异议投标截止10日前","澄清修改招标文件投标截止15日前","编制投标文件最短不少于20日","投标保证金不超过估算价2%"]},
+  {title:"4.2.3 建设工程投标",stars:5,years:"2017~2023单选，2021·2022多选",points:["联合体资质就低不就高，承担连带责任","招标人不得强制组成联合体","串通投标：属于串通（主观合谋）+视为串通（客观事实）"]},
+  {title:"4.2.4 开标、评标、中标",stars:5,years:"2017~2025单选，2022·2023多选",points:["评标委员会5人以上单数，专家不少于2/3","大写小写不一致以大写为准；单价总价不一致以单价为准","中标通知书30日内订立合同，不得背离实质性内容"]},
+  {title:"4.2.5 异议、投诉处理",stars:3,years:"2021·2024·2025单选，2022·2024·2025多选",points:["异议：资格预审2日前、招标文件10日前、开标当场、评标结果公示期","收到异议3日内答复；投诉自知道之日起10日内"]}]},
+ {title:"4.3 非招标采购制度",items:[
+  {title:"4.3.1 竞争性谈判（含磋商）",stars:3,years:"高频对比",points:["竞争性谈判适用：招标失败、技术复杂、时间紧、不能计算总额"]},
+  {title:"4.3.2 询价",stars:3,years:"程序类",points:["适用规格标准统一、现货充足、价格变化小的政府采购"]},
+  {title:"4.3.3 单一来源采购",stars:3,years:"2024·2025多选",points:["唯一供应商、不可预见紧急情况、原供应商添购不超原合同10%"]},
+  {title:"4.3.4 框架协议采购",stars:3,years:"2024·2025单选",points:["货物项目一般不超1年，服务项目不超2年","封闭式框架协议评审：价格优先法（主要）、质量优先法"]}]}
+]},
+{part:"发承包合同",num:5,chapter:"建设工程合同法律制度",score:"26预测16分·重点",sections:[
+ {title:"5.1 合同基本规定",items:[
+  {title:"5.1.1 合同的订立",stars:4,years:"多年单选/多选",points:["要约、承诺；要约邀请（招标公告、价目表）","承诺生效时合同成立"]},
+  {title:"5.1.2 合同的效力",stars:4,years:"多年单选",points:["无效合同：违反强制性规定、恶意串通损害他人","可撤销：重大误解、欺诈、胁迫、显失公平"]},
+  {title:"5.1.3 合同的履行",stars:4,years:"多年单选",points:["同时履行抗辩权、先履行抗辩权、不安抗辩权","代位权、撤销权（保全）"]},
+  {title:"5.1.4 违约责任",stars:4,years:"2024单选",points:["⚠ 定金与违约金择一适用；定金双倍返还","违约金过高可请求法院或仲裁机构减少"]}]},
+ {title:"5.2 施工合同规定",items:[
+  {title:"5.2.1 施工合同订立与效力",stars:4,years:"多年单选",points:["黑白合同：以中标合同（招投标文件）为结算依据","实际施工人可向发包人主张欠付工程款范围内责任"]},
+  {title:"5.2.2 工程价款与工程款优先受偿权",stars:5,years:"高频",points:["承包人对工程折价拍卖价款享有优先受偿权","优先受偿权行使期限：发包人应给付之日起18个月","优先受偿权优于抵押权和其他债权"]},
+  {title:"5.2.3 工程质量与保修",stars:4,years:"多年单选",points:["保修期自竣工验收合格之日起算","最低保修期：屋面防水5年、供热供冷2个采暖供冷期"]},
+  {title:"5.2.4 合同解除",stars:3,years:"多年单选",points:["法定解除、协议解除、约定解除"]}]},
+ {title:"5.3 相关合同制度",items:[
+  {title:"5.3.1~5.3.8 买卖/借款/租赁/委托等",stars:3,years:"综合",points:["买卖合同标的物风险交付时转移","融资租赁：出租人保留所有权","委托合同双方均可任意解除"]}]}
+]},
+{part:"安全质量环保",num:6,chapter:"建设工程安全生产法律制度",score:"26预测20分·全书分值最高",sections:[
+ {title:"6.1 建设单位和相关单位安全责任",items:[
+  {title:"6.1.1~6.1.4 建设/勘察设计/监理等责任",stars:4,years:"多年单选/多选",points:["建设单位提供真实准确齐全资料，不得压缩合理工期","设计单位对涉及安全的重点部位提出防范指导意见","监理发现安全隐患应要求整改或暂停施工"]}]},
+ {title:"6.2 安全生产许可证制度",items:[
+  {title:"6.2.1~6.2.3 许可证取得与管理",stars:4,years:"多年单选",points:["安全生产许可证有效期3年","期满前3个月办理延期","有效期内未死亡事故可不再审查延期3年"]}]},
+ {title:"6.3 施工单位安全生产责任",items:[
+  {title:"6.3.1~6.3.6 安全责任制度",stars:5,years:"多年单选/多选",points:["专职安全生产管理人员配备标准","安全生产费用、三类人员考核（企业负责人、项目负责人、专职安全员）","特种作业人员持证上岗"]}]},
+ {title:"6.4 施工现场安全防护",items:[
+  {title:"6.4.1~6.4.4 现场防护制度",stars:4,years:"多年单选",points:["危大工程专项施工方案与专家论证","安全防护用具、机械设备进场验收","消防安全责任制度"]}]},
+ {title:"6.5 事故应急救援和调查处理",items:[
+  {title:"6.5.1~6.5.3 应急与调查",stars:4,years:"多年单选",points:["事故等级：死亡3-10-30、重伤10-50-100、损失1000万-5000万-1亿","单位负责人1h内报告，逐级上报每级不超2h","调查60日内提交报告（可延长60日）"]}]},
+ {title:"6.6 政府主管部门监督管理",items:[
+  {title:"6.6.1~6.6.4 监督管理",stars:3,years:"多年单选",points:["县级以上住建主管部门负责本行政区域安全生产监督管理","监督检查权：进入现场、查阅资料、责令整改"]}]}
+]},
+{part:"安全质量环保",num:7,chapter:"建设工程质量法律制度",score:"26预测18分·重点",sections:[
+ {title:"7.1 工程建设标准",items:[
+  {title:"7.1.1 标准制定",stars:5,years:"2019~2023单选/多选",points:["国标分强制性、推荐性；行标/地标为推荐性","强制性国标由国务院批准发布","推荐性标准不得低于强制性标准"]},
+  {title:"7.1.2 强制性标准实施",stars:3,years:"2017单选，2016·2019多选",points:["国务院住建部门负责全国监督管理","监督方式：重点检查、抽查、专项检查"]},
+  {title:"7.1.3 建设工程抗震管理",stars:3,years:"2024·2025单选/多选",points:["隔震减震装置属主体结构，总承包单位自行完成","学校医院等应进行抗震性能鉴定加固"]}]},
+ {title:"7.2 无障碍环境建设制度",items:[
+  {title:"7.2.1~7.2.3 建设/保障/监督",stars:4,years:"2024·2025单选/多选",points:["五同步：同步规划设计施工验收交付","建设单位将无障碍经费纳入概预算","残联老龄协会可提出制定修改标准建议"]}]},
+ {title:"7.3 建设单位及相关单位质量责任",items:[
+  {title:"7.3.1 建设单位质量责任",stars:5,years:"2019~2023单选，多选高频",points:["不得压缩合理工期、迫使低于成本竞标","施工图未审查批准不得使用","必须实行监理：3000万以上、5万m²以上住宅"]},
+  {title:"7.3.2 勘察设计单位质量责任",stars:5,years:"2016~2020单选，2022~2025多选",points:["设计文件注明合理使用年限","选用材料设备注明规格型号性能","设计单位就审查合格施工图技术交底"]},
+  {title:"7.3.3 工程监理单位质量责任",stars:5,years:"2021·2024·2025单选，2017·2020·2023多选",points:["与被监理承包单位、设备供应单位有利害关系应回避","旁站、巡视、平行检验","总监未签字不拨款不验收"]}]},
+ {title:"7.4 施工单位质量责任",items:[
+  {title:"7.4.1~7.4.6 施工质量责任义务",stars:4,years:"2016~2025单选，2022多选",points:["见证取样送检不低于应取样数量30%","隐蔽工程隐蔽前通知建设单位和质量监督机构","项目经理造成重大质量事故吊销资格证5年不予注册"]}]},
+ {title:"7.5 建设工程竣工验收制度",items:[
+  {title:"7.5.1 竣工验收主体和法定条件",stars:4,years:"2018·2024单选，2016·2021多选",points:["建设单位组织竣工验收","五条件：完成设计合同内容、技术档案、试验报告、质量合格文件、保修书"]},
+  {title:"7.5.2 竣工验收备案",stars:3,years:"缺页补录",points:["⚠ 缺页补录：竣工验收合格15日内向备案机关备案"]}]},
+ {title:"7.6 建设工程质量保修制度",items:[
+  {title:"7.6.1 建设工程质量保证金",stars:5,years:"2018~2025单选，2020·2022多选",points:["缺陷责任期一般1年最长2年","保证金总预留比例不超工程价款结算总额3%","发包人原因无法竣工验收，报告90日后自动进入缺陷责任期"]},
+  {title:"7.6.2 缺陷责任期与保修期对比",stars:4,years:"缺页补录",points:["⚠ 缺页补录：屋面防水5年、供热供冷2个采暖供冷期、电气给排水2年","保修期自竣工验收合格之日起算"]}]}
+]},
+{part:"安全质量环保",num:8,chapter:"环境保护和历史文化遗产保护",score:"26预测7分",sections:[
+ {title:"8.1 建设工程环境保护制度",items:[
+  {title:"8.1.1 大气污染防治",stars:5,years:"2023单选",points:["扬尘费用列入工程造价","主要路段封闭围挡≥2.5m，一般路段≥1.8m","施工现场严禁焚烧废弃物"]},
+  {title:"8.1.2 水污染防治",stars:5,years:"2016~2025单选",points:["禁止在饮用水水源准保护区新建扩建对水体污染严重项目","饮用水水源保护区内禁止设置排污口"]},
+  {title:"8.1.3 固体废物污染防治",stars:4,years:"2017·2019·2020·2021单选",points:["施工单位编制建筑垃圾处理方案报环卫部门备案","严禁危险废物和生活垃圾混入建筑垃圾"]},
+  {title:"8.1.4 噪声污染防治",stars:4,years:"2023·2025单选，2024单选",points:["原则禁止夜间生噪施工","例外需取得证明并公告附近居民"]}]},
+ {title:"8.2 施工中历史文化遗产保护制度",items:[
+  {title:"8.2.1 受法律保护的遗产范围",stars:4,years:"2021·2024·2025单选，2023多选",points:["国家所有：地下内水领海文物、古文化遗址古墓葬石窟寺","历史文化名城国务院公布，街区村镇省级核定"]},
+  {title:"8.2.2 保护范围和建设控制地带施工",stars:3,years:"2016·2017·2019单选",points:["选址尽可能避开不可移动文物","保护范围内不得进行文物保护工程以外建设"]},
+  {title:"8.2.3 施工发现文物报告和保护",stars:3,years:"2020·2024·2025单选，2024·2025多选",points:["任何单位任何人发现文物应保护现场并报告","⚠ 文物部门24小时内赶赴现场，7日内提出处理意见"]}]}
+]},
+{part:"劳动与争议",num:9,chapter:"建设工程劳动保障法律制度",score:"26预测11分",sections:[
+ {title:"9.1 劳动合同制度",items:[
+  {title:"9.1.1 劳动合同订立",stars:4,years:"2020·2022~2025单选",points:["连续工作满10年应订无固定期限；连续两次固定期限续订","试用期：3月~1年1个月、1~3年2个月、3年以上6个月","建立劳动关系应自用工之日起1个月内订书面合同"]},
+  {title:"9.1.2 履行、变更、解除和终止",stars:5,years:"2017~2023单选，2019·2023多选",points:["用人单位即时解除（劳动者过错）无需提前通知无补偿","预告解除提前30日或额外1个月工资","经济性裁员20人以上或占职工10%以上"]},
+  {title:"9.1.3 违反劳动合同的法律责任",stars:3,years:"2024单选",points:["超1个月不满1年未订书面合同支付2倍工资","违法解除按经济补偿2倍支付赔偿金","月工资高于社平3倍按3倍计，年限最高12年"]}]},
+ {title:"9.2 劳动用工和工资支付保障",items:[
+  {title:"9.2.1 劳动用工管理（劳务派遣）",stars:3,years:"2016~2022单选",points:["劳务派遣只在临时性辅助性替代性岗位","被派遣劳动者同工同酬","工伤由劳务派遣单位申请认定，用工单位协助"]},
+  {title:"9.2.2 工资支付保障",stars:3,years:"2024·2025单选/多选",points:["延长工时不低于150%、休息日200%、法定假日300%","农民工工资保证金1%~3%；工资专用账户","总包单位签约30日内开立专用账户"]}]},
+ {title:"9.3 劳动安全卫生和保护",items:[
+  {title:"9.3.1 劳动安全卫生",stars:3,years:"基础",points:["用人单位是职业健康监护责任主体"]},
+  {title:"9.3.2 劳动保护",stars:4,years:"2024·2025单选/多选",points:["职业病危害预评价，未经卫生部门审核同意不得开工","女职工产假98天；孕7个月以上不得延长工时夜班","童工<16岁非法；未成年工16~18岁"]}]},
+ {title:"9.4 工伤保险制度",items:[
+  {title:"9.4.1 工伤认定",stars:4,years:"2020·2023·2024单选",points:["上下班途中非本人主要责任交通事故认定工伤","48小时内抢救无效死亡视同工伤","单位30日内、职工或近亲属1年内申请","故意犯罪、醉酒吸毒、自残自杀不得认定"]},
+  {title:"9.4.2 工伤保险待遇",stars:3,years:"2016·2021·2022·2025单选",points:["工伤保险费由用人单位缴纳，无过错责任","停工留薪期一般不超12个月","一次性伤残补助金一级27个月至十级7个月"]}]},
+ {title:"9.5 劳动争议的解决",items:[
+  {title:"9.5.1 劳动争议调解",stars:3,years:"范围类",points:["调解组织：企业调解委员会、基层人民调解组织、乡镇街道组织"]},
+  {title:"9.5.2 劳动争议仲裁",stars:5,years:"2022·2024·2025单选，2024·2025多选",points:["仲裁委员会三方组成：劳动行政部门、工会、企业代表","申请仲裁时效1年，从知道权利被侵害之日起算","不能形成多数意见按首席仲裁员意见作出"]}]}
+]},
+{part:"劳动与争议",num:10,chapter:"建设工程争议解决法律制度",score:"26预测14分·全书页数最多",sections:[
+ {title:"10.1 争议和解、调解制度",items:[
+  {title:"10.1.1 和解",stars:3,years:"2016~2022单选",points:["⚠ 和解协议、人民调解书无强制执行力","人民调解书经司法确认后具强制执行力","自调解协议生效30日内共同向法院申请司法确认"]},
+  {title:"10.1.2 调解",stars:5,years:"2016~2025单选/多选",points:["法院调解书经双方签收即生效，效力与判决相同","可不制作调解书：和好离婚、维持收养、即时履行","仲裁调解书与裁决书同等效力"]}]},
+ {title:"10.2 仲裁制度",items:[
+  {title:"10.2.1 仲裁协议",stars:5,years:"2016~2025单选，2016·2020·2021多选",points:["必须书面形式，口头无效","仲裁协议独立存在，合同无效不影响其效力","一方起诉另一方首次开庭前提交仲裁协议，法院驳回起诉","效力异议应在首次开庭前提出"]},
+  {title:"10.2.2 仲裁申请和受理",stars:3,years:"程序类",points:["审查期限5日；被申请人未答辩不影响仲裁程序"]},
+  {title:"10.2.3 仲裁庭组成、开庭和裁决",stars:5,years:"2016~2025单选，2017~2020多选",points:["合议庭3名（各选1名+首席）；独任庭1名","仲裁不公开进行","不能形成多数意见按首席仲裁员意见作出","收到裁决书30日内可请求补正"]},
+  {title:"10.2.4 申请撤销、执行和不予执行",stars:4,years:"2019·2021·2023单选，2022·2024·2025多选",points:["撤销情形：无仲裁协议、超范围、程序违法、证据伪造","执行由被执行人住所地或财产所在地中级法院管辖","申请强制执行期间2年"]}]},
+ {title:"10.3 民事诉讼制度",items:[
+  {title:"10.3.1 民事诉讼的法院管辖",stars:5,years:"2016~2023单选/多选",points:["一般地域管辖'原告就被告'","建设工程施工合同纠纷按不动产纠纷专属管辖","协议管辖：被告住所地、合同履行地、签订地、原告住所地、标的物所在地"]},
+  {title:"10.3.2 审判组织、诉讼参加人",stars:3,years:"2020·2025单选",points:["最高法判决裁定、特别程序、小额诉讼一审终审","诉讼代理人1~2人；特别授权代为承认放弃变更请求、和解、反诉上诉"]},
+  {title:"10.3.3 民事诉讼证据",stars:3,years:"2019·2021·2022单选",points:["八种证据：当事人陈述、书证、物证、视听资料、电子数据、证人证言、鉴定意见、勘验笔录","当事人陈述不能单独作为认定依据"]},
+  {title:"10.3.4 民事诉讼时效",stars:4,years:"2017·2019·2021单选，2016多选",points:["普通时效3年；最长保护期20年","口诀'中止在天意，中断在人为'","起算：知道或应当知道权利受损及义务人之日"]},
+  {title:"10.3.5 民事诉讼审判程序",stars:3,years:"2017·2023·2024·2025单选，2021·2022多选",points:["起诉7日内立案；上诉期判决15日、裁定10日","简易程序3个月内审结","不予受理、管辖权异议、驳回起诉可上诉"]},
+  {title:"10.3.6 民事诉讼的执行",stars:3,years:"2019·2020单选，2025多选",points:["执行申请期间2年","执行异议审查期间不停止执行","执行中止VS执行终结区分"]}]},
+ {title:"10.4 行政复议制度",items:[
+  {title:"10.4.1 行政复议范围",stars:5,years:"2023单选，2021多选",points:["复议审合法性+合理性；诉讼审合法性","复议不停止执行原则","国防外交、抽象行政行为、内部奖惩不可申请"]},
+  {title:"10.4.2 行政复议申请、受理和决定",stars:4,years:"2021单选，2016~2018多选",points:["申请时限60日；审查5日","决定类型：变更、撤销、确认违法","可向本级政府或上一级主管部门申请"]}]},
+ {title:"10.5 行政诉讼制度",items:[
+  {title:"10.5.1 行政诉讼受案范围",stars:4,years:"见10.4",points:["受案范围与行政复议一致"]},
+  {title:"10.5.2 行政诉讼的法院管辖",stars:4,years:"2023·2024·2025单选",points:["复议维持行政机关和复议机关共同被告","经复议案件可由复议机关所在地法院管辖","向两个以上法院起诉由最先立案的管辖"]},
+  {title:"10.5.3 行政诉讼参加人",stars:3,years:"被告认定高频",points:["复议维持→共同被告；复议改变→复议机关","委托组织行为→委托的行政机关"]},
+  {title:"10.5.4 行政诉讼证据、举证责任",stars:4,years:"2024·2025单选",points:["⚠ 被告对行政行为负举证责任（区别于民事'谁主张谁举证'）","原告提供其向被告提出申请的证据"]},
+  {title:"10.5.5 行政诉讼起诉和受理",stars:3,years:"条件类",points:["原告适格、明确被告、具体请求事实根据、属受案范围和管辖"]},
+  {title:"10.5.6 行政诉讼审理判决执行",stars:3,years:"2024·2025单选/多选",points:["判决类型：驳回、撤销、履行、变更、确认违法","简易程序：当场作出、款额2000元以下、政府信息公开"]}]}
+]}
+];
+const PARTS=["总则与准入","发承包合同","安全质量环保","劳动与争议"];
+const PARTCLASS={"总则与准入":"zc","发承包合同":"hc","安全质量环保":"aq","劳动与争议":"ly"};
+const world=document.getElementById('world');
+const svg=world.querySelector('svg.links');
+const stage=document.getElementById('stage');
+let curPart="总则与准入";
+let roots={};
+const NODEW=250, LEAFW=360, GAPX=46, GAPY=12;
+function buildTree(part){
+  const chs=DATA.filter(c=>c.part===part).sort((a,b)=>a.num-b.num);
+  const root={label:part, lv:0, type:'root', children:[], collapsed:false, score:chs.length+" 章"};
+  for(const ch of chs){
+    const cn={label:"第"+ch.num+"章 "+ch.chapter, lv:1, type:'ch', score:ch.score||"", children:[], collapsed:false};
+    for(const s of (ch.sections||[])){
+      const sn={label:s.title, lv:2, type:'sec', children:[], collapsed:true};
+      for(const it of (s.items||[])){
+        const inode={label:it.title, lv:3, type:'item', stars:it.stars||0, years:it.years||"", children:[], collapsed:true};
+        for(const p of (it.points||[])){
+          inode.children.push({label:p, lv:4, type:'point', children:[], leaf:true});
+        }
+        sn.children.push(inode);
+      }
+      cn.children.push(sn);
+    }
+    root.children.push(cn);
+  }
+  return root;
+}
+function esc(s){return (s+"").replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function isTrap(s){return /^⚠/.test(s)||/陷阱/.test(s);}
+function starStr(n){return "★".repeat(n);}
+function nodeHTML(n){
+  const kids=n.children&&n.children.length;
+  const caret=kids?`<span class="caret">▶</span>`:"";
+  const cnt=(kids&&n.collapsed)?`<span class="cnt">${countLeaves(n)}</span>`:"";
+  if(n.lv===0) return `<div class="t">${esc(n.label)}<span class="sc">${esc(n.score)}</span></div>`;
+  if(n.lv===1) return `${caret}<span class="t">${esc(n.label)}</span>${cnt}<span class="sc">${esc(n.score)}</span>`;
+  if(n.lv===3){
+    const meta=(n.stars?`<span class="stars">${starStr(n.stars)}</span>`:"")+(n.years?`<span class="yr">${esc(n.years)}</span>`:"");
+    return `${caret}<span class="t">${esc(n.label)}</span>${cnt}${meta?`<span class="meta">${meta}</span>`:""}`;
+  }
+  if(n.leaf) return esc(n.label);
+  return `${caret}<span class="t">${esc(n.label)}</span>${cnt}`;
+}
+function countLeaves(n){
+  if(!n.children||!n.children.length) return n.leaf?1:0;
+  let s=0; for(const c of n.children) s+=countLeaves(c); return s;
+}
+let elMap=new Map();
+function render(){
+  [...world.querySelectorAll('.node')].forEach(e=>e.remove());
+  elMap.clear();
+  const root=roots[curPart];
+  const visible=[];
+  (function walk(n){
+    visible.push(n);
+    if(!n.collapsed && n.children) for(const c of n.children) walk(c);
+  })(root);
+  for(const n of visible){
+    const d=document.createElement('div');
+    let cls="node lv"+n.lv+(n.leaf?" leaf":"")+((n.leaf&&isTrap(n.label))?" trap":"")+(n.collapsed&&n.children&&n.children.length?" collapsed":"");
+    d.className=cls;
+    d.style.width=(n.leaf?LEAFW:NODEW)+"px";
+    d.innerHTML=nodeHTML(n);
+    world.appendChild(d);
+    n._el=d; elMap.set(n,d);
+    if(!n.leaf) d.addEventListener('click',ev=>{ev.stopPropagation();toggle(n);});
+  }
+  for(const n of visible){ n.h=n._el.offsetHeight; n.w=n._el.offsetWidth; }
+  (function sub(n){
+    if(n.collapsed||!n.children||!n.children.length){n.subH=n.h;return n.subH;}
+    let t=0; for(const c of n.children){t+=sub(c)+GAPY;} t-=GAPY;
+    n.subH=Math.max(n.h,t); return n.subH;
+  })(root);
+  const step=NODEW+GAPX;
+  const W=n=>n.leaf?LEAFW:NODEW;
+  const rootKids=(root.collapsed||!root.children)?[]:root.children;
+  let rightKids=rootKids, leftKids=[];
+  {
+    let total=0; for(const c of rootKids) total+=c.subH;
+    let acc=0, splitIdx=rootKids.length;
+    for(let i=0;i<rootKids.length;i++){
+      acc+=rootKids[i].subH;
+      const diff=Math.abs(acc-(total-acc));
+      if(i+1<rootKids.length){ const acc2=acc+rootKids[i+1].subH; if(Math.abs(acc2-(total-acc2))>diff){splitIdx=i+1;break;} }
+    }
+    rightKids=rootKids.slice(0,splitIdx); leftKids=rootKids.slice(splitIdx);
+  }
+  function place(n,side,depth,top){
+    n.side=side; n.depth=depth;
+    n.x = side>0 ? depth*step : -depth*step;
+    n.cy = top + n.subH/2;
+    n.y = n.cy - n.h/2;
+    if(!n.collapsed && n.children && n.children.length){
+      let cur=top;
+      for(const c of n.children){place(c,side,depth+1,cur);cur+=c.subH+GAPY;}
+    }
+  }
+  const stackH=kids=>{let t=0;for(const c of kids)t+=c.subH+GAPY;return t>0?t-GAPY:0;};
+  const rH=stackH(rightKids), lH=stackH(leftKids), H=Math.max(rH,lH,root.h);
+  let cur=(H-rH)/2; for(const c of rightKids){place(c, 1,1,cur);cur+=c.subH+GAPY;}
+  cur=(H-lH)/2;     for(const c of leftKids){ place(c,-1,1,cur);cur+=c.subH+GAPY;}
+  root.x=0; root.cy=H/2; root.y=root.cy-root.h/2;
+  let minX=0,maxX=0,minY=0,maxY=0;
+  for(const n of visible){
+    minX=Math.min(minX,n.side<0?n.x:n.x); maxX=Math.max(maxX,n.x+W(n));
+    minY=Math.min(minY,n.y); maxY=Math.max(maxY,n.y+n.h);
+  }
+  const ox=-minX+10, oy=-minY+10;
+  for(const n of visible){ n.x+=ox; n.cy+=oy; n.y+=oy; n._el.style.left=n.x+"px"; n._el.style.top=n.y+"px"; }
+  minX+=ox;maxX+=ox;minY+=oy;maxY+=oy;
+  let paths="";
+  for(const n of visible){
+    if(n.collapsed||!n.children) continue;
+    for(const c of n.children){
+      const x1 = c.side<0 ? n.x : n.x+W(n);
+      const x2 = c.side<0 ? c.x+W(c) : c.x;
+      const y1=n.cy, y2=c.cy, mx=(x1+x2)/2;
+      const col=n.lv===0?"var(--"+PARTCLASS[curPart]+")":"var(--line)";
+      const w=n.lv===0?2.2:(n.lv===1?1.6:1);
+      paths+=`<path d="M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}" fill="none" stroke="${col}" stroke-width="${w}" opacity="0.7"/>`;
+    }
+  }
+  worldW=maxX-minX+20; worldH=maxY-minY+20;
+  svg.style.width=worldW+"px"; svg.style.height=worldH+"px"; svg.innerHTML=paths;
+}
+let worldW=0,worldH=0;
+function toggle(n){ if(n.children&&n.children.length){n.collapsed=!n.collapsed;render();} }
+function setAll(node,collapsed,minLv){
+  if(node.children&&node.children.length && node.lv>=minLv) node.collapsed=collapsed;
+  if(node.lv<minLv && node.children) node.collapsed=false;
+  if(node.children) for(const c of node.children) setAll(c,collapsed,minLv);
+}
+let scale=1, tx=40, ty=20;
+function applyT(){world.style.transform=`translate(${tx}px,${ty}px) scale(${scale})`;}
+function fit(){
+  render();
+  const sw=stage.clientWidth, sh=stage.clientHeight;
+  scale=Math.min(1, (sw-40)/(worldW+40));
+  scale=Math.max(0.2,Math.min(scale,1));
+  tx=Math.max(20,(sw-worldW*scale)/2); ty=Math.max(20,(sh-worldH*scale)/2);
+  applyT();
+}
+document.getElementById('zin').onclick=()=>{scale=Math.min(2.2,scale*1.2);applyT();};
+document.getElementById('zout').onclick=()=>{scale=Math.max(0.2,scale/1.2);applyT();};
+document.getElementById('fit').onclick=fit;
+document.getElementById('expand').onclick=()=>{setAll(roots[curPart],false,2);render();};
+document.getElementById('collapse').onclick=()=>{setAll(roots[curPart],true,2);render();};
+let dragging=false,sx,sy,stx,sty;
+stage.addEventListener('pointerdown',e=>{dragging=true;stage.classList.add('drag');sx=e.clientX;sy=e.clientY;stx=tx;sty=ty;stage.setPointerCapture(e.pointerId);});
+stage.addEventListener('pointermove',e=>{if(!dragging)return;tx=stx+(e.clientX-sx);ty=sty+(e.clientY-sy);applyT();});
+stage.addEventListener('pointerup',e=>{dragging=false;stage.classList.remove('drag');});
+stage.addEventListener('wheel',e=>{e.preventDefault();const f=e.deltaY<0?1.1:1/1.1;const r=stage.getBoundingClientRect();const mx=e.clientX-r.left,my=e.clientY-r.top;const ns=Math.max(0.2,Math.min(2.2,scale*f));tx=mx-(mx-tx)*(ns/scale);ty=my-(my-ty)*(ns/scale);scale=ns;applyT();},{passive:false});
+let pd=0;
+stage.addEventListener('touchmove',e=>{if(e.touches.length===2){e.preventDefault();const dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;const d=Math.hypot(dx,dy);if(pd){const f=d/pd;scale=Math.max(0.2,Math.min(2.2,scale*f));applyT();}pd=d;}},{passive:false});
+stage.addEventListener('touchend',()=>{pd=0;});
+function switchPart(part){
+  curPart=part;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.part===part));
+  world.className=""; world.classList.add(PARTCLASS[part]);
+  document.getElementById('hint').textContent=part+"板块";
+  fit();
+}
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>switchPart(t.dataset.part));
+for(const p of PARTS) roots[p]=buildTree(p);
+world.classList.add('zc');
+fit();
+</script>
+</body>
+</html>
