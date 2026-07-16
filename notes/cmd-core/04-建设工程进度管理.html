@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第4章 建设工程进度管理 · 知识树</title>
+<style>
+  :root{ --accent:#2563ab; --accent-bg:#ecf3fa; --ink:#2b2b2b; --sub:#777; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.6;}
+  a.back{display:inline-block;font-size:.8rem;color:var(--sub);text-decoration:none;margin-bottom:8px;}
+  h1{font-size:1.15rem;margin:2px 0 4px;color:var(--accent);}
+  .meta{color:var(--sub);font-size:.78rem;margin-bottom:10px;}
+  .legend{background:#fff;border-radius:10px;padding:8px 12px;font-size:.75rem;color:#555;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;}
+  .score{background:#fff;border-radius:10px;padding:10px 12px;font-size:.8rem;margin-bottom:14px;}
+  .score b{font-size:.85rem;}
+  .score table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .score td,.score th{border:1px solid #eee;padding:3px 6px;font-size:.75rem;text-align:center;}
+  .score th{background:#fafafa;font-weight:600;}
+  details.sec{background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);border-left:4px solid var(--accent);}
+  details.sec>summary{list-style:none;cursor:pointer;padding:11px 13px;font-weight:700;font-size:.95rem;display:flex;gap:8px;align-items:center;}
+  details.sec>summary::-webkit-details-marker{display:none;}
+  .caret{margin-left:auto;color:#bbb;font-size:.75rem;transition:transform .2s;flex:none;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .sec .inner{padding:0 12px 12px;}
+  details.item{border:1px solid #eee;border-radius:9px;margin-bottom:8px;background:#fff;}
+  details.item>summary{list-style:none;cursor:pointer;padding:9px 11px;font-size:.88rem;font-weight:600;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+  details.item>summary::-webkit-details-marker{display:none;}
+  .stars{color:#e8a20c;font-size:.8rem;letter-spacing:1px;flex:none;}
+  .yr{background:var(--accent-bg);color:var(--accent);font-size:.68rem;padding:1px 6px;border-radius:4px;flex:none;}
+  .item .kp{padding:2px 12px 10px;border-top:1px dashed #f0f0f0;font-size:.85rem;}
+  .kp ul{margin:6px 0;padding-left:1.25em;}
+  .kp li{margin:4px 0;}
+  .kp table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem;}
+  .kp th,.kp td{border:1px solid #e8e8e8;padding:5px 7px;text-align:left;vertical-align:top;}
+  .kp th{background:#fafafa;font-weight:600;white-space:nowrap;}
+  .r{color:#c62828;font-weight:600;}
+  .b{color:#1d64c0;}
+  .fml{background:#f4f8fd;border:1px solid #d8e6f5;border-radius:8px;padding:7px 10px;margin:8px 0;font-size:.82rem;color:#234;}
+  .trap{background:#fff8e6;border-left:3px solid #e8a20c;border-radius:0 8px 8px 0;padding:7px 10px;margin:8px 0;font-size:.8rem;color:#7a5c00;}
+  details.ex{background:#eef4fb;border-radius:8px;margin:8px 0;font-size:.82rem;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:8px 10px;color:var(--accent);}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>div{padding:0 10px 9px;color:#444;}
+  .btns{display:flex;gap:8px;justify-content:center;margin:0 0 12px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
+  footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
+</style>
+</head>
+<body>
+
+<a class="back" href="00-全书骨架.html">← 返回全书骨架</a>
+<h1>第4章 建设工程进度管理</h1>
+<div class="meta">板块三 四大目标控制 · 共4节（网络计划计算是必考点 · 重点章）</div>
+
+<div class="legend">
+  <span><span class="stars">★</span>数=重要度</span>
+  <span class="r">红=重点/易考/高频</span>
+  <span class="b">蓝=次重点</span>
+  <span>⚠=易混陷阱</span>
+</div>
+
+<div class="score">
+  <b>本章分值：2024年16分 · 2025年16分 · 2026预测18分</b>
+  <table>
+    <tr><th>知识点</th><th>题型</th><th>2024</th><th>2025</th><th>2026预测</th></tr>
+    <tr><td rowspan="2">4.1 工程进度影响因素与进度计划系统</td><td>单选</td><td>2</td><td>1</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>—</td><td>2</td></tr>
+    <tr><td rowspan="2">4.2 流水施工进度计划</td><td>单选</td><td>2</td><td>3</td><td>2</td></tr>
+    <tr><td>多选</td><td>4</td><td>4</td><td>4</td></tr>
+    <tr><td rowspan="2">4.3 工程网络计划技术</td><td>单选</td><td>2</td><td>3</td><td>2</td></tr>
+    <tr><td>多选</td><td>4</td><td>2</td><td>4</td></tr>
+    <tr><td rowspan="2">4.4 施工进度控制</td><td>单选</td><td>2</td><td>1</td><td>1</td></tr>
+    <tr><td>多选</td><td>—</td><td>2</td><td>2</td></tr>
+    <tr><td colspan="2"><b>合计</b></td><td><b>16</b></td><td><b>16</b></td><td><b>18</b></td></tr>
+  </table>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ════════ 4.1 ════════ -->
+<details class="sec" open>
+  <summary>4.1 工程进度影响因素与进度计划系统<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>4.1.1 工程进度影响因素</span><span class="stars">★★★</span><span class="yr">2024单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 工程设计进度影响因素</b> 图4-1：业主建设意图及要求的改变；设计各专业之间的协调配合；设计文件审查批准延误。<br>
+        <b>2. 工程施工进度影响因素</b>［2024单选］ 图4-2
+        <table>
+          <tr><th>因素类</th><th>内容</th></tr>
+          <tr><td>自然条件影响</td><td>复杂的工程地质条件、不明的水文气象条件、地下埋藏文物保护处理、洪水地震台风等不可抗力</td></tr>
+          <tr><td>施工单位自身因素</td><td>施工技术因素（方案工艺安全措施不当、特殊材料不合理使用、设备不配套或故障、不成熟技术应用）；组织管理因素（审批手续延误、合同漏条款、计划不周密、协调不力、指挥不力）</td></tr>
+          <tr><td>相关单位影响</td><td>建设单位（设计变更、场地条件不及时、资金不到位、不及时支付工程款）、勘察设计单位、工程监理单位、材料设备供应单位</td></tr>
+          <tr><td>社会环境影响</td><td>临近工程干扰、节假日交通市容限制、临时停水停电断路、国外法律制度变化经济制裁、战争罢工汇率浮动通货膨胀</td></tr>
+          <tr><td>有关协作部门影响</td><td>协作部门配合不够或支持力度不够</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>4.1.2 工程进度计划系统及表达形式</span><span class="stars">★★★★</span><span class="yr">2019·2020·2024·2025单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 建设单位计划系统</b>［2024单选］ 表4-1
+        <table>
+          <tr><th>类别</th><th>表格</th></tr>
+          <tr><td>工程项目前期工作计划</td><td>工程项目前期工作计划（标志"<span class="r">前期</span>"）</td></tr>
+          <tr><td>工程建设总进度计划</td><td>工程项目一览表、工程项目总进度计划、<span class="r">投资计划年度分配表</span>、工程项目进度平衡表（<span class="r">明确设计文件交付、设备交货、进场、水电道路接通日期</span>）</td></tr>
+          <tr><td>工程项目年度计划</td><td>年度计划项目表、年度竣工投产交付使用计划表、年度建设资金平衡表、年度设备平衡表（均带"<span class="r">年度</span>"）</td></tr>
+        </table>
+        <div class="trap">⚠ 带"年度""本年"的一般属年度计划，但"<b>投资计划年度分配表</b>"是特例，属建设总进度计划；只有一种表格且标志"前期"的属前期工作计划；其余均属建设总进度计划。</div>
+        <b>2~4. 设计/监理/施工单位计划系统</b>［2025单选］ 图4-3~4-5：施工单位按项目组成编制（施工总进度计划、单位工程施工进度计划、分部分项工程施工进度计划）+ 按进展时间编制（年度、季度、月/旬作业计划）。<br>
+        <b>5. 施工进度计划表达形式</b>［2019、2020单选］ 图4-6
+        <table>
+          <tr><th>横道图（优点）</th><th>网络图（优点）</th></tr>
+          <tr><td>形象直观、易于编制和理解；直观表明各工作开始/完成/持续时间及总工期</td><td>明确表达各工作先后顺序（逻辑关系）；<span class="r">找出关键工作和关键线路</span>；能确定各工作机动时间（时差）；可用软件计算优化实现动态控制</td></tr>
+          <tr><td colspan="2"><b>横道图缺点</b>：不能明确反映工作间相互联系制约；不能反映关键工作和关键线路；不能反映机动时间；不便优化；大型项目无法计算机分析。</td></tr>
+        </table>
+      </div>
+    </details>
+  </div>
+</details>
+
+<!-- ════════ 4.2 ════════ -->
+<details class="sec">
+  <summary>4.2 流水施工进度计划<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>4.2.1 流水施工特点及表达方式</span><span class="stars">★★★★</span><span class="yr">2025单选，2024多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        表4-2
+        <table>
+          <tr><th>施工方式</th><th>工作面利用</th><th>工期</th><th>连续施工</th><th>专业化</th><th>资源投入</th><th>组织管理</th></tr>
+          <tr><td>依次</td><td>没有充分</td><td>较长</td><td>否</td><td>否</td><td>较少</td><td>比较简单</td></tr>
+          <tr><td>平行</td><td>充分</td><td><span class="r">短</span></td><td>否</td><td>否</td><td>成倍增加</td><td>比较复杂</td></tr>
+          <tr><td>流水</td><td>尽可能</td><td>较短</td><td><span class="r">能</span></td><td><span class="r">能</span></td><td><span class="r">较均衡</span></td><td>有利于科学管理、文明施工</td></tr>
+        </table>
+        <details class="ex"><summary>【2024年真题】与依次施工和平行施工相比，建设工程组织流水施工的特点有（ ）。A.施工工期最短 B.各工作队可实现专业化施工 C.能够尽可能利用工作面进行施工 D.单位时间内投入的资源较为均衡 E.施工现场组织管理比较简单</summary>
+        <div>答案 B、C、D。A工期最短是平行施工；E组织管理简单是依次施工。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>4.2.2 流水施工参数</span><span class="stars">★★★★</span><span class="yr">2024·2025单选，2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        表4-4
+        <table>
+          <tr><th>参数类</th><th>参数及要点</th></tr>
+          <tr><td>工艺参数</td><td><span class="r">施工过程数</span>（可为单位/单项/分部/分项工程或工序）；<span class="r">流水强度</span>（某施工过程在单位时间完成的工程量）</td></tr>
+          <tr><td>空间参数</td><td><span class="r">工作面</span>；<span class="r">施工段（流水段）</span>——各施工段劳动量大致相等（相差不宜超<span class="r">15%</span>）、有足够工作面、界限尽可能与结构界限吻合、段数满足合理组织要求；多层需既分施工段又分施工层</td></tr>
+          <tr><td>时间参数</td><td><span class="r">流水节拍</span>（某专业工作队在一个施工段上的施工时间；决定单位时间资源供应量）；<span class="r">流水步距</span>（相邻两专业工作队相继开始施工的最小间隔时间；数目取决于施工过程数，大小取决于流水节拍及组织方式）；<span class="r">流水施工工期</span></td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>4.2.3 流水施工基本方式</span><span class="stars">★★★★</span><span class="yr">2017·2024·2025单选，2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 三种流水的特点</b>［2025单选/多选］ 表4-5
+        <table>
+          <tr><th>项目</th><th>全等（固定）节拍</th><th>加快的成倍节拍</th><th>非节奏</th></tr>
+          <tr><td>流水节拍</td><td>所有均相等</td><td>同一施工过程相等，不同施工过程<span class="r">倍数关系</span></td><td>不全相等</td></tr>
+          <tr><td>流水步距</td><td>相等且等于流水节拍</td><td>相等且等于流水节拍的<span class="r">最大公约数</span></td><td>不尽相等</td></tr>
+          <tr><td>过程数与工作队数</td><td>相等</td><td><span class="r">专业工作队数＞施工过程数</span></td><td>相等</td></tr>
+          <tr><td>能否连续作业</td><td colspan="2">能</td><td>能</td></tr>
+          <tr><td>施工段之间是否有空闲</td><td>没有</td><td>没有</td><td>可能有</td></tr>
+        </table>
+        <b>2. 全等节拍流水工期</b>
+        <div class="fml">流水施工工期 =（施工段数 + 施工过程数 − 1）× 流水步距 + 技术间歇之和 − 提前插入之和</div>
+        <b>3. 加快的成倍节拍流水计算</b>［2024单选］ 表4-6
+        <div class="fml">流水步距 = min（各施工过程流水节拍）＝流水节拍的最大公约数；<br>专业工作队数目 = 流水节拍 ÷ 流水步距（各过程之和）；<br>流水施工工期 =（施工段数 + <span class="r">专业工作队数</span> − 1）× 流水步距 + 技术间歇 − 提前插入</div>
+        <b>4. 非节奏流水</b>［2017、2025单选］ 表4-7：流水步距用"<span class="r">累加数列错位相减取大差法</span>"（①累加数列 ②错位相减 ③取大差）。
+        <div class="fml">流水施工工期 = ∑流水步距 + 最后一个施工过程各段流水节拍之和 + 技术间歇 − 提前插入</div>
+        <details class="ex"><summary>【2025年真题】某分部工程有3个施工过程，划分为4个施工段组织非节奏流水施工，节拍见下表，则流水施工工期是（ ）d。（Ⅰ:3,5,3,4 / Ⅱ:4,3,4,3 / Ⅲ:5,4,5,4）A.21 B.22 C.25 D.26</summary>
+        <div>答案 D。累加数列错位相减：K(Ⅰ,Ⅱ)=max{3,4,4,4,−14}=4；K(Ⅱ,Ⅲ)=max{4,2,2,0,−18}=4；工期=(4+4)+(5+4+5+4)=26d。</div></details>
+      </div>
+    </details>
+  </div>
+</details>
+
+<!-- ════════ 4.3 ════════ -->
+<details class="sec">
+  <summary>4.3 工程网络计划技术<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>4.3.1 网络计划编制程序和方法</span><span class="stars">★★★★★</span><span class="yr">2017~2022单选，多年多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 编制程序</b> 表4-9：①计划编制准备（调查研究、确定目标）②网络图绘制（分解、确定逻辑关系、绘制）③时间参数计算（计算参数、确定关键工作和关键线路）④优化（优化网络计划、编制正式计划）。<br>
+        <b>2. 快速判断双代号网络图中的错误画法</b>［多年单选/多选］ 表4-10
+        <ul>
+          <li><span class="r">多个起点节点</span>：存在两个及以上节点只有外向箭线而无内向箭线</li>
+          <li><span class="r">多个终点节点</span>：存在两个及以上节点只有内向箭线而无外向箭线</li>
+          <li><span class="r">节点编号错误</span>：箭尾编号大于箭头编号；或编号重复</li>
+          <li><span class="r">工作代号重复</span>：同一工作代号出现两次及以上</li>
+          <li><span class="r">多余虚工作</span>：去掉后逻辑关系不变；虚工作紧前只有虚工作；两节点间既有虚工作又有实工作</li>
+          <li><span class="r">循环回路</span>：沿箭线方向又回到该节点</li>
+          <li><span class="r">逻辑关系错误</span>：与给定紧前工作条件不符</li>
+        </ul>
+        <b>3. 网络计划优化</b>［2025单选，2024多选］ 图4-9
+        <table>
+          <tr><th>类型</th><th>要点</th></tr>
+          <tr><td>工期优化</td><td>压缩关键工作持续时间；被压缩对象宜选：对质量安全影响不大、有充足备用资源、增加费用最少的工作</td></tr>
+          <tr><td>费用优化</td><td>寻求工程总成本最低时的工期安排。直接费随工期缩短而增加，间接费随工期缩短而减少；应选<span class="r">直接费用率最小</span>的关键工作压缩；多条关键线路时选<span class="r">组合直接费用率之和最小</span>者</td></tr>
+          <tr><td>资源优化</td><td>"资源有限、工期最短"与"工期固定、资源均衡"两类</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>4.3.2 时间参数计算方法</span><span class="stars">★★★★★</span><span class="yr">2016~2025单选/多选（核心计算点）</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>参数含义</b> 表4-11：ES最早开始、EF最早完成、LS最迟开始、LF最迟完成、TF总时差、FF自由时差。<br>
+        <b>1. 双代号工作计算法</b>（口诀"<span class="r">最早看紧前多个取最大，最迟看紧后多个取最小</span>"）
+        <div class="fml">
+        ES：起点节点=0，其他工作 = max{紧前工作 EF}；EF = ES + 持续时间<br>
+        计算工期 = max{终点节点为箭头节点的工作 EF}<br>
+        LF：终点节点 = 计划工期，其他工作 = min{紧后工作 LS}；LS = LF − 持续时间<br>
+        <span class="r">总时差 TF = LS − ES = LF − EF</span>（唯一线路=线路总时差；多线路=各线路总时差最小值）<br>
+        <span class="r">自由时差 FF = min{紧后工作 ES} − 本工作 EF</span>（无紧后=计划工期 − EF）
+        </div>
+        <div class="trap">⚠ TF=0 时 FF 必为 0；同一工作 FF ≤ TF。总时差=计算工期 − 经过该工作各线路持续时间之和的最大值。</div>
+        <b>2. 双代号节点计算法</b>［2019单选，2018、2025多选］ 表4-15
+        <div class="fml">节点最早时间 ET<sub>j</sub> = max{ET<sub>i</sub> + D<sub>i-j</sub>}；节点最迟时间 LT<sub>i</sub> = min{LT<sub>j</sub> − D<sub>i-j</sub>}<br>
+        ES<sub>i-j</sub>=ET<sub>i</sub>；EF<sub>i-j</sub>=ET<sub>i</sub>+D<sub>i-j</sub>；LF<sub>i-j</sub>=LT<sub>j</sub>；LS<sub>i-j</sub>=LT<sub>j</sub>−D<sub>i-j</sub><br>
+        TF<sub>i-j</sub>=LT<sub>j</sub>−ET<sub>i</sub>−D<sub>i-j</sub>；FF<sub>i-j</sub>=ET<sub>j</sub>−ET<sub>i</sub>−D<sub>i-j</sub></div>
+        <b>3. 单代号网络计划</b>（表4-16~4-18）：相邻两项工作时间间隔 LAG = 紧后工作 ES − 本工作 EF；
+        <div class="fml">终点工作 TF<sub>n</sub>=T<sub>p</sub>−EF<sub>n</sub>，其他 TF<sub>i</sub>=min{TF<sub>j</sub>+LAG<sub>i,j</sub>}；<br>终点工作 FF<sub>n</sub>=T<sub>p</sub>−EF<sub>n</sub>，其他 FF<sub>i</sub>=min{LAG<sub>i,j</sub>}；<br>LF=EF+TF，LS=ES+TF</div>
+        <b>4. 双代号时标网络计划</b>［多年单选/多选］：<span class="r">波形线水平投影长度 = 时间间隔</span>；ES=箭线左端节点时标值；EF=右端节点（无波形线）或实线部分右端点（有波形线）；总时差用<span class="r">波形线累加法/取最小法</span>；<span class="r">凡自始至终不出现波形线的线路即为关键线路</span>。<br>
+        <b>5. 单代号搭接网络计划</b>［2020、2023单选］ 表4-20~4-21：搭接关系 FTS/FTF/STS/STF；LAG = min{各时距对应差值}（口诀"时距为STS/STF：开始加时距，遇完成减持续；时距为FTF/FTS：完成加时距，遇完成减持续"）。
+        <details class="ex"><summary>【2020年真题·六时标注】某双代号网络计划关键线路 A→D→E→I，计算工期15d，工作 G 总时差=（15−7）−（2+4）=2d；工作 F 自由时差=(2+4+6)−(2+4+4)=2d。</summary>
+        <div>掌握"六时标注法"（ES/LS/TF ‖ EF/LF/FF）可一图求全部参数。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>4.3.3 关键工作及关键线路确定方法</span><span class="stars">★★★★★</span><span class="yr">2016~2025单选/多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 双代号网络计划</b> 表4-22
+        <ul>
+          <li><b>关键工作</b>：总时差最小的工作（计划工期=计算工期时，总时差为零的工作）</li>
+          <li><b>关键线路</b>：关键工作首尾相连、持续时间总和最大的通路；<span class="r">关键线路上可能有虚工作存在</span></li>
+          <li><b>标号法</b>：起点标号0，b<sub>j</sub>=max{b<sub>i</sub>+D<sub>i-j</sub>}，从终点逆箭线按源节点确定关键线路</li>
+        </ul>
+        <b>2. 关键节点与关键工作、关键线路的关系</b> 图4-21
+        <ul>
+          <li>关键工作两端节点必为关键节点，但两端为关键节点的工作<span class="r">不一定</span>是关键工作</li>
+          <li>关键节点必然处在关键线路上，但由关键节点组成的线路<span class="r">不一定</span>是关键线路</li>
+          <li>以关键节点为完成节点的工作，其总时差和自由时差必然相等</li>
+        </ul>
+        <b>3. 单代号网络计划</b>［2024单选，2022、2023多选］ 表4-23：总时差最小的工作为关键工作；相邻工作时间间隔全部为零的线路为关键线路。<br>
+        <div class="trap">⚠ 常见错误说法（表4-24）：持续时间最长的工作是关键工作（×）；关键线路只有一条（×）；关键线路一经确定不可转移（×）；无虚箭线的线路是关键线路（×）；由关键节点连成的线路是关键线路（×）。</div>
+      </div>
+    </details>
+  </div>
+</details>
+
+<!-- ════════ 4.4 ════════ -->
+<details class="sec">
+  <summary>4.4 施工进度控制<span class="caret">▶</span></summary>
+  <div class="inner">
+
+    <details class="item">
+      <summary><span>4.4.1 施工进度计划实施中的检查与分析</span><span class="stars">★★★★</span><span class="yr">2016·2018·2021单选，2017·2025多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>检查与分析</b> 图4-22：施工进度监测系统过程（实施→收集整理实际数据→实际与计划比较分析→判断偏差）+ 施工进度调整系统过程（分析偏差原因→分析对后续及总工期影响→确定限制条件→调整计划）。<br>
+        <b>进度偏差对后续工作和工期影响</b> 表4-25
+        <table>
+          <tr><th>偏差</th><th>影响后续工作</th><th>影响总工期</th></tr>
+          <tr><td>＞总时差</td><td>是</td><td>是</td></tr>
+          <tr><td>＜总时差</td><td>—</td><td>否</td></tr>
+          <tr><td>＞自由时差</td><td>是</td><td>—</td></tr>
+          <tr><td>＜自由时差</td><td>否</td><td>否</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>4.4.2 实际进度与计划进度比较方法</span><span class="stars">★★★★</span><span class="yr">2016·2024·2025单选，2020·2023多选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 横道图比较法</b>［2025单选］：基于横道计划的进度比较方法，工作非匀速进展时需对不同时段实际与计划进度比较。<br>
+        <b>2. S曲线比较法</b> 表4-26：（口诀"<span class="r">左侧及上方，超前与超额；右侧及下方，拖后与拖欠</span>"）实际进展点落在计划S曲线左侧=超前，右侧=拖后；上方=任务量超额，下方=任务量拖欠。<br>
+        <b>3. 前锋线比较法</b>［2016、2024单选，2020、2023多选］ 表4-27
+        <table>
+          <tr><th>位置点</th><th>实际进度</th><th>对后续/总工期影响</th></tr>
+          <tr><td>落在检查日<span class="r">左侧</span></td><td>拖后（检查时刻−位置点时刻）</td><td>超过自由时差就影响后续、超过总时差就影响总工期，超几天影响几天</td></tr>
+          <tr><td>与检查日重合</td><td>一致</td><td>不影响</td></tr>
+          <tr><td>落在检查日<span class="r">右侧</span></td><td>超前</td><td>需结合其他工作分析</td></tr>
+        </table>
+        <details class="ex"><summary>【2024年真题·前锋线】第6周末检查：工作C（关键工作）拖后2周→影响工期2周；工作D总时差1周，拖后1周→不影响总工期；工作E（非关键）提前1周→不影响。</summary>
+        <div>前锋线判断口诀：拖后量与"自由时差/总时差"比大小定影响。</div></details>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span>4.4.3 施工进度计划调整方法及措施</span><span class="stars">★★★★</span><span class="yr">2024单选</span><span class="caret">▶</span></summary>
+      <div class="kp">
+        <b>1. 调整方法</b> 图4-24：①压缩某些工作的持续时间（增加资源投入、提高劳动效率，<span class="r">不改变逻辑关系</span>）；②改变某些工作间的逻辑关系（顺序作业改为平行、搭接或分段流水作业）。<br>
+        <b>2. 压缩持续时间的措施</b>［2024单选］ 图4-25（口诀"<span class="r">组织要增加、技术需改进、奖励属经济、改善归配套</span>"）
+        <table>
+          <tr><th>措施</th><th>内容</th></tr>
+          <tr><td>组织措施</td><td>增加工作面组织更多施工队伍；增加每天施工时间（加班或多班制）；增加劳动力和机械数量</td></tr>
+          <tr><td>技术措施</td><td>改进工艺技术缩短工艺间歇；采用更先进施工方式（现浇改预制装配）；采用更先进施工机械</td></tr>
+          <tr><td>经济措施</td><td>实行包干奖励；提高奖金数额；对技术措施给予经济补偿</td></tr>
+          <tr><td>其他配套措施</td><td>改善外部配合条件；改善作业环境；实施强有力的组织调度</td></tr>
+        </table>
+      </div>
+    </details>
+  </div>
+</details>
+
+<footer>依据《建设工程项目管理四色笔记》第071~099页整理</footer>
+
+<script>
+function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>
