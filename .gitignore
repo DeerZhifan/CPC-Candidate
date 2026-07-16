@@ -1,5 +1,9 @@
-# 忽略超过 GitHub 100MB 限制的 PDF 大文件
+# 忽略超过 GitHub 100MB 限制的四色笔记扫描 PDF 大文件
 notes/eco-war/一建经济四色笔记.pdf
+notes/cmd-core/一建项目管理四色笔记.pdf
+notes/law-fort/一建法规四色笔记.pdf
 
-# 兜底：忽略 eco-war 下所有 PDF
+# 兜底：忽略各科笔记目录下所有 PDF 扫描件
 notes/eco-war/*.pdf
+notes/cmd-core/*.pdf
+notes/law-fort/*.pdf

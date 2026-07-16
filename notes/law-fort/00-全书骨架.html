@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>建设工程法规及相关知识 · 全书骨架</title>
+<style>
+  :root{
+    --c1:#e05d2d; --c1-bg:#fdf0ea; --c1-line:#f3c9b6;
+    --c2:#1a7f5a; --c2-bg:#eaf6f0; --c2-line:#bfe3d3;
+    --c3:#2563ab; --c3-bg:#ecf3fa; --c3-line:#c2d8ee;
+    --c4:#7a4fb0; --c4-bg:#f2edf9; --c4-line:#d8c8ec;
+    --ink:#2b2b2b; --sub:#777; --trap:#c22;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f7f6f4;margin:0;padding:14px 12px 60px;line-height:1.55;}
+  h1{font-size:1.25rem;text-align:center;margin:6px 0 2px;}
+  .meta{text-align:center;color:var(--sub);font-size:.78rem;margin-bottom:14px;}
+  /* 顶层逻辑链 */
+  .chain{background:#fff;border-radius:12px;padding:12px 14px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.06);font-size:.85rem;}
+  .chain b{display:block;margin-bottom:6px;font-size:.9rem;}
+  .chain .flow{display:flex;flex-direction:column;gap:4px;}
+  .flow .step{display:flex;align-items:baseline;gap:8px;}
+  .flow .tag{flex:none;font-weight:700;padding:1px 8px;border-radius:6px;font-size:.8rem;color:#fff;}
+  .t1{background:var(--c1);} .t2{background:var(--c2);} .t3{background:var(--c3);} .t4{background:var(--c4);}
+  .flow .arrow{color:var(--sub);text-align:center;font-size:.8rem;margin:-2px 0;}
+  /* 分值总览 */
+  .score{background:#fff;border-radius:12px;padding:10px 12px;font-size:.8rem;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.06);}
+  .score b{font-size:.85rem;}
+  .score table{width:100%;border-collapse:collapse;margin-top:6px;}
+  .score td,.score th{border:1px solid #eee;padding:3px 5px;font-size:.72rem;text-align:center;}
+  .score th{background:#fafafa;font-weight:600;}
+  .score .nm{text-align:left;}
+  .score .hi{color:var(--trap);font-weight:700;}
+  /* 板块 */
+  .part{border-radius:12px;margin-bottom:14px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06);}
+  .part>summary{list-style:none;cursor:pointer;padding:12px 14px;color:#fff;font-weight:700;font-size:1rem;display:flex;justify-content:space-between;align-items:center;}
+  .part>summary::-webkit-details-marker{display:none;}
+  .p1>summary{background:var(--c1);} .p2>summary{background:var(--c2);} .p3>summary{background:var(--c3);} .p4>summary{background:var(--c4);}
+  .part .body{padding:10px 10px 12px;}
+  .p1 .body{background:var(--c1-bg);} .p2 .body{background:var(--c2-bg);} .p3 .body{background:var(--c3-bg);} .p4 .body{background:var(--c4-bg);}
+  .plogic{font-size:.82rem;color:#555;background:rgba(255,255,255,.75);border-radius:8px;padding:8px 10px;margin-bottom:10px;}
+  .plogic b{color:var(--ink);}
+  /* 章 */
+  .chap{background:#fff;border-radius:10px;margin-bottom:8px;overflow:hidden;}
+  .p1 .chap{border-left:4px solid var(--c1);} .p2 .chap{border-left:4px solid var(--c2);} .p3 .chap{border-left:4px solid var(--c3);} .p4 .chap{border-left:4px solid var(--c4);}
+  .chap>summary{list-style:none;cursor:pointer;padding:10px 12px;display:flex;align-items:center;gap:7px;font-size:.92rem;flex-wrap:wrap;}
+  .chap>summary::-webkit-details-marker{display:none;}
+  .chap .no{flex:none;font-weight:700;color:var(--sub);font-size:.8rem;min-width:2.8em;}
+  .chap .nm{font-weight:600;}
+  .hot{flex:none;font-size:.66rem;background:#fdeaea;color:var(--trap);border:1px solid #f3c9c9;border-radius:4px;padding:0 5px;font-weight:700;}
+  .sc{flex:none;font-size:.68rem;color:var(--sub);background:#f5f5f5;border-radius:4px;padding:1px 6px;margin-left:auto;}
+  .caret{flex:none;color:#bbb;transition:transform .2s;font-size:.75rem;}
+  details[open]>summary .caret{transform:rotate(90deg);}
+  .secs{padding:2px 12px 10px 12px;border-top:1px dashed #eee;}
+  .sec{font-size:.85rem;padding:4px 0 4px 2.6em;text-indent:-2.6em;color:#444;}
+  .sec .sn{color:var(--sub);font-size:.78rem;margin-right:6px;}
+  .clogic{font-size:.8rem;color:#666;background:#fafafa;border-radius:6px;padding:6px 9px;margin:6px 0 4px;}
+  .pending{flex:none;font-size:.68rem;color:#aaa;border:1px solid #ddd;border-radius:4px;padding:0 6px;}
+  a.mounted{flex:none;font-size:.72rem;color:#fff;background:#3aa06b;border-radius:4px;padding:1px 7px;text-decoration:none;font-weight:600;}
+  .btns{display:flex;gap:8px;justify-content:center;margin-bottom:14px;}
+  .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:6px 16px;font-size:.82rem;color:#555;}
+  footer{text-align:center;color:#bbb;font-size:.72rem;margin-top:24px;}
+</style>
+</head>
+<body>
+
+<h1>《建设工程法规及相关知识》全书骨架</h1>
+<div class="meta">四色笔记 · 10章 47节 · 满分130分 · 逐章知识树陆续挂载</div>
+
+<div class="chain">
+  <b>全书一条逻辑链</b>
+  <div class="flow">
+    <div class="step"><span class="tag t1">法律地基</span><span><b>第1章</b>——先立法律根基：民法（物权/知识产权/侵权）、行政法、刑法基础，是后面一切"合规"判断的底层规则。</span></div>
+    <div class="arrow">↓ 有了规则，主体才能进场、签约</div>
+    <div class="step"><span class="tag t2">进场与签约</span><span><b>第2~5章</b>——按"进入市场→拿到许可→发承包招投标→订立合同"的先后：谁能干（主体资质）→ 准不准干（许可）→ 怎么承接（招投标）→ 怎么约定（合同）。</span></div>
+    <div class="arrow">↓ 合同签了，落到施工现场怎么管</div>
+    <div class="step"><span class="tag t3">过程管控</span><span><b>第6~9章</b>——施工阶段四条管控主线：安全生产 → 工程质量 → 环保与文物保护 → 劳动保障。四大重灾区，分值大头。</span></div>
+    <div class="arrow">↓ 干出了纠纷，怎么救济</div>
+    <div class="step"><span class="tag t4">争议解决</span><span><b>第10章</b>——收尾救济：和解、调解、仲裁、民事诉讼、行政复议与行政诉讼，四种途径各有边界。</span></div>
+  </div>
+</div>
+
+<div class="score">
+  <b>各章分值统计与2026预测（满分130分）</b>
+  <table>
+    <tr><th class="nm">章</th><th>2024</th><th>2025</th><th>2026预测</th></tr>
+    <tr><td class="nm">第1章 基本法律知识 <span class="hi">重点</span></td><td>16</td><td>17</td><td class="hi">18</td></tr>
+    <tr><td class="nm">第2章 建筑市场主体制度</td><td>10</td><td>10</td><td>10</td></tr>
+    <tr><td class="nm">第3章 建设工程许可法律制度</td><td>5</td><td>5</td><td>5</td></tr>
+    <tr><td class="nm">第4章 建设工程发承包法律制度</td><td>9</td><td>9</td><td>11</td></tr>
+    <tr><td class="nm">第5章 建设工程合同法律制度 <span class="hi">重点</span></td><td>8</td><td>17</td><td class="hi">16</td></tr>
+    <tr><td class="nm">第6章 建设工程安全生产法律制度 <span class="hi">重点</span></td><td>17</td><td>21</td><td class="hi">20</td></tr>
+    <tr><td class="nm">第7章 建设工程质量法律制度 <span class="hi">重点</span></td><td>14</td><td>18</td><td class="hi">18</td></tr>
+    <tr><td class="nm">第8章 环境保护和历史文化遗产保护</td><td>3</td><td>6</td><td>7</td></tr>
+    <tr><td class="nm">第9章 建设工程劳动保障法律制度</td><td>8</td><td>12</td><td>11</td></tr>
+    <tr><td class="nm">第10章 建设工程争议解决法律制度</td><td>10</td><td>15</td><td>14</td></tr>
+    <tr><td class="nm"><b>合计</b></td><td><b>130</b></td><td><b>130</b></td><td><b>130</b></td></tr>
+  </table>
+</div>
+
+<div class="btns">
+  <button onclick="setAll(true)">全部展开</button>
+  <button onclick="setAll(false)">全部收起</button>
+</div>
+
+<!-- ===================== 板块一 ===================== -->
+<details class="part p1" open>
+  <summary><span>板块一 法律地基（第1章）</span><span class="caret">▶</span></summary>
+  <div class="body">
+    <div class="plogic"><b>组织原则：</b>本章不是工程专业内容，而是全科的"法律语法"——民商法、行政法、刑法基础。后面每一章的"合不合法""要不要担责"都用这套语言判断，也是近年分值上升最快的重点章。</div>
+
+    <details class="chap"><summary><span class="no">第1章</span><span class="nm">建设工程基本法律知识</span><span class="hot">重点</span><span class="sc">26预测18分</span><a class="mounted" href="01-建设工程基本法律知识.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">法律基础→物权→知识产权→侵权→税收→行政→刑事，从"财产归属"到"责任承担"逐层展开，易混概念密集。</div>
+        <div class="sec"><span class="sn">1.1</span>建设工程法律基础</div>
+        <div class="sec"><span class="sn">1.2</span>建设工程物权制度</div>
+        <div class="sec"><span class="sn">1.3</span>建设工程知识产权制度</div>
+        <div class="sec"><span class="sn">1.4</span>建设工程侵权责任制度</div>
+        <div class="sec"><span class="sn">1.5</span>建设工程税收制度</div>
+        <div class="sec"><span class="sn">1.6</span>建设工程行政法律制度</div>
+        <div class="sec"><span class="sn">1.7</span>建设工程刑事法律制度</div>
+      </div>
+    </details>
+  </div>
+</details>
+
+<!-- ===================== 板块二 ===================== -->
+<details class="part p2">
+  <summary><span>板块二 进场与签约（第2~5章）</span><span class="caret">▶</span></summary>
+  <div class="body">
+    <div class="plogic"><b>组织原则：</b>沿"进入市场→签成合同"的时间轴——主体资质（谁能干）→ 许可（准不准干）→ 发承包招投标（怎么承接）→ 合同（怎么约定权利义务）。第5章合同是本板块重点，近两年分值大涨。</div>
+
+    <details class="chap"><summary><span class="no">第2章</span><span class="nm">建筑市场主体制度</span><span class="sc">26预测10分</span><a class="mounted" href="02-建筑市场主体制度.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">解决"谁能进场"：一般规定→企业资质→建造师注册执业→信用体系→营商环境。资质与注册执业是高频。</div>
+        <div class="sec"><span class="sn">2.1</span>建筑市场主体的一般规定</div>
+        <div class="sec"><span class="sn">2.2</span>建筑业企业资质制度</div>
+        <div class="sec"><span class="sn">2.3</span>建造师注册执业制度</div>
+        <div class="sec"><span class="sn">2.4</span>建筑市场主体信用体系建设</div>
+        <div class="sec"><span class="sn">2.5</span>营商环境制度</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第3章</span><span class="nm">建设工程许可法律制度</span><span class="sc">26预测5分</span><a class="mounted" href="03-建设工程许可法律制度.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">解决"准不准干"：规划许可（选址/用地/工程规划）→ 施工许可（开工前的最后一道门槛）。施工许可申请条件年年考。</div>
+        <div class="sec"><span class="sn">3.1</span>建设工程规划许可</div>
+        <div class="sec"><span class="sn">3.2</span>建设工程施工许可</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第4章</span><span class="nm">建设工程发承包法律制度</span><span class="sc">26预测11分</span><a class="mounted" href="04-建设工程发承包法律制度.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">解决"怎么承接"：发承包一般规定（禁止转包/违法分包/挂靠）→ 招标投标程序 → 非招标采购。转包与违法分包辨析是核心。</div>
+        <div class="sec"><span class="sn">4.1</span>建设工程发承包的一般规定</div>
+        <div class="sec"><span class="sn">4.2</span>建设工程招标投标制度</div>
+        <div class="sec"><span class="sn">4.3</span>非招标采购制度</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第5章</span><span class="nm">建设工程合同法律制度</span><span class="hot">重点</span><span class="sc">26预测16分</span><a class="mounted" href="05-建设工程合同法律制度.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">解决"怎么约定"：合同基本规定（订立/效力/履行/违约）→ 施工合同专门规定 → 相关合同（勘察设计/监理/分包等）。2025年分值大涨，必抓。</div>
+        <div class="sec"><span class="sn">5.1</span>合同的基本规定</div>
+        <div class="sec"><span class="sn">5.2</span>建设工程施工合同的规定</div>
+        <div class="sec"><span class="sn">5.3</span>相关合同制度</div>
+      </div>
+    </details>
+  </div>
+</details>
+
+<!-- ===================== 板块三 ===================== -->
+<details class="part p3">
+  <summary><span>板块三 施工过程管控（第6~9章）</span><span class="caret">▶</span></summary>
+  <div class="body">
+    <div class="plogic"><b>组织原则：</b>合同签订后进入施工现场，本板块是四条并行的管控主线——安全生产、工程质量、环境与文物保护、劳动保障。第6、7章是全书两大重灾区，安全+质量合计约40分。</div>
+
+    <details class="chap"><summary><span class="no">第6章</span><span class="nm">建设工程安全生产法律制度</span><span class="hot">重点</span><span class="sc">26预测20分</span><a class="mounted" href="06-建设工程安全生产法律制度.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">全书最高分章：从各方责任→安全生产许可证→施工单位责任→现场防护→事故应急与调查→政府监管，按"责任—准入—防护—应急—监管"闭环。</div>
+        <div class="sec"><span class="sn">6.1</span>建设单位和相关单位的安全责任制度</div>
+        <div class="sec"><span class="sn">6.2</span>施工安全生产许可证制度</div>
+        <div class="sec"><span class="sn">6.3</span>施工单位安全生产责任制度</div>
+        <div class="sec"><span class="sn">6.4</span>施工现场安全防护制度</div>
+        <div class="sec"><span class="sn">6.5</span>施工生产安全事故的应急救援和调查处理</div>
+        <div class="sec"><span class="sn">6.6</span>政府主管部门安全生产监督管理</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第7章</span><span class="nm">建设工程质量法律制度</span><span class="hot">重点</span><span class="sc">26预测18分</span><a class="mounted" href="07-建设工程质量法律制度.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">质量主线：工程建设标准→无障碍环境→各方质量责任（建设单位/施工单位）→竣工验收→质量保修。竣工验收与保修期限高频。</div>
+        <div class="sec"><span class="sn">7.1</span>工程建设标准</div>
+        <div class="sec"><span class="sn">7.2</span>无障碍环境建设制度</div>
+        <div class="sec"><span class="sn">7.3</span>建设单位及相关单位的质量责任和义务</div>
+        <div class="sec"><span class="sn">7.4</span>施工单位的质量责任和义务</div>
+        <div class="sec"><span class="sn">7.5</span>建设工程竣工验收制度</div>
+        <div class="sec"><span class="sn">7.6</span>建设工程质量保修制度</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第8章</span><span class="nm">建设工程环境保护和历史文化遗产保护法律制度</span><span class="sc">26预测7分</span><a class="mounted" href="08-建设工程环境保护和历史文化遗产保护法律制度.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">两条小主线：施工环境保护（噪声/扬尘/排污）与施工中历史文化遗产保护（发现文物如何处理）。分值不高但易得分。</div>
+        <div class="sec"><span class="sn">8.1</span>建设工程环境保护制度</div>
+        <div class="sec"><span class="sn">8.2</span>施工中历史文化遗产保护制度</div>
+      </div>
+    </details>
+
+    <details class="chap"><summary><span class="no">第9章</span><span class="nm">建设工程劳动保障法律制度</span><span class="sc">26预测11分</span><a class="mounted" href="09-建设工程劳动保障法律制度.html" onclick="event.stopPropagation()">打开 ▸</a><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">保障农民工与劳动者：劳动合同→用工与工资支付→劳动安全卫生→工伤保险→劳动争议解决。工资支付与工伤保险是高频。</div>
+        <div class="sec"><span class="sn">9.1</span>劳动合同制度</div>
+        <div class="sec"><span class="sn">9.2</span>劳动用工和工资支付保障</div>
+        <div class="sec"><span class="sn">9.3</span>劳动安全卫生和保护</div>
+        <div class="sec"><span class="sn">9.4</span>工伤保险制度</div>
+        <div class="sec"><span class="sn">9.5</span>劳动争议的解决</div>
+      </div>
+    </details>
+  </div>
+</details>
+
+<!-- ===================== 板块四 ===================== -->
+<details class="part p4">
+  <summary><span>板块四 争议解决（第10章）</span><span class="caret">▶</span></summary>
+  <div class="body">
+    <div class="plogic"><b>组织原则：</b>项目全流程的"救济出口"——按"私力→半公力→公力"排列：和解/调解 → 仲裁 → 民事诉讼 → 行政复议/行政诉讼。各途径的适用条件、时效与管辖是命题点，近年分值走高。</div>
+
+    <details class="chap"><summary><span class="no">第10章</span><span class="nm">建设工程争议解决法律制度</span><span class="sc">26预测14分</span><span class="pending">待补</span><span class="caret">▶</span></summary>
+      <div class="secs">
+        <div class="clogic">五种途径边界辨析：和解调解（自愿）→ 仲裁（一裁终局、协议前提）→ 民事诉讼（两审终审）→ 行政复议/行政诉讼（民告官）。管辖、时效、"或裁或审"常设坑。</div>
+        <div class="sec"><span class="sn">10.1</span>建设工程争议和解、调解制度</div>
+        <div class="sec"><span class="sn">10.2</span>仲裁制度</div>
+        <div class="sec"><span class="sn">10.3</span>民事诉讼制度</div>
+        <div class="sec"><span class="sn">10.4</span>行政复议制度</div>
+        <div class="sec"><span class="sn">10.5</span>行政诉讼制度</div>
+      </div>
+    </details>
+  </div>
+</details>
+
+<footer>骨架依据《建设工程法规及相关知识四色笔记》目录整理 · 10章知识树逐章挂载中</footer>
+
+<script>
+function setAll(open){
+  document.querySelectorAll('details').forEach(d=>d.open=open);
+}
+</script>
+</body>
+</html>
