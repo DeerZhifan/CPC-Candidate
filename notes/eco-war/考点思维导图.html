@@ -164,42 +164,71 @@ function render(){
   }
   // measure heights
   for(const n of visible){ n.h=n._el.offsetHeight; n.w=n._el.offsetWidth; }
-  // layout subtree heights
+  // subtree heights (direction-independent)
   (function sub(n){
     if(n.collapsed||!n.children||!n.children.length){n.subH=n.h;return n.subH;}
     let t=0; for(const c of n.children){t+=sub(c)+GAPY;} t-=GAPY;
     n.subH=Math.max(n.h,t); return n.subH;
   })(root);
-  // assign positions
-  let maxX=0,maxY=0;
-  (function place(n,depth,top){
-    n.x=depth*(NODEW+GAPX);
+  const step=NODEW+GAPX;
+  const W=n=>n.leaf?LEAFW:NODEW;
+  // split the root's chapters into a right group and a left group,
+  // preserving order, balancing the two stacks by total height
+  const rootKids=(root.collapsed||!root.children)?[]:root.children;
+  let rightKids=rootKids, leftKids=[];
+  if(rootKids.length>1){
+    let total=0; for(const c of rootKids) total+=c.subH;
+    let acc=0, best=Math.ceil(rootKids.length/2), bestDiff=Infinity;
+    for(let k=1;k<rootKids.length;k++){
+      acc+=rootKids[k-1].subH;
+      const diff=Math.abs(acc-(total-acc));
+      if(diff<bestDiff){bestDiff=diff;best=k;}
+    }
+    rightKids=rootKids.slice(0,best);
+    leftKids=rootKids.slice(best);
+  }
+  // place one directed subtree (side>0 grows right, side<0 grows left)
+  function place(n,side,depth,top){
+    n.side=side;
+    n.x=side>0 ? depth*step : -((depth-1)*step+GAPX)-W(n);
     if(n.collapsed||!n.children||!n.children.length){
       n.cy=top+n.subH/2;
     }else{
       let cur=top;
-      for(const c of n.children){place(c,depth+1,cur);cur+=c.subH+GAPY;}
+      for(const c of n.children){place(c,side,depth+1,cur);cur+=c.subH+GAPY;}
       n.cy=(n.children[0].cy+n.children[n.children.length-1].cy)/2;
     }
     n.y=n.cy-n.h/2;
-    maxX=Math.max(maxX,n.x+(n.leaf?LEAFW:NODEW));
-    maxY=Math.max(maxY,n.y+n.h);
-  })(root,0,20);
-  for(const n of visible){ n._el.style.left=n.x+"px"; n._el.style.top=n.y+"px"; }
-  // links
+  }
+  const stackH=kids=>{let t=0;for(const c of kids)t+=c.subH+GAPY;return t>0?t-GAPY:0;};
+  const rH=stackH(rightKids), lH=stackH(leftKids), H=Math.max(rH,lH,root.h);
+  let cur=(H-rH)/2; for(const c of rightKids){place(c, 1,1,cur);cur+=c.subH+GAPY;}
+  cur=(H-lH)/2;     for(const c of leftKids){ place(c,-1,1,cur);cur+=c.subH+GAPY;}
+  // root sits in the centre, straddling x=0
+  root.side=0; root.x=0; root.cy=H/2; root.y=root.cy-root.h/2;
+  // normalise so every coordinate is positive
+  let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
+  for(const n of visible){
+    minX=Math.min(minX,n.x); maxX=Math.max(maxX,n.x+W(n));
+    minY=Math.min(minY,n.y); maxY=Math.max(maxY,n.y+n.h);
+  }
+  const ox=-minX+10, oy=-minY+10;
+  for(const n of visible){ n.x+=ox; n.cy+=oy; n.y+=oy; n._el.style.left=n.x+"px"; n._el.style.top=n.y+"px"; }
+  // links (connect on the side facing the parent)
   let paths="";
   for(const n of visible){
     if(n.collapsed||!n.children) continue;
     for(const c of n.children){
-      const x1=n.x+(n.leaf?LEAFW:NODEW), y1=n.cy, x2=c.x, y2=c.cy;
-      const mx=(x1+x2)/2;
+      const x1 = c.side<0 ? n.x : n.x+W(n);
+      const x2 = c.side<0 ? c.x+W(c) : c.x;
+      const y1=n.cy, y2=c.cy, mx=(x1+x2)/2;
       const col=n.lv===0?"var(--"+PARTCLASS[curPart]+")":"var(--line)";
       const w=n.lv===0?2.2:(n.lv===1?1.6:1);
       paths+=`<path d="M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}" fill="none" stroke="${col}" stroke-width="${w}" opacity="0.7"/>`;
     }
   }
-  svg.style.width=maxX+"px"; svg.style.height=maxY+"px"; svg.innerHTML=paths;
-  worldW=maxX; worldH=maxY;
+  worldW=maxX-minX+20; worldH=maxY-minY+20;
+  svg.style.width=worldW+"px"; svg.style.height=worldH+"px"; svg.innerHTML=paths;
 }
 let worldW=0,worldH=0;
 function toggle(n){ if(n.children&&n.children.length){n.collapsed=!n.collapsed;render();} }
@@ -218,7 +247,7 @@ function fit(){
   const sw=stage.clientWidth, sh=stage.clientHeight;
   scale=Math.min(1, (sw-40)/(worldW+40));
   scale=Math.max(0.2,Math.min(scale,1));
-  tx=20; ty=Math.max(20,(sh-worldH*scale)/2);
+  tx=Math.max(20,(sw-worldW*scale)/2); ty=Math.max(20,(sh-worldH*scale)/2);
   applyT();
 }
 document.getElementById('zin').onclick=()=>{scale=Math.min(2.2,scale*1.2);applyT();};
