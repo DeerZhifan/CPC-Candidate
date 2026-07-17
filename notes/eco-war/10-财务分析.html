@@ -47,6 +47,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -95,6 +96,14 @@
           <tr><th>所有者权益（或股东权益）变动表</th><td>反映构成所有者权益（或股东权益）的各组成部分当期增减变动情况</td></tr>
           <tr><th>附注</th><td>对在上述各报表中列示项目的文字描述或明细资料，以及对未能在这些报表中列示项目的说明</td></tr>
         </table>
+        <div class="visual-note">
+          <div class="visual-title">财务报表：时点、期间与补充说明</div>
+          <div class="compare-grid">
+            <div class="compare-card"><strong>静态时点</strong><div>资产负债表：回答“某一特定日期，家底怎样”。</div></div>
+            <div class="compare-card"><strong>动态期间</strong><div>利润表看经营成果；现金流量表看现金流入流出；权益变动表看当期权益增减。</div></div>
+            <div class="compare-card"><strong>文字补充</strong><div>附注：解释报表已列项目，并说明未能列示的项目。</div></div>
+          </div>
+        </div>
         <div class="trap">⚠ 资产负债表=<b>特定日期</b>（时点、静态）；利润表、现金流量表=<b>一定会计期间</b>（动态报表）——"日期/期间"互换是常见选项坑。</div>
 
         <p><b>2. 资产负债表的内容</b> <span class="yr">2018单选</span></p>
@@ -288,5 +297,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

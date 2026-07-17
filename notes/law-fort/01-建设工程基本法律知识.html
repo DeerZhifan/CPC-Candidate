@@ -45,6 +45,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -140,6 +141,16 @@
           <li><b>特别法＞一般法</b></li>
           <li><b>新法＞旧法</b></li>
         </ul>
+        <div class="visual-note">
+          <div class="visual-title">效力层级 · 一条主干 + 两条适用规则</div>
+          <div class="memory-chain" aria-label="法的效力层级">
+            <span>宪法</span><i>＞</i><span>法律</span><i>＞</i><span>行政法规</span><i>＞</i><span>地方性法规 / 部门规章</span><i>＞</i><span>地方政府规章</span>
+          </div>
+          <div class="compare-grid" style="margin-top:8px">
+            <div class="compare-card"><strong>同一层级看时间</strong><div>新法 ＞ 旧法</div></div>
+            <div class="compare-card"><strong>同一事项看范围</strong><div>特别法 ＞ 一般法</div></div>
+          </div>
+        </div>
         <div class="trap">⚠ 地方性法规＞（本级/下级）地方政府规章；但部门规章与地方性法规之间无绝对高低，冲突时由裁决程序解决（见下）。</div>
         <details class="ex"><summary>【2024年真题】关于法的效力层级的说法，正确的有（ ）。A.宪法具有最高的法律效力 B.法的制定主体、程序、时间、适用范围影响法的效力层级 C.地方性法规的效力高于地方政府规章 D.行政法规的法律地位和法律效力高于地方性法规和部门规章 E.某一机关制定的自治条例和单行条例，新的规定与旧的规定不一致的，适用新的规定</summary>
         <div>答案 A、B、D、E。C错：地方性法规仅高于本级和下级地方政府规章，表述过绝对。</div></details>
@@ -154,6 +165,17 @@
           <tr><td>部门规章之间、部门规章与地方政府规章不一致</td><td>由<span class="r">国务院</span>裁决</td></tr>
           <tr><td>授权制定的法规与法律规定不一致</td><td>由<span class="r">全国人大常委会</span>裁决</td></tr>
         </table>
+        <div class="visual-note">
+          <div class="visual-title">冲突裁决 · 先辨冲突发生在哪一层</div>
+          <div class="decision-tree">
+            <div class="decision-question">冲突规范属于哪一层？</div>
+            <div class="decision-branches">
+              <div class="decision-branch"><strong>法律 / 授权法规 ↔ 法律</strong>全国人大常委会裁决</div>
+              <div class="decision-branch"><strong>行政法规 / 规章内部</strong>国务院裁决；同一机关制定的由制定机关裁决</div>
+              <div class="decision-branch"><strong>地方性法规 ↔ 部门规章</strong>国务院先判断；若倾向部门规章，再提请全国人大常委会</div>
+            </div>
+          </div>
+        </div>
         <div class="trap">⚠ 记忆钩子：涉"法律"层面的裁决→全国人大常委会；涉"行政法规/规章"层面→国务院；地方性法规VS部门规章两步走（国务院先判，倾向部门规章时再提请全国人大常委会）。</div>
 
         <b>5. 备案</b>［2016单选］
@@ -732,5 +754,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

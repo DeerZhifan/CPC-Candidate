@@ -45,6 +45,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -99,6 +100,17 @@
           <tr><td>合同管理</td><td>依据合同中的BIM要求进行BIM管理、合同执行和界面管理</td></tr>
           <tr><td>项目信息管理</td><td>BIM内置信息分类编码、工程量清单或定额、工程项目信息集成管理</td></tr>
         </table>
+        <div class="visual-note">
+          <div class="visual-title">BIM项目管理六域</div>
+          <div class="compare-grid">
+            <div class="compare-card"><strong>进度</strong><div>模拟、跟踪、分析、优化</div></div>
+            <div class="compare-card"><strong>成本</strong><div>3D＋4D＋成本形成5D</div></div>
+            <div class="compare-card"><strong>质量</strong><div>碰撞检测、质量问题管理</div></div>
+            <div class="compare-card"><strong>安全</strong><div>教育、布置、模拟</div></div>
+            <div class="compare-card"><strong>合同</strong><div>执行与界面管理</div></div>
+            <div class="compare-card"><strong>信息</strong><div>编码、清单、定额与集成</div></div>
+          </div>
+        </div>
       </div>
     </details>
   </div>
@@ -142,5 +154,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

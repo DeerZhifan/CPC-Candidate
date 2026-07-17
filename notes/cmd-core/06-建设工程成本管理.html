@@ -46,6 +46,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -115,6 +116,17 @@
       <summary><span>6.1.2 施工成本管理流程</span><span class="stars">★★★</span><span class="yr">流程逻辑</span><span class="caret">▶</span></summary>
       <div class="kp">
         图6-3：工程投标报价→项目管理策划（承包责任成本）→施组及方案→资源供应→<span class="r">成本计划</span>→施工→数据收集整理→<span class="r">成本控制</span>→节超分析→<span class="r">成本分析</span>→<span class="r">成本管理绩效考核</span>→持续改进→竣工结算。
+        <div class="visual-note">
+          <div class="visual-title">施工成本管理主链</div>
+          <div class="flow">
+            <div class="step"><strong>报价与策划</strong><small>形成承包责任成本</small></div>
+            <div class="step"><strong>成本计划</strong><small>控制和分析的基础</small></div>
+            <div class="step"><strong>成本控制</strong><small>监督计划实施</small></div>
+            <div class="step"><strong>成本分析</strong><small>检查计划实现情况</small></div>
+            <div class="step"><strong>绩效考核</strong><small>推动责任落实</small></div>
+            <div class="step"><strong>持续改进</strong><small>衔接竣工结算</small></div>
+          </div>
+        </div>
         <div class="trap">⚠ 关系链："<b>成本计划</b>是开展成本控制和分析的基础，是成本控制的主要依据；<b>成本控制</b>对计划实施监督；<b>成本分析</b>是对计划是否实现的检查，为绩效考核提供依据；<b>绩效考核</b>是实现责任成本目标的保证和手段。"</div>
       </div>
     </details>
@@ -261,5 +273,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

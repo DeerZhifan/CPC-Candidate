@@ -47,6 +47,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -95,6 +96,13 @@
           <tr><th rowspan="2">外源筹资</th><td><span class="r">权益筹资、债务筹资以及混合筹资</span>。权益筹资=普通股+优先股筹资；债务筹资=借款+债券筹资；混合筹资=可转换债券+认股权证</td></tr>
           <tr><td><b>直接筹资</b>：<span class="r">发行股票和企业债券筹资</span><br><b>间接筹资</b>：<span class="b">通过银行等金融中介机构向资金提供者间接筹资，如向商业银行申请贷款、委托信托公司进行证券化筹资等</span></td></tr>
         </table>
+        <div class="visual-note">
+          <div class="visual-title">企业筹资的两组分类不要串轴</div>
+          <div class="compare-grid">
+            <div class="compare-card"><strong>按资金来源</strong><ul><li>内源：企业内部积累与可用资金</li><li>外源：权益、债务、混合筹资</li></ul></div>
+            <div class="compare-card"><strong>按是否经金融中介</strong><ul><li>直接：发行股票、企业债券</li><li>间接：银行贷款、信托证券化</li></ul></div>
+          </div>
+        </div>
         <div class="trap">⚠ 分类交叉设坑：①"应收账款"属内源筹资的自有资金（易误以为对外筹资）；②直接/间接筹资的分界是有无"金融中介"——发行股票、企业债券=直接；银行贷款、信托证券化=间接。</div>
       </div>
     </details>
@@ -221,5 +229,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

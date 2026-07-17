@@ -46,6 +46,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -198,6 +199,15 @@
           <li>i 增大，净现值减小；i 减小到净现值 = 0 时，i 值就是财务内部收益率</li>
           <li><span class="r">基准收益率越大，财务净现值越小</span></li>
         </ul>
+        <div class="visual-note">
+          <div class="visual-title">折现率—净现值—内部收益率关系</div>
+          <div class="flow">
+            <div class="step"><strong>折现率 i ↑</strong><small>折现力度加大</small></div>
+            <div class="step"><strong>FNPV ↓</strong><small>由正逐渐变负</small></div>
+            <div class="step"><strong>FNPV = 0</strong><small>此时 i = FIRR</small></div>
+            <div class="step"><strong>与 i<sub>c</sub> 比较</strong><small>FIRR ≥ i<sub>c</sub> 可接受</small></div>
+          </div>
+        </div>
         <div class="trap">⚠ FIRR的取值区间：FNPV由正变负所夹的折现率区间内。如 i=7% 时 FNPV=+150，i=9% 时 FNPV=−80，则 8%附近需再判断：内插值更靠近净现值绝对值小的一端——考题只要求区间时选"正负变号"的两点之间。</div>
         <details class="ex"><summary>【2025真题】折现率7%时FNPV=150万元，9%时FNPV=−80万元，FIRR取值范围？</summary><div>答案 C：大于8%，小于9%。内插：FIRR ≈ 7% + 150/(150+80) × 2% ≈ 8.3%，落在8%~9%之间。</div></details>
         <details class="ex"><summary>【2024真题】原方案建设期2年、运营期10年，FIRR=17.67%；追加建设投资使建设期第1年年初现金流出增加40000万元，运营期前4年每年净流入增加10000万元，FIRR可能变为？</summary><div>答案 A：15.00%。按17.67%折现增量现金流：−40000 + 10000/(1.1767)³⁻⁶合计 = −23751.411万元 &lt; 0，说明追加投资后FIRR小于17.67%，只有A符合。</div></details>
@@ -270,5 +280,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

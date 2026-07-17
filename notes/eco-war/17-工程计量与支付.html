@@ -46,6 +46,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -459,6 +460,15 @@
           <li>发包人查验承包人的记录和证明材料后 <span class="r">28天内</span>：将索赔处理结果答复承包人</li>
           <li>达成一致：在<span class="b">当期进度款、施工过程结算款、竣工结算款</span>中支付；不能达成一致：按约定争议解决办法办理</li>
         </ul>
+        <div class="visual-note">
+          <div class="visual-title">承包人索赔：四个“28天”</div>
+          <div class="timeline">
+            <div class="event"><strong>事件发生后28天内</strong>　提交索赔意向通知</div>
+            <div class="event"><strong>随后28天内</strong>　提交工程索赔报告，工期与费用一并提出</div>
+            <div class="event"><strong>连续影响每28天</strong>　合同未另约定时提交中间报告；结束后28天交最终报告</div>
+            <div class="event"><strong>查验后28天内</strong>　发包人答复处理结果</div>
+          </div>
+        </div>
         <div class="trap">⚠ 四个"28天"：提意向28天→交报告28天→（连续影响未约定28天）→发包人答复28天。意向通知是第一步，直接交索赔报告不符合程序。</div>
       </div>
     </details>
@@ -705,5 +715,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

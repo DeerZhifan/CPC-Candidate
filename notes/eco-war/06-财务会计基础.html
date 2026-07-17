@@ -49,6 +49,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -248,6 +249,15 @@
       <summary><span>6.4.2 会计核算的基本过程</span><span class="stars">★★★</span><span class="caret">▶</span></summary>
       <div class="kp">
         <p>四步：<span class="b">①设置会计科目和账簿 → ②填制会计凭证 → ③登记账簿、对账和结账 → ④编制财务会计报告</span></p>
+        <div class="visual-note">
+          <div class="visual-title">会计信息形成路径</div>
+          <div class="flow">
+            <div class="step"><strong>建科目、账簿</strong><small>先搭核算框架</small></div>
+            <div class="step"><strong>填会计凭证</strong><small>原始凭证→记账凭证</small></div>
+            <div class="step"><strong>登记、对账、结账</strong><small>形成账簿记录</small></div>
+            <div class="step"><strong>编财务报告</strong><small>输出会计信息</small></div>
+          </div>
+        </div>
         <p><b>会计凭证</b>（分原始凭证、记账凭证）要点：</p>
         <ul>
           <li>凭证必须具备：名称、填制日期、填制单位名称或填制人姓名、经办人签名或盖章、接受凭证单位名称、经济业务内容、数量、单价和金额</li>
@@ -312,5 +322,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

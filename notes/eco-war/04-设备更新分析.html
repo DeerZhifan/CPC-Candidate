@@ -47,6 +47,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -99,6 +100,16 @@
           <tr><td><b>无形磨损</b><br>第Ⅱ类</td><td><span class="r">科学技术的进步</span>：出现结构更先进、性能更完善、生产效率更高的新型设备；出现耗费原材料和能源更少的新型设备</td><td><span class="r">原有设备价值降低；原有设备生产精度和能耗达不到新的标准和要求</span></td></tr>
           <tr><td><b>综合磨损</b></td><td colspan="2">同时存在有形磨损和无形磨损的损坏与贬值的综合情况</td></tr>
         </table>
+        <div class="visual-note">
+          <div class="visual-title">设备磨损：先看“实体”，再分原因</div>
+          <div class="decision-tree">
+            <div class="decision-question">设备实体是否发生磨损、变形或损坏？</div>
+            <div class="decision-branches">
+              <div class="decision-branch"><strong>是 → 有形磨损</strong>使用中的外力作用＝第Ⅰ类；闲置时的自然力作用＝第Ⅱ类。</div>
+              <div class="decision-branch"><strong>否 → 无形磨损</strong>同种设备降价但仍能用＝第Ⅰ类；新设备更先进使旧设备性能落后＝第Ⅱ类。</div>
+            </div>
+          </div>
+        </div>
         <div class="tip">口诀助记：第Ⅰ类有形磨损是<b>用</b>的，第Ⅱ类有形磨损是<b>放</b>的；无形磨损都是<b>技术进步</b>引起的。</div>
         <div class="trap">⚠ 第Ⅰ种无形磨损：同种设备变便宜→原值贬值，但<b>不影响使用</b>；第Ⅱ种无形磨损：出现更先进的新设备→旧设备<b>价值降低且性能落后</b>（精度、能耗达不到新标准）。选项常互换设坑。</div>
       </div>
@@ -338,5 +349,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

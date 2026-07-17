@@ -49,6 +49,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -127,6 +128,13 @@
             第t个计息周期末复利本利和：
             <div class="formula">F<sub>t</sub> = F<sub>t−1</sub> × (1 + i)</div></td></tr>
         </table>
+        <div class="visual-note">
+          <div class="visual-title">单利 vs 复利 · 看利息是否进入下一期本金</div>
+          <div class="compare-grid">
+            <div class="compare-card"><strong>单利：利不生利</strong><div>每期都只按最初本金 P 计息<br><b>n 是乘数：</b>P(1+n×i)</div></div>
+            <div class="compare-card"><strong>复利：利滚利</strong><div>上期本利和进入下期本金<br><b>n 是指数：</b>P(1+i)<sup>n</sup></div></div>
+          </div>
+        </div>
         <div class="trap">⚠ 单利本利和用 P(1+n×i)，复利本利和用 P(1+i)<sup>n</sup>——n 的位置（乘数 vs 指数）是区分点。</div>
         <details class="ex"><summary>【2025年真题】某企业向银行借入1000万元，期限5年，年利率5%，按年计息，到期一次性还本付息。复利与单利两种计息方式的总利息差额是（ ）万元。</summary>
         <div>答案 C：26.282。复利总利息 1000×(1.05<sup>5</sup>−1)=276.282，单利总利息 1000×5×5%=250，差额 26.282。</div></details>
@@ -146,6 +154,15 @@
       <div class="kp">
         <p>一个公式（年名义利率 r，年内计息 m 次）：</p>
         <div class="formula"><span class="r">i = (1 + r/m)<sup>m</sup> − 1</span></div>
+        <div class="visual-note">
+          <div class="visual-title">换算公式 · 先拆周期，再复利累积</div>
+          <div class="flow">
+            <div class="step"><small>年名义利率</small><strong>r</strong></div>
+            <div class="step"><small>每期利率</small><strong>r ÷ m</strong></div>
+            <div class="step"><small>复利 m 次</small><strong>(1+r/m)<sup>m</sup></strong></div>
+            <div class="step"><small>扣除本金 1</small><strong>年有效利率 i</strong></div>
+          </div>
+        </div>
         <ul>
           <li>公式中 <b>r/m</b> 的 <b>m = 计息的次数</b></li>
           <li><span class="r">指数中的 m ＝ 所求有效利率的时间单位 ÷ 计息周期的时间单位</span></li>
@@ -213,6 +230,13 @@
         </ul>
 
         <b>（1）一次支付现金流量等值计算（2个公式）</b>
+        <div class="visual-note">
+          <div class="visual-title">一次支付 · P 与 F 双向换算</div>
+          <div class="formula-grid">
+            <div class="formula-card"><strong>P → F：向未来滚</strong><span class="formula">F = P(1+i)<sup>n</sup></span><small>已知现在一笔钱，求未来本利和</small></div>
+            <div class="formula-card"><strong>F → P：向现在折</strong><span class="formula">P = F(1+i)<sup>−n</sup></span><small>已知未来目标金额，求现在需投入多少</small></div>
+          </div>
+        </div>
         <table>
           <tr><th>公式名称</th><th>已知→求</th><th>公式</th><th>系数名称</th><th>适用场景</th></tr>
           <tr><td>一次支付终值</td><td>P → F</td><td><span class="r">F = P(1+i)<sup>n</sup></span></td><td>终值系数 (F/P, i, n)</td><td>一笔钱存入银行，计算未来本利和（今天存5万，5年后有多少）</td></tr>
@@ -223,6 +247,13 @@
         <div>答案 C：5849.293。一次支付终值 F=5000×(1+4%)<sup>4</sup>=5849.293。</div></details>
 
         <b>（2）等额支付系列现金流量等值计算（4个公式）</b>
+        <div class="visual-note">
+          <div class="visual-title">年金换算 · 先锁定“已知 → 求”</div>
+          <div class="compare-grid">
+            <div class="compare-card"><strong>A ↔ F（面向未来）</strong><div>A→F：定期存钱求终值<br>F→A：为未来目标求每期存款</div></div>
+            <div class="compare-card"><strong>A ↔ P（折到现在）</strong><div>A→P：未来等额回收求现值<br>P→A：当前借款求每期偿还</div></div>
+          </div>
+        </div>
         <table>
           <tr><th>公式名称</th><th>已知→求</th><th>公式</th><th>系数名称</th><th>适用场景</th></tr>
           <tr><td>等额支付终值</td><td>A → F</td><td><span class="r">F = A × [(1+i)<sup>n</sup> − 1] / i</span></td><td>年金终值系数 (F/A, i, n)</td><td>定期存钱求未来总额（每年存1万，5年后有多少钱）</td></tr>
@@ -258,5 +289,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

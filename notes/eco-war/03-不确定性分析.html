@@ -49,6 +49,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -157,6 +158,16 @@
           <tr><th>④ 确定敏感性因素</th><td>目的：寻找敏感因素。方法：相对测定法（主要通过<span class="r">敏感度系数</span>确定）和绝对测定法（主要通过<span class="r">临界点</span>确定）</td></tr>
           <tr><th>⑤ 对结果进行分析</th><td>一般应选择<span class="b">敏感程度小、承受风险能力强、可靠性大</span>的方案</td></tr>
         </table>
+        <div class="visual-note">
+          <div class="visual-title">敏感性分析五步闭环</div>
+          <div class="flow">
+            <div class="step"><strong>定指标</strong><small>与效果评价指标一致</small></div>
+            <div class="step"><strong>选因素</strong><small>不准或影响大</small></div>
+            <div class="step"><strong>算影响</strong><small>因素变化→指标变化</small></div>
+            <div class="step"><strong>找敏感项</strong><small>系数或临界点</small></div>
+            <div class="step"><strong>作选择</strong><small>选敏感小、风险低</small></div>
+          </div>
+        </div>
 
         <b>2. 敏感度系数（相对测定法）</b>
         <div class="formula"><b>S<sub>AF</sub> = (ΔA/A) / (ΔF/F)</b>　　ΔF/F——不确定因素 F 的变化率(%)；ΔA/A——F 变化 ΔF 时分析指标 A 的相应变化率(%)</div>
@@ -198,5 +209,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

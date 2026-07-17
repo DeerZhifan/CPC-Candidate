@@ -46,6 +46,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -162,6 +163,15 @@
           <tr><td>③>20d 且≤30d</td><td>放弃了全部折扣</td></tr>
           <tr><td>④>30d付款</td><td>支付罚息</td><td><span class="r">展期信用（强制超期获得的）</span></td></tr>
         </table>
+        <div class="visual-note">
+          <div class="visual-title">2/10、1/20、n/30：越晚付款，信用代价越高</div>
+          <div class="timeline">
+            <div class="event"><strong>第1—10天</strong>　享2%折扣，属于免费信用</div>
+            <div class="event"><strong>第11—20天</strong>　只享1%折扣，已放弃部分折扣，属于有代价信用</div>
+            <div class="event"><strong>第21—30天</strong>　不享折扣，属于有代价信用</div>
+            <div class="event"><strong>第30天以后</strong>　超期并付罚息，属于展期信用</div>
+          </div>
+        </div>
       </div>
     </details>
 
@@ -298,5 +308,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

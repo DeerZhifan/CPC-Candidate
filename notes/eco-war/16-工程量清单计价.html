@@ -46,6 +46,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -103,6 +104,19 @@
       <div class="kp">
         <p><b>1. 工程量清单的编制程序</b>（依据《建设工程工程量清单计价标准》GB/T 50500—2024 及施工组织设计、施工规范、工程验收规范）：</p>
         <div class="formula">招标文件 → 确定项目<b>名称</b> → 项目<b>编码</b> → 项目<b>特征</b> → <b>计量单位</b> → 计算<b>工程量</b> → 确定<b>工程内容</b> → 完成清单编制</div>
+        <div class="visual-note">
+          <div class="visual-title">工程量清单编制链</div>
+          <div class="flow">
+            <div class="step"><strong>招标文件</strong></div>
+            <div class="step"><strong>名称</strong></div>
+            <div class="step"><strong>编码</strong></div>
+            <div class="step"><strong>特征</strong></div>
+            <div class="step"><strong>计量单位</strong></div>
+            <div class="step"><strong>工程量</strong></div>
+            <div class="step"><strong>工程内容</strong></div>
+            <div class="step"><strong>完成清单</strong></div>
+          </div>
+        </div>
         <p><b>2. 工程造价的计算（三种单价法）</b></p>
         <table>
           <tr><th>工料单价法</th><td>人工费＋材料费＋施工机具使用费</td></tr>
@@ -469,5 +483,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

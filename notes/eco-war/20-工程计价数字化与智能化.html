@@ -46,6 +46,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -202,6 +203,15 @@
           <tr><th>③分析阶段</th><td>利用有组织的信息<span class="b">产生合成的知识</span></td></tr>
           <tr><th>④行动阶段</th><td>运用合成的知识<span class="b">为组织生成价值</span></td></tr>
         </table>
+        <div class="visual-note">
+          <div class="visual-title">大数据生存周期：阶段与产物一一对应</div>
+          <div class="flow">
+            <div class="step"><strong>收集</strong><small>原始数据 → 数据</small></div>
+            <div class="step"><strong>准备</strong><small>清洗组织 → 信息</small></div>
+            <div class="step"><strong>分析</strong><small>综合提炼 → 知识</small></div>
+            <div class="step"><strong>行动</strong><small>应用知识 → 价值</small></div>
+          </div>
+        </div>
         <div class="trap">⚠ 四阶段与四要素一一对应：收集→数据、准备→信息、分析→知识、行动→价值。顺序题勿颠倒（"准备"在"分析"之前）。</div>
       </div>
     </details>
@@ -236,5 +246,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

@@ -47,6 +47,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -279,6 +280,16 @@
             ② <b>分配计入成本</b>：几个成本核算对象承担的费用，分配方法有<span class="b">直接费用比例（定额比例）、职工薪酬比例</span>等；<br>
             ③ <b>结转产品成本</b>：企业为生产产品、提供劳务等发生的可归属于产品成本、劳务成本等的费用，应当<span class="r">在确认产品销售收入、劳务收入等时</span>，将已销售产品、已提供劳务的成本（与收入配比的费用）等计入当期损益；与合同成本有关的资产，应当采用与该资产相关的商品收入确认相同的基础进行摊销，计入当期损益</td></tr>
         </table>
+        <div class="visual-note">
+          <div class="visual-title">成本从发生到进入当期损益</div>
+          <div class="flow">
+            <div class="step"><strong>费用发生</strong><small>识别核算对象</small></div>
+            <div class="step"><strong>归集</strong><small>单一对象直接计入；多个对象按比例分配</small></div>
+            <div class="step"><strong>形成产品/合同成本</strong><small>先进入成本</small></div>
+            <div class="step"><strong>确认相关收入</strong><small>关键结转时点</small></div>
+            <div class="step"><strong>计入当期损益</strong><small>收入与成本配比</small></div>
+          </div>
+        </div>
         <div class="trap">⚠ 成本结转时点：不是发生时、不是完工时，而是<b>确认销售收入/劳务收入时</b>才计入当期损益——"计入成本"与"计入当期损益"的边界是高频陷阱。</div>
       </div>
     </details>
@@ -326,5 +337,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

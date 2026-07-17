@@ -46,6 +46,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -239,6 +240,16 @@
           <li>除工程特别复杂或抢险救灾工程宜采用成本加酬金合同外，<span class="b">工程总承包最适宜采用的合同方式应为</span><span class="r">总价合同</span></li>
           <li>在总价合同中，<span class="r">除工程变更外，工程量不予调整</span></li>
         </ul>
+        <div class="visual-note">
+          <div class="visual-title">工程总承包合同价格形式判定</div>
+          <div class="decision-tree">
+            <div class="decision-question">工程是否特别复杂或属于抢险救灾？</div>
+            <div class="decision-branches">
+              <div class="decision-branch"><strong>否：优先总价合同</strong>总价合同中除工程变更外，工程量不予调整。</div>
+              <div class="decision-branch"><strong>是：宜成本加酬金</strong>用于难以事先准确确定工作范围与成本的特殊情形。</div>
+            </div>
+          </div>
+        </div>
         <p><b>2. 发包人承担造成合同工期和价格变化的情形</b></p>
         <ul>
           <li>国家法律发生变化</li>
@@ -392,5 +403,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

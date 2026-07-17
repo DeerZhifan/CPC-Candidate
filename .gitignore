@@ -7,3 +7,8 @@ notes/law-fort/一建法规四色笔记.pdf
 notes/eco-war/*.pdf
 notes/cmd-core/*.pdf
 notes/law-fort/*.pdf
+
+# OCR、PDF 渲染和审计报告的可再生缓存
+tmp/
+__pycache__/
+*.py[cod]

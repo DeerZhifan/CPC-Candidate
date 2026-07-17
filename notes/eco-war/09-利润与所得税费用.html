@@ -47,6 +47,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -118,6 +119,15 @@
           <tr><th>分配顺序</th><td>（1）先提取利润的 <span class="r">10%</span> 列入公司<b>法定公积金</b>：<br>① 法定公积金累计额已达注册资本的 <span class="r">50%以上，则可以不再提取</span>；<br>② 法定公积金不足以弥补以前年度亏损的，应先用当年利润弥补亏损（再提取）；<br>③ 根据股东会决议可提取<b>任意公积金</b>；<br>（2）所余税后利润：有限责任公司按照股东<span class="r">实缴的出资比例分配</span>利润</td></tr>
           <tr><th>税务处理</th><td>自然人股东：<span class="r">20%</span> 的个人所得税；<br>居民企业之间的股息、红利等权益性投资收益为<span class="r">免税收入</span>；<br>非居民企业：按 <span class="r">10%</span> 的税率缴纳企业所得税</td></tr>
         </table>
+        <div class="visual-note">
+          <div class="visual-title">税后利润分配顺序</div>
+          <div class="flow">
+            <div class="step"><strong>先弥补亏损</strong><small>有以前年度亏损时</small></div>
+            <div class="step"><strong>法定公积金</strong><small>当年利润10%；累计达注册资本50%可停</small></div>
+            <div class="step"><strong>任意公积金</strong><small>须经股东会决议</small></div>
+            <div class="step"><strong>向股东分配</strong><small>有限公司按实缴比例</small></div>
+          </div>
+        </div>
         <div class="trap">⚠ 三个比例别混：法定公积金<b>提取10%</b>、累计达注册资本<b>50%</b>可不再提；自然人股东分红缴<b>20%</b>个税；非居民企业分红按<b>10%</b>缴企业所得税（而企业所得税基本税率是25%）。</div>
         <div class="trap">⚠ 分配顺序：弥补亏损 → 提法定公积金(10%) → 提任意公积金（股东会决议）→ 向股东分配（有限公司按<b>实缴</b>出资比例，不是认缴）。</div>
       </div>
@@ -246,5 +256,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

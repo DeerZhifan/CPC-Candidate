@@ -50,6 +50,7 @@
   .kw{background:var(--accent-bg);color:var(--accent);border-radius:4px;padding:0 5px;font-size:.75rem;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -140,6 +141,16 @@
           <tr><th>第三部分<br>预备费</th><td>基本预备费 ／ 价差预备费</td></tr>
           <tr><th>其后</th><td>建设期利息 ／ 铺底流动资金等</td></tr>
         </table>
+        <div class="visual-note">
+          <div class="visual-title">建设项目总投资：三大部分之后再加两项</div>
+          <div class="flow">
+            <div class="step"><strong>工程费用</strong><small>建筑＋设备工器具＋安装</small></div>
+            <div class="step"><strong>工程建设其他费</strong><small>土地、管理、咨询、试验等</small></div>
+            <div class="step"><strong>预备费</strong><small>基本＋价差</small></div>
+            <div class="step"><strong>建设期利息</strong></div>
+            <div class="step"><strong>铺底流动资金等</strong></div>
+          </div>
+        </div>
         <ul>
           <li>建设管理费包含：建设单位管理费（项目建设管理费）、工程监理费、设备监造费、招标投标费（招标代理费）、设计评审费、特殊项目定额研究及测定费、其他咨询费、印花税等</li>
           <li>勘察设计费包含：勘察费、设计费、<span class="b">建筑信息模型（BIM）技术应用服务费</span></li>
@@ -523,5 +534,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

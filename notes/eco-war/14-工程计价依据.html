@@ -46,6 +46,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -161,6 +162,14 @@
           <tr><td>停工时间</td><td>施工本身造成的停工时间 / 非施工本身造成的停工时间</td></tr>
           <tr><td>违背劳动纪律损失时间</td><td>—</td></tr>
         </table>
+        <div class="visual-note">
+          <div class="visual-title">工人工作时间：是否计入定额</div>
+          <div class="compare-grid">
+            <div class="compare-card"><strong>必需消耗 → 计入</strong><ul><li>有效工作时间</li><li>休息时间</li><li>不可避免的中断时间</li></ul></div>
+            <div class="compare-card"><strong>损失时间 → 原则不计</strong><ul><li>多余和偶然工作</li><li>停工</li><li>违背劳动纪律</li></ul></div>
+            <div class="compare-card"><strong>停工的例外辨析</strong><div>非施工本身原因造成的停工，应合理考虑；施工组织、供料、差错造成的不计。</div></div>
+          </div>
+        </div>
         <div class="trap">⚠ 停工时间虽属损失时间，但编制定额时：<b>非施工本身造成的停工</b>（如水源、电源中断）应合理考虑并予以计算；施工本身造成的停工（组织不当、供料不及时等）不予计算。</div>
         <details class="ex"><summary>【2025真题】编制人工定额时，应合理考虑并予以计算的停工时间是（ ）</summary><div>答案 B：由于水源或电源中断引起的停工时间（非施工本身造成）。A劳动组织不合理、C材料供应不及时、D技术人员和工人差错均为施工本身造成，不计算。</div></details>
         <b>4. 确定人工定额消耗量</b>
@@ -459,5 +468,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>

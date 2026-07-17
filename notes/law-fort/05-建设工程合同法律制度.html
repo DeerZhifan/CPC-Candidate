@@ -45,6 +45,7 @@
   .btns button{border:1px solid #ccc;background:#fff;border-radius:20px;padding:5px 14px;font-size:.8rem;color:#555;}
   footer{text-align:center;color:#bbb;font-size:.7rem;margin-top:22px;}
 </style>
+<link rel="stylesheet" href="../shared/notes-enhance.css">
 </head>
 <body>
 
@@ -98,7 +99,18 @@
           <tr><td>失效</td><td>①被拒绝 ②被依法撤销 ③承诺期届满未承诺 ④受要约人作<span class="r">实质性变更</span></td></tr>
         </table>
         <b>4. 承诺</b>［2020单选］：受要约人同意要约的意思表示；通知方式作出；<span class="r">到达要约人时</span>生效；应与要约内容一致，作实质性变更的<span class="r">为新要约</span>。<br>
-        <b>5. 合同成立</b>［2020单选］：<span class="r">承诺生效时</span>合同成立（法律另有规定或约定除外）；采用合同书的，自双方签名、盖章或按指印时成立；签章前一方已履行主要义务对方接受时成立。<br>
+        <b>5. 合同成立</b>［2020单选］：<span class="r">承诺生效时</span>合同成立（法律另有规定或约定除外）；采用合同书的，自双方签名、盖章或按指印时成立；签章前一方已履行主要义务、对方接受时成立；法律规定或当事人约定应采用书面形式而未采用，但一方已履行主要义务、对方接受的，合同仍成立；采用信件、数据电文等形式并要求签订确认书的，自<span class="r">签订确认书时</span>成立。<br>
+        <div class="visual-note">
+          <div class="visual-title">合同成立时点 · 先辨订立形式</div>
+          <div class="decision-tree">
+            <div class="decision-question">采用哪种形式订立？</div>
+            <div class="decision-branches">
+              <div class="decision-branch"><strong>一般要约—承诺</strong>承诺生效时成立</div>
+              <div class="decision-branch"><strong>合同书</strong>各方签名、盖章或按指印时成立；先履行主要义务且对方接受的也成立</div>
+              <div class="decision-branch"><strong>信件 / 数据电文 + 确认书</strong>签订确认书时成立</div>
+            </div>
+          </div>
+        </div>
         <b>6. 缔约过失（应担赔偿责任）</b>：假借订立合同恶意磋商；故意隐瞒重要事实或提供虚假情况；泄露、不正当使用商业秘密或信息造成对方损失。
         <details class="ex"><summary>【2021年真题】3月1日甲向乙发出钢材采购单，承诺期限3月5日前。3月1日乙收到采购单，3月2日乙收到甲取消采购的函，3月4日乙发函同意履行。关于合同订立，正确的是（ ）。A.甲3月2日属要约邀请 B.甲乙买卖合同成立 C.乙3月4日属新要约 D.甲的要约已撤销</summary>
         <div>答案 B。要约确定了承诺期限（3.5前）故不可撤销，甲3.2取消无效；乙3.4在期限内承诺→合同成立。</div></details>
@@ -137,6 +149,7 @@
           <tr><td>价款报酬不明</td><td>按订立时<span class="r">履行地</span>市场价格</td></tr>
           <tr><td>履行地点不明</td><td>给付货币在<span class="r">接受货币一方</span>所在地；交付不动产在<span class="r">不动产</span>所在地；其他在<span class="r">履行义务一方</span>所在地</td></tr>
           <tr><td>履行期限不明</td><td>债务人可随时履行，债权人可随时请求，但应给必要准备时间</td></tr>
+          <tr><td>履行方式不明</td><td>按<span class="r">有利于实现合同目的</span>的方式履行</td></tr>
           <tr><td>履行费用不明</td><td>由履行义务一方负担；因债权人原因增加的由债权人负担</td></tr>
         </table>
         <b>3. 履行中的抗辩权</b>
@@ -402,5 +415,6 @@
 <script>
 function setAll(open){document.querySelectorAll('details').forEach(d=>d.open=open);}
 </script>
+<script src="../shared/notes-enhance.js"></script>
 </body>
 </html>
