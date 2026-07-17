@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>建设工程项目管理 · 考点记忆闪卡</title>
+<style>
+  :root{
+    --bg:#f4f2ee; --ink:#2b2b2b; --sub:#6d6a64; --card:#fff; --cardline:#e6e1d8;
+    --accent:#c94a1e; --accent2:#e05d2d;
+    --amber:#c98a00; --amberbg:#fff6e0; --amberink:#6f5406;
+    --shadow:0 6px 24px rgba(0,0,0,.10); --softbg:rgba(0,0,0,.015);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#1e1c1a; --ink:#ece7df; --sub:#9a948b; --card:#26241f; --cardline:#3a352e;
+      --accent:#f0824f; --accent2:#f0824f; --amberbg:#3a2f12; --amberink:#f0d489; --shadow:0 6px 24px rgba(0,0,0,.4); --softbg:rgba(255,255,255,.03);}
+  }
+  :root[data-theme="light"]{ --bg:#f4f2ee; --ink:#2b2b2b; --sub:#6d6a64; --card:#fff; --cardline:#e6e1d8; --accent:#c94a1e; --accent2:#e05d2d; --amberbg:#fff6e0; --amberink:#6f5406; --shadow:0 6px 24px rgba(0,0,0,.10); --softbg:rgba(0,0,0,.015);}
+  :root[data-theme="dark"]{ --bg:#1e1c1a; --ink:#ece7df; --sub:#9a948b; --card:#26241f; --cardline:#3a352e; --accent:#f0824f; --accent2:#f0824f; --amberbg:#3a2f12; --amberink:#f0d489; --shadow:0 6px 24px rgba(0,0,0,.4); --softbg:rgba(255,255,255,.03);}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;height:100%;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);display:flex;flex-direction:column;height:100vh;overflow:hidden;}
+  header{flex:none;padding:10px 14px 6px;}
+  .htop{display:flex;align-items:baseline;gap:8px;}
+  h1{font-size:1rem;margin:0;font-weight:800;}
+  h1 .badge{color:var(--sub);font-weight:500;font-size:.7rem;margin-left:4px;}
+  .theme{margin-left:auto;border:1px solid var(--cardline);background:var(--card);color:var(--sub);border-radius:8px;width:30px;height:28px;font-size:.9rem;cursor:pointer;align-self:center;}
+  .filters{display:flex;gap:6px;margin-top:9px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;}
+  .filters::-webkit-scrollbar{display:none;}
+  .chip{flex:none;border:1px solid var(--cardline);background:var(--card);color:var(--sub);border-radius:15px;padding:5px 12px;font-size:.76rem;font-weight:600;cursor:pointer;white-space:nowrap;}
+  .chip.on{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .chip.star.on{background:var(--amber);border-color:var(--amber);color:#3a2c00;}
+  .bar{flex:none;padding:6px 14px 2px;display:flex;align-items:center;gap:10px;font-size:.72rem;color:var(--sub);}
+  .prog{flex:1;height:5px;background:var(--cardline);border-radius:3px;overflow:hidden;}
+  .prog i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s;}
+  .stage{flex:1;position:relative;display:flex;align-items:center;justify-content:center;padding:8px 14px;min-height:0;}
+  .card{width:100%;max-width:520px;height:100%;perspective:1600px;cursor:pointer;}
+  .inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,.15,.2,1);transform-style:preserve-3d;}
+  .card.flip .inner{transform:rotateY(180deg);}
+  .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--card);border:1px solid var(--cardline);border-radius:18px;box-shadow:var(--shadow);padding:20px;display:flex;flex-direction:column;overflow:hidden;}
+  .front{align-items:flex-start;justify-content:center;text-align:left;}
+  .crumb{font-size:.72rem;color:var(--sub);font-weight:600;}
+  .qt{font-size:1.5rem;font-weight:800;line-height:1.4;margin:14px 0 12px;text-wrap:balance;}
+  .metarow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:auto;}
+  .stars{color:var(--amber);font-size:1rem;letter-spacing:2px;}
+  .yr{background:var(--card);border:1px solid var(--cardline);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:.7rem;}
+  .tapcue{position:absolute;bottom:14px;right:18px;font-size:.7rem;color:var(--sub);opacity:.8;}
+  .back{transform:rotateY(180deg);}
+  .back .bt{font-size:.82rem;font-weight:800;color:var(--accent2);margin-bottom:6px;flex:none;letter-spacing:.04em;}
+  .pts{overflow-y:auto;flex:1;margin:0;padding:0;list-style:none;-webkit-overflow-scrolling:touch;}
+  .pts li{font-size:.95rem;line-height:1.5;padding:8px 10px 8px 12px;margin:7px 0;border-left:3px solid var(--cardline);background:var(--softbg);border-radius:0 8px 8px 0;}
+  .pts li.trap{background:var(--amberbg);border-left-color:var(--amber);color:var(--amberink);font-weight:500;}
+  .controls{flex:none;display:flex;gap:8px;align-items:center;justify-content:center;padding:10px 14px calc(10px + env(safe-area-inset-bottom));}
+  .controls button{border:1px solid var(--cardline);background:var(--card);color:var(--ink);border-radius:12px;height:46px;font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;}
+  .nav{flex:1;max-width:130px;}
+  .flipbtn{flex:1;max-width:130px;background:var(--accent);border-color:var(--accent);color:#fff;}
+  .icon{width:46px;flex:none;font-size:1.05rem;}
+  .card.done .front::after{content:"✓ 已掌握";position:absolute;top:14px;right:16px;font-size:.72rem;color:#3a9d5f;font-weight:700;}
+  .empty{text-align:center;color:var(--sub);font-size:.9rem;padding:0 20px;}
+  .empty b{color:var(--ink);}
+  .hintbar{flex:none;text-align:center;font-size:.66rem;color:var(--sub);padding-bottom:6px;opacity:.85;}
+</style>
+</head>
+<body>
+<header>
+  <div class="htop">
+    <h1>建设工程项目管理<span class="badge">考点记忆闪卡</span></h1>
+    <button class="theme" id="theme" title="切换主题">◐</button>
+  </div>
+  <div class="filters" id="filters"></div>
+</header>
+<div class="bar">
+  <span id="counter">0 / 0</span>
+  <div class="prog"><i id="progi"></i></div>
+  <span id="knownc">已掌握 0</span>
+</div>
+<div class="stage" id="stage">
+  <div class="card" id="card">
+    <div class="inner">
+      <div class="face front" id="front"></div>
+      <div class="face back"><div class="bt">要点 KEY POINTS</div><ul class="pts" id="pts"></ul></div>
+    </div>
+  </div>
+</div>
+<div class="controls">
+  <button class="icon" id="shuffle" title="洗牌">🔀</button>
+  <button class="nav" id="prev">◀ 上一张</button>
+  <button class="flipbtn" id="flip">翻转</button>
+  <button class="nav" id="next">下一张 ▶</button>
+  <button class="icon" id="mark" title="标记已掌握">✓</button>
+</div>
+<div class="hintbar">点击卡片翻转 · 左右滑动切换 · ✓标记已掌握（本机记忆）· 🔀洗牌</div>
+<script>
+const DATA=[
+{part:"管理框架",num:1,chapter:"项目组织、规划与控制",score:"26预测20分·重点",sections:[
+ {title:"1.1 投资管理与实施",items:[
+  {title:"1.1.1 工程项目投资管理制度",stars:3,years:"2024·2025单选",points:["项目资本金：不付息、不抽回、可转让（非债务性资金）","工业产权/非专利技术出资≤资本金总额20%","最低资本金：轨交/港口/铁路公路20%，机场25%，钢铁电解铝40%，水泥35%","政府投资项目审批项目建议书+可研报告，不再审批开工报告"]},
+  {title:"1.1.2 工程建设实施程序",stars:4,years:"2024·2025单选/多选",points:["设计一般分初步设计+施工图设计两阶段，重大复杂加技术设计","初步设计→工程总概算；技术设计→修正概算；施工图→施工图预算","概算超批准可研估算10%应重新报可研","开工时间＝永久性工程第一次正式破土开槽；勘察平整拆除不算开工","PPP：BOT/BOOT/BOO/TOT等；民企股权原则上不低于35%"]},
+  {title:"1.1.3 工程承包模式",stars:5,years:"2024·2025单选/多选",points:["DBB优点责权明确，缺点建设周期长","EPC优点缩短工期，缺点道德风险高、建设单位前期工作量大","联合体各成员共同与建设单位签合同，承担连带责任","CM采用快速路径法；CM单位不赚取总包与分包差价","⚠ 非代理型CM采用GMP（保证最大工程费用）加酬金","Partnering协议不是法律意义上的合同"]},
+  {title:"1.1.4 工程监理",stars:4,years:"2024单选，2025多选",points:["学校/影剧院/体育场馆无论投资多少均应监理","总监：组织编制监理规划、审批细则、签发开工/暂停/复工令、竣工结算","专业监理工程师：参与编制规划、编制细则、验收检验批","⚠ 见证取样是监理员职责","图纸会审、第一次工地会议由建设单位主持"]},
+  {title:"1.1.5 工程质量监督",stars:4,years:"2024·2025单选/多选",points:["监督内容＝质量责任主体行为+工程实体质量（抽查为主）","开工前建设单位办理工程质量监督手续","需提供：施工图审查报告、中标通知书、监理合同、施工组织设计","竣工验收质量监督出具监督报告，负责人签认+机构审核盖章"]}]},
+ {title:"1.2 管理组织与项目经理",items:[
+  {title:"1.2.1 参建各方管理目标和任务",stars:3,years:"2024多选，2025单选",points:["业主方：进度（交付使用时间）、质量、投资（建设总投资）、绿色目标","工程总承包方管理：设计/采购/施工/试运行四个执行计划"]},
+  {title:"1.2.2 工程项目管理组织",stars:4,years:"2024·2025单选，2026修改",points:["直线式：全能式人才；职能式：多头领导","矩阵式：双重领导，易扯皮","强矩阵：专职大权限项目经理，适用技术复杂时间紧迫","责任矩阵：横向查每项工作有人负责，纵向查每人至少负责一件事"]},
+  {title:"1.2.3 项目经理",stars:4,years:"2024·2025单选",points:["总承包项目经理权限：批准发布项目管理程序","施工项目经理权限：组织项目团队绩效考核评价","⚠ 施工项目经理是'参与'组建经理部、'参与'投标签约，非'负责'"]}]},
+ {title:"1.3 管理规划与动态控制",items:[
+  {title:"1.3.1 工程项目管理规划",stars:5,years:"2019~2024单选，2023多选",points:["项目管理规划大纲（15项内容）+ 项目管理实施规划（17项内容）","实施规划含现场平面布置图、目标控制计划、技术经济指标"]},
+  {title:"1.3.2 施工组织设计",stars:5,years:"2023单选，多年多选",points:["三类：施工组织总设计、单位工程施工组织设计、施工方案","⚠ 施工方案主要内容＝施工安排+施工方法工艺（无总平面布置）","综合时间定额H=Σ(QᵢHᵢ)/ΣQᵢ；持续时间D=P/(R·B)","总设计→总承包技术负责人审批；施工方案→项目技术负责人审批","危大工程专项方案→技术部门专家评审，施工单位技术负责人批准"]},
+  {title:"1.3.3 目标动态控制",stars:3,years:"2025多选，2026修改",points:["过程：事前计划预控→事中过程控制→事后纠偏控制","四类措施：组织、技术、经济、合同措施","技术措施含网络计划、价值工程、挣值分析","⚠ 审查论证施工方案、采用价值工程属技术措施"]}]}
+]},
+{part:"管理框架",num:2,chapter:"项目管理相关体系标准",score:"26预测9分",sections:[
+ {title:"2.1 质量/环境/职业健康安全体系",items:[
+  {title:"2.1.1 质量管理体系",stars:3,years:"2024·2025单选，2018多选",points:["七项原则口诀'顾客领导全员的过程决策改进'","核心：过程控制、全员参与、持续改进","顾客导向过程含产品交付后的防护活动"]},
+  {title:"2.1.2 环境管理体系",stars:3,years:"2024·2025单选",points:["理念：持续改进、合法合规、风险管理、绩效评估等","PDCA循环结构"]},
+  {title:"2.1.3 职业健康安全体系",stars:4,years:"2021·2024·2025单选",points:["遵循自愿原则","只对方针目标和管理体系要素做要求，不规定绩效准则","10大要素，PDCA结构"]},
+  {title:"2.1.4 卓越绩效管理",stars:3,years:"2024·2025单选",points:["驱动力理念：远见卓识的领导、战略导向、顾客驱动","经营行为理念：社会责任、以人为本、合作共赢"]},
+  {title:"2.1.5 全面一体化管理",stars:3,years:"2024多选",points:["新建体系顺序：管理手册→程序文件→工作指导书和记录","编制原则：系统协调、合理优化、操作可行、证实检查"]}]},
+ {title:"2.2 风险管理与社会责任体系",items:[
+  {title:"2.2.1 风险管理体系",stars:3,years:"原则框架过程",points:["原则核心：创造和保护价值；框架核心：领导作用与承诺","过程：风险识别→风险分析→风险评价"]},
+  {title:"2.2.2 社会责任管理体系",stars:3,years:"2024单选",points:["7大核心主题：组织治理、人权、劳工实践、环境、公平运行、消费者、社区","社会责任重'性质'，ESG重'量值'"]}]},
+ {title:"2.3 项目管理标准体系",items:[
+  {title:"2.3.1 项目管理标准及价值交付",stars:3,years:"2024·2025单选/多选，2026修改",points:["6项原则口诀'整体价值重质量，领导持续赋文化'","7个绩效域口诀'治理范围进度财，相关资源风险排'","价值交付：从铁三角约束转变为实现收益获取价值"]},
+  {title:"2.3.2 项目群与项目组合管理",stars:3,years:"2024多选，2025单选",points:["项目群至少由两个组件组成，是临时结构","项目群发起人对战略负责，项目群经理对整体绩效负责","项目组合是层级结构，最少由两项组件构成"]}]}
+]},
+{part:"商务起点",num:3,chapter:"招标投标与合同管理",score:"26预测22分·重点·分值第一",sections:[
+ {title:"3.1 工程招标与投标",items:[
+  {title:"3.1.1 招标方式与程序",stars:4,years:"2024单选/多选",points:["公开招标竞争激烈、避免贿标，但时间长费用高","邀请招标节约费用缩短时间，但可能提高中标价","评标委员会5人以上单数，专家不少于2/3","开标：检查密封、当众宣读投标人名称价格","中标通知书发出30日内订立合同，5日内退还投标保证金"]},
+  {title:"3.1.2 合同计价方式",stars:4,years:"2024·2025单选/多选",points:["固定总价适用：施工图完整、工期短（1年内）、工程量小","单价合同适用：工期长、技术复杂、不可预见因素多","成本加固定酬金：施工单位基本没有费用风险","目标成本加奖罚：鼓励降成本缩工期，双方风险都不大","已完成施工图→总价；只完成初步设计→单价或成本加酬金"]},
+  {title:"3.1.3 施工投标",stars:3,years:"2024·2025单选",points:["不平衡报价：早结算/工程量将增加的项目提高单价","后期工程、工程量将减少的降低单价","工程总报价至少两人分别校对一遍"]},
+  {title:"3.1.4 工程总承包投标",stars:3,years:"2025多选",points:["项目经理需施工类注册资格，设计负责人需设计类注册资格","对未中标人设计成果给予补偿并有权免费使用"]}]},
+ {title:"3.2 工程合同管理",items:[
+  {title:"3.2.1 施工合同管理",stars:5,years:"2022~2025单选/多选，2026修改",points:["优先顺序：协议书>中标通知书>投标函>专用条款>通用条款>技术标准>图纸>已标价工程量清单","异常恶劣气候属发包人责任，不利气候属承包人风险","安全生产措施费：开工后28d内预付不低于50%","进度款：监理14d核，发包人28d付；政府/国企不低于已完80%","暂停施工超56d可要求28d内复工","变更估价：有适用子目用该单价；类似子目参照；无则成本加利润","工程量变化超15%调整单价；暂列金额剩余归发包人","承包人索赔：28d意向→28d最终→14d审查→42d答复→28d赔付","实际竣工日以提交竣工验收申请报告日期为准","收到申请报告56d内未验收视为验收合格","⚠ 缺页补录：发包人索赔28d，争议评审开工后28d内选评审员"]},
+  {title:"3.2.2 工程总承包合同管理",stars:3,years:"2024·2025单选/多选",points:["优先顺序含发包人要求、承包人建议书","设计审查期限不超过21d","因发包人原因90d内未发开始工作通知，承包人可调价或解约"]},
+  {title:"3.2.3 专业分包与劳务分包合同",stars:4,years:"2019~2025单选，2022·2023多选",points:["分包工程价款与总包相应部分无连带关系，方式应一致","未经承包人允许，分包人不得与发包人/监理直接联系","保险口诀'谁的人、物由谁买保险'","劳务分包人不得对原工程设计进行变更"]},
+  {title:"3.2.4 材料设备采购合同",stars:3,years:"2024单选，2025多选",points:["材料供货≤12个月为固定价格","预付款10%→进度款至95%→质保期满付5%","迟延交付违约金＝金额×0.08%×天数，最高10%"]}]},
+ {title:"3.3 风险管理及担保保险",items:[
+  {title:"3.3.1 工程承包风险管理",stars:3,years:"2025单选，2024·2025多选",points:["应对：风险规避、减轻、转移、自留","风险转移＝保险转移+非保险转移（分包/担保）","风险自留＝建立应急储备（预算储备+时间储备）","优化方案降低复杂性属风险减轻"]},
+  {title:"3.3.2 工程担保",stars:4,years:"2016·2022·2024·2025单选",points:["投标保证金不超过估算价2%","履约保证金不超过中标合同金额10%","预付款担保金额与预付款相同，随扣回递减"]},
+  {title:"3.3.3 工程保险",stars:3,years:"缺页补录+实拍",points:["建筑/安装工程一切险一般由建设单位投保","⚠ 缺页补录：一切险含工程本身物质损失+第三者责任","设计责任险投保人和被保险人均为工程设计单位","鼓励为危险作业职工办理意外伤害保险"]}]}
+]},
+{part:"目标控制",num:4,chapter:"建设工程进度管理",score:"26预测18分·重点",sections:[
+ {title:"4.1 影响因素与计划系统",items:[
+  {title:"4.1.1 工程进度影响因素",stars:3,years:"2024单选",points:["施工进度：自然条件、施工单位自身、相关单位、社会环境、协作部门","建设单位影响：设计变更、场地不及时、资金不到位、不及时付款"]},
+  {title:"4.1.2 进度计划系统及表达形式",stars:4,years:"2019·2020·2024·2025单选",points:["投资计划年度分配表属建设总进度计划（非年度计划）","横道图直观但不反映逻辑关系、关键线路、机动时间","网络图能找关键工作和关键线路、确定时差、便优化"]}]},
+ {title:"4.2 流水施工进度计划",items:[
+  {title:"4.2.1 流水施工特点及表达",stars:4,years:"2025单选，2024多选",points:["流水施工：能连续、能专业化、资源较均衡","平行施工工期最短；依次施工组织管理最简单"]},
+  {title:"4.2.2 流水施工参数",stars:4,years:"2024·2025单选，2025多选",points:["工艺参数：施工过程数、流水强度","空间参数：工作面、施工段（劳动量相差不宜超15%）","时间参数：流水节拍、流水步距、流水施工工期"]},
+  {title:"4.2.3 流水施工基本方式",stars:4,years:"2017·2024·2025单选/多选",points:["加快成倍节拍：流水步距＝节拍最大公约数，工作队数>过程数","非节奏流水：累加数列错位相减取大差法求流水步距","工期＝Σ流水步距+末过程节拍和+技术间歇−提前插入"]}]},
+ {title:"4.3 工程网络计划技术",items:[
+  {title:"4.3.1 编制程序和方法",stars:5,years:"2017~2022单选，多年多选",points:["快速判断错误：多起点/终点、编号错误、循环回路、多余虚工作","费用优化：选直接费用率最小的关键工作压缩"]},
+  {title:"4.3.2 时间参数计算",stars:5,years:"2016~2025单选/多选·核心",points:["ES看紧前取最大，LF看紧后取最小","总时差TF=LS−ES=LF−EF；自由时差FF=min{紧后ES}−本工作EF","TF=0时FF必为0；FF≤TF","时标网络：波形线水平投影长度＝时间间隔","自始至终无波形线的线路即关键线路"]},
+  {title:"4.3.3 关键工作及关键线路",stars:5,years:"2016~2025单选/多选",points:["关键工作＝总时差最小；关键线路可能有虚工作","标号法：bⱼ=max{bᵢ+D}，逆箭线定关键线路","⚠ 持续时间最长的工作不一定是关键工作","关键线路不止一条、可转移"]}]},
+ {title:"4.4 施工进度控制",items:[
+  {title:"4.4.1 检查与分析",stars:4,years:"2016·2018·2021单选，2017·2025多选",points:["偏差>总时差→影响后续和总工期","偏差<自由时差→不影响后续和总工期"]},
+  {title:"4.4.2 实际与计划进度比较",stars:4,years:"2016·2024·2025单选，2020·2023多选",points:["S曲线：左侧/上方＝超前/超额，右侧/下方＝拖后/拖欠","前锋线：落在检查日左侧＝拖后，与自由/总时差比大小定影响"]},
+  {title:"4.4.3 进度计划调整方法及措施",stars:4,years:"2024单选",points:["调整：压缩持续时间（不改逻辑）或改变逻辑关系","压缩措施口诀'组织要增加、技术需改进、奖励属经济、改善归配套'"]}]}
+]},
+{part:"目标控制",num:5,chapter:"建设工程质量管理",score:"26预测15分·重点",sections:[
+ {title:"5.1 影响因素及管理体系",items:[
+  {title:"5.1.1 质量形成过程及影响因素",stars:3,years:"2024·2025单选",points:["勘察设计＝影响质量决定性阶段；施工＝关键阶段","4M1E：人（决定性）、材料、机械、方法、环境","质量评价标准属技术环境；质量检验制度属管理环境"]},
+  {title:"5.1.2 全面质量管理",stars:3,years:"2025多选，2026修改",points:["特点口诀'三全一多样'：内容全面、范围全面、人员全面、方法多样"]},
+  {title:"5.1.3 工程质量管理体系",stars:4,years:"2016~2024单选，2024多选",points:["项目质量控制体系：一次性、自我评价诊断","企业质量管理体系：永久性、第三方认证","运行机制：动力机制＝核心机制"]}]},
+ {title:"5.2 抽样检验和统计分析",items:[
+  {title:"5.2.1 施工质量抽样检验方法",stars:4,years:"2024·2025单选，2024多选，2026修改",points:["系统随机抽样主要用于工序质量检验","一次抽样3参数（N,n,C）；二次抽样5参数","超声波/射线探伤检测混凝土内部质量和钢材焊接质量"]},
+  {title:"5.2.2 施工质量统计分析方法",stars:5,years:"2016~2025单选，多年多选·高频",points:["分层法＝最基本方法；因果图＝追溯根本原因","排列图＝分析主次因素（A类0~80%重点管理）","直方图形状：正常/折齿/缓坡/孤岛/双峰/峭壁型","孤岛型＝原材料变化或工人操作不熟练"]}]},
+ {title:"5.3 施工质量控制",items:[
+  {title:"5.3.1 施工准备质量控制",stars:3,years:"2019·2023·2024单选，2026修改",points:["事前控制→事中控制→事后控制","混凝土预制构件出厂强度不得低于设计强度75%","涉及结构安全的试块试件材料见证检验"]},
+  {title:"5.3.2 施工过程质量控制",stars:4,years:"2024·2025单选/多选，2026修改",points:["技术交底由项目技术人员编制，项目技术负责人批准","三检制度：自检、交接检查、专检","隐蔽工程经监理现场检查确认签字后准予隐蔽"]},
+  {title:"5.3.3 施工质量检查验收",stars:4,years:"2019~2025单选，2017·2022·2023多选",points:["检验批/分项→专业监理工程师组织","分部→总监组织；单位工程→建设单位组织","地基基础/主体结构验收，施工单位技术、质量部门负责人参加","验收层次划分：施工单位制定，监理审核，建设单位确认"]}]},
+ {title:"5.4 质量事故预防与调查处理",items:[
+  {title:"5.4.1 施工质量事故分类",stars:5,years:"2016~2024单选，多年多选",points:["按责任：指导责任事故、操作责任事故","严重程度：死亡3-10-30，重伤10-50-100","直接损失：100万-1000万-5000万-1亿","⚠ 三项就高定级"]},
+  {title:"5.4.2 施工质量事故预防",stars:3,years:"2025多选",points:["坚持按建设程序办事、技术复核、把好材料关"]},
+  {title:"5.4.3 施工质量事故调查处理",stars:4,years:"2016~2025单选，2022多选",points:["报告：现场人员1h内向本单位负责人，逐级上报每级不超2h","30日内伤亡变化补报","处理方法：返修/加固（危及承载力）/返工/限制使用/不作处理/报废","下一道工序可弥补的缺陷可不作处理"]}]}
+]},
+{part:"目标控制",num:6,chapter:"建设工程成本管理",score:"26预测12分",sections:[
+ {title:"6.1 影响因素及管理流程",items:[
+  {title:"6.1.1 工程成本分类及影响因素",stars:4,years:"2024·2025单选/多选，2026修改",points:["直接成本：人工费、材料费、机械使用费、其他直接费","质量控制成本＝预防成本+鉴定成本","质量损失成本＝内部损失（返工）+外部损失（保修费）"]},
+  {title:"6.1.2 施工成本管理流程",stars:3,years:"流程逻辑",points:["成本计划是成本控制和分析的基础、控制的主要依据"]}]},
+ {title:"6.2 施工成本计划",items:[
+  {title:"6.2.1 施工责任成本构成",stars:3,years:"2024·2025单选，2026修改",points:["责任成本四条件：可考核、可预计、可计量、可控制","责任成本＝结算收入−税金−企业管理费−目标利润","商务部门组织标价分离、责任成本分解"]},
+  {title:"6.2.2 施工成本计划编制",stars:4,years:"2016~2024单选，2020·2022多选",points:["竞争性（估算）、指导性（预算/合同价）、实施性（施工定额）","S曲线包络在香蕉图内","全按最早开始→提高按期竣工保证率，但占用建设单位资金"]}]},
+ {title:"6.3 施工成本控制",items:[
+  {title:"6.3.1 施工成本控制过程",stars:3,years:"2016·2018·2025单选",points:["管理行为控制＝基础；指标控制＝重点"]},
+  {title:"6.3.2 施工成本控制方法·挣值法",stars:5,years:"2016~2025单选，2019·2022多选·核心",points:["材料费控制口诀'指定干粮(量)'","BCWP已完预算=Σ已完量×预算单价（挣值）","BCWS拟完预算；ACWP已完实际","CV=BCWP−ACWP<0超支；SV=BCWP−BCWS<0拖后","CPI=BCWP/ACWP；SPI=BCWP/BCWS；<1不利","CV/SV绝对偏差；CPI/SPI相对偏差可跨项目比较"]}]},
+ {title:"6.4 成本分析与绩效考核",items:[
+  {title:"6.4.1 施工成本分析",stars:5,years:"2016~2025单选，2016·2021·2022多选",points:["会计核算最小、业务核算最广、统计核算第二","因素分析法＝连环置换法：先实物量后价值量，先绝对后相对","分部分项成本分析进行预算/目标/实际'三算'对比"]},
+  {title:"6.4.2 施工成本管理绩效考核",stars:3,years:"2024·2025单选/多选，2026修改",points:["KPIs适用定量化、周期短；360°反馈适用定性化","平衡积分卡适用定量化、周期长"]}]}
+]},
+{part:"目标控制",num:7,chapter:"建设工程施工安全管理",score:"26预测15分·重点",sections:[
+ {title:"7.1 安全管理基本理论",items:[
+  {title:"7.1.1 施工生产危险源及控制",stars:3,years:"2024·2025单选，2026修改",points:["第一类危险源＝能量或危险物质本身（决定严重程度）","第二类危险源＝约束失效的因素（决定发生可能性）","有毒有害物质属第一类；违章、防护缺失属第二类","LEC评价法＝L可能性×E暴露频繁×C后果"]},
+  {title:"7.1.2 安全事故致因理论",stars:3,years:"2024单选，2024·2025多选",points:["海因里希因果连锁：遗传社会环境→人的缺点→不安全行为/状态→事故→伤害","轨迹交叉理论：避免人不安全行为与物不安全状态时空同时出现"]}]},
+ {title:"7.2 管理体系及基本制度",items:[
+  {title:"7.2.1 施工安全管理体系",stars:3,years:"2024·2025单选/多选",points:["项目经理＝安全生产第一责任人","制度保证体系以全员安全生产责任制为核心","3E原则：Engineering工程、Education教育、Enforcement强制"]},
+  {title:"7.2.2 施工安全管理基本制度",stars:3,years:"2016~2025单选，2016多选",points:["安全费提取：矿山3.5%、房建轨交3%、市政公路1.5%","主要负责人初次培训≥32学时，新员工岗前≥24学时","安全生产许可证：省级颁发，有效期3年，期满前3个月延期","特种作业操作证每3年复审，连续10年可延至每6年"]}]},
+ {title:"7.3 专项方案及技术管理",items:[
+  {title:"7.3.1 专项施工方案编制与报审",stars:5,years:"2019~2025单选/多选·高频",points:["对象：基坑支护降水、土方开挖、模板、起重吊装、脚手架、拆除爆破","⚠ 深基坑/地下暗挖/高大模板还需专家论证","审批：施工单位技术负责人+总监理工程师签字盖章"]},
+  {title:"7.3.2 安全技术措施及交底",stars:3,years:"2024·2025单选，2026修改",points:["临边作业：2m及以上设防护栏杆+密目式安全立网","防触电：TN-S系统，三级控制两极保护，一机一闸一漏一箱","技术交底：项目技术负责人向施工员/班组长交底"]}]},
+ {title:"7.4 事故应急预案和调查处理",items:[
+  {title:"7.4.1 事故隐患处置和应急预案",stars:3,years:"2020·2024单选",points:["风险分级：重大/较大/一般/低＝红/橙/黄/蓝","应急预案分类：综合、专项、现场处置方案","预案公布20个工作日内向县级以上应急管理部门备案","施工单位至少每半年演练一次，每三年评估一次"]},
+  {title:"7.4.2 事故等级和应急救援",stars:4,years:"2018~2025单选",points:["死亡3-10-30，重伤10-50-100","⚠ 直接损失一般事故上限1000万（无100万下限）","小微企业可不建应急救援队伍但应指定兼职人员","立即组织营救＝首要任务，迅速控制事态＝重要任务"]},
+  {title:"7.4.3 事故报告和调查处理",stars:4,years:"2017·2019·2021单选",points:["单位负责人1h内向县级以上应急管理部门报告","逐级上报每级不超2h；总承包工程由总承包单位上报","补报：30日内（道路交通/火灾7日内）","调查60日内提交报告（可延长60日）","主要负责人未履职罚款：一般40%/较大60%/重大80%/特别重大100%"]}]}
+]},
+{part:"拓展工具",num:8,chapter:"绿色建造及施工现场环境管理",score:"26预测9分",sections:[
+ {title:"8.1 绿色建造管理",items:[
+  {title:"8.1.1 绿色建造基本要求",stars:3,years:"2024单选/多选，2025多选",points:["特征：工业化、信息化、集约化、产业化","绿色策划＝绿色设计策划+绿色施工策划+绿色交付策划","绿色交付策划明确综合效能调适及效果评估内容方式"]},
+  {title:"8.1.2 各方主体绿色施工职责",stars:3,years:"2024·2025单选，2026修改",points:["清洁生产'三清一控'","循环经济3R：减量化、再利用、再循环","施工单位＝绿色施工实施主体，项目经理为第一责任人","噪声：昼间≤70dB、夜间≤55dB，超限幅度≤15dB","垃圾回收利用率30%，有毒有害废弃物分类率100%"]}]},
+ {title:"8.2 施工现场环境管理",items:[
+  {title:"8.2.1 施工现场文明施工要求",stars:3,years:"2024单选/多选，2026修改",points:["8S＝5S（整理整顿清扫清洁素养）+安全+节约+学习","封闭围挡高度≥1.8m","五牌一图：工程概况、管理人员名单、安全生产、文明施工、消防保卫+总平面图"]},
+  {title:"8.2.2 施工现场环境保护措施",stars:3,years:"2024·2025单选",points:["控制项含制定地下文物保护应急预案","装配式垃圾≤200t/万m²，非装配式≤300t/万m²","材料包装物回收利用率100%","遇六级及以上大风停止土方作业"]}]}
+]},
+{part:"拓展工具",num:9,chapter:"国际工程承包管理",score:"26预测8分",sections:[
+ {title:"9.1 国际工程承包市场开拓",items:[
+  {title:"9.1.1 国际工程承包相关政策",stars:3,years:"2025单选",points:["高质量发展原则：企业主体、质量优先、互利共赢、规范有序","敏感类项目核准机关＝国家发改委","一般项目商务主管部门备案，投标/议标前完成","承包项目结果公布/签约/开工/完工后30个工作日内填报"]},
+  {title:"9.1.2 国际工程承包市场进入",stars:3,years:"2024多选",points:["政府出资项目多采用公开招标","税收标准：属地主义、属人主义、属地兼属人原则","税种：流转税、收益税、财产税、杂项税"]}]},
+ {title:"9.2 承包风险及应对策略",items:[
+  {title:"9.2.1 国际工程承包风险",stars:3,years:"风险类型",points:["政治、经济、市场、自然、社会、合同、资金、技术、法律、合规风险"]},
+  {title:"9.2.2 承包风险应对策略",stars:3,years:"2024单选，2025多选",points:["金融工具：远期合约、期权合约、货币期货、货币互换","属地化经营、践行ESG（环境社会治理）、保险保障"]}]},
+ {title:"9.3 国际工程投标与合同管理",items:[
+  {title:"9.3.1 国际工程投标策略",stars:3,years:"报价策略",points:["不平衡报价：工程量增加项目高报，前期工程偏高报价","大概率实施暂定项高报，不实施的低报"]},
+  {title:"9.3.2 FIDIC施工合同和EPC合同",stars:3,years:"2024·2025单选，2025多选·高频",points:["FIDIC：费用不含利润；费用加利润未规定按5%","基准日期＝投标截止前28d","工程师开工前至少14d通知，开工在收到中标函后42d内","期中付款：工程师28d签证书，业主56d付款","竣工前不少于14d申请接收证书，工程师28d内签发或拒绝","EPC优先顺序：协议书>专用条件>通用条件>业主要求>明细表>投标书","EPC工期索赔只有3种情形"]},
+  {title:"9.3.3 NEC施工合同和AIA合同",stars:3,years:"2024·2025单选",points:["ECC选项A-F：A/B标价合同、C/D目标合同、E成本补偿、F管理合同","ECC合作机制：合作伙伴、早期警告、补偿事件","AIA主要用于私营房屋建筑工程"]}]}
+]},
+{part:"拓展工具",num:10,chapter:"建设工程项目管理智能化",score:"26预测2分",sections:[
+ {title:"10.1 建筑信息模型（BIM）",items:[
+  {title:"10.1.1 BIM技术的基本特征",stars:3,years:"2025单选",points:["可视化、完备性、关联性、一致性、动态性、可拓展性"]},
+  {title:"10.1.2 BIM在工程项目管理中的应用",stars:3,years:"2024单选",points:["成本管理：3D+4D集成形成5D模型","质量管理：碰撞检测","项目信息管理：BIM内置信息分类编码"]}]},
+ {title:"10.2 智能建造与智慧工地",items:[
+  {title:"10.2.1 智能建造",stars:3,years:"2026修改",points:["以新一代信息技术融合应用为基础","核心：系统化集成设计、精益化生产施工、工业化组织管理","着力点：数智化管控平台和建筑机器人"]},
+  {title:"10.2.2 智慧工地",stars:3,years:"2024·2025单选",points:["感知层＝基础（传感器、监控设备、无人机）","网络层＝数据通道和处理中枢","应用层＝核心（基于数据的智能应用）"]}]}
+]}
+];
+const PARTS=["管理框架","商务起点","目标控制","拓展工具"];
+const KEY="cards_known_pm";
+let known=new Set();
+try{known=new Set(JSON.parse(localStorage.getItem(KEY)||"[]"));}catch(e){}
+function saveKnown(){try{localStorage.setItem(KEY,JSON.stringify([...known]));}catch(e){}}
+const ALL=[];
+for(const ch of DATA){for(const s of (ch.sections||[])){for(const it of (s.items||[])){
+  ALL.push({id:ch.num+"|"+it.title, part:ch.part, chNum:ch.num, chapter:ch.chapter, sec:s.title, title:it.title, stars:it.stars||0, years:it.years||"", points:it.points||[]});
+}}}
+let filterPart="全部", onlyStar=false, deck=[], idx=0;
+function buildDeck(){
+  deck=ALL.filter(x=>(filterPart==="全部"||x.part===filterPart)&&(!onlyStar||x.stars>=4));
+  idx=0; render();
+}
+function isTrap(s){return /^⚠/.test(s);}
+const card=document.getElementById('card'), front=document.getElementById('front'), pts=document.getElementById('pts');
+function esc(s){return (s+"").replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function render(){
+  card.classList.remove('flip');
+  const cardEl=document.getElementById('stage').querySelector('.card');
+  if(!deck.length){ cardEl.style.display='none';
+    if(!document.getElementById('emptyMsg')){const e=document.createElement('div');e.className='empty';e.id='emptyMsg';e.innerHTML='<b>本组暂无卡片</b><br>换个板块，或关闭“只看重点”';document.getElementById('stage').appendChild(e);}
+    document.getElementById('counter').textContent='0 / 0'; document.getElementById('progi').style.width='0'; return; }
+  const em=document.getElementById('emptyMsg'); if(em) em.remove();
+  cardEl.style.display='';
+  if(idx>=deck.length) idx=0; if(idx<0) idx=deck.length-1;
+  const x=deck[idx];
+  const stars="★".repeat(x.stars)+"☆".repeat(5-x.stars);
+  front.innerHTML='<div class="crumb">第'+x.chNum+'章 · '+esc(x.sec)+'</div>'
+    +'<div class="qt">'+esc(x.title.replace(/^d+.d+.d+s*/,''))+'</div>'
+    +'<div class="metarow"><span class="stars">'+stars+'</span>'+(x.years?'<span class="yr">'+esc(x.years)+'</span>':'')+'</div>'
+    +'<div class="tapcue">点击查看要点 ▸</div>';
+  pts.innerHTML=x.points.map(p=>'<li class="'+(isTrap(p)?'trap':'')+'">'+esc(p)+'</li>').join('')||'<li>（要点见知识树）</li>';
+  card.classList.toggle('done',known.has(x.id));
+  document.getElementById('counter').textContent=(idx+1)+' / '+deck.length;
+  document.getElementById('progi').style.width=((idx+1)/deck.length*100)+'%';
+  document.getElementById('knownc').textContent='已掌握 '+known.size;
+}
+function next(){idx++;render();}
+function prev(){idx--;render();}
+card.addEventListener('click',()=>card.classList.toggle('flip'));
+document.getElementById('flip').onclick=e=>{e.stopPropagation();card.classList.toggle('flip');};
+document.getElementById('next').onclick=next;
+document.getElementById('prev').onclick=prev;
+document.getElementById('shuffle').onclick=()=>{for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]];}idx=0;render();};
+document.getElementById('mark').onclick=()=>{if(!deck.length)return;const x=deck[idx];if(known.has(x.id))known.delete(x.id);else known.add(x.id);saveKnown();render();};
+const fc=document.getElementById('filters');
+["全部",...PARTS].forEach(p=>{const b=document.createElement('div');b.className='chip'+(p==="全部"?' on':'');b.textContent=p;b.onclick=()=>{filterPart=p;[...fc.querySelectorAll('.chip:not(.star)')].forEach(z=>z.classList.toggle('on',z.textContent===p));buildDeck();};fc.appendChild(b);});
+const sb=document.createElement('div');sb.className='chip star';sb.textContent='★ 只看重点';sb.onclick=()=>{onlyStar=!onlyStar;sb.classList.toggle('on',onlyStar);buildDeck();};fc.appendChild(sb);
+let tsx=0,tsy=0;
+document.getElementById('stage').addEventListener('touchstart',e=>{tsx=e.touches[0].clientX;tsy=e.touches[0].clientY;},{passive:true});
+document.getElementById('stage').addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tsx,dy=e.changedTouches[0].clientY-tsy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)next();else prev();}},{passive:true});
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')next();else if(e.key==='ArrowLeft')prev();else if(e.key===' '){e.preventDefault();card.classList.toggle('flip');}});
+document.getElementById('theme').onclick=()=>{const r=document.documentElement;const cur=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');r.setAttribute('data-theme',cur==='dark'?'light':'dark');};
+buildDeck();
+</script>
+</body>
+</html>
