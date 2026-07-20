@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>建设工程经济 · 计算专题手册</title>
+<style>
+  :root{
+    --bg:#f4f2ee; --ink:#241f1b; --sub:#6f695f; --card:#fff; --line:#e5e0d6;
+    --accent:#c94a1e; --accent2:#e05d2d; --accentbg:#fdf0ea;
+    --red:#c62828; --blue:#1d64c0;
+    --amber:#c98a00; --amberbg:#fff6e0; --amberink:#6f5406;
+    --tipbg:#eef6ee; --tipbd:#4a934a; --tipink:#2f5d2f;
+    --exbg:#f7f2ee; --thbg:#faf7f3; --softbg:#faf8f5;
+    --shadow:0 6px 22px rgba(60,40,25,.08);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#1c1a17; --ink:#ece7df; --sub:#a49c8f; --card:#26231e; --line:#39342c;
+      --accent:#f0824f; --accent2:#f0824f; --accentbg:#33251d;
+      --red:#ff8a80; --blue:#8fb8f0; --amberbg:#3a2f12; --amberink:#f0d489;
+      --tipbg:#1e2f1e; --tipbd:#5ba85b; --tipink:#a8d8a8; --exbg:#2b2721; --thbg:#302b24; --softbg:#2a2620;
+      --shadow:0 6px 22px rgba(0,0,0,.4);}
+  }
+  :root[data-theme="light"]{ --bg:#f4f2ee; --ink:#241f1b; --sub:#6f695f; --card:#fff; --line:#e5e0d6; --accent:#c94a1e; --accent2:#e05d2d; --accentbg:#fdf0ea; --red:#c62828; --blue:#1d64c0; --amberbg:#fff6e0; --amberink:#6f5406; --tipbg:#eef6ee; --tipbd:#4a934a; --tipink:#2f5d2f; --exbg:#f7f2ee; --thbg:#faf7f3; --softbg:#faf8f5; --shadow:0 6px 22px rgba(60,40,25,.08);}
+  :root[data-theme="dark"]{ --bg:#1c1a17; --ink:#ece7df; --sub:#a49c8f; --card:#26231e; --line:#39342c; --accent:#f0824f; --accent2:#f0824f; --accentbg:#33251d; --red:#ff8a80; --blue:#8fb8f0; --amberbg:#3a2f12; --amberink:#f0d489; --tipbg:#1e2f1e; --tipbd:#5ba85b; --tipink:#a8d8a8; --exbg:#2b2721; --thbg:#302b24; --softbg:#2a2620; --shadow:0 6px 22px rgba(0,0,0,.4);}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);margin:0;line-height:1.6;
+    background-image:radial-gradient(circle at 6% 0,color-mix(in srgb,var(--accent) 9%,transparent),transparent 20rem);}
+  .rp{position:fixed;inset:0 0 auto;height:3px;background:color-mix(in srgb,var(--accent) 15%,transparent);z-index:60;}
+  .rp>i{display:block;height:100%;width:0;background:var(--accent);}
+  header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:9px 14px 7px;}
+  .htop{display:flex;align-items:baseline;gap:8px;max-width:960px;margin:0 auto;}
+  h1{font-size:1.02rem;margin:0;font-weight:800;}
+  h1 .badge{color:var(--sub);font-weight:500;font-size:.7rem;margin-left:5px;}
+  .theme{margin-left:auto;border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:8px;width:30px;height:28px;font-size:.9rem;cursor:pointer;align-self:center;}
+  .nav{display:flex;gap:6px;overflow-x:auto;max-width:960px;margin:8px auto 0;padding-bottom:2px;scrollbar-width:none;}
+  .nav::-webkit-scrollbar{display:none;}
+  .nav a{flex:none;border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:999px;padding:4px 11px;font-size:.72rem;font-weight:600;text-decoration:none;white-space:nowrap;}
+  .nav a.p1{border-left:3px solid #e05d2d;} .nav a.p2{border-left:3px solid #2f8f6b;} .nav a.p3{border-left:3px solid #2f6bb0;}
+  main{max-width:960px;margin:0 auto;padding:14px 14px 70px;}
+  .intro{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.82rem;color:var(--sub);box-shadow:var(--shadow);margin-bottom:16px;}
+  .intro b{color:var(--ink);}
+  .part{margin:26px 0 10px;font-size:.76rem;font-weight:800;letter-spacing:.1em;color:#fff;display:inline-block;padding:4px 12px;border-radius:7px;}
+  .part.p1{background:linear-gradient(135deg,#e86a3b,#c94a1e);}
+  .part.p2{background:linear-gradient(135deg,#39a37c,#227a58);}
+  .part.p3{background:linear-gradient(135deg,#3a79bd,#245a94);}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 15px 6px;margin-bottom:14px;box-shadow:var(--shadow);scroll-margin-top:96px;}
+  h2{font-size:1.02rem;margin:0 0 3px;color:var(--accent);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+  h2 .no{font-size:.72rem;background:var(--accentbg);color:var(--accent);border-radius:6px;padding:1px 7px;font-weight:800;}
+  .lead{font-size:.78rem;color:var(--sub);margin:0 0 12px;}
+  h3{font-size:.9rem;margin:16px 0 7px;color:var(--ink);display:flex;align-items:center;gap:7px;}
+  h3::before{content:"";width:6px;height:6px;border:2px solid var(--accent);border-radius:50%;flex:none;}
+  p{margin:7px 0;font-size:.86rem;}
+  .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:9px;margin:9px 0;}
+  .fcard{border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line));border-radius:11px;padding:11px 13px;background:var(--softbg);}
+  .fcard .fname{font-size:.78rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+  .fcard .formula{display:block;margin:6px 0;color:var(--accent);font-family:"Cambria Math","Times New Roman",Georgia,serif;font-size:1.12rem;font-weight:700;line-height:1.5;overflow-x:auto;}
+  .fcard .vars{font-size:.74rem;color:var(--sub);line-height:1.55;}
+  .fcard .vars b{color:var(--ink);font-weight:600;}
+  .fcard .use{font-size:.72rem;color:var(--accent2);margin-top:5px;}
+  table{width:100%;border-collapse:collapse;margin:0;font-size:.78rem;min-width:400px;}
+  th,td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top;}
+  th{background:var(--thbg);font-weight:700;white-space:nowrap;}
+  .tscroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin:9px 0;-webkit-overflow-scrolling:touch;}
+  .tscroll table{border:0;}
+  .r{color:var(--red);font-weight:600;} .b{color:var(--blue);}
+  code{font-family:"Cambria Math",ui-monospace,Consolas,monospace;font-size:.92em;color:var(--accent2);}
+  details.ex{background:var(--exbg);border:1px solid var(--line);border-radius:10px;margin:10px 0;overflow:hidden;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:9px 12px;font-size:.83rem;font-weight:700;color:var(--accent);display:flex;gap:7px;align-items:baseline;}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>summary::before{content:"▶";font-size:.66rem;color:var(--sub);transition:transform .15s;}
+  details.ex[open]>summary::before{transform:rotate(90deg);}
+  details.ex>summary .tag{font-size:.66rem;background:var(--accentbg);color:var(--accent);border-radius:5px;padding:1px 6px;font-weight:700;}
+  .exbody{padding:0 12px 11px;font-size:.84rem;}
+  .exbody .q{color:var(--ink);}
+  .exbody .sol{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);}
+  .exbody .sol b{color:var(--accent);}
+  .exbody .ans{margin-top:7px;font-weight:700;color:var(--tipink);background:var(--tipbg);border-radius:7px;padding:6px 9px;font-size:.83rem;}
+  .step{display:block;margin:3px 0;}
+  .trap{background:var(--amberbg);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:8px 11px;margin:10px 0;font-size:.8rem;color:var(--amberink);}
+  .tip{background:var(--tipbg);border-left:3px solid var(--tipbd);border-radius:0 8px 8px 0;padding:8px 11px;margin:10px 0;font-size:.8rem;color:var(--tipink);}
+  .trap b,.tip b{font-weight:700;}
+  footer{max-width:960px;margin:0 auto;padding:8px 14px 30px;text-align:center;color:var(--sub);font-size:.72rem;}
+  sub{font-size:.72em;} sup{font-size:.72em;}
+  @media (max-width:560px){ .fgrid{grid-template-columns:1fr;} }
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
+</style>
+</head>
+<body>
+<div class="rp"><i id="rpi"></i></div>
+<header>
+  <div class="htop">
+    <h1>建设工程经济<span class="badge">计算专题手册</span></h1>
+    <button class="theme" id="theme" title="切换主题">◐</button>
+  </div>
+  <nav class="nav">
+    <a class="p1" href="#s1">资金时间价值</a>
+    <a class="p1" href="#s2">经济效果评价</a>
+    <a class="p1" href="#s3">不确定性分析</a>
+    <a class="p1" href="#s4">设备更新</a>
+    <a class="p1" href="#s5">价值工程</a>
+    <a class="p2" href="#s6">财务比率</a>
+    <a class="p2" href="#s7">资金成本</a>
+    <a class="p2" href="#s8">营运资金</a>
+    <a class="p3" href="#s9">总投资构成</a>
+    <a class="p3" href="#s10">清单综合单价</a>
+    <a class="p3" href="#s11">计量与支付</a>
+    <a class="p3" href="#s12">国际投标报价</a>
+  </nav>
+</header>
+<main>
+  <div class="intro">
+    <b>使用说明：</b>本手册按"计算族"归类经济三篇的全部可算考点。每个考点 = <b>公式卡</b>（公式＋变量释义＋适用条件）＋ 可折叠<b>经典例题</b>（题干·解题步骤·答案）＋ <span style="color:var(--amberink)">⚠陷阱</span> ＋ <span style="color:var(--tipink)">💡速算技巧</span>。
+    等值系数记法：<code>(F/P,i,n)</code> 读作"已知P求F、利率i、期数n的系数"，考试常给出系数表数值。
+  </div>
+
+  <!-- ══════════════ 第一篇 ══════════════ -->
+  <div class="part p1">第一篇 · 工程经济</div>
+
+  <section id="s1">
+    <h2><span class="no">1</span>资金时间价值（六大等值公式）</h2>
+    <p class="lead">全书计算地基。核心是"现金流在不同时间点按利率 <code>i</code> 等值换算"，一切评价指标都建立在此之上。</p>
+
+    <h3>六个等值换算公式</h3>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">① 一次支付终值（整存整取）</div>
+        <span class="formula">F = P(1+i)<sup>n</sup></span>
+        <div class="vars"><b>P</b>现值 · <b>F</b>终值 · <b>i</b>利率 · <b>n</b>期数；系数 <b>(F/P,i,n)</b>=(1+i)<sup>n</sup></div>
+        <div class="use">已知现在P，求将来F</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">② 一次支付现值</div>
+        <span class="formula">P = F(1+i)<sup>−n</sup></span>
+        <div class="vars">系数 <b>(P/F,i,n)</b>=(1+i)<sup>−n</sup>，即①的倒数（贴现）</div>
+        <div class="use">已知将来F，求现在应投P</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">③ 等额支付终值（零存整取）</div>
+        <span class="formula">F = A·[(1+i)<sup>n</sup>−1]/i</span>
+        <div class="vars"><b>A</b>=每期期末等额支付；系数 <b>(F/A,i,n)</b></div>
+        <div class="use">已知每年存A，求n年末总额F</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">④ 偿债基金（为攒F每年存多少）</div>
+        <span class="formula">A = F·i/[(1+i)<sup>n</sup>−1]</span>
+        <div class="vars">系数 <b>(A/F,i,n)</b>，即③的倒数</div>
+        <div class="use">已知目标F，求每年应存A</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">⑤ 等额支付现值</div>
+        <span class="formula">P = A·[(1+i)<sup>n</sup>−1]/[i(1+i)<sup>n</sup>]</span>
+        <div class="vars">系数 <b>(P/A,i,n)</b>（年金现值系数，最常用）</div>
+        <div class="use">已知每年收益A，求现在总值P</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">⑥ 资本回收（投P每年能回收多少）</div>
+        <span class="formula">A = P·i(1+i)<sup>n</sup>/[(1+i)<sup>n</sup>−1]</span>
+        <div class="vars">系数 <b>(A/P,i,n)</b>，即⑤的倒数</div>
+        <div class="use">已知投资P，求每年等额回收A（NAV法基础）</div>
+      </div>
+    </div>
+    <div class="tip">💡 <b>互为倒数关系：</b>①↔② · ③↔④ · ⑤↔⑥。记住"终值系数×现值系数=1"，考试给一个可推另一个。口诀"<b>整存整取、零存整取、偿债基金、资本回收</b>"。</div>
+
+    <h3>名义利率与有效利率</h3>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">有效（实际）年利率</div>
+        <span class="formula">i = (1 + r/m)<sup>m</sup> − 1</span>
+        <div class="vars"><b>r</b>名义年利率 · <b>m</b>一年计息次数</div>
+        <div class="use">计息周期&lt;1年（月/季计息）时换算</div>
+      </div>
+    </div>
+    <div class="trap">⚠ 名义利率 <b>r 直接可加、可拆</b>（月利率×12=名义年利率）；<b>有效利率随计息频次升高而变大</b>。当 m=1 时二者相等；m→∞ 趋于 e<sup>r</sup>−1。题目问"实际/有效"必须换算。</div>
+
+    <details class="ex"><summary>经典例题 1-A<span class="tag">终值/现值</span></summary>
+      <div class="exbody">
+        <div class="q">某项目现投资 1000 万元，年利率 10%，按复利计，3 年末可积累多少？又：若希望 5 年后每年末获得 300 万元、共 5 年，年利率 10%，现在应一次投入多少？</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">① 终值 F = 1000×(1+0.10)³ = 1000×1.331 = <b>1331 万元</b></span>
+          <span class="step">② 年金现值 P = 300×(P/A,10%,5) = 300×3.7908 = <b>1137.24 万元</b></span>
+          <span class="step">〔(P/A,10%,5) = (1.1⁵−1)/(0.1×1.1⁵) = 0.61051/0.161051 = 3.7908〕</span>
+        </div>
+        <div class="ans">答：3 年末积累 1331 万元；需一次投入约 1137.24 万元。</div>
+      </div>
+    </details>
+    <details class="ex"><summary>经典例题 1-B<span class="tag">有效利率</span></summary>
+      <div class="exbody">
+        <div class="q">名义年利率 12%，若按月计息，实际年利率是多少？</div>
+        <div class="sol">
+          <b>解：</b> m=12，月利率 = 12%/12 = 1%
+          <span class="step">i = (1+0.01)¹² − 1 = 1.1268 − 1 = <b>12.68%</b></span>
+        </div>
+        <div class="ans">答：有效年利率 12.68% &gt; 名义 12%。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s2">
+    <h2><span class="no">2</span>经济效果评价指标</h2>
+    <p class="lead">判断方案"值不值得干"。分静态（不考虑资金时间价值）与动态（考虑）两类，动态更常考。</p>
+
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">净现值 NPV</div>
+        <span class="formula">NPV = Σ(CI−CO)<sub>t</sub>(1+i<sub>c</sub>)<sup>−t</sup></span>
+        <div class="vars"><b>CI</b>现金流入 · <b>CO</b>流出 · <b>i<sub>c</sub></b>基准收益率</div>
+        <div class="use">判据 <b>NPV≥0 可行</b>；越大越优</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">净年值 NAV</div>
+        <span class="formula">NAV = NPV·(A/P,i<sub>c</sub>,n)</span>
+        <div class="vars">把 NPV 摊成等额年值</div>
+        <div class="use">判据 NAV≥0；<b>寿命不同的方案比选用 NAV</b></div>
+      </div>
+      <div class="fcard">
+        <div class="fname">内部收益率 IRR（内插近似）</div>
+        <span class="formula">IRR ≈ i₁ + (i₂−i₁)·NPV₁/(NPV₁−NPV₂)</span>
+        <div class="vars">令 NPV=0 的折现率；i₁使NPV₁&gt;0，i₂使NPV₂&lt;0</div>
+        <div class="use">判据 <b>IRR≥i<sub>c</sub> 可行</b></div>
+      </div>
+      <div class="fcard">
+        <div class="fname">静态投资回收期 P<sub>t</sub></div>
+        <span class="formula">P<sub>t</sub> = (累计净现金流出现正值的年数−1) + 上年绝对值/当年净现金流</span>
+        <div class="vars">从建设开始算起</div>
+        <div class="use">判据 P<sub>t</sub>≤基准回收期；越短越好</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">效益费用比 R<sub>BC</sub></div>
+        <span class="formula">R = PV(效益) / PV(费用)</span>
+        <div class="vars">均折现到基准年</div>
+        <div class="use">判据 <b>R≥1 可行</b></div>
+      </div>
+    </div>
+    <div class="trap">⚠ ①<b>寿命期不同</b>的互斥方案不能直接比 NPV，要用 <b>NAV</b>（或最小公倍数法）。②IRR 内插只是近似，i₁、i₂ 间隔越小越准（一般≤2%~5%）。③NPV&gt;0 ⇔ IRR&gt;i<sub>c</sub> ⇔ R&gt;1，三者判断方向一致。</div>
+
+    <details class="ex"><summary>经典例题 2-A<span class="tag">NPV</span></summary>
+      <div class="exbody">
+        <div class="q">某项目第 0 年初投资 1000 万元，第 1~5 年每年末净收益 300 万元，基准收益率 i<sub>c</sub>=10%。求 NPV 并判断可行性。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">NPV = −1000 + 300×(P/A,10%,5) = −1000 + 300×3.7908</span>
+          <span class="step">= −1000 + 1137.24 = <b>+137.24 万元</b> &gt; 0</span>
+        </div>
+        <div class="ans">答：NPV=137.24 万元&gt;0，方案在经济上可行。</div>
+      </div>
+    </details>
+    <details class="ex"><summary>经典例题 2-B<span class="tag">IRR 内插</span></summary>
+      <div class="exbody">
+        <div class="q">已算得折现率 12% 时 NPV₁=+50 万元，15% 时 NPV₂=−30 万元。求内部收益率 IRR。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">IRR ≈ 12% + (15%−12%)×50/[50−(−30)]</span>
+          <span class="step">= 12% + 3%×50/80 = 12% + 1.875% = <b>13.88%</b></span>
+        </div>
+        <div class="ans">答：IRR≈13.88%；若&gt;基准收益率则可行。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s3">
+    <h2><span class="no">3</span>不确定性分析</h2>
+    <p class="lead">回答"抗风险能力如何"。三大工具：盈亏平衡（临界产量）、敏感性（哪个因素最敏感）、概率分析。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">盈亏平衡产量（BEP）</div>
+        <span class="formula">Q* = C<sub>F</sub> / (p − c<sub>v</sub> − t)</span>
+        <div class="vars"><b>C<sub>F</sub></b>年固定成本 · <b>p</b>单价 · <b>c<sub>v</sub></b>单位变动成本 · <b>t</b>单位税金</div>
+        <div class="use">产量&gt;Q* 才盈利；Q* 越低抗风险越强</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">生产能力利用率 BEP</div>
+        <span class="formula">E* = Q* / Q<sub>设计</sub> ×100%</span>
+        <div class="vars">用设计生产能力表示的盈亏平衡点</div>
+        <div class="use">E* 越小越安全</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">敏感度系数</div>
+        <span class="formula">S<sub>AF</sub> = (ΔA/A) / (ΔF/F)</span>
+        <div class="vars">评价指标变化率 ÷ 不确定因素变化率</div>
+        <div class="use">|S| 越大越敏感；&gt;1 为敏感因素</div>
+      </div>
+    </div>
+    <div class="trap">⚠ 盈亏平衡分析属<b>确定性因素</b>下的临界点分析，只用于<b>单一项目</b>抗风险判断，不能用于多方案比选。敏感度系数取<b>绝对值</b>排序。</div>
+    <details class="ex"><summary>经典例题 3-A<span class="tag">盈亏平衡</span></summary>
+      <div class="exbody">
+        <div class="q">某产品年固定成本 100 万元，单价 100 元，单位变动成本 60 元，单位税金 0；设计年产能 5 万件。求盈亏平衡产量与生产能力利用率。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">Q* = 1 000 000 / (100−60−0) = 1 000 000 / 40 = <b>25 000 件</b></span>
+          <span class="step">E* = 25 000 / 50 000 ×100% = <b>50%</b></span>
+        </div>
+        <div class="ans">答：年产 2.5 万件保本；产能利用率达 50% 即盈亏平衡。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s4">
+    <h2><span class="no">4</span>设备更新分析</h2>
+    <p class="lead">核心是求"经济寿命"——年平均使用成本最低的年限；以及新旧设备、租赁与购买的比选。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">经济寿命（低劣化数值法·静态）</div>
+        <span class="formula">N₀ = √(2(P−L)/λ)</span>
+        <div class="vars"><b>P</b>设备原值 · <b>L</b>最终残值 · <b>λ</b>年运行成本逐年递增额（低劣化值）</div>
+        <div class="use">使年平均总成本最低的使用年限</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">年平均使用成本（列表法）</div>
+        <span class="formula">AC(n)=[(P−L<sub>n</sub>)+ΣC<sub>t</sub>]/n</span>
+        <div class="vars">逐年试算，取 AC 最小的 n</div>
+        <div class="use">残值/运营费不规则时用列表法</div>
+      </div>
+    </div>
+    <div class="tip">💡 设备更新比选<b>只比未来成本</b>，旧设备原始购价属"<b>沉没成本</b>"不计入；旧设备的"现值"应按<b>市场变现价值</b>作为继续使用的机会成本。</div>
+    <details class="ex"><summary>经典例题 4-A<span class="tag">经济寿命</span></summary>
+      <div class="exbody">
+        <div class="q">某设备原值 10 000 元，最终残值近似为 0，年运行成本逐年递增额 λ=500 元。用低劣化数值法估算经济寿命。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">N₀ = √(2×(10 000−0)/500) = √40 ≈ 6.3 年</span>
+        </div>
+        <div class="ans">答：经济寿命约 6 年（取整）。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s5">
+    <h2><span class="no">5</span>价值工程</h2>
+    <p class="lead">用最低寿命周期成本可靠实现必要功能。核心指标价值 = 功能 ÷ 成本。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">价值 V</div>
+        <span class="formula">V = F / C</span>
+        <div class="vars"><b>F</b>功能 · <b>C</b>寿命周期成本</div>
+        <div class="use">V=1 理想；<b>V&lt;1 成本偏高（重点改进对象）</b>；V&gt;1 功能过剩或成本偏低</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">价值指数（对象选择）</div>
+        <span class="formula">V<sub>i</sub> = F<sub>i</sub> / C<sub>i</sub></span>
+        <div class="vars">功能系数 F<sub>i</sub>=功能评分/Σ评分；成本系数 C<sub>i</sub>=部件成本/总成本</div>
+        <div class="use">V<sub>i</sub> 最小、成本-功能差(C<sub>i</sub>−F<sub>i</sub>)最大者为改进重点</div>
+      </div>
+    </div>
+    <div class="trap">⚠ 提高价值的<b>5 条途径</b>：功能↑成本↓（最优）｜功能不变成本↓｜功能↑成本不变｜功能略降成本大降｜成本略增功能大增。<b>单纯降低功能</b>不是提高价值的途径。</div>
+    <details class="ex"><summary>经典例题 5-A<span class="tag">对象选择</span></summary>
+      <div class="exbody">
+        <div class="q">某产品甲、乙、丙三部件，功能评分 40/35/25，成本占比 30%/45%/25%。哪个是价值工程改进重点？</div>
+        <div class="sol">
+          <b>解：</b>功能系数 F = 0.40/0.35/0.25；成本系数 C = 0.30/0.45/0.25
+          <span class="step">V<sub>甲</sub>=0.40/0.30=1.33；V<sub>乙</sub>=0.35/0.45=<b>0.78</b>；V<sub>丙</sub>=0.25/0.25=1.00</span>
+        </div>
+        <div class="ans">答：乙 V 最小(0.78)、成本-功能差最大，是改进重点。</div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ══════════════ 第二篇 ══════════════ -->
+  <div class="part p2">第二篇 · 工程财务</div>
+
+  <section id="s6">
+    <h2><span class="no">6</span>财务分析比率</h2>
+    <p class="lead">从财务报表看企业/项目的偿债、营运、盈利三方面能力，均为"比值"，记牢分子分母。</p>
+    <div class="tscroll"><table>
+      <tr><th>类别</th><th>指标</th><th>计算式</th><th>说明</th></tr>
+      <tr><td rowspan="5">偿债能力</td><td>资产负债率</td><td>负债总额 / 资产总额</td><td>越低偿债越有保障</td></tr>
+      <tr><td>流动比率</td><td>流动资产 / 流动负债</td><td>一般 <span class="r">≥2</span></td></tr>
+      <tr><td>速动比率</td><td>(流动资产−存货) / 流动负债</td><td>一般 <span class="r">≥1</span></td></tr>
+      <tr><td>利息备付率</td><td>息税前利润EBIT / 应付利息</td><td><span class="r">≥1</span>，宜&gt;2</td></tr>
+      <tr><td>偿债备付率</td><td>(EBITDA−所得税) / 应还本付息额</td><td><span class="r">≥1</span>，宜&gt;1.3</td></tr>
+      <tr><td rowspan="3">营运能力</td><td>应收账款周转率</td><td>营业收入 / 平均应收账款</td><td>次/年，越高越好</td></tr>
+      <tr><td>存货周转率</td><td>营业成本 / 平均存货</td><td>越高营运效率越好</td></tr>
+      <tr><td>总资产周转率</td><td>营业收入 / 平均资产总额</td><td>反映全部资产利用率</td></tr>
+      <tr><td rowspan="3">盈利能力</td><td>总资产报酬率</td><td>息税前利润EBIT / 平均资产总额</td><td>不受资本结构影响</td></tr>
+      <tr><td>净资产收益率</td><td>净利润 / 平均净资产</td><td>股东回报核心指标</td></tr>
+      <tr><td>资本金净利润率</td><td>净利润 / 资本金</td><td>投资者关注</td></tr>
+    </table></div>
+    <div class="trap">⚠ 分子口径易错：<b>存货周转率用"营业成本"</b>作分子，<b>应收账款周转率用"营业收入"</b>作分子。利息备付率分子是 EBIT（息税前），偿债备付率分子是 EBITDA 减所得税。</div>
+    <details class="ex"><summary>经典例题 6-A<span class="tag">偿债比率</span></summary>
+      <div class="exbody">
+        <div class="q">某企业流动资产 800 万元（其中存货 300 万元），流动负债 400 万元。求流动比率与速动比率。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">流动比率 = 800/400 = <b>2.0</b>（达标）</span>
+          <span class="step">速动比率 = (800−300)/400 = 500/400 = <b>1.25</b>（达标）</span>
+        </div>
+        <div class="ans">答：流动比率 2.0、速动比率 1.25，短期偿债能力良好。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s7">
+    <h2><span class="no">7</span>资金成本与加权平均资金成本</h2>
+    <p class="lead">筹资的"价格"。个别资金成本取税后口径，再按占比加权得 WACC，用于判断筹资方案与作折现率参考。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">个别资金成本（税后）</div>
+        <span class="formula">K = [年资金占用费×(1−T)] / [筹资额×(1−f)]</span>
+        <div class="vars"><b>T</b>所得税率 · <b>f</b>筹资费率；<b>借款/债券利息可抵税</b>（乘 1−T），股权资金成本不抵税</div>
+        <div class="use">分别算借款、债券、优先股、普通股、留存收益成本</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">加权平均资金成本 WACC</div>
+        <span class="formula">K<sub>w</sub> = Σ(W<sub>j</sub> · K<sub>j</sub>)</span>
+        <div class="vars"><b>W<sub>j</sub></b>第 j 种资金占筹资总额比重 · <b>K<sub>j</sub></b>其个别资金成本</div>
+        <div class="use">综合筹资成本，越低越优</div>
+      </div>
+    </div>
+    <div class="tip">💡 <b>只有债务性资金（借款、债券）的利息能抵税</b>，故税后成本更低——这是适度负债能降低综合资金成本的原因。留存收益成本≈普通股成本但无筹资费。</div>
+    <details class="ex"><summary>经典例题 7-A<span class="tag">WACC</span></summary>
+      <div class="exbody">
+        <div class="q">某项目资金结构：银行借款占 40%、税后成本 6%；权益资金占 60%、成本 10%。求加权平均资金成本。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">K<sub>w</sub> = 40%×6% + 60%×10% = 2.4% + 6.0% = <b>8.4%</b></span>
+        </div>
+        <div class="ans">答：加权平均资金成本 8.4%。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s8">
+    <h2><span class="no">8</span>营运资金管理</h2>
+    <p class="lead">管好现金、应收账款、存货。计算重点是存货的经济订货批量 EOQ 与最佳现金持有量。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">经济订货批量 EOQ</div>
+        <span class="formula">Q* = √(2·D·S / H)</span>
+        <div class="vars"><b>D</b>年需求量 · <b>S</b>每次订货成本 · <b>H</b>单位年储存成本</div>
+        <div class="use">使"订货成本+储存成本"之和最小</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">最佳现金持有量（成本模型）</div>
+        <span class="formula">取"持有成本+短缺成本+转换成本"之和最小的持有量</span>
+        <div class="vars">成本分析法：列表比较各持有方案总成本</div>
+        <div class="use">总成本最低者为最佳持有量</div>
+      </div>
+    </div>
+    <details class="ex"><summary>经典例题 8-A<span class="tag">EOQ</span></summary>
+      <div class="exbody">
+        <div class="q">某材料年需求量 3600 吨，每次订货成本 25 元，每吨每年储存成本 2 元。求经济订货批量。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">Q* = √(2×3600×25 / 2) = √90 000 = <b>300 吨</b></span>
+          <span class="step">全年订货次数 = 3600/300 = 12 次</span>
+        </div>
+        <div class="ans">答：每次订购 300 吨最经济，全年订 12 次。</div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ══════════════ 第三篇 ══════════════ -->
+  <div class="part p3">第三篇 · 工程计价</div>
+
+  <section id="s9">
+    <h2><span class="no">9</span>建设项目总投资构成及计算</h2>
+    <p class="lead">"造价一张树"：总投资=建设投资+建设期利息+流动资金。计算高频点是预备费与建设期利息。</p>
+    <div class="tscroll"><table>
+      <tr><th>层次</th><th>构成</th></tr>
+      <tr><td>建设投资</td><td>工程费用（建筑安装工程费＋设备及工器具购置费）＋工程建设其他费＋<span class="r">预备费</span></td></tr>
+      <tr><td>预备费</td><td><span class="r">基本预备费</span>（应对一般变更）＋<span class="r">价差预备费</span>（应对涨价）</td></tr>
+      <tr><td>总投资</td><td>建设投资 ＋ <span class="r">建设期利息</span> ＋ 铺底流动资金</td></tr>
+    </table></div>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">基本预备费</div>
+        <span class="formula">基本预备费 = (工程费用 + 工程建设其他费) × 费率</span>
+        <div class="vars">费率按行业规定</div>
+        <div class="use">应对设计变更、一般自然灾害等</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">价差预备费</div>
+        <span class="formula">PF = Σ I<sub>t</sub>[(1+f)<sup>m</sup>(1+f)<sup>0.5</sup>(1+f)<sup>t−1</sup> − 1]</span>
+        <div class="vars"><b>I<sub>t</sub></b>第 t 年投资 · <b>f</b>年涨价率 · <b>m</b>建设前期年限；投资当年按<b>半年（0.5）</b>计</div>
+        <div class="use">应对建设期物价上涨</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">建设期利息（当年借款半年计息）</div>
+        <span class="formula">q<sub>j</sub> = (P<sub>j−1</sub> + A<sub>j</sub>/2) × i</span>
+        <div class="vars"><b>P<sub>j−1</sub></b>年初借款本息累计 · <b>A<sub>j</sub></b>当年借款 · <b>i</b>年利率</div>
+        <div class="use">当年新增借款按<b>年中支用、计半年利息</b></div>
+      </div>
+    </div>
+    <details class="ex"><summary>经典例题 9-A<span class="tag">建设期利息</span></summary>
+      <div class="exbody">
+        <div class="q">建设期 2 年，第 1 年借款 500 万元、第 2 年借款 300 万元，年利率 6%，借款均在年中支用。求建设期利息合计。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">第 1 年 q₁ = (0 + 500/2)×6% = 250×6% = <b>15 万元</b></span>
+          <span class="step">第 2 年 q₂ = (500+15 + 300/2)×6% = (515+150)×6% = 665×6% = <b>39.9 万元</b></span>
+          <span class="step">合计 = 15 + 39.9 = <b>54.9 万元</b></span>
+        </div>
+        <div class="ans">答：建设期利息合计 54.9 万元（注意第 2 年要含第 1 年利息滚入本金）。</div>
+      </div>
+    </details>
+    <details class="ex"><summary>经典例题 9-B<span class="tag">基本预备费</span></summary>
+      <div class="exbody">
+        <div class="q">某项目工程费用 8000 万元，工程建设其他费 1000 万元，基本预备费率 5%。求基本预备费。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">基本预备费 = (8000 + 1000)×5% = 9000×5% = <b>450 万元</b></span>
+        </div>
+        <div class="ans">答：基本预备费 450 万元（<b>不含价差预备费</b>作基数）。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s10">
+    <h2><span class="no">10</span>工程量清单综合单价与造价合成</h2>
+    <p class="lead">清单计价的核心是"综合单价"，再逐层合成分部分项费、措施费、其他项目费、规费、税金。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">综合单价</div>
+        <span class="formula">= 人工费+材料费+施工机具使用费+企业管理费+利润(+风险)</span>
+        <div class="vars">注意：<b>综合单价不含规费和税金</b></div>
+        <div class="use">按每个清单项目计</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">分部分项工程费</div>
+        <span class="formula">= Σ(清单工程量 × 综合单价)</span>
+        <div class="vars">工程量按清单规则计算</div>
+        <div class="use">造价主体部分</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">单位工程造价（税前→含税）</div>
+        <span class="formula">造价 = 分部分项费 + 措施项目费 + 其他项目费 + 规费 + 税金</span>
+        <div class="vars">税金 = (税前造价)×增值税率</div>
+        <div class="use">逐层汇总</div>
+      </div>
+    </div>
+    <div class="trap">⚠ <b>综合单价 = 五项（人材机管利）＋风险</b>，<b>不含规费、税金</b>（"综合"是综合了管理费和利润，不是综合了规费税金）。规费、税金在最后统一计取。</div>
+    <details class="ex"><summary>经典例题 10-A<span class="tag">造价合成</span></summary>
+      <div class="exbody">
+        <div class="q">某单位工程：分部分项费 800 万、措施项目费 60 万、其他项目费 40 万、规费 30 万，增值税率 9%。求含税造价。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">税前造价 = 800+60+40+30 = 930 万元</span>
+          <span class="step">税金 = 930×9% = 83.7 万元</span>
+          <span class="step">含税造价 = 930 + 83.7 = <b>1013.7 万元</b></span>
+        </div>
+        <div class="ans">答：含税造价 1013.7 万元。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s11">
+    <h2><span class="no">11</span>工程计量与支付</h2>
+    <p class="lead">高频计算：预付款起扣点、进度款、质保金、以及物价波动下的调值公式法。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">预付款起扣点</div>
+        <span class="formula">T = P − M / N</span>
+        <div class="vars"><b>P</b>承包合同总价 · <b>M</b>预付款限额 · <b>N</b>主要材料及构件所占比重</div>
+        <div class="use">累计完成工程价款达 T 后开始起扣预付款</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">每次抵扣（起扣后）</div>
+        <span class="formula">本期抵扣额 = 本期完成工程价款 × N</span>
+        <div class="vars">按主材比重逐期扣回，至预付款扣完</div>
+        <div class="use">保证竣工前预付款全部收回</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">价格调整（调值公式法）</div>
+        <span class="formula">P = P₀(a₀ + a₁·A₁/A₀ + a₂·B₁/B₀ + …)</span>
+        <div class="vars"><b>a₀</b>固定要素权重（不调值，如10%）· <b>a₁,a₂…</b>各调值要素权重 · <b>下标1/0</b>=现行/基期价格指数；<b>Σa = 1</b></div>
+        <div class="use">工期长、物价波动大的合同</div>
+      </div>
+    </div>
+    <details class="ex"><summary>经典例题 11-A<span class="tag">起扣点</span></summary>
+      <div class="exbody">
+        <div class="q">某工程合同总价 1000 万元，预付款限额 200 万元，主要材料及构件所占比重 60%。求预付款起扣点。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">T = P − M/N = 1000 − 200/0.6 = 1000 − 333.33 = <b>666.67 万元</b></span>
+        </div>
+        <div class="ans">答：当累计完成工程价款达 666.67 万元时开始起扣预付款；之后每期按完成价款×60% 抵扣。</div>
+      </div>
+    </details>
+    <details class="ex"><summary>经典例题 11-B<span class="tag">调值公式</span></summary>
+      <div class="exbody">
+        <div class="q">某月完成工程款基期价 500 万元，调值：固定权重 a₀=0.15，人工 a₁=0.35（指数由 100 涨至 110），材料 a₂=0.50（指数由 100 涨至 120）。求调整后结算款。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">P = 500×(0.15 + 0.35×110/100 + 0.50×120/100)</span>
+          <span class="step">= 500×(0.15 + 0.385 + 0.600) = 500×1.135 = <b>567.5 万元</b></span>
+        </div>
+        <div class="ans">答：调整后结算款 567.5 万元（较基期增加 67.5 万元）。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s12">
+    <h2><span class="no">12</span>国际工程投标报价</h2>
+    <p class="lead">在总报价确定后，用报价技巧调整各子项单价，在不抬高总价的前提下改善现金流与索赔空间。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">不平衡报价法（原则）</div>
+        <span class="formula">总价不变，调整各分项单价</span>
+        <div class="vars">早结算/预计工程量增加项 → <b>单价报高</b>；后期/预计工程量减少项 → <b>单价报低</b></div>
+        <div class="use">改善现金流、争取索赔与结算收益</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">投标报价构成</div>
+        <span class="formula">报价 = 直接费 + 间接费 + 暂列/暂估 + 分包 + 风险费 + 利润 + 税金</span>
+        <div class="vars">国际工程还含现场管理费、总部管理费、保函/保险费等</div>
+        <div class="use">先算成本、再定加价（Mark-up）</div>
+      </div>
+    </div>
+    <div class="trap">⚠ 不平衡报价的前提是<b>总报价不变、不影响中标</b>；调整幅度过大反而暴露意图或被判废标。工程量清单中<b>预计会增加</b>的项目报高价、<b>会减少</b>的报低价——判断方向不要反。</div>
+  </section>
+
+  <footer>
+    建设工程经济 · 计算专题手册 · 覆盖三篇 12 个计算族<br>
+    公式与例题依据《建设工程经济》教材与历年真题整理，计算结果均为四舍五入示意，应试以最新教材口径为准。
+  </footer>
+</main>
+<script>
+(function(){
+  var rpi=document.getElementById('rpi');
+  function onScroll(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    rpi.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  }
+  document.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  document.getElementById('theme').onclick=function(){
+    var r=document.documentElement;
+    var cur=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+    r.setAttribute('data-theme',cur==='dark'?'light':'dark');
+  };
+})();
+</script>
+</body>
+</html>
