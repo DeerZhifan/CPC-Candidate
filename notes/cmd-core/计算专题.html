@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>建设工程项目管理 · 计算专题手册</title>
+<style>
+  :root{
+    --bg:#f2f4f7; --ink:#20242b; --sub:#69707c; --card:#fff; --line:#e2e6ec;
+    --accent:#245a94; --accent2:#2563ab; --accentbg:#eaf1fa;
+    --red:#c62828; --blue:#1d64c0;
+    --amber:#c98a00; --amberbg:#fff6e0; --amberink:#6f5406;
+    --tipbg:#eef6ee; --tipbd:#4a934a; --tipink:#2f5d2f;
+    --exbg:#eef3f8; --thbg:#f5f8fb; --softbg:#f5f8fb;
+    --shadow:0 6px 22px rgba(30,45,70,.08);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#181b20; --ink:#e6eaef; --sub:#98a0ac; --card:#22262c; --line:#343a42;
+      --accent:#5b9be0; --accent2:#5b9be0; --accentbg:#1d2b3a;
+      --red:#ff8a80; --blue:#8fb8f0; --amberbg:#3a2f12; --amberink:#f0d489;
+      --tipbg:#1e2f1e; --tipbd:#5ba85b; --tipink:#a8d8a8; --exbg:#242a31; --thbg:#2a3038; --softbg:#262c33;
+      --shadow:0 6px 22px rgba(0,0,0,.4);}
+  }
+  :root[data-theme="light"]{ --bg:#f2f4f7; --ink:#20242b; --sub:#69707c; --card:#fff; --line:#e2e6ec; --accent:#245a94; --accent2:#2563ab; --accentbg:#eaf1fa; --red:#c62828; --blue:#1d64c0; --amberbg:#fff6e0; --amberink:#6f5406; --tipbg:#eef6ee; --tipbd:#4a934a; --tipink:#2f5d2f; --exbg:#eef3f8; --thbg:#f5f8fb; --softbg:#f5f8fb; --shadow:0 6px 22px rgba(30,45,70,.08);}
+  :root[data-theme="dark"]{ --bg:#181b20; --ink:#e6eaef; --sub:#98a0ac; --card:#22262c; --line:#343a42; --accent:#5b9be0; --accent2:#5b9be0; --accentbg:#1d2b3a; --red:#ff8a80; --blue:#8fb8f0; --amberbg:#3a2f12; --amberink:#f0d489; --tipbg:#1e2f1e; --tipbd:#5ba85b; --tipink:#a8d8a8; --exbg:#242a31; --thbg:#2a3038; --softbg:#262c33; --shadow:0 6px 22px rgba(0,0,0,.4);}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);margin:0;line-height:1.6;
+    background-image:radial-gradient(circle at 6% 0,color-mix(in srgb,var(--accent) 9%,transparent),transparent 20rem);}
+  .rp{position:fixed;inset:0 0 auto;height:3px;background:color-mix(in srgb,var(--accent) 15%,transparent);z-index:60;}
+  .rp>i{display:block;height:100%;width:0;background:var(--accent);}
+  header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:9px 14px 7px;}
+  .htop{display:flex;align-items:baseline;gap:8px;max-width:960px;margin:0 auto;}
+  h1{font-size:1.02rem;margin:0;font-weight:800;}
+  h1 .badge{color:var(--sub);font-weight:500;font-size:.7rem;margin-left:5px;}
+  .theme{margin-left:auto;border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:8px;width:30px;height:28px;font-size:.9rem;cursor:pointer;align-self:center;}
+  .nav{display:flex;gap:6px;overflow-x:auto;max-width:960px;margin:8px auto 0;padding-bottom:2px;scrollbar-width:none;}
+  .nav::-webkit-scrollbar{display:none;}
+  .nav a{flex:none;border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:999px;padding:4px 11px;font-size:.72rem;font-weight:600;text-decoration:none;white-space:nowrap;border-left:3px solid var(--accent2);}
+  main{max-width:960px;margin:0 auto;padding:14px 14px 70px;}
+  .intro{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.82rem;color:var(--sub);box-shadow:var(--shadow);margin-bottom:16px;}
+  .intro b{color:var(--ink);}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 15px 6px;margin-bottom:14px;box-shadow:var(--shadow);scroll-margin-top:96px;}
+  h2{font-size:1.02rem;margin:0 0 3px;color:var(--accent);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+  h2 .no{font-size:.72rem;background:var(--accentbg);color:var(--accent);border-radius:6px;padding:1px 7px;font-weight:800;}
+  .lead{font-size:.78rem;color:var(--sub);margin:0 0 12px;}
+  h3{font-size:.9rem;margin:16px 0 7px;color:var(--ink);display:flex;align-items:center;gap:7px;}
+  h3::before{content:"";width:6px;height:6px;border:2px solid var(--accent);border-radius:50%;flex:none;}
+  p{margin:7px 0;font-size:.86rem;}
+  .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:9px;margin:9px 0;}
+  .fcard{border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line));border-radius:11px;padding:11px 13px;background:var(--softbg);}
+  .fcard .fname{font-size:.78rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+  .fcard .formula{display:block;margin:6px 0;color:var(--accent);font-family:"Cambria Math","Times New Roman",Georgia,serif;font-size:1.08rem;font-weight:700;line-height:1.5;overflow-x:auto;}
+  .fcard .vars{font-size:.74rem;color:var(--sub);line-height:1.55;}
+  .fcard .vars b{color:var(--ink);font-weight:600;}
+  .fcard .use{font-size:.72rem;color:var(--accent2);margin-top:5px;}
+  table{width:100%;border-collapse:collapse;margin:0;font-size:.78rem;min-width:400px;}
+  th,td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top;}
+  th{background:var(--thbg);font-weight:700;white-space:nowrap;}
+  .tscroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin:9px 0;-webkit-overflow-scrolling:touch;}
+  .tscroll table{border:0;} td.c,th.c{text-align:center;}
+  .r{color:var(--red);font-weight:600;} .b{color:var(--blue);}
+  code{font-family:"Cambria Math",ui-monospace,Consolas,monospace;font-size:.92em;color:var(--accent2);}
+  details.ex{background:var(--exbg);border:1px solid var(--line);border-radius:10px;margin:10px 0;overflow:hidden;}
+  details.ex>summary{list-style:none;cursor:pointer;padding:9px 12px;font-size:.83rem;font-weight:700;color:var(--accent);display:flex;gap:7px;align-items:baseline;}
+  details.ex>summary::-webkit-details-marker{display:none;}
+  details.ex>summary::before{content:"▶";font-size:.66rem;color:var(--sub);transition:transform .15s;}
+  details.ex[open]>summary::before{transform:rotate(90deg);}
+  details.ex>summary .tag{font-size:.66rem;background:var(--accentbg);color:var(--accent);border-radius:5px;padding:1px 6px;font-weight:700;}
+  .exbody{padding:0 12px 11px;font-size:.84rem;}
+  .exbody .sol{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);}
+  .exbody .sol b{color:var(--accent);}
+  .exbody .ans{margin-top:7px;font-weight:700;color:var(--tipink);background:var(--tipbg);border-radius:7px;padding:6px 9px;font-size:.83rem;}
+  .step{display:block;margin:3px 0;}
+  .trap{background:var(--amberbg);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:8px 11px;margin:10px 0;font-size:.8rem;color:var(--amberink);}
+  .tip{background:var(--tipbg);border-left:3px solid var(--tipbd);border-radius:0 8px 8px 0;padding:8px 11px;margin:10px 0;font-size:.8rem;color:var(--tipink);}
+  footer{max-width:960px;margin:0 auto;padding:8px 14px 30px;text-align:center;color:var(--sub);font-size:.72rem;}
+  sub{font-size:.72em;} sup{font-size:.72em;}
+  @media (max-width:560px){ .fgrid{grid-template-columns:1fr;} }
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
+</style>
+</head>
+<body>
+<div class="rp"><i id="rpi"></i></div>
+<header>
+  <div class="htop">
+    <h1>建设工程项目管理<span class="badge">计算专题手册</span></h1>
+    <button class="theme" id="theme" title="切换主题">◐</button>
+  </div>
+  <nav class="nav">
+    <a href="#s1">流水施工</a>
+    <a href="#s2">网络计划·时间参数</a>
+    <a href="#s3">关键线路与工期</a>
+    <a href="#s4">时标与搭接网络</a>
+    <a href="#s5">挣值法</a>
+    <a href="#s6">因素分析法</a>
+    <a href="#s7">进度定额</a>
+  </nav>
+</header>
+<main>
+  <div class="intro">
+    <b>使用说明：</b>本手册聚焦项目管理的"计算硬骨头"——流水施工、<b>网络计划时间参数</b>（占计算分值最大）、挣值法、因素分析法。每个考点 = 公式/规则卡 ＋ 可折叠<b>经典例题</b>（题干·步骤·答案）＋ <span style="color:var(--amberink)">⚠陷阱</span> ＋ <span style="color:var(--tipink)">💡技巧</span>。
+    网络计划记忆总纲：<b>"最早看紧前取大、最迟看紧后取小；总时差 LS−ES、自由时差看紧后最早减本最早"</b>。
+  </div>
+
+  <section id="s1">
+    <h2><span class="no">1</span>流水施工</h2>
+    <p class="lead">用流水节拍与流水步距组织连续、均衡施工。三种基本方式：全等节拍、加快成倍节拍、非节奏流水。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">全等（固定）节拍流水工期</div>
+        <span class="formula">T = (m + n − 1)·K + Σ间歇 − Σ提前</span>
+        <div class="vars"><b>m</b>施工段数 · <b>n</b>施工过程数 · <b>K</b>流水步距（=节拍）</div>
+        <div class="use">各过程节拍全相等</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">加快成倍节拍流水</div>
+        <span class="formula">K = 各节拍最大公约数；n′ = Σ(t<sub>i</sub>/K)</span>
+        <div class="vars"><b>n′</b>专业工作队总数（&gt;过程数）；T = (m + n′ − 1)·K + 间歇 − 提前</div>
+        <div class="use">同过程节拍相等、不同过程成倍数关系</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">非节奏流水（累加错位相减取大差法）</div>
+        <span class="formula">T = ΣK + Σ末过程节拍 + Σ间歇 − Σ提前</span>
+        <div class="vars">流水步距 K：①各过程节拍<b>累加</b>成数列 ②相邻错位<b>相减</b> ③取差中<b>最大值</b></div>
+        <div class="use">节拍不全相等（最常考）</div>
+      </div>
+    </div>
+    <div class="trap">⚠ 加快成倍节拍中"<b>专业工作队数 n′</b> ≠ 施工过程数 n"，工期公式里用 n′。非节奏流水求步距别忘"<b>取大差</b>"，且末尾补一个 0 参与相减。</div>
+    <details class="ex"><summary>经典例题 1-A<span class="tag">非节奏流水</span></summary>
+      <div class="exbody">
+        <div>某分部工程 3 个施工过程、4 个施工段组织非节奏流水，节拍（d）如下。求流水工期。</div>
+        <div class="tscroll"><table>
+          <tr><th>过程\段</th><th class="c">①</th><th class="c">②</th><th class="c">③</th><th class="c">④</th></tr>
+          <tr><td>Ⅰ</td><td class="c">3</td><td class="c">5</td><td class="c">3</td><td class="c">4</td></tr>
+          <tr><td>Ⅱ</td><td class="c">4</td><td class="c">3</td><td class="c">4</td><td class="c">3</td></tr>
+          <tr><td>Ⅲ</td><td class="c">5</td><td class="c">4</td><td class="c">5</td><td class="c">4</td></tr>
+        </table></div>
+        <div class="sol">
+          <b>解：累加错位相减取大差</b>
+          <span class="step">Ⅰ累加：3,8,11,15；Ⅱ累加：4,7,11,14；Ⅲ累加：5,9,14,18</span>
+          <span class="step">K(Ⅰ,Ⅱ)=max(3,8−4,11−7,15−11,0−14)=max(3,4,4,4,−14)=<b>4</b></span>
+          <span class="step">K(Ⅱ,Ⅲ)=max(4,7−5,11−9,14−14,0−18)=max(4,2,2,0,−18)=<b>4</b></span>
+          <span class="step">T=ΣK+Ⅲ过程节拍和=(4+4)+(5+4+5+4)=8+18=<b>26 d</b></span>
+        </div>
+        <div class="ans">答：流水施工工期 26 d。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s2">
+    <h2><span class="no">2</span>网络计划·时间参数计算</h2>
+    <p class="lead">全书最核心计算点。掌握双代号"工作计算法"与"节点计算法"，再迁移到单代号。</p>
+    <h3>双代号 · 工作计算法</h3>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">最早时间（顺推，取大）</div>
+        <span class="formula">ES = max{紧前工作 EF}；EF = ES + D</span>
+        <div class="vars">起点工作 ES=0；D=持续时间</div>
+        <div class="use">计算工期 = max{终点工作 EF}</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">最迟时间（逆推，取小）</div>
+        <span class="formula">LF = min{紧后工作 LS}；LS = LF − D</span>
+        <div class="vars">终点工作 LF = 计划工期</div>
+        <div class="use">从终点倒推</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">总时差 TF</div>
+        <span class="formula">TF = LS − ES = LF − EF</span>
+        <div class="vars">不影响总工期的机动时间</div>
+        <div class="use"><b>TF=0（计划=计算工期时）即关键工作</b></div>
+      </div>
+      <div class="fcard">
+        <div class="fname">自由时差 FF</div>
+        <span class="formula">FF = min{紧后工作 ES} − 本工作 EF</span>
+        <div class="vars">无紧后工作时 FF = 计划工期 − EF</div>
+        <div class="use">不影响紧后工作最早开始的机动时间</div>
+      </div>
+    </div>
+    <div class="tip">💡 恒等关系：<b>FF ≤ TF</b>；<b>TF=0 ⇒ FF=0</b>。总时差还可用"计算工期 − 经过该工作各条线路持续时间之和的最大值"求得。</div>
+    <h3>双代号 · 节点计算法</h3>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">节点最早/最迟时间</div>
+        <span class="formula">ET<sub>j</sub>=max{ET<sub>i</sub>+D<sub>ij</sub>}；LT<sub>i</sub>=min{LT<sub>j</sub>−D<sub>ij</sub>}</span>
+        <div class="vars">起点 ET=0；终点 LT=计划工期</div>
+        <div class="use">先求全部节点时间</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">由节点时间求工作参数</div>
+        <span class="formula">TF<sub>ij</sub>=LT<sub>j</sub>−ET<sub>i</sub>−D<sub>ij</sub>；FF<sub>ij</sub>=ET<sub>j</sub>−ET<sub>i</sub>−D<sub>ij</sub></span>
+        <div class="vars">ES=ET<sub>i</sub>，EF=ET<sub>i</sub>+D，LF=LT<sub>j</sub>，LS=LT<sub>j</sub>−D</div>
+        <div class="use">节点法算 TF/FF 更快</div>
+      </div>
+    </div>
+    <h3>单代号网络计划</h3>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">相邻工作时间间隔 LAG</div>
+        <span class="formula">LAG<sub>i,j</sub> = ES<sub>j</sub> − EF<sub>i</sub></span>
+        <div class="vars">紧后工作最早开始 − 本工作最早完成</div>
+        <div class="use">单代号关键线路判据：<b>LAG 全为 0 的线路</b></div>
+      </div>
+      <div class="fcard">
+        <div class="fname">时差（逆推）</div>
+        <span class="formula">TF<sub>i</sub>=min{TF<sub>j</sub>+LAG<sub>i,j</sub>}；FF<sub>i</sub>=min{LAG<sub>i,j</sub>}</span>
+        <div class="vars">终点工作 TF=FF=计划工期−EF</div>
+        <div class="use">LS=ES+TF，LF=EF+TF</div>
+      </div>
+    </div>
+    <details class="ex"><summary>经典例题 2-A<span class="tag">六时参数</span></summary>
+      <div class="exbody">
+        <div>某双代号网络：A(2)起点；B(3)紧前A；C(4)紧前A；D(2)紧前B、C；E(3)紧前D。求各工作时间参数、计算工期与关键线路。</div>
+        <div class="sol">
+          <b>解：顺推 ES/EF</b>
+          <span class="step">A:0~2；B:2~5；C:2~6；D:max(5,6)=6~8；E:8~11 ⇒ 计算工期 = <b>11</b></span>
+          <b>逆推 LF/LS（LF终=11）</b>
+          <span class="step">E:8~11；D:6~8；C:2~6；B:LF=6,LS=3；A:LF=min(3,2)=2,LS=0</span>
+          <b>总时差 TF=LS−ES</b>
+          <span class="step">A=0，B=3−2=<b>1</b>，C=0，D=0，E=0</span>
+        </div>
+        <div class="tscroll"><table>
+          <tr><th>工作</th><th class="c">D</th><th class="c">ES</th><th class="c">EF</th><th class="c">LS</th><th class="c">LF</th><th class="c">TF</th><th class="c">FF</th></tr>
+          <tr><td>A</td><td class="c">2</td><td class="c">0</td><td class="c">2</td><td class="c">0</td><td class="c">2</td><td class="c">0</td><td class="c">0</td></tr>
+          <tr><td>B</td><td class="c">3</td><td class="c">2</td><td class="c">5</td><td class="c">3</td><td class="c">6</td><td class="c">1</td><td class="c">1</td></tr>
+          <tr><td>C</td><td class="c">4</td><td class="c">2</td><td class="c">6</td><td class="c">2</td><td class="c">6</td><td class="c">0</td><td class="c">0</td></tr>
+          <tr><td>D</td><td class="c">2</td><td class="c">6</td><td class="c">8</td><td class="c">6</td><td class="c">8</td><td class="c">0</td><td class="c">0</td></tr>
+          <tr><td>E</td><td class="c">3</td><td class="c">8</td><td class="c">11</td><td class="c">8</td><td class="c">11</td><td class="c">0</td><td class="c">0</td></tr>
+        </table></div>
+        <div class="ans">答：计算工期 11；关键线路 <b>A→C→D→E</b>（TF=0，长度 2+4+2+3=11）。工作 B 有 1 d 总/自由时差。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s3">
+    <h2><span class="no">3</span>关键工作、关键线路与工期优化</h2>
+    <p class="lead">关键工作＝总时差最小；关键线路＝关键工作首尾相连且持续时间之和最大。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">标号法求关键线路</div>
+        <span class="formula">b<sub>j</sub> = max{b<sub>i</sub> + D<sub>ij</sub>}</span>
+        <div class="vars">起点 b=0，逐节点标号并记来源节点；从终点<b>逆着来源</b>回溯即关键线路</div>
+        <div class="use">快速定关键线路与工期</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">工期优化（压缩关键工作）</div>
+        <span class="formula">优先压：直接费用率最小的关键工作</span>
+        <div class="vars">多条关键线路需<b>同时压缩</b>，取组合直接费用率之和最小者</div>
+        <div class="use">费用优化：总成本=直接费+间接费最低</div>
+      </div>
+    </div>
+    <div class="trap">⚠ 常见错误说法：①"持续时间最长的工作是关键工作"（×，应看总时差）②"关键线路只有一条、不可转移"（×，压缩后可能转移）③"由关键节点连成的线路一定是关键线路"（×）。</div>
+  </section>
+
+  <section id="s4">
+    <h2><span class="no">4</span>时标网络与搭接网络判读</h2>
+    <p class="lead">时标网络"看图读参数"；搭接网络掌握四种时距关系。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">双代号时标网络</div>
+        <span class="formula">波形线水平投影长度 = 相邻工作时间间隔</span>
+        <div class="vars">ES=箭线左端节点时标；EF=实线右端；<b>自始至终无波形线的线路=关键线路</b></div>
+        <div class="use">TF 用波形线累加法/取小法</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">搭接网络四种时距</div>
+        <span class="formula">FTS / FTF / STS / STF</span>
+        <div class="vars">F=完成、S=开始；如 STS=紧前开始到紧后开始的最小间隔</div>
+        <div class="use">按时距推 ES/EF，间隔为 0 处判关键</div>
+      </div>
+    </div>
+    <div class="tip">💡 时标网络自由时差最直观：<b>工作箭线末端波形线的水平投影长度</b>就是该工作的自由时差；一条线路上波形线长度之和最小者更接近关键线路。</div>
+  </section>
+
+  <section id="s5">
+    <h2><span class="no">5</span>挣值法（偏差分析）</h2>
+    <p class="lead">用三个基本参数、四个评价指标，同时衡量成本与进度偏差。成本管理的核心计算。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">三参数</div>
+        <span class="formula">BCWP·BCWS·ACWP</span>
+        <div class="vars"><b>BCWP</b>已完预算(挣值)=Σ已完量×预算单价；<b>BCWS</b>拟完预算=Σ计划量×预算单价；<b>ACWP</b>已完实际=Σ已完量×实际单价</div>
+        <div class="use">"两已完、一拟完"</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">费用偏差 / 进度偏差</div>
+        <span class="formula">CV = BCWP − ACWP；SV = BCWP − BCWS</span>
+        <div class="vars">CV&lt;0 超支、SV&lt;0 拖后（&gt;0 反之）</div>
+        <div class="use">绝对偏差，仅同一项目分析</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">费用/进度绩效指数</div>
+        <span class="formula">CPI = BCWP/ACWP；SPI = BCWP/BCWS</span>
+        <div class="vars">&lt;1 不利、&gt;1 有利</div>
+        <div class="use">相对偏差，可跨项目比较</div>
+      </div>
+    </div>
+    <div class="trap">⚠ 记忆钩子："偏差=相减、指数=相除；分子永远是 <b>BCWP（挣值）</b>；带 <b>C</b> 配 <b>ACWP</b>（成本），带 <b>S</b> 配 <b>BCWS</b>（进度）"。负值/小于1均为不利。</div>
+    <details class="ex"><summary>经典例题 5-A<span class="tag">挣值四指标</span></summary>
+      <div class="exbody">
+        <div>某工程至第 4 月末：拟完工程预算费用 330 万、已完工程预算费用 350 万、已完工程实际费用 300 万。分析成本与进度状况。</div>
+        <div class="sol">
+          <b>解：</b>BCWS=330，BCWP=350，ACWP=300
+          <span class="step">CV=350−300=<b>+50 万</b>（&gt;0，成本节约）</span>
+          <span class="step">SV=350−330=<b>+20 万</b>（&gt;0，进度提前）</span>
+          <span class="step">CPI=350/300=<b>1.17</b>（&gt;1，省钱）；SPI=350/330=<b>1.06</b>（&gt;1，超前）</span>
+        </div>
+        <div class="ans">答：成本节约、进度提前，项目状况良好（省钱又超前）。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s6">
+    <h2><span class="no">6</span>因素分析法（连环置换法）</h2>
+    <p class="lead">成本分析基本方法，逐个分析各因素对成本的影响程度。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">连环置换法则</div>
+        <span class="formula">以目标数为基础，按顺序逐个用实际数替换，替换后保留</span>
+        <div class="vars">排序：<b>先实物量、后价值量；先绝对值、后相对值</b></div>
+        <div class="use">某因素影响 = 该次替换结果 − 上次替换结果</div>
+      </div>
+    </div>
+    <div class="trap">⚠ 各因素<b>替换顺序不能颠倒</b>（顺序不同结果不同）；每算一个因素时，前面的因素已替换为实际值并保留，后面的因素仍为目标值。</div>
+    <details class="ex"><summary>经典例题 6-A<span class="tag">连环置换</span></summary>
+      <div class="exbody">
+        <div>砖基础目标成本与实际对比：工程量 计划 500 m³、实际 510 m³；砖消耗 529、530 块/m³；单价 0.26、0.25 元/块。求各因素对成本的影响（顺序：工程量→消耗量→单价）。</div>
+        <div class="sol">
+          <b>解：</b>目标 = 500×529×0.26 = 68 770 元
+          <span class="step">① 替工程量：510×529×0.26 = 70 145.4 → 影响 = 70 145.4−68 770 = <b>+1375.4 元</b></span>
+          <span class="step">② 替消耗量：510×530×0.26 = 70 278 → 影响 = 70 278−70 145.4 = <b>+132.6 元</b></span>
+          <span class="step">③ 替单价：510×530×0.25 = 67 575 → 影响 = 67 575−70 278 = <b>−2703 元</b></span>
+          <span class="step">合计影响 = 1375.4+132.6−2703 = −1195 元（= 实际67 575 − 目标68 770）✓</span>
+        </div>
+        <div class="ans">答：工程量增加 +1375.4 元、消耗量增加 +132.6 元、单价下降 −2703 元，综合降本 1195 元。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s7">
+    <h2><span class="no">7</span>进度定额（综合时间定额·持续时间）</h2>
+    <p class="lead">编制单位工程施工进度计划时的基础计算。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">综合时间定额（合并工作）</div>
+        <span class="formula">H = Σ(Q<sub>i</sub>H<sub>i</sub>) / ΣQ<sub>i</sub></span>
+        <div class="vars"><b>Q<sub>i</sub></b>各分项工程量 · <b>H<sub>i</sub></b>各分项时间定额</div>
+        <div class="use">两个分项合并为一项工作时</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">工作持续时间</div>
+        <span class="formula">D = P / (R · B)</span>
+        <div class="vars"><b>P</b>工作量(劳动量/台班量) · <b>R</b>每班人数或机械台班数 · <b>B</b>每天工作班数</div>
+        <div class="use">最小工作面限 R 上限，最小劳动组合限 R 下限</div>
+      </div>
+    </div>
+    <details class="ex"><summary>经典例题 7-A<span class="tag">综合时间定额</span></summary>
+      <div class="exbody">
+        <div>工作 A 由 B、C 两分项合并：B 时间定额 0.35 工日/m²、工程量 5000 m²；C 时间定额 0.52 工日/m²、工程量 3000 m²。求 A 的综合时间定额。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">H = (0.35×5000 + 0.52×3000)/(5000+3000) = (1750+1560)/8000 = 3310/8000 = <b>0.41 工日/m²</b></span>
+        </div>
+        <div class="ans">答：综合时间定额 0.41 工日/m²。</div>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    建设工程项目管理 · 计算专题手册 · 流水施工／网络计划／挣值法／因素分析<br>
+    公式与例题依据《建设工程项目管理》教材与历年真题整理，计算结果为示意，应试以最新教材口径为准。
+  </footer>
+</main>
+<script>
+(function(){
+  var rpi=document.getElementById('rpi');
+  function onScroll(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight;rpi.style.width=(max>0?(h.scrollTop/max*100):0)+'%';}
+  document.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  document.getElementById('theme').onclick=function(){var r=document.documentElement;var cur=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');r.setAttribute('data-theme',cur==='dark'?'light':'dark');};
+})();
+</script>
+</body>
+</html>

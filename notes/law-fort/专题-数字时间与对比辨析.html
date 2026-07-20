@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>建设工程法规 · 数字时间与对比辨析专题</title>
+<style>
+  :root{
+    --bg:#f2f4f7; --ink:#20242b; --sub:#69707c; --card:#fff; --line:#e2e6ec;
+    --accent:#245a94; --accent2:#2563ab; --accentbg:#eaf1fa;
+    --red:#c62828; --blue:#1d64c0;
+    --amber:#c98a00; --amberbg:#fff6e0; --amberink:#6f5406;
+    --tipbg:#eef6ee; --tipbd:#4a934a; --tipink:#2f5d2f;
+    --thbg:#f5f8fb; --softbg:#f5f8fb; --hl:#fdecec;
+    --shadow:0 6px 22px rgba(30,45,70,.08);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#181b20; --ink:#e6eaef; --sub:#98a0ac; --card:#22262c; --line:#343a42;
+      --accent:#5b9be0; --accent2:#5b9be0; --accentbg:#1d2b3a;
+      --red:#ff8a80; --blue:#8fb8f0; --amberbg:#3a2f12; --amberink:#f0d489;
+      --tipbg:#1e2f1e; --tipbd:#5ba85b; --tipink:#a8d8a8; --thbg:#2a3038; --softbg:#262c33; --hl:#3a2226;
+      --shadow:0 6px 22px rgba(0,0,0,.4);}
+  }
+  :root[data-theme="light"]{ --bg:#f2f4f7; --ink:#20242b; --sub:#69707c; --card:#fff; --line:#e2e6ec; --accent:#245a94; --accent2:#2563ab; --accentbg:#eaf1fa; --red:#c62828; --blue:#1d64c0; --amberbg:#fff6e0; --amberink:#6f5406; --tipbg:#eef6ee; --tipbd:#4a934a; --tipink:#2f5d2f; --thbg:#f5f8fb; --softbg:#f5f8fb; --hl:#fdecec; --shadow:0 6px 22px rgba(30,45,70,.08);}
+  :root[data-theme="dark"]{ --bg:#181b20; --ink:#e6eaef; --sub:#98a0ac; --card:#22262c; --line:#343a42; --accent:#5b9be0; --accent2:#5b9be0; --accentbg:#1d2b3a; --red:#ff8a80; --blue:#8fb8f0; --amberbg:#3a2f12; --amberink:#f0d489; --tipbg:#1e2f1e; --tipbd:#5ba85b; --tipink:#a8d8a8; --thbg:#2a3038; --softbg:#262c33; --hl:#3a2226; --shadow:0 6px 22px rgba(0,0,0,.4);}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);margin:0;line-height:1.6;
+    background-image:radial-gradient(circle at 6% 0,color-mix(in srgb,var(--accent) 9%,transparent),transparent 20rem);}
+  .rp{position:fixed;inset:0 0 auto;height:3px;background:color-mix(in srgb,var(--accent) 15%,transparent);z-index:60;}
+  .rp>i{display:block;height:100%;width:0;background:var(--accent);}
+  header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:9px 14px 7px;}
+  .htop{display:flex;align-items:baseline;gap:8px;max-width:960px;margin:0 auto;}
+  h1{font-size:1rem;margin:0;font-weight:800;}
+  h1 .badge{color:var(--sub);font-weight:500;font-size:.68rem;margin-left:5px;}
+  .theme{margin-left:auto;border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:8px;width:30px;height:28px;font-size:.9rem;cursor:pointer;align-self:center;}
+  .nav{display:flex;gap:6px;overflow-x:auto;max-width:960px;margin:8px auto 0;padding-bottom:2px;scrollbar-width:none;}
+  .nav::-webkit-scrollbar{display:none;}
+  .nav a{flex:none;border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:999px;padding:4px 11px;font-size:.72rem;font-weight:600;text-decoration:none;white-space:nowrap;border-left:3px solid var(--accent2);}
+  main{max-width:960px;margin:0 auto;padding:14px 14px 70px;}
+  .intro{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.82rem;color:var(--sub);box-shadow:var(--shadow);margin-bottom:16px;}
+  .intro b{color:var(--ink);}
+  .part{margin:24px 0 10px;font-size:.76rem;font-weight:800;letter-spacing:.08em;color:#fff;display:inline-block;padding:4px 12px;border-radius:7px;background:linear-gradient(135deg,#3a79bd,#245a94);}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 15px 8px;margin-bottom:14px;box-shadow:var(--shadow);scroll-margin-top:96px;}
+  h2{font-size:1rem;margin:0 0 3px;color:var(--accent);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+  h2 .no{font-size:.72rem;background:var(--accentbg);color:var(--accent);border-radius:6px;padding:1px 7px;font-weight:800;}
+  .lead{font-size:.78rem;color:var(--sub);margin:0 0 10px;}
+  h3{font-size:.88rem;margin:15px 0 6px;color:var(--ink);display:flex;align-items:center;gap:7px;}
+  h3::before{content:"";width:6px;height:6px;border:2px solid var(--accent);border-radius:50%;flex:none;}
+  table{width:100%;border-collapse:collapse;margin:0;font-size:.78rem;min-width:440px;}
+  th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top;}
+  th{background:var(--thbg);font-weight:700;white-space:nowrap;}
+  .tscroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin:9px 0;-webkit-overflow-scrolling:touch;}
+  .tscroll table{border:0;}
+  .num{font-weight:800;color:var(--accent);white-space:nowrap;font-family:"Cambria Math",Georgia,serif;}
+  .r{color:var(--red);font-weight:600;} .b{color:var(--blue);}
+  .trap{background:var(--amberbg);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:8px 11px;margin:10px 0;font-size:.8rem;color:var(--amberink);}
+  .tip{background:var(--tipbg);border-left:3px solid var(--tipbd);border-radius:0 8px 8px 0;padding:8px 11px;margin:10px 0;font-size:.8rem;color:var(--tipink);}
+  .trap b,.tip b{font-weight:700;}
+  footer{max-width:960px;margin:0 auto;padding:8px 14px 30px;text-align:center;color:var(--sub);font-size:.72rem;}
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
+</style>
+</head>
+<body>
+<div class="rp"><i id="rpi"></i></div>
+<header>
+  <div class="htop">
+    <h1>法规 · 数字时间与对比辨析<span class="badge">记忆专题</span></h1>
+    <button class="theme" id="theme" title="切换主题">◐</button>
+  </div>
+  <nav class="nav">
+    <a href="#t1">时间数字·按值汇总</a>
+    <a href="#t2">保修期与专利期</a>
+    <a href="#c1">担保：抵押·质押·留置</a>
+    <a href="#c2">行政处罚·强制措施·执行</a>
+    <a href="#c3">处罚 vs 刑罚</a>
+    <a href="#c4">要约·法的形式</a>
+    <a href="#c5">违法分包·转包·挂靠</a>
+    <a href="#c6">时效中止·中断</a>
+    <a href="#c7">复议 vs 诉讼·五方责任</a>
+  </nav>
+</header>
+<main>
+  <div class="intro">
+    <b>专题定位：</b>法规最爱考"<b>数字时间</b>"和"<b>易混对比</b>"——这两块纯记忆、专题化后提分最快。上半部按<b>数值大小</b>把散落各章的法定期限汇总成一张表；下半部把高频易混概念做<b>并列对比</b>，抓住区分点。
+  </div>
+
+  <div class="part">一、法定期限·数字时间汇总</div>
+
+  <section id="t1">
+    <h2><span class="no">时</span>按数值大小串记（招投标·许可·质量·争议）</h2>
+    <p class="lead">同一数值的期限放在一起记，考试改数字设坑时一眼识破。</p>
+    <div class="tscroll"><table>
+      <tr><th>数值</th><th>适用情形（散见各章）</th></tr>
+      <tr><td class="num">当场/立即</td><td>对<b>开标</b>有异议——现场当场提出、当场答复；发现文物立即停工保护</td></tr>
+      <tr><td class="num">24 小时</td><td>文物行政部门接报后 24h 内赶赴现场</td></tr>
+      <tr><td class="num">1 小时</td><td>安全/质量事故：单位负责人接报后 1h 内向应急管理等部门报告</td></tr>
+      <tr><td class="num">2 小时</td><td>事故逐级上报，每级上报时间不超过 2h</td></tr>
+      <tr><td class="num">2 日</td><td>对<b>资格预审文件</b>有异议，应在提交申请文件截止前 2 日提出</td></tr>
+      <tr><td class="num">3 日</td><td>异议答复期（收到异议 3 日内）；澄清资格预审文件在截止前 3 日</td></tr>
+      <tr><td class="num">5 日</td><td>招标文件/资格预审文件<b>发售期≥5 日</b>；签合同后 5 日内退投标保证金</td></tr>
+      <tr><td class="num">7 日 / 7 日内</td><td>文物部门 7 日内提出处理意见；起诉后 7 日内立案或裁定不予受理</td></tr>
+      <tr><td class="num">10 日</td><td>对<b>招标文件</b>异议（投标截止 10 日前）；<b>安许证</b>变更后 10 日内办变更；投诉自知道之日起 10 日内；<b>裁定</b>上诉期 10 日</td></tr>
+      <tr><td class="num">15 日</td><td>澄清/修改<b>招标文件</b>（投标截止 15 日前）；竣工验收合格后 15 日内<b>备案</b>；<b>判决</b>上诉期 15 日；重大及以下事故批复 15 日</td></tr>
+      <tr><td class="num">20 日 / 20 工作日</td><td>编制投标文件<b>≥20 日</b>；强制性国标发布后 20 日内免费公开；应急预案公布后 20 个工作日内备案</td></tr>
+      <tr><td class="num">30 日</td><td>中标通知书发出 30 日内订立合同；事故 30 日内补报伤亡变化；投诉处理 30 个工作日内决定；调解协议 30 日内申请司法确认；行政诉讼特别重大事故批复≤30 日</td></tr>
+      <tr><td class="num">3 个月</td><td>领施工许可证后 3 个月内开工；延期以 2 次为限、每次≤3 个月；简易程序 3 个月内审结；安许证延期在期满前 3 个月申请</td></tr>
+      <tr><td class="num">60 日</td><td><b>行政复议</b>申请期 60 日；事故调查 60 日内提交报告（可延长 60 日）</td></tr>
+      <tr><td class="num">6 个月</td><td>商标续展<b>宽展期</b> 6 个月；再审申请 6 个月内；不良行为记录公布 6 个月；移出失信名单满 6 个月</td></tr>
+      <tr><td class="num">90 日</td><td>发包人原因无法竣工验收，承包人提交报告 90 日后自动进入缺陷责任期</td></tr>
+    </table></div>
+    <div class="trap">⚠ 最易混的三组：<b>异议</b>——资格预审"2 日前"、招标文件"10 日前"、开标"当场"、评标结果"公示期内"，答复统一"3 日内"。<b>澄清修改</b>——资格预审"3 日前"、招标文件"15 日前"。<b>上诉期</b>——判决 15 日、裁定 10 日（"判长裁短"）。</div>
+  </section>
+
+  <section id="t2">
+    <h2><span class="no">时</span>年度期限·保修期·专利期</h2>
+    <div class="tscroll"><table>
+      <tr><th>数值</th><th>适用情形</th></tr>
+      <tr><td class="num">1 年</td><td>缺陷责任期一般 1 年；占有返还原物请求权 1 年（超期消灭）；仲裁/劳动仲裁时效 1 年；工伤认定：职工或近亲属、工会 1 年内申请</td></tr>
+      <tr><td class="num">2 年</td><td>缺陷责任期<b>最长 2 年</b>；申请强制执行期间 2 年；保修：电气管线/给排水管道/设备安装/装修 <b>2 年</b>；供热供冷 <b>2 个采暖期/供冷期</b></td></tr>
+      <tr><td class="num">3 年</td><td>安全生产许可证有效期 3 年；建造师注册有效期 3 年；特种作业操作证每 3 年复审；<b>普通诉讼时效 3 年</b></td></tr>
+      <tr><td class="num">4 年</td><td>国际货物买卖合同、技术进出口合同争议诉讼时效 4 年（特殊）</td></tr>
+      <tr><td class="num">5 年</td><td>资质证书有效期 5 年；保修：屋面防水/有防水要求房间/外墙面防渗漏 <b>5 年</b>；累犯 5 年内再犯；吊销执业资格证 5 年内不予注册</td></tr>
+      <tr><td class="num">10 / 6 年</td><td>连续从事本工种 10 年以上特种作业证可延至每 <b>6 年</b>复审；商标有效期 10 年</td></tr>
+      <tr><td class="num">20 年</td><td>诉讼时效最长保护期：自权利受损之日起超过 20 年不保护</td></tr>
+      <tr><td class="num">专利：20/10/15</td><td>发明 <b>20 年</b>、实用新型 <b>10 年</b>、外观设计 <b>15 年</b>，均自<b>申请日</b>起算</td></tr>
+      <tr><td class="num">保修·地基主体</td><td>基础设施/地基基础/主体结构：设计文件规定的<b>合理使用年限</b></td></tr>
+    </table></div>
+    <div class="tip">💡 保修期口诀"<b>地基主体看年限，防水五年，采暖供冷两期，电气给排水装修两年，其他约定</b>"；保修期与缺陷责任期<b>起算点都是竣工验收合格之日</b>。专利口诀"<b>发 20、用 10、外 15，全从申请日</b>"。</div>
+  </section>
+
+  <div class="part">二、易混概念·对比辨析</div>
+
+  <section id="c1">
+    <h2><span class="no">辨</span>担保物权：抵押 · 质押 · 留置</h2>
+    <div class="tscroll"><table>
+      <tr><th>项目</th><th>抵押</th><th>质押</th><th>留置</th></tr>
+      <tr><td>是否转移占有</td><td class="r">不转移</td><td class="r">转移</td><td class="r">转移</td></tr>
+      <tr><td>标的物</td><td>动产、不动产</td><td>动产、权利</td><td class="r">仅动产</td></tr>
+      <tr><td>产生方式</td><td>约定</td><td>约定</td><td class="r">法定</td></tr>
+      <tr><td>提供人</td><td>债务人或第三人</td><td>债务人或第三人</td><td class="r">仅债务人本人</td></tr>
+      <tr><td>设立时间</td><td>不动产登记时/动产合同生效时</td><td>动产交付时/权利凭证交付或登记时</td><td>合法占有动产且债权到期未清偿</td></tr>
+    </table></div>
+    <div class="trap">⚠ 区分核心一句话：<b>抵押不转移占有</b>；<b>质押、留置都转移占有，但留置只能是动产、且是法定的、只能债务人本人的财产</b>。同一财产多个抵押：已登记的按登记先后、登记先于未登记、未登记的按债权比例受偿。</div>
+  </section>
+
+  <section id="c2">
+    <h2><span class="no">辨</span>行政处罚 · 行政强制措施 · 行政强制执行</h2>
+    <div class="tscroll"><table>
+      <tr><th>行政处罚（惩戒）</th><th>行政强制措施（静态·控制）</th><th>行政强制执行（动态·实现）</th></tr>
+      <tr><td>警告、通报批评</td><td class="r">限制公民人身自由</td><td class="b">加处罚款或滞纳金</td></tr>
+      <tr><td>罚款、没收违法所得/非法财物</td><td class="r">查封场所、设施或财物</td><td class="b">划拨存款、汇款</td></tr>
+      <tr><td>暂扣/吊销许可证、降低资质等级</td><td class="r">扣押财物</td><td class="b">拍卖/依法处理查封扣押财物</td></tr>
+      <tr><td>责令停产停业、限制从业、行政拘留</td><td class="r">冻结存款、汇款</td><td class="b">排除妨碍、恢复原状、代履行</td></tr>
+    </table></div>
+    <div class="trap">⚠ "措施"是<b>静态控制</b>（查封/扣押/冻结/限制人身自由）；"执行"是<b>动态实现</b>（加处罚款/划拨/拍卖/代履行）。设定权：<b>限制人身自由的处罚只能由法律设定</b>；限制人身自由、冻结存款汇款的强制措施也只能由法律设定，查封扣押行政法规/地方性法规亦可。</div>
+  </section>
+
+  <section id="c3">
+    <h2><span class="no">辨</span>行政处罚 vs 刑罚（字面近似最爱设坑）</h2>
+    <div class="tscroll"><table>
+      <tr><th>维度</th><th>行政处罚</th><th>刑罚</th></tr>
+      <tr><td>关于钱</td><td class="r">罚款</td><td class="b">罚金</td></tr>
+      <tr><td>关于没收</td><td class="r">没收违法所得</td><td class="b">没收财产</td></tr>
+      <tr><td>关于人身自由</td><td class="r">拘留</td><td class="b">拘役</td></tr>
+    </table></div>
+    <div class="trap">⚠ 刑罚种类：<b>主刑</b>=管制、拘役、有期徒刑、无期徒刑、死刑；<b>附加刑</b>=罚金、剥夺政治权利、没收财产、驱逐出境。"罚金"是<b>附加刑</b>（不是主刑，更不是行政处罚的"罚款"）。"记大过/记过"是<b>行政处分</b>，不是行政处罚。</div>
+  </section>
+
+  <section id="c4">
+    <h2><span class="no">辨</span>要约 vs 要约邀请 · 法的形式与制定机关</h2>
+    <h3>要约 vs 要约邀请</h3>
+    <div class="tscroll"><table>
+      <tr><th>要约（希望订立合同的意思表示）</th><th>要约邀请（希望他人向自己发要约）</th></tr>
+      <tr><td>内容具体确定，受要约人承诺即成立</td><td>拍卖公告、招标公告、招股说明书、<b>价目表、商业广告</b>（一般）</td></tr>
+      <tr><td>如：投标文件是<b>要约</b>，中标通知书是<b>承诺</b></td><td>如：<b>招标公告是要约邀请</b></td></tr>
+    </table></div>
+    <h3>法的形式与制定机关</h3>
+    <div class="tscroll"><table>
+      <tr><th>形式</th><th>制定机关</th></tr>
+      <tr><td>宪法</td><td>全国人民代表大会</td></tr>
+      <tr><td>法律</td><td class="r">全国人大及其常委会</td></tr>
+      <tr><td>行政法规</td><td class="r">国务院</td></tr>
+      <tr><td>地方性法规</td><td>地方人大及其常委会</td></tr>
+      <tr><td>部门规章</td><td>国务院各部委</td></tr>
+      <tr><td>地方政府规章</td><td>省级及设区的市政府</td></tr>
+    </table></div>
+    <div class="trap">⚠ 效力："宪法&gt;法律&gt;行政法规&gt;地方性法规、部门规章"；地方性法规&gt;本级和下级地方政府规章。裁决："涉法律层面→全国人大常委会；涉行政法规/规章层面→国务院"。<b>部门规章不能设定行政许可</b>。"条例"未必是行政法规——地方性法规也可叫"条例"，抓制定机关。</div>
+  </section>
+
+  <section id="c5">
+    <h2><span class="no">辨</span>违法分包 · 转包 · 挂靠</h2>
+    <div class="tscroll"><table>
+      <tr><th>行为</th><th>本质特征</th></tr>
+      <tr><td><b>违法分包</b></td><td>承包人自己<b>干一部分</b>活，但分包过程不合法（分包给个人/无资质、主体结构分包、再分包等）</td></tr>
+      <tr><td><b>转包</b></td><td>承包人<b>自己不干活</b>，将全部工程转给他人，或肢解后以分包名义分别转给他人</td></tr>
+      <tr><td><b>挂靠</b></td><td>单位或个人<b>以他人（有资质）企业名义</b>承揽工程</td></tr>
+    </table></div>
+    <div class="trap">⚠ 分包合法要件：主体结构必须自行完成（<b>钢结构除外</b>）；不得分包给个人或无资质单位；不得再分包；除合同约定外须经建设单位认可。<b>主体结构分包违法，但钢结构工程可以分包</b>。</div>
+  </section>
+
+  <section id="c6">
+    <h2><span class="no">辨</span>诉讼时效：中止 vs 中断</h2>
+    <div class="tscroll"><table>
+      <tr><th>诉讼时效中止（"天意"）</th><th>诉讼时效中断（"人为"）</th></tr>
+      <tr><td>不可抗力</td><td>权利人向义务人提出履行请求</td></tr>
+      <tr><td>无/限制行为能力人无法定代理人等</td><td>义务人同意履行义务</td></tr>
+      <tr><td>继承开始未定继承人/遗产管理人</td><td>权利人提起诉讼或申请仲裁</td></tr>
+      <tr><td>权利人被义务人或他人控制</td><td>与起诉/仲裁有同等效力的其他情形</td></tr>
+      <tr><td colspan="2">效果：中止＝<b>暂停计时，障碍消除后继续算</b>（发生在时效期间最后 6 个月内）；中断＝<b>已过时间清零、重新计算</b></td></tr>
+    </table></div>
+    <div class="tip">💡 一句话："<b>中止在天意，中断在人为</b>"。中止是暂停（接着算），中断是清零（重新算）。</div>
+  </section>
+
+  <section id="c7">
+    <h2><span class="no">辨</span>行政复议 vs 行政诉讼 · 五方主体责任</h2>
+    <h3>行政复议 vs 行政诉讼</h3>
+    <div class="tscroll"><table>
+      <tr><th>维度</th><th>行政复议</th><th>行政诉讼</th></tr>
+      <tr><td>管辖</td><td>本级政府或上一级主管部门</td><td>人民法院</td></tr>
+      <tr><td>审查范围</td><td class="r">合法性 + 合理性</td><td class="r">原则上仅合法性</td></tr>
+      <tr><td>申请/起诉期</td><td>知道之日起 <b>60 日</b></td><td>直接起诉 <b>6 个月</b>；经复议 15 日</td></tr>
+      <tr><td>举证责任</td><td>—</td><td class="r">被告（行政机关）负举证责任</td></tr>
+    </table></div>
+    <h3>五方主体质量责任（速记）</h3>
+    <div class="tscroll"><table>
+      <tr><th>主体</th><th>质量责任要点</th></tr>
+      <tr><td>建设单位</td><td>不得压缩合理工期/迫使低于成本竞标；施工图未审查批准不得使用；组织竣工验收</td></tr>
+      <tr><td>勘察设计</td><td>执行强制性标准；设计注明合理使用年限、材料规格型号性能；施工图技术交底</td></tr>
+      <tr><td>施工单位</td><td>按图施工不偷工减料；见证取样送检≥30%；隐蔽工程隐蔽前通知；对施工质量负责</td></tr>
+      <tr><td>监理单位</td><td>与被监理承包/供应单位有利害关系应回避；旁站巡视平行检验；总监未签字不拨款不验收</td></tr>
+    </table></div>
+    <div class="trap">⚠ 行政诉讼最大特色：<b>被告（行政机关）对其行政行为负举证责任</b>，区别于民事诉讼"谁主张谁举证"。复议维持→行政机关和复议机关<b>共同被告</b>；复议改变→<b>复议机关</b>作被告。</div>
+  </section>
+
+  <footer>
+    建设工程法规及相关知识 · 数字时间与对比辨析记忆专题<br>
+    依据《建设工程法规及相关知识》教材及历年真题整理，应试以最新教材口径为准。
+  </footer>
+</main>
+<script>
+(function(){
+  var rpi=document.getElementById('rpi');
+  function onScroll(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight;rpi.style.width=(max>0?(h.scrollTop/max*100):0)+'%';}
+  document.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  document.getElementById('theme').onclick=function(){var r=document.documentElement;var cur=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');r.setAttribute('data-theme',cur==='dark'?'light':'dark');};
+})();
+</script>
+</body>
+</html>

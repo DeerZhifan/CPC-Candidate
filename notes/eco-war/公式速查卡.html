@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>建设工程经济 · 公式速查卡</title>
+<style>
+  :root{
+    --bg:#f4f2ee; --ink:#241f1b; --sub:#6f695f; --card:#fff; --line:#e5e0d6;
+    --accent:#c94a1e; --accent2:#e05d2d;
+    --p1:#e05d2d; --p2:#2f8f6b; --p3:#2f6bb0;
+    --amber:#c98a00; --amberbg:#fff6e0; --amberink:#6f5406;
+    --softbg:#faf8f5; --shadow:0 5px 18px rgba(60,40,25,.08);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#1c1a17; --ink:#ece7df; --sub:#a49c8f; --card:#26231e; --line:#39342c;
+      --accent:#f0824f; --accent2:#f0824f; --p1:#f0824f; --p2:#5fbf95; --p3:#6ba3e0;
+      --amberbg:#3a2f12; --amberink:#f0d489; --softbg:#2a2620; --shadow:0 5px 18px rgba(0,0,0,.4);}
+  }
+  :root[data-theme="light"]{ --bg:#f4f2ee; --ink:#241f1b; --sub:#6f695f; --card:#fff; --line:#e5e0d6; --accent:#c94a1e; --accent2:#e05d2d; --p1:#e05d2d; --p2:#2f8f6b; --p3:#2f6bb0; --amberbg:#fff6e0; --amberink:#6f5406; --softbg:#faf8f5; --shadow:0 5px 18px rgba(60,40,25,.08);}
+  :root[data-theme="dark"]{ --bg:#1c1a17; --ink:#ece7df; --sub:#a49c8f; --card:#26231e; --line:#39342c; --accent:#f0824f; --accent2:#f0824f; --p1:#f0824f; --p2:#5fbf95; --p3:#6ba3e0; --amberbg:#3a2f12; --amberink:#f0d489; --softbg:#2a2620; --shadow:0 5px 18px rgba(0,0,0,.4);}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);margin:0;line-height:1.5;}
+  header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding:9px 14px;display:flex;align-items:baseline;gap:8px;}
+  h1{font-size:1rem;margin:0;font-weight:800;}
+  h1 .badge{color:var(--sub);font-weight:500;font-size:.68rem;margin-left:5px;}
+  .theme{margin-left:auto;border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:8px;width:30px;height:28px;font-size:.9rem;cursor:pointer;align-self:center;}
+  main{max-width:1100px;margin:0 auto;padding:12px 12px 60px;}
+  .tip0{font-size:.76rem;color:var(--sub);margin:2px 2px 12px;}
+  .cols{column-width:320px;column-gap:12px;}
+  .blk{break-inside:avoid;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin:0 0 12px;box-shadow:var(--shadow);}
+  .blk.p1{border-top:3px solid var(--p1);} .blk.p2{border-top:3px solid var(--p2);} .blk.p3{border-top:3px solid var(--p3);}
+  .blk h2{font-size:.86rem;margin:0 0 8px;display:flex;align-items:center;gap:6px;}
+  .blk.p1 h2{color:var(--p1);} .blk.p2 h2{color:var(--p2);} .blk.p3 h2{color:var(--p3);}
+  .blk h2 .pf{font-size:.6rem;font-weight:800;letter-spacing:.06em;border-radius:5px;padding:1px 6px;color:#fff;}
+  .blk.p1 h2 .pf{background:var(--p1);} .blk.p2 h2 .pf{background:var(--p2);} .blk.p3 h2 .pf{background:var(--p3);}
+  .f{margin:7px 0;padding-bottom:7px;border-bottom:1px dashed var(--line);}
+  .f:last-child{border-bottom:0;padding-bottom:0;}
+  .f .n{font-size:.75rem;color:var(--sub);}
+  .f .e{display:block;margin-top:2px;color:var(--accent);font-family:"Cambria Math","Times New Roman",Georgia,serif;font-size:1.02rem;font-weight:700;line-height:1.5;overflow-x:auto;}
+  .f .e small{color:var(--sub);font-family:inherit;font-weight:400;font-size:.7rem;}
+  sub{font-size:.72em;} sup{font-size:.72em;}
+  .k{font-size:.7rem;color:var(--amberink);background:var(--amberbg);border-radius:5px;padding:1px 5px;font-weight:600;}
+  footer{text-align:center;color:var(--sub);font-size:.72rem;margin-top:6px;}
+  @media (prefers-reduced-motion:reduce){ *{scroll-behavior:auto;} }
+</style>
+</head>
+<body>
+<header>
+  <h1>建设工程经济 · 公式速查卡<span class="badge">考前一页纸</span></h1>
+  <button class="theme" id="theme" title="切换主题">◐</button>
+</header>
+<main>
+  <div class="tip0">全部核心公式一屏浓缩（三篇分色：<span style="color:var(--p1)">■</span>工程经济 <span style="color:var(--p2)">■</span>工程财务 <span style="color:var(--p3)">■</span>工程计价）。需要详细例题请看《计算专题手册》。</div>
+  <div class="cols">
+
+    <div class="blk p1"><h2><span class="pf">经济</span>资金时间价值</h2>
+      <div class="f"><span class="n">① 一次支付终值 (F/P)</span><span class="e">F = P(1+i)<sup>n</sup></span></div>
+      <div class="f"><span class="n">② 一次支付现值 (P/F)</span><span class="e">P = F(1+i)<sup>−n</sup></span></div>
+      <div class="f"><span class="n">③ 等额终值 (F/A)</span><span class="e">F = A·[(1+i)<sup>n</sup>−1]/i</span></div>
+      <div class="f"><span class="n">④ 偿债基金 (A/F)</span><span class="e">A = F·i/[(1+i)<sup>n</sup>−1]</span></div>
+      <div class="f"><span class="n">⑤ 等额现值 (P/A)</span><span class="e">P = A·[(1+i)<sup>n</sup>−1]/[i(1+i)<sup>n</sup>]</span></div>
+      <div class="f"><span class="n">⑥ 资本回收 (A/P)</span><span class="e">A = P·i(1+i)<sup>n</sup>/[(1+i)<sup>n</sup>−1]</span></div>
+      <div class="f"><span class="n">有效年利率 <span class="k">m=计息次数</span></span><span class="e">i = (1+r/m)<sup>m</sup> − 1</span></div>
+    </div>
+
+    <div class="blk p1"><h2><span class="pf">经济</span>经济效果评价</h2>
+      <div class="f"><span class="n">净现值 <span class="k">≥0 可行</span></span><span class="e">NPV = Σ(CI−CO)<sub>t</sub>(1+i<sub>c</sub>)<sup>−t</sup></span></div>
+      <div class="f"><span class="n">净年值（寿命不同用它）</span><span class="e">NAV = NPV·(A/P,i<sub>c</sub>,n)</span></div>
+      <div class="f"><span class="n">内部收益率（内插）</span><span class="e">IRR ≈ i₁+(i₂−i₁)·NPV₁/(NPV₁−NPV₂)</span></div>
+      <div class="f"><span class="n">静态投资回收期</span><span class="e">P<sub>t</sub> = (首个累计正值年−1) + 上年|累计|/当年净现金流</span></div>
+      <div class="f"><span class="n">效益费用比 <span class="k">≥1 可行</span></span><span class="e">R = PV(效益)/PV(费用)</span></div>
+    </div>
+
+    <div class="blk p1"><h2><span class="pf">经济</span>不确定性 · 设备 · 价值工程</h2>
+      <div class="f"><span class="n">盈亏平衡产量</span><span class="e">Q* = C<sub>F</sub>/(p − c<sub>v</sub> − t)</span></div>
+      <div class="f"><span class="n">生产能力利用率 BEP</span><span class="e">E* = Q*/Q<sub>设计</sub> ×100%</span></div>
+      <div class="f"><span class="n">敏感度系数 <span class="k">|S|大=敏感</span></span><span class="e">S = (ΔA/A)/(ΔF/F)</span></div>
+      <div class="f"><span class="n">设备经济寿命（低劣化）</span><span class="e">N₀ = √(2(P−L)/λ)</span></div>
+      <div class="f"><span class="n">价值 <span class="k">V&lt;1 重点改进</span></span><span class="e">V = F/C　<small>功能/成本</small></span></div>
+    </div>
+
+    <div class="blk p2"><h2><span class="pf">财务</span>偿债能力</h2>
+      <div class="f"><span class="n">资产负债率</span><span class="e">= 负债总额 / 资产总额</span></div>
+      <div class="f"><span class="n">流动比率 <span class="k">≥2</span></span><span class="e">= 流动资产 / 流动负债</span></div>
+      <div class="f"><span class="n">速动比率 <span class="k">≥1</span></span><span class="e">= (流动资产−存货)/流动负债</span></div>
+      <div class="f"><span class="n">利息备付率 <span class="k">≥1</span></span><span class="e">= EBIT / 应付利息</span></div>
+      <div class="f"><span class="n">偿债备付率 <span class="k">≥1</span></span><span class="e">= (EBITDA−所得税)/应还本付息</span></div>
+    </div>
+
+    <div class="blk p2"><h2><span class="pf">财务</span>营运 · 盈利能力</h2>
+      <div class="f"><span class="n">应收账款周转率 <span class="k">分子收入</span></span><span class="e">= 营业收入 / 平均应收账款</span></div>
+      <div class="f"><span class="n">存货周转率 <span class="k">分子成本</span></span><span class="e">= 营业成本 / 平均存货</span></div>
+      <div class="f"><span class="n">总资产报酬率</span><span class="e">= EBIT / 平均资产总额</span></div>
+      <div class="f"><span class="n">净资产收益率</span><span class="e">= 净利润 / 平均净资产</span></div>
+      <div class="f"><span class="n">资本金净利润率</span><span class="e">= 净利润 / 资本金</span></div>
+    </div>
+
+    <div class="blk p2"><h2><span class="pf">财务</span>资金成本 · 营运资金</h2>
+      <div class="f"><span class="n">个别资金成本（税后）</span><span class="e">K = 年占用费(1−T)/[筹资额(1−f)]</span></div>
+      <div class="f"><span class="n">加权平均资金成本</span><span class="e">K<sub>w</sub> = Σ(W<sub>j</sub>·K<sub>j</sub>)</span></div>
+      <div class="f"><span class="n">经济订货批量</span><span class="e">Q* = √(2·D·S/H)</span></div>
+      <div class="f"><span class="n">最佳现金持有量</span><span class="e">总成本(持有+短缺+转换)最小</span></div>
+    </div>
+
+    <div class="blk p3"><h2><span class="pf">计价</span>总投资构成</h2>
+      <div class="f"><span class="n">基本预备费</span><span class="e">= (工程费用+工程建设其他费)×费率</span></div>
+      <div class="f"><span class="n">价差预备费 <span class="k">当年半年计</span></span><span class="e">PF = Σ I<sub>t</sub>[(1+f)<sup>m</sup>(1+f)<sup>0.5</sup>(1+f)<sup>t−1</sup>−1]</span></div>
+      <div class="f"><span class="n">建设期利息（当年借款半年计息）</span><span class="e">q<sub>j</sub> = (P<sub>j−1</sub> + A<sub>j</sub>/2)·i</span></div>
+      <div class="f"><span class="n">总投资</span><span class="e">= 建设投资 + 建设期利息 + 铺底流动资金</span></div>
+    </div>
+
+    <div class="blk p3"><h2><span class="pf">计价</span>清单计价 · 造价合成</h2>
+      <div class="f"><span class="n">综合单价 <span class="k">不含规费税金</span></span><span class="e">= 人+材+机+企业管理费+利润(+风险)</span></div>
+      <div class="f"><span class="n">分部分项工程费</span><span class="e">= Σ(工程量 × 综合单价)</span></div>
+      <div class="f"><span class="n">单位工程造价</span><span class="e">= 分部分项+措施+其他+规费+税金</span></div>
+      <div class="f"><span class="n">税金</span><span class="e">= 税前造价 × 增值税率</span></div>
+    </div>
+
+    <div class="blk p3"><h2><span class="pf">计价</span>计量与支付</h2>
+      <div class="f"><span class="n">预付款起扣点</span><span class="e">T = P − M/N　<small>M预付款 N主材比重</small></span></div>
+      <div class="f"><span class="n">起扣后每次抵扣</span><span class="e">= 本期完成价款 × N</span></div>
+      <div class="f"><span class="n">调值公式法 <span class="k">Σa=1</span></span><span class="e">P = P₀(a₀ + a₁A₁/A₀ + a₂B₁/B₀ + …)</span></div>
+    </div>
+
+  </div>
+  <footer>依据《建设工程经济》教材整理 · 详细例题见《计算专题手册》 · 应试以最新教材口径为准</footer>
+</main>
+<script>
+document.getElementById('theme').onclick=function(){var r=document.documentElement;var cur=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');r.setAttribute('data-theme',cur==='dark'?'light':'dark');};
+</script>
+</body>
+</html>
