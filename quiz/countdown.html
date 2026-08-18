@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一建考试倒计时牌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+  /* ── 图纸配色：浅色＝描图纸，深色＝夜间蓝图；两套都由同一组 token 驱动 ── */
+  :root{
+    --paper:#E7EAE4;      /* 描图纸底 */
+    --sheet:#F2F4EF;      /* 图框内纸面 */
+    --ink:#16201D;        /* 制图墨 */
+    --ink-2:#4A5551;      /* 次级文字 */
+    --ink-3:#8A938E;      /* 标注文字 */
+    --rule:#16201D1F;     /* 图线 */
+    --rule-2:#16201D0F;   /* 细网格 */
+    --accent:#C8501B;     /* 工程橙 */
+    --accent-soft:#C8501B1A;
+    --mark:#B8860B;       /* 警示黄（仅标周末） */
+    --mark-soft:#D9A2271F;
+    --cell:#16201D0A;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0F1614; --sheet:#16201D; --ink:#E4E8E2; --ink-2:#9BA5A0; --ink-3:#6B7570;
+      --rule:#E4E8E229; --rule-2:#E4E8E214; --accent:#E9703C; --accent-soft:#E9703C24;
+      --mark:#D9A227; --mark-soft:#D9A22726; --cell:#E4E8E20A;
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0F1614; --sheet:#16201D; --ink:#E4E8E2; --ink-2:#9BA5A0; --ink-3:#6B7570;
+    --rule:#E4E8E229; --rule-2:#E4E8E214; --accent:#E9703C; --accent-soft:#E9703C24;
+    --mark:#D9A227; --mark-soft:#D9A22726; --cell:#E4E8E20A;
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+    padding:clamp(12px,3vw,28px);
+  }
+  .sheet{
+    max-width:940px; margin:0 auto; background:var(--sheet);
+    border:1px solid var(--rule); position:relative;
+    background-image:linear-gradient(var(--rule-2) 1px,transparent 1px),
+                     linear-gradient(90deg,var(--rule-2) 1px,transparent 1px);
+    background-size:28px 28px;
+  }
+  /* 图框四角的定位角标 */
+  .sheet::before,.sheet::after{
+    content:""; position:absolute; width:13px; height:13px; pointer-events:none;
+  }
+  .sheet::before{top:7px;left:7px;border-top:1px solid var(--accent);border-left:1px solid var(--accent);}
+  .sheet::after{bottom:7px;right:7px;border-bottom:1px solid var(--accent);border-right:1px solid var(--accent);}
+
+  /* ── 图签栏 ── */
+  .titleblock{
+    display:grid; grid-template-columns:repeat(4,1fr);
+    border-bottom:1px solid var(--rule);
+  }
+  .tb{padding:11px 14px; border-right:1px solid var(--rule); min-width:0;}
+  .tb:last-child{border-right:none;}
+  .tb dt{
+    font-family:"Barlow Condensed",sans-serif; font-size:11px; font-weight:600;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin:0 0 1px;
+  }
+  .tb dd{
+    margin:0; font-size:13.5px; font-weight:500; color:var(--ink);
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .tb dd .sub{color:var(--ink-2); font-weight:400;}
+
+  /* ── 主体：倒计时牌 ── */
+  .board{padding:clamp(24px,5vw,46px) clamp(16px,4vw,40px) clamp(18px,3vw,30px);}
+  .eyebrow{
+    display:flex; align-items:center; gap:10px; margin-bottom:6px;
+    font-family:"Barlow Condensed",sans-serif; font-size:12.5px; font-weight:600;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--accent);
+  }
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--rule);}
+
+  .count{display:flex; align-items:flex-end; gap:clamp(10px,2.4vw,22px); flex-wrap:wrap;}
+  .count .num{
+    font-family:"Barlow Condensed",sans-serif; font-weight:700;
+    font-size:clamp(104px,26vw,224px); line-height:.78; letter-spacing:-.02em;
+    font-variant-numeric:tabular-nums; color:var(--accent);
+    margin:0; text-wrap:balance;
+  }
+  .count .unit{
+    font-size:clamp(20px,4.4vw,34px); font-weight:700; line-height:1.1;
+    padding-bottom:clamp(6px,1.4vw,14px); color:var(--ink);
+  }
+  .count .ticker{
+    margin-left:auto; padding-bottom:clamp(6px,1.4vw,14px); text-align:right;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-variant-numeric:tabular-nums;
+  }
+  .count .ticker b{display:block; font-size:clamp(19px,4.2vw,27px); font-weight:500; letter-spacing:.01em;}
+  .count .ticker span{
+    display:block; font-family:"Barlow Condensed",sans-serif; font-size:11px; font-weight:600;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-top:2px;
+  }
+  .whenline{
+    margin:16px 0 0; padding-top:14px; border-top:1px solid var(--rule);
+    font-size:14px; color:var(--ink-2); display:flex; gap:10px; align-items:baseline; flex-wrap:wrap;
+  }
+  .whenline b{color:var(--ink); font-weight:700;}
+  .editbtn{
+    font:inherit; font-size:12.5px; color:var(--ink-3); background:none;
+    border:1px solid var(--rule); border-radius:2px; padding:2px 9px; cursor:pointer;
+    font-family:"Barlow Condensed",sans-serif; letter-spacing:.1em; text-transform:uppercase; font-weight:600;
+  }
+  .editbtn:hover{color:var(--accent); border-color:var(--accent);}
+  .editbtn:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+
+  /* ── 剩余日程网格 ── */
+  .schedule{padding:0 clamp(16px,4vw,40px) clamp(20px,4vw,34px);}
+  .sec-h{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:12px; flex-wrap:wrap;
+    font-family:"Barlow Condensed",sans-serif; font-size:12.5px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3);
+  }
+  .sec-h .zh{font-family:"Noto Sans SC",sans-serif; letter-spacing:0; text-transform:none;
+    font-size:13.5px; color:var(--ink-2); font-weight:400;}
+  .grid-wrap{overflow-x:auto;}
+  .weekhead,.daygrid{display:grid; grid-template-columns:repeat(7,minmax(38px,1fr)); gap:4px; min-width:294px;}
+  .weekhead div{
+    font-family:"Barlow Condensed",sans-serif; font-size:11px; font-weight:600;
+    letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3);
+    text-align:center; padding-bottom:5px;
+  }
+  .weekhead div.we{color:var(--mark);}
+  .daygrid{margin-top:0;}
+  .day{
+    aspect-ratio:1/.86; border:1px solid var(--rule); background:var(--cell);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    font-family:"Barlow Condensed",sans-serif; font-weight:600; font-size:clamp(15px,3.4vw,19px);
+    font-variant-numeric:tabular-nums; color:var(--ink-2); position:relative;
+  }
+  .day.blank{border-color:transparent; background:none;}
+  .day.we{background:var(--mark-soft); border-color:var(--mark); color:var(--mark);}
+  .day.past{opacity:.32;}
+  .day .mon{
+    position:absolute; top:3px; left:0; right:0; text-align:center;
+    font-size:9.5px; font-weight:600; letter-spacing:.06em; color:var(--ink-3);
+    font-family:"Noto Sans SC",sans-serif;
+  }
+  .day.today{border-color:var(--ink); color:var(--ink); box-shadow:inset 0 0 0 1px var(--ink);}
+  .day.exam{
+    background:var(--accent); border-color:var(--accent); color:#FFF6F2;
+    box-shadow:0 0 0 3px var(--accent-soft);
+  }
+  .day.exam .mon{color:#FFF6F2; opacity:.8;}
+  .legend{
+    display:flex; gap:16px; flex-wrap:wrap; margin-top:12px;
+    font-size:12px; color:var(--ink-3);
+  }
+  .legend span{display:flex; align-items:center; gap:6px;}
+  .legend i{width:11px; height:11px; display:inline-block; border:1px solid var(--rule); background:var(--cell);}
+  .legend i.we{background:var(--mark-soft); border-color:var(--mark);}
+  .legend i.today{border-color:var(--ink); box-shadow:inset 0 0 0 1px var(--ink);}
+  .legend i.exam{background:var(--accent); border-color:var(--accent);}
+
+  /* ── 数据栏 ── */
+  .stats{
+    display:grid; grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--rule);
+  }
+  .stat{padding:16px clamp(14px,3vw,22px); border-right:1px solid var(--rule);}
+  .stat:last-child{border-right:none;}
+  .stat b{
+    display:block; font-family:"Barlow Condensed",sans-serif; font-weight:700;
+    font-size:clamp(30px,6.4vw,42px); line-height:1; font-variant-numeric:tabular-nums;
+    color:var(--ink);
+  }
+  .stat b em{font-style:normal; font-size:.46em; margin-left:3px; color:var(--ink-2);}
+  .stat span{
+    display:block; margin-top:5px; font-size:12.5px; color:var(--ink-3);
+  }
+  .stat.hi b{color:var(--mark);}
+
+  /* ── 页脚 ── */
+  .foot{
+    border-top:1px solid var(--rule); padding:13px clamp(14px,3vw,22px);
+    display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+    font-size:12.5px; color:var(--ink-3);
+  }
+  .foot a{
+    color:var(--accent); text-decoration:none; font-weight:500;
+    border-bottom:1px solid var(--accent-soft); padding-bottom:1px;
+  }
+  .foot a:hover{border-bottom-color:var(--accent);}
+  .foot a:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+
+  dialog{
+    border:1px solid var(--rule); background:var(--sheet); color:var(--ink);
+    padding:20px; max-width:340px; width:calc(100% - 32px);
+    font-family:inherit;
+  }
+  dialog::backdrop{background:#16201Db3;}
+  dialog h2{margin:0 0 4px; font-size:16px;}
+  dialog p{margin:0 0 14px; font-size:12.5px; color:var(--ink-3); line-height:1.6;}
+  dialog input{
+    font:inherit; font-size:14px; width:100%; padding:8px 10px; color:var(--ink);
+    background:var(--paper); border:1px solid var(--rule); border-radius:2px;
+  }
+  dialog input:focus-visible{outline:2px solid var(--accent); outline-offset:1px;}
+  .dlg-foot{display:flex; gap:8px; justify-content:flex-end; margin-top:16px;}
+  .dlg-foot button{
+    font:inherit; font-size:13px; padding:7px 15px; cursor:pointer; border-radius:2px;
+    border:1px solid var(--rule); background:none; color:var(--ink-2);
+  }
+  .dlg-foot button.go{background:var(--accent); border-color:var(--accent); color:#FFF6F2; font-weight:500;}
+  .dlg-foot button:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+
+  @media (max-width:560px){
+    .titleblock{grid-template-columns:repeat(2,1fr);}
+    /* 窄屏改为换行，宁可占两行也不要把"实务"省略掉 */
+    .tb dd{white-space:normal; font-size:12.5px;}
+    .tb{border-bottom:1px solid var(--rule);}
+    .tb:nth-child(2){border-right:none;}
+    .tb:nth-child(3),.tb:nth-child(4){border-bottom:none;}
+    .count .ticker{margin-left:0; text-align:left; width:100%; padding-bottom:0; padding-top:4px;}
+    .stats{grid-template-columns:1fr 1fr;}
+    .stat:nth-child(2){border-right:none;}
+    .stat:nth-child(3){border-top:1px solid var(--rule); border-right:none; grid-column:1/-1;}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .board,.schedule,.stats{animation:rise .5s cubic-bezier(.2,.7,.3,1) both;}
+    .schedule{animation-delay:.06s;} .stats{animation-delay:.12s;}
+    @keyframes rise{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;}}
+  }
+</style>
+</head>
+<body>
+
+<main class="sheet">
+  <dl class="titleblock">
+    <div class="tb"><dt>Exam</dt><dd>一级建造师执业资格考试</dd></div>
+    <div class="tb"><dt>Date</dt><dd id="tbDate">—</dd></div>
+    <div class="tb"><dt>Subjects</dt><dd>经济·法规·管理·实务</dd></div>
+    <div class="tb"><dt>Status</dt><dd id="tbStatus">备考中</dd></div>
+  </dl>
+
+  <section class="board">
+    <p class="eyebrow" id="eyebrow">距开考还有</p>
+    <div class="count">
+      <p class="num" id="numDays">—</p>
+      <div class="unit" id="unitLabel">天</div>
+      <div class="ticker">
+        <b id="hms">--:--:--</b>
+        <span id="hmsLabel">时 · 分 · 秒</span>
+      </div>
+    </div>
+    <p class="whenline">
+      <span>开考时刻　<b id="whenText">—</b></span>
+      <button class="editbtn" id="editBtn" type="button">改时间</button>
+    </p>
+  </section>
+
+  <section class="schedule">
+    <h2 class="sec-h">Remaining Days <span class="zh" id="schedNote">—</span></h2>
+    <div class="grid-wrap">
+      <div class="weekhead">
+        <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div>
+        <div class="we">Sat</div><div class="we">Sun</div>
+      </div>
+      <div class="daygrid" id="dayGrid"></div>
+    </div>
+    <p class="legend">
+      <span><i class="we"></i>周末</span>
+      <span><i class="today"></i>今天</span>
+      <span><i class="exam"></i>考试日</span>
+    </p>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><b id="stPrep">—</b><span>考前可复习天数</span></div>
+    <div class="stat hi"><b id="stWeekend">—</b><span>完整周末（每个 2 天）</span></div>
+    <div class="stat"><b id="stWork">—</b><span>其中工作日</span></div>
+  </div>
+
+  <footer class="foot">
+    <span id="footNote">开考时刻与倒计时均按北京时间（UTC+8）计算</span>
+    <a href="https://claude.ai/code/artifact/fc3cdb4b-6869-4d22-ad69-c4bfd03c6b2e" target="_blank" rel="noopener">打开真题练习 →</a>
+  </footer>
+</main>
+
+<dialog id="dlg">
+  <h2>设置开考时刻</h2>
+  <p>默认取 2026 年 9 月 12 日 09:00（北京时间）。若你的开考时间不同，改这里，只保存在本机浏览器。</p>
+  <input type="datetime-local" id="dlgInput">
+  <div class="dlg-foot">
+    <button type="button" id="dlgReset">恢复默认</button>
+    <button type="button" id="dlgCancel">取消</button>
+    <button type="button" class="go" id="dlgSave">保存</button>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  "use strict";
+  /* 开考时刻：2026-09-12 09:00 北京时间（UTC+8）→ 对应 UTC 01:00。
+     以 UTC+8 为锚点，换到任何时区看到的倒计时都指向同一时刻。 */
+  var DEFAULT_EXAM_UTC = Date.UTC(2026, 8, 12, 1, 0, 0);
+  var LS_KEY = "yjjc_exam_at_v1";
+  var CST_OFFSET = 8 * 3600 * 1000;
+  var WD = ["周日","周一","周二","周三","周四","周五","周六"];
+
+  function examUTC(){
+    var v = null;
+    try{ v = localStorage.getItem(LS_KEY); }catch(e){}
+    var n = v ? parseInt(v, 10) : NaN;
+    return isFinite(n) ? n : DEFAULT_EXAM_UTC;
+  }
+  /* 把某个时刻换算成"北京时间的那一天"，用 UTC 方法读取，避免受浏览器本地时区影响 */
+  function cstDate(ms){
+    var d = new Date(ms + CST_OFFSET);
+    return {y:d.getUTCFullYear(), m:d.getUTCMonth(), d:d.getUTCDate(), w:d.getUTCDay(),
+            hh:d.getUTCHours(), mi:d.getUTCMinutes()};
+  }
+  function cstMidnightUTC(ms){
+    var c = cstDate(ms);
+    return Date.UTC(c.y, c.m, c.d) - CST_OFFSET;
+  }
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+
+  var $ = function(id){ return document.getElementById(id); };
+  var lastGridKey = "";
+
+  function render(){
+    var now = Date.now(), exam = examUTC();
+    var ec = cstDate(exam);
+    var examMid = cstMidnightUTC(exam), todayMid = cstMidnightUTC(now);
+    var dayDiff = Math.round((examMid - todayMid) / 86400000);
+    var left = exam - now;
+
+    /* 大数字：按自然日计，"还有 25 天"与日历一致；考试当天单独措辞 */
+    var eyebrow = $("eyebrow"), num = $("numDays"), unit = $("unitLabel");
+    if(dayDiff > 0){
+      eyebrow.textContent = "距开考还有";
+      num.textContent = dayDiff; unit.textContent = "天";
+      $("tbStatus").textContent = dayDiff <= 7 ? "冲刺阶段" : "备考中";
+    } else if(dayDiff === 0 && left > 0){
+      eyebrow.textContent = "今天开考";
+      num.textContent = "0"; unit.textContent = "天";
+      $("tbStatus").textContent = "今日开考";
+    } else if(left > -6 * 3600 * 1000){
+      eyebrow.textContent = "考试进行中";
+      num.textContent = "0"; unit.textContent = "天";
+      $("tbStatus").textContent = "考试中";
+    } else {
+      eyebrow.textContent = "已考完";
+      num.textContent = Math.abs(dayDiff); unit.textContent = "天前";
+      $("tbStatus").textContent = "已结束";
+    }
+
+    /* 秒表：大数字按自然日走，所以这里配一个不会自相矛盾的量——
+       备考期间显示"今天还剩多少"（归零之时正是天数减一之时），考试当天才切成"距开考"。 */
+    var hms = $("hms"), lab = $("hmsLabel"), span;
+    if(dayDiff > 0){
+      span = todayMid + 86400000 - now;   // 到北京时间下一个零点
+      lab.textContent = "今天还剩";
+    } else if(left > 0){
+      span = left;
+      lab.textContent = "距开考";
+    } else {
+      span = 0;
+      lab.textContent = "已开考";
+    }
+    var s = Math.max(0, Math.floor(span / 1000));
+    hms.textContent = pad(Math.floor(s / 3600)) + ":" + pad(Math.floor(s % 3600 / 60)) + ":" + pad(s % 60);
+
+    /* 图签栏与开考时刻 */
+    $("tbDate").innerHTML = (ec.m + 1) + "月" + ec.d + "日 <span class=\"sub\">" + WD[ec.w] + "</span>";
+    $("whenText").textContent = ec.y + "年" + (ec.m + 1) + "月" + ec.d + "日（" + WD[ec.w] + "）"
+      + pad(ec.hh) + ":" + pad(ec.mi);
+
+    /* 日历网格：只在跨天或改时间后重建 */
+    var key = todayMid + "|" + examMid;
+    if(key !== lastGridKey){ lastGridKey = key; buildGrid(todayMid, examMid, dayDiff); }
+  }
+
+  function buildGrid(todayMid, examMid, dayDiff){
+    var grid = $("dayGrid");
+    grid.innerHTML = "";
+    if(dayDiff < 0){
+      $("schedNote").textContent = "考试已结束";
+      $("stPrep").textContent = "0"; $("stWeekend").textContent = "0"; $("stWork").textContent = "0";
+      return;
+    }
+    var days = [], i, c;
+    for(i = 0; i <= dayDiff; i++){
+      c = cstDate(todayMid + i * 86400000);
+      days.push(c);
+    }
+    /* 首格前补空位：网格以周一为首列 */
+    var lead = (days[0].w + 6) % 7;
+    var html = "";
+    for(i = 0; i < lead; i++) html += '<div class="day blank"></div>';
+    days.forEach(function(c, idx){
+      var cls = "day", isWE = (c.w === 0 || c.w === 6);
+      if(idx === dayDiff) cls += " exam";
+      else if(isWE) cls += " we";
+      if(idx === 0 && dayDiff !== 0) cls += " today";
+      var monTag = (c.d === 1 || idx === 0) ? '<span class="mon">' + (c.m + 1) + '月</span>' : "";
+      html += '<div class="' + cls + '">' + monTag + c.d + "</div>";
+    });
+    grid.innerHTML = html;
+
+    /* 统计：考前可复习天数 = 今天起到考试前一天 */
+    var prep = days.slice(0, dayDiff);
+    var weDays = prep.filter(function(c){ return c.w === 0 || c.w === 6; }).length;
+    var workDays = prep.length - weDays;
+    /* 完整周末 = 六、日成对且都在考试日之前 */
+    var full = 0;
+    for(i = 0; i < prep.length - 1; i++){
+      if(prep[i].w === 6 && prep[i + 1].w === 0) full++;
+    }
+    $("stPrep").textContent = prep.length;
+    $("stWeekend").innerHTML = full + '<em>个</em>';
+    $("stWork").textContent = workDays;
+    $("schedNote").textContent = dayDiff === 0
+      ? "就是今天"
+      : "今天起共 " + (dayDiff + 1) + " 格，最后一格为考试日";
+  }
+
+  /* ── 改开考时刻 ── */
+  var dlg = $("dlg");
+  $("editBtn").addEventListener("click", function(){
+    var e = examUTC() + CST_OFFSET;
+    var d = new Date(e);
+    $("dlgInput").value = d.getUTCFullYear() + "-" + pad(d.getUTCMonth() + 1) + "-" + pad(d.getUTCDate())
+      + "T" + pad(d.getUTCHours()) + ":" + pad(d.getUTCMinutes());
+    if(dlg.showModal) dlg.showModal();
+  });
+  $("dlgCancel").addEventListener("click", function(){ dlg.close(); });
+  $("dlgSave").addEventListener("click", function(){
+    var v = $("dlgInput").value;
+    var m = v && v.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})$/);
+    if(m){
+      var ms = Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]) - CST_OFFSET;
+      try{ localStorage.setItem(LS_KEY, String(ms)); }catch(e){}
+      lastGridKey = ""; render();
+    }
+    dlg.close();
+  });
+  $("dlgReset").addEventListener("click", function(){
+    try{ localStorage.removeItem(LS_KEY); }catch(e){}
+    lastGridKey = ""; render(); dlg.close();
+  });
+
+  render();
+  setInterval(render, 1000);
+})();
+</script>
+</body>
+</html>
