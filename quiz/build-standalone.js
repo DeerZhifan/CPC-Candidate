@@ -24,3 +24,10 @@ html = html.replace(reScriptSrc, (m, file) => {
 
 fs.writeFileSync(OUT, html, "utf8");
 console.log(`内联了 ${count} 个脚本文件，已写入 ${OUT}（${(fs.statSync(OUT).size / 1024).toFixed(0)} KB）`);
+console.log(
+  "\n发布到 Claude Artifact 时，建议声明 downloads 能力：capabilities: { downloads: true }。\n" +
+  "  · 答题进度、同步码、错题分析都在浏览器本地运行，不依赖任何能力；\n" +
+  "  · 只有【进度同步 → 导出备份文件】需要它——artifact 预览里页面自身发起的下载会被沙箱拦掉，\n" +
+  "    声明后走 claude.use(\"downloads\") 由查看者确认保存；未声明时该按钮会自动退回 Blob 下载（在\n" +
+  "    artifact 里可能无声失败），同步码与同步链接不受影响。"
+);
