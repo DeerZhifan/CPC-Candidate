@@ -439,12 +439,13 @@
         <div class="use">使"订货成本+储存成本"之和最小</div>
       </div>
       <div class="fcard">
-        <div class="fname">最佳现金持有量（成本模型）</div>
-        <span class="formula">取"持有成本+短缺成本+转换成本"之和最小的持有量</span>
-        <div class="vars">成本分析法：列表比较各持有方案总成本</div>
-        <div class="use">总成本最低者为最佳持有量</div>
+        <div class="fname">最佳现金持有量（成本分析模型）</div>
+        <span class="formula">min 相关总成本 = 机会成本 + 管理成本 + 短缺成本</span>
+        <div class="vars"><b>机会成本</b>=持有现金放弃的投资收益，随持有量↑而↑ · <b>管理成本</b>=固定成本，与持有量基本无关 · <b>短缺成本</b>=现金不足造成的损失，随持有量↑而↓</div>
+        <div class="use">列表试算各方案，三项之和最小者为最佳持有量</div>
       </div>
     </div>
+    <div class="trap">⚠ <b>成本分析模型</b>用机会成本+管理成本+短缺成本三项（管理成本是<b>固定成本</b>，不影响最优点位置，故最优点实为"机会成本+短缺成本"最小处）；<b>存货模型（鲍莫尔）</b>则只权衡<b>持有机会成本与交易/转换成本</b>，用 C*=√(2·T·F/K)。两模型的成本项别混。</div>
     <details class="ex"><summary>经典例题 8-A<span class="tag">EOQ</span></summary>
       <div class="exbody">
         <div class="q">某材料年需求量 3600 吨，每次订货成本 25 元，每吨每年储存成本 2 元。求经济订货批量。</div>
