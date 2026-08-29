@@ -103,10 +103,11 @@
     <a class="p2" href="#s6">财务比率</a>
     <a class="p2" href="#s7">资金成本</a>
     <a class="p2" href="#s8">营运资金</a>
-    <a class="p3" href="#s9">总投资构成</a>
-    <a class="p3" href="#s10">清单综合单价</a>
-    <a class="p3" href="#s11">计量与支付</a>
-    <a class="p3" href="#s12">国际投标报价</a>
+    <a class="p2" href="#s9">折旧计算</a>
+    <a class="p3" href="#s10">总投资构成</a>
+    <a class="p3" href="#s11">清单综合单价</a>
+    <a class="p3" href="#s12">计量与支付</a>
+    <a class="p3" href="#s13">国际投标报价</a>
   </nav>
 </header>
 <main>
@@ -176,7 +177,7 @@
 
     <details class="ex"><summary>经典例题 1-A<span class="tag">终值/现值</span></summary>
       <div class="exbody">
-        <div class="q">某项目现投资 1000 万元，年利率 10%，按复利计，3 年末可积累多少？又：若希望 5 年后每年末获得 300 万元、共 5 年，年利率 10%，现在应一次投入多少？</div>
+        <div class="q">某项目现投资 1000 万元，年利率 10%，按复利计，3 年末可积累多少？又：若希望未来 5 年内每年末各获得 300 万元，年利率 10%，现在应一次投入多少？</div>
         <div class="sol">
           <b>解：</b>
           <span class="step">① 终值 F = 1000×(1+0.10)³ = 1000×1.331 = <b>1331 万元</b></span>
@@ -224,8 +225,14 @@
       <div class="fcard">
         <div class="fname">静态投资回收期 P<sub>t</sub></div>
         <span class="formula">P<sub>t</sub> = (累计净现金流出现正值的年数−1) + 上年绝对值/当年净现金流</span>
-        <div class="vars">从建设开始算起</div>
+        <div class="vars">从建设开始算起，<b>不折现</b></div>
         <div class="use">判据 P<sub>t</sub>≤基准回收期；越短越好</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">动态投资回收期 P′<sub>t</sub></div>
+        <span class="formula">P′<sub>t</sub> = (累计折现净现金流出现正值的年数−1) + 上年累计折现值绝对值/当年折现净现金流</span>
+        <div class="vars">净现金流<b>先按 i<sub>c</sub> 折现</b>再累计</div>
+        <div class="use">判据 P′<sub>t</sub>≤基准；恒有 <b>P′<sub>t</sub>&gt;P<sub>t</sub></b></div>
       </div>
       <div class="fcard">
         <div class="fname">效益费用比 R<sub>BC</sub></div>
@@ -451,17 +458,74 @@
     </details>
   </section>
 
+  <section id="s9">
+    <h2><span class="no">9</span>固定资产折旧计算</h2>
+    <p class="lead">折旧把固定资产原值在使用年限内分摊进成本。直线法最基础；加速折旧（双倍余额递减、年数总和）前期多提、后期少提，是高频计算与易错点。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">① 年限平均法（直线法）</div>
+        <span class="formula">年折旧额 = (原值 − 预计净残值)/折旧年限</span>
+        <div class="vars">年折旧率 = (1 − 净残值率)/折旧年限；每年折旧额相等</div>
+        <div class="use">最常用；残值率一般取 3%~5%</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">② 工作量法</div>
+        <span class="formula">某期折旧 = 该期工作量 × (原值−净残值)/预计总工作量</span>
+        <div class="vars">单位工作量折旧额固定，按实际工作量提取</div>
+        <div class="use">运输设备、大型施工机械（按台班/里程）</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">③ 双倍余额递减法（加速）</div>
+        <span class="formula">年折旧额 = 期初账面净值 × 2/折旧年限</span>
+        <div class="vars">折旧率 <b>2/n 不扣残值</b>；<b>最后两年</b>改直线法，把剩余净值减残值后均摊</div>
+        <div class="use">前期折旧多、抵税早</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">④ 年数总和法（加速）</div>
+        <span class="formula">年折旧额 = (原值−净残值) × 尚可使用年数/年数总和</span>
+        <div class="vars">年数总和 = n(n+1)/2；折旧率逐年递减，<b>一开始就扣净残值</b></div>
+        <div class="use">前期折旧多、抵税早</div>
+      </div>
+    </div>
+    <div class="tip">💡 三种方法<b>累计折旧总额相同</b>（都等于"原值−净残值"），只是<b>年度分摊节奏不同</b>。加速折旧前期多提折旧→前期利润小、所得税少，等于把纳税时间后移，获得资金时间价值上的合法节税收益。</div>
+    <div class="trap">⚠ <b>双倍余额递减法</b>算折旧率时<b>不减净残值</b>（率=2/n），但<b>最后两年</b>务必改直线法把剩余净值（扣除残值后）均分，否则会把残值也提完；<b>年数总和法</b>则从第一年起分子就用"原值−净残值"。两法方向别记反。</div>
+    <div class="tscroll"><table>
+      <tr><th>年份</th><th>年限平均法</th><th>双倍余额递减法</th><th>年数总和法</th></tr>
+      <tr><td>第 1 年</td><td>19.2</td><td>40.0</td><td>32.0</td></tr>
+      <tr><td>第 2 年</td><td>19.2</td><td>24.0</td><td>25.6</td></tr>
+      <tr><td>第 3 年</td><td>19.2</td><td>14.4</td><td>19.2</td></tr>
+      <tr><td>第 4 年</td><td>19.2</td><td><span class="r">8.8</span></td><td>12.8</td></tr>
+      <tr><td>第 5 年</td><td>19.2</td><td><span class="r">8.8</span></td><td>6.4</td></tr>
+      <tr><td>合计</td><td>96.0</td><td>96.0</td><td>96.0</td></tr>
+    </table></div>
+    <p style="font-size:.72rem;color:var(--sub);margin:2px 0 10px;">（上表为下方例题数据：原值 100 万、净残值 4 万、年限 5 年，单位：万元）</p>
+    <details class="ex"><summary>经典例题 9-A<span class="tag">加速折旧</span></summary>
+      <div class="exbody">
+        <div class="q">某设备原值 100 万元，预计净残值 4 万元，使用年限 5 年。分别用双倍余额递减法和年数总和法计算各年折旧额。</div>
+        <div class="sol">
+          <b>解：双倍余额递减法</b>（率 = 2/5 = 40%，前 3 年按期初净值提取）
+          <span class="step">第 1 年 = 100×40% = <b>40</b>；第 2 年 =(100−40)×40% = <b>24</b>；第 3 年 =(60−24)×40% = <b>14.4</b></span>
+          <span class="step">末两年改直线：期初净值 = 36−14.4 = 21.6，扣残值 4 后 17.6 均分 → 第 4、5 年各 <b>8.8</b></span>
+          <span class="step">校核：40+24+14.4+8.8+8.8 = 96 = 100−4 ✓</span>
+          <b>解：年数总和法</b>（年数总和 = 5×6/2 = 15，可提折旧 = 100−4 = 96）
+          <span class="step">第 1 年 = 96×5/15 = <b>32</b>；第 2 年 = 96×4/15 = <b>25.6</b>；第 3 年 = 96×3/15 = <b>19.2</b>；第 4 年 = 96×2/15 = <b>12.8</b>；第 5 年 = 96×1/15 = <b>6.4</b></span>
+        </div>
+        <div class="ans">答：见上方对比表；两种加速法五年累计折旧均为 96 万元，仅分摊节奏不同。</div>
+      </div>
+    </details>
+  </section>
+
   <!-- ══════════════ 第三篇 ══════════════ -->
   <div class="part p3">第三篇 · 工程计价</div>
 
-  <section id="s9">
-    <h2><span class="no">9</span>建设项目总投资构成及计算</h2>
+  <section id="s10">
+    <h2><span class="no">10</span>建设项目总投资构成及计算</h2>
     <p class="lead">"造价一张树"：总投资=建设投资+建设期利息+流动资金。计算高频点是预备费与建设期利息。</p>
     <div class="tscroll"><table>
       <tr><th>层次</th><th>构成</th></tr>
       <tr><td>建设投资</td><td>工程费用（建筑安装工程费＋设备及工器具购置费）＋工程建设其他费＋<span class="r">预备费</span></td></tr>
       <tr><td>预备费</td><td><span class="r">基本预备费</span>（应对一般变更）＋<span class="r">价差预备费</span>（应对涨价）</td></tr>
-      <tr><td>总投资</td><td>建设投资 ＋ <span class="r">建设期利息</span> ＋ 铺底流动资金</td></tr>
+      <tr><td>总投资</td><td>建设投资 ＋ <span class="r">建设期利息</span> ＋ 流动资金（生产性项目）</td></tr>
     </table></div>
     <div class="fgrid">
       <div class="fcard">
@@ -507,8 +571,8 @@
     </details>
   </section>
 
-  <section id="s10">
-    <h2><span class="no">10</span>工程量清单综合单价与造价合成</h2>
+  <section id="s11">
+    <h2><span class="no">11</span>工程量清单综合单价与造价合成</h2>
     <p class="lead">清单计价的核心是"综合单价"，再逐层合成分部分项费、措施费、其他项目费、规费、税金。</p>
     <div class="fgrid">
       <div class="fcard">
@@ -545,8 +609,8 @@
     </details>
   </section>
 
-  <section id="s11">
-    <h2><span class="no">11</span>工程计量与支付</h2>
+  <section id="s12">
+    <h2><span class="no">12</span>工程计量与支付</h2>
     <p class="lead">高频计算：预付款起扣点、进度款、质保金、以及物价波动下的调值公式法。</p>
     <div class="fgrid">
       <div class="fcard">
@@ -591,8 +655,8 @@
     </details>
   </section>
 
-  <section id="s12">
-    <h2><span class="no">12</span>国际工程投标报价</h2>
+  <section id="s13">
+    <h2><span class="no">13</span>国际工程投标报价</h2>
     <p class="lead">在总报价确定后，用报价技巧调整各子项单价，在不抬高总价的前提下改善现金流与索赔空间。</p>
     <div class="fgrid">
       <div class="fcard">
@@ -612,7 +676,7 @@
   </section>
 
   <footer>
-    建设工程经济 · 计算专题手册 · 覆盖三篇 12 个计算族<br>
+    建设工程经济 · 计算专题手册 · 覆盖三篇 13 个计算族<br>
     公式与例题依据《建设工程经济》教材与历年真题整理，计算结果均为四舍五入示意，应试以最新教材口径为准。
   </footer>
 </main>
