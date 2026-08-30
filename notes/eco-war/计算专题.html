@@ -240,8 +240,14 @@
         <div class="vars">均折现到基准年</div>
         <div class="use">判据 <b>R≥1 可行</b></div>
       </div>
+      <div class="fcard">
+        <div class="fname">差额投资内部收益率 ΔIRR（互斥方案）</div>
+        <span class="formula">令 Σ(ΔCI−ΔCO)<sub>t</sub>(1+ΔIRR)<sup>−t</sup> = 0</span>
+        <div class="vars">用"投资大−投资小"两方案的<b>差额现金流</b>求 IRR</div>
+        <div class="use">判据 <b>ΔIRR≥i<sub>c</sub></b> 选投资大者，否则选投资小者</div>
+      </div>
     </div>
-    <div class="trap">⚠ ①<b>寿命期不同</b>的互斥方案不能直接比 NPV，要用 <b>NAV</b>（或最小公倍数法）。②IRR 内插只是近似，i₁、i₂ 间隔越小越准（一般≤2%~5%）。③NPV&gt;0 ⇔ IRR&gt;i<sub>c</sub> ⇔ R&gt;1，三者判断方向一致。</div>
+    <div class="trap">⚠ ①<b>寿命期不同</b>的互斥方案不能直接比 NPV，要用 <b>NAV</b>（或最小公倍数法）。②IRR 内插只是近似，i₁、i₂ 间隔越小越准（一般≤2%~5%）。③NPV&gt;0 ⇔ IRR&gt;i<sub>c</sub> ⇔ R&gt;1，三者判断方向一致。④<b>投资额不同的互斥方案</b>不能只看各自 IRR 大小，须用 <b>ΔIRR</b> 或 NPV 判优（IRR 高的方案 NPV 未必大）。</div>
 
     <details class="ex"><summary>经典例题 2-A<span class="tag">NPV</span></summary>
       <div class="exbody">
@@ -288,6 +294,12 @@
         <span class="formula">S<sub>AF</sub> = (ΔA/A) / (ΔF/F)</span>
         <div class="vars">评价指标变化率 ÷ 不确定因素变化率</div>
         <div class="use">|S| 越大越敏感；&gt;1 为敏感因素</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">概率分析·期望值</div>
+        <span class="formula">E(NPV) = Σ P<sub>i</sub> · NPV<sub>i</sub></span>
+        <div class="vars"><b>P<sub>i</sub></b>各状态发生概率（ΣP<sub>i</sub>=1）· <b>NPV<sub>i</sub></b>该状态下净现值</div>
+        <div class="use">E(NPV)&gt;0 可行；配合 NPV≥0 的累计概率判风险</div>
       </div>
     </div>
     <div class="trap">⚠ 盈亏平衡分析属<b>确定性因素</b>下的临界点分析，只用于<b>单一项目</b>抗风险判断，不能用于多方案比选。敏感度系数取<b>绝对值</b>排序。</div>
@@ -548,7 +560,7 @@
         <div class="use">当年新增借款按<b>年中支用、计半年利息</b></div>
       </div>
     </div>
-    <details class="ex"><summary>经典例题 9-A<span class="tag">建设期利息</span></summary>
+    <details class="ex"><summary>经典例题 10-A<span class="tag">建设期利息</span></summary>
       <div class="exbody">
         <div class="q">建设期 2 年，第 1 年借款 500 万元、第 2 年借款 300 万元，年利率 6%，借款均在年中支用。求建设期利息合计。</div>
         <div class="sol">
@@ -560,7 +572,7 @@
         <div class="ans">答：建设期利息合计 54.9 万元（注意第 2 年要含第 1 年利息滚入本金）。</div>
       </div>
     </details>
-    <details class="ex"><summary>经典例题 9-B<span class="tag">基本预备费</span></summary>
+    <details class="ex"><summary>经典例题 10-B<span class="tag">基本预备费</span></summary>
       <div class="exbody">
         <div class="q">某项目工程费用 8000 万元，工程建设其他费 1000 万元，基本预备费率 5%。求基本预备费。</div>
         <div class="sol">
@@ -596,7 +608,7 @@
       </div>
     </div>
     <div class="trap">⚠ <b>综合单价 = 五项（人材机管利）＋风险</b>，<b>不含规费、税金</b>（"综合"是综合了管理费和利润，不是综合了规费税金）。规费、税金在最后统一计取。</div>
-    <details class="ex"><summary>经典例题 10-A<span class="tag">造价合成</span></summary>
+    <details class="ex"><summary>经典例题 11-A<span class="tag">造价合成</span></summary>
       <div class="exbody">
         <div class="q">某单位工程：分部分项费 800 万、措施项目费 60 万、其他项目费 40 万、规费 30 万，增值税率 9%。求含税造价。</div>
         <div class="sol">
@@ -612,7 +624,9 @@
 
   <section id="s12">
     <h2><span class="no">12</span>工程计量与支付</h2>
-    <p class="lead">高频计算：预付款起扣点、进度款、质保金、以及物价波动下的调值公式法。</p>
+    <p class="lead">合同价款计算高频区：预付款起扣与进度款、质量保证金，以及物价波动、工程量偏差与清单缺陷引起的价款调整。</p>
+
+    <h3>预付款、进度款与质量保证金</h3>
     <div class="fgrid">
       <div class="fcard">
         <div class="fname">预付款起扣点</div>
@@ -627,13 +641,47 @@
         <div class="use">保证竣工前预付款全部收回</div>
       </div>
       <div class="fcard">
-        <div class="fname">价格调整（调值公式法）</div>
-        <span class="formula">P = P₀(a₀ + a₁·A₁/A₀ + a₂·B₁/B₀ + …)</span>
-        <div class="vars"><b>a₀</b>固定要素权重（不调值，如10%）· <b>a₁,a₂…</b>各调值要素权重 · <b>下标1/0</b>=现行/基期价格指数；<b>Σa = 1</b></div>
-        <div class="use">工期长、物价波动大的合同</div>
+        <div class="fname">进度款与质量保证金</div>
+        <span class="formula">质保金 = 结算总价 × 比例（一般≤3%）</span>
+        <div class="vars">进度款 = 已完合格工程价款 × 支付比例 − 应扣回（预付款抵扣＋质保金预留）；质保金一般不超过结算价 <b>3%</b></div>
+        <div class="use">缺陷责任期满且无缺陷返还质保金</div>
       </div>
     </div>
-    <details class="ex"><summary>经典例题 11-A<span class="tag">起扣点</span></summary>
+
+    <h3>物价波动引起的价款调整（两种方法）</h3>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">法一 · 价格指数调整法（调值公式法）</div>
+        <span class="formula">结算价 = P₀(a₀ + a₁·F₁ₜ/F₁₀ + a₂·F₂ₜ/F₂₀ + …)</span>
+        <div class="vars"><b>P₀</b>基准期完成价款 · <b>a₀</b>定值权重（不调，如10%）· <b>aₙ</b>各可调因子变值权重 · <b>Fₙₜ/Fₙ₀</b>=现行/基准价格指数；<b>a₀+Σaₙ=1</b></div>
+        <div class="use">价格指数可查、工期长的大合同</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">法二 · 造价信息调整法（价格信息调差法）</div>
+        <span class="formula">调整额 = Σ 用量 × (现行发布价 − 基准价中超风险幅度部分)</span>
+        <div class="vars">按造价管理机构发布的价格信息调整；材料价格涨/跌<b>超过约定风险幅度</b>（常取±5%）的部分才调，幅度内自担</div>
+        <div class="use">主要材料、设备价格调整（无价格指数时）</div>
+      </div>
+    </div>
+    <div class="trap">⚠ <b>造价信息法</b>"基准"取法易错：投标单价<b>低于</b>基准单价时，涨价以<b>基准单价</b>为基础、跌价以<b>投标单价</b>为基础算超幅部分；只调超过风险幅度的部分，幅度内价差由承包人承担。<b>价格指数法</b>则按权重×指数比计算，与风险幅度无关，两法不可混用。</div>
+
+    <h3>工程量偏差与清单缺陷引起的综合单价调整</h3>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">工程量偏差调整原则</div>
+        <span class="formula">|实际工程量 − 清单量| / 清单量 &gt; 15% → 调综合单价</span>
+        <div class="vars">工程量<b>增加>15%</b>：增加部分单价应<b>调低</b>；工程量<b>减少>15%</b>：剩余部分单价应<b>调高</b>（量增价降、量减价升）</div>
+        <div class="use">清单缺项/工程量偏差导致量变时</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">综合单价调整（偏差>15% 的托底 / 封顶）</div>
+        <span class="formula">P₀偏低 → P₁ = P₂(1−L)(1−15%)　｜　P₀偏高 → P₁ = P₂(1+15%)</span>
+        <div class="vars"><b>P₀</b>承包人清单填报综合单价 · <b>P₂</b>最高投标限价(招标控制价)相应综合单价 · <b>P₁</b>调整后单价 · <b>L</b>承包人报价浮动率</div>
+        <div class="use">当 P₀ 与 P₂ 偏差超 15% 时把单价约束回合理带</div>
+      </div>
+    </div>
+    <div class="tip">💡 <b>综合单价偏差调整三情形：</b>① 当 P₀ &lt; P₂(1−L)(1−15%)：P₁ <b>上调</b>至 P₂(1−L)(1−15%)（托底）；② 当 P₀ &gt; P₂(1+15%)：P₁ <b>下调</b>至 P₂(1+15%)（封顶）；③ 当 P₀ 落在 [P₂(1−L)(1−15%)，P₂(1+15%)] 区间内：<b>可不调整</b>。实质是把偏离过大的报价拉回招标控制价附近的合理区间。</div>
+    <details class="ex"><summary>经典例题 12-A<span class="tag">起扣点</span></summary>
       <div class="exbody">
         <div class="q">某工程合同总价 1000 万元，预付款限额 200 万元，主要材料及构件所占比重 60%。求预付款起扣点。</div>
         <div class="sol">
@@ -643,7 +691,7 @@
         <div class="ans">答：当累计完成工程价款达 666.67 万元时开始起扣预付款；之后每期按完成价款×60% 抵扣。</div>
       </div>
     </details>
-    <details class="ex"><summary>经典例题 11-B<span class="tag">调值公式</span></summary>
+    <details class="ex"><summary>经典例题 12-B<span class="tag">调值公式</span></summary>
       <div class="exbody">
         <div class="q">某月完成工程款基期价 500 万元，调值：固定权重 a₀=0.15，人工 a₁=0.35（指数由 100 涨至 110），材料 a₂=0.50（指数由 100 涨至 120）。求调整后结算款。</div>
         <div class="sol">
@@ -652,6 +700,28 @@
           <span class="step">= 500×(0.15 + 0.385 + 0.600) = 500×1.135 = <b>567.5 万元</b></span>
         </div>
         <div class="ans">答：调整后结算款 567.5 万元（较基期增加 67.5 万元）。</div>
+      </div>
+    </details>
+    <details class="ex"><summary>经典例题 12-C<span class="tag">造价信息法</span></summary>
+      <div class="exbody">
+        <div class="q">某工程一批钢筋用量 200 吨，投标报价采用的基准单价 4000 元/吨（等于造价信息基准价），施工期造价信息发布价涨至 4600 元/吨。合同约定材料价格风险幅度 ±5%，超过部分调整。求价差调整额。</div>
+        <div class="sol">
+          <b>解：</b>涨价以基准单价为基础，风险幅度上限 = 4000×(1+5%) = 4200 元/吨
+          <span class="step">现行价 4600 &gt; 4200，超风险幅度部分 = 4600 − 4200 = 400 元/吨</span>
+          <span class="step">调整额 = 400 × 200 = 80 000 元 = <b>8 万元</b>（发包人补偿承包人）</span>
+        </div>
+        <div class="ans">答：发包人应补价差 8 万元；5% 幅度以内的 200 元/吨价差由承包人自担。</div>
+      </div>
+    </details>
+    <details class="ex"><summary>经典例题 12-D<span class="tag">工程量偏差·单价调整</span></summary>
+      <div class="exbody">
+        <div class="q">某清单项目最高投标限价综合单价 P₂=100 元，承包人填报 P₀=140 元，承包人报价浮动率 L=5%。施工中该项工程量偏差超过 15%，需调整综合单价。求调整后综合单价 P₁。</div>
+        <div class="sol">
+          <b>解：</b>先算合理区间上、下限
+          <span class="step">上限 = P₂(1+15%) = 100×1.15 = 115 元；下限 = P₂(1−L)(1−15%) = 100×0.95×0.85 = 80.75 元</span>
+          <span class="step">P₀=140 &gt; 115（超上限）→ 按封顶调整：P₁ = <b>115 元</b></span>
+        </div>
+        <div class="ans">答：调整后综合单价 P₁ = 115 元（因 P₀ 高于 P₂(1+15%)，按上限封顶）。</div>
       </div>
     </details>
   </section>
