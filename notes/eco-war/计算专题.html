@@ -104,10 +104,13 @@
     <a class="p2" href="#s7">资金成本</a>
     <a class="p2" href="#s8">营运资金</a>
     <a class="p2" href="#s9">折旧计算</a>
-    <a class="p3" href="#s10">总投资构成</a>
-    <a class="p3" href="#s11">清单综合单价</a>
-    <a class="p3" href="#s12">计量与支付</a>
-    <a class="p3" href="#s13">国际投标报价</a>
+    <a class="p2" href="#s10">收入利润所得税</a>
+    <a class="p3" href="#s11">总投资构成</a>
+    <a class="p3" href="#s12">造价构成与取费</a>
+    <a class="p3" href="#s13">人材机定额</a>
+    <a class="p3" href="#s14">清单综合单价</a>
+    <a class="p3" href="#s15">计量与支付</a>
+    <a class="p3" href="#s16">国际投标报价</a>
   </nav>
 </header>
 <main>
@@ -327,13 +330,19 @@
         <div class="use">使年平均总成本最低的使用年限</div>
       </div>
       <div class="fcard">
-        <div class="fname">年平均使用成本（列表法）</div>
+        <div class="fname">年平均使用成本（列表法·静态）</div>
         <span class="formula">AC(n)=[(P−L<sub>n</sub>)+ΣC<sub>t</sub>]/n</span>
-        <div class="vars">逐年试算，取 AC 最小的 n</div>
-        <div class="use">残值/运营费不规则时用列表法</div>
+        <div class="vars">逐年试算、<b>不折现</b>，取 AC 最小的 n</div>
+        <div class="use">残值/运营费不规则时求经济寿命</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">费用年值法 AC（动态·方案比选）</div>
+        <span class="formula">AC = P·(A/P,i,n) + C − L·(A/F,i,n)</span>
+        <div class="vars"><b>P</b>投资（旧设备取<b>市场转让价</b>）· <b>C</b>年运行成本 · <b>L</b>期末残值 · 三项：资本回收费＋年运行费−残值年回收</div>
+        <div class="use">判据 <b>AC 最低者优</b>；寿命不同的方案可直接比</div>
       </div>
     </div>
-    <div class="tip">💡 设备更新比选<b>只比未来成本</b>，旧设备原始购价属"<b>沉没成本</b>"不计入；旧设备的"现值"应按<b>市场变现价值</b>作为继续使用的机会成本。</div>
+    <div class="tip">💡 设备更新比选<b>只比未来成本</b>，旧设备原始购价属"<b>沉没成本</b>"不计入；旧设备的"现值"应按<b>市场变现价值</b>作为继续使用的机会成本。费用年值法把寿命不等的方案都摊成"等额年成本"，故可直接比较——这正是它优于现值法之处。</div>
     <details class="ex"><summary>经典例题 4-A<span class="tag">经济寿命</span></summary>
       <div class="exbody">
         <div class="q">某设备原值 10 000 元，最终残值近似为 0，年运行成本逐年递增额 λ=500 元。用低劣化数值法估算经济寿命。</div>
@@ -342,6 +351,18 @@
           <span class="step">N₀ = √(2×(10 000−0)/500) = √40 ≈ 6.3 年</span>
         </div>
         <div class="ans">答：经济寿命约 6 年（取整）。</div>
+      </div>
+    </details>
+    <details class="ex"><summary>经典例题 4-B<span class="tag">费用年值法·新旧比选</span></summary>
+      <div class="exbody">
+        <div class="q">旧设备 A 现市场转让价 90 万元，尚可用 6 年，年运行成本 80 万元，6 年末残值 25 万元；新设备 B 购价 300 万元，可用 10 年，年运行成本 50 万元，10 年末残值 35 万元。i=10%。系数 (A/P,10%,6)=0.2296、(A/F,10%,6)=0.1296、(A/P,10%,10)=0.1627、(A/F,10%,10)=0.0627。用费用年值法比选。</div>
+        <div class="sol">
+          <b>解：</b>（旧设备投资取市场转让价 90，寿命 6 年；不算原始购价）
+          <span class="step">AC<sub>A</sub> = 90×0.2296 + 80 − 25×0.1296 = 20.66 + 80 − 3.24 = <b>97.42 万元</b></span>
+          <span class="step">AC<sub>B</sub> = 300×0.1627 + 50 − 35×0.0627 = 48.81 + 50 − 2.19 = <b>96.62 万元</b></span>
+          <span class="step">AC<sub>A</sub>(97.42) &gt; AC<sub>B</sub>(96.62)</span>
+        </div>
+        <div class="ans">答：AC<sub>B</sub> 更低，购买新设备 B 的方案较优。</div>
       </div>
     </details>
   </section>
@@ -528,11 +549,65 @@
     </details>
   </section>
 
+  <section id="s10">
+    <h2><span class="no">10</span>收入 · 利润 · 所得税计算</h2>
+    <p class="lead">建造合同收入按<b>履约进度（完工百分比）</b>确认；再由营业利润推出利润总额、净利润与应纳所得税。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">履约进度（完工百分比）</div>
+        <span class="formula">进度 = 累计实际合同成本 / 合同预计总成本 ×100%</span>
+        <div class="vars">或按工作量法 = 累计已完工程量 / 预计总工程量 ×100%</div>
+        <div class="use">分母是<b>预计总量</b>，设计变更后须更新</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">当期确认的合同收入</div>
+        <span class="formula">当期收入 = 合同总收入 × 完工进度 − 以前期间累计已确认收入</span>
+        <div class="vars">先算"累计应确认"，再减以前累计，得本期</div>
+        <div class="use">累计法，非当年增量直接×进度</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">利润总额与净利润</div>
+        <span class="formula">利润总额 = 营业利润 + 营业外收入 − 营业外支出；净利润 = 利润总额 − 所得税费用</span>
+        <div class="vars">营业利润 = 营业收入 − 营业成本 − 税金及附加 − 期间费用 ∓ 各类损益</div>
+        <div class="use">利润表自上而下逐层结出</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">应纳所得税额</div>
+        <span class="formula">应纳税额 = 应纳税所得额 × 适用税率 − 减免税额 − 抵免税额</span>
+        <div class="vars"><b>应纳税所得额 = 利润总额 ± 纳税调整</b>，未必等于利润总额；企业所得税率一般 25%</div>
+        <div class="use">先纳税调整、再乘税率</div>
+      </div>
+    </div>
+    <div class="trap">⚠ ①完工进度分母用<b>预计总成本/总工程量</b>，设计变更后分母要相应调整；②当期收入用<b>累计法</b>（总收入×累计进度 − 以前累计），不是"当年增量×进度"；③<b>应纳税所得额 ≠ 利润总额</b>，需纳税调整后再乘税率。</div>
+    <details class="ex"><summary>经典例题 10-A<span class="tag">完工百分比·收入</span></summary>
+      <div class="exbody">
+        <div class="q">某建造合同总收入 5000 万元。第 1 年末累计履约进度 30%，第 2 年末累计履约进度 80%。求第 2 年应确认的合同收入。</div>
+        <div class="sol">
+          <b>解：</b>累计法
+          <span class="step">第 2 年收入 = 5000×80% − 5000×30% = 4000 − 1500 = <b>2500 万元</b></span>
+        </div>
+        <div class="ans">答：第 2 年确认合同收入 2500 万元。</div>
+      </div>
+    </details>
+    <details class="ex"><summary>经典例题 10-B<span class="tag">利润·所得税</span></summary>
+      <div class="exbody">
+        <div class="q">某企业营业利润 800 万元，营业外收入 50 万元，营业外支出 30 万元，所得税税率 25%（暂不考虑纳税调整）。求利润总额、应纳所得税额与净利润。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">利润总额 = 800 + 50 − 30 = <b>820 万元</b></span>
+          <span class="step">应纳所得税 = 820×25% = <b>205 万元</b>（此处按应纳税所得额=利润总额简化）</span>
+          <span class="step">净利润 = 820 − 205 = <b>615 万元</b></span>
+        </div>
+        <div class="ans">答：利润总额 820 万、所得税 205 万、净利润 615 万元。</div>
+      </div>
+    </details>
+  </section>
+
   <!-- ══════════════ 第三篇 ══════════════ -->
   <div class="part p3">第三篇 · 工程计价</div>
 
-  <section id="s10">
-    <h2><span class="no">10</span>建设项目总投资构成及计算</h2>
+  <section id="s11">
+    <h2><span class="no">11</span>建设项目总投资构成及计算</h2>
     <p class="lead">"造价一张树"：总投资=建设投资+建设期利息+流动资金。计算高频点是预备费与建设期利息。</p>
     <div class="tscroll"><table>
       <tr><th>层次</th><th>构成</th></tr>
@@ -560,7 +635,7 @@
         <div class="use">当年新增借款按<b>年中支用、计半年利息</b></div>
       </div>
     </div>
-    <details class="ex"><summary>经典例题 10-A<span class="tag">建设期利息</span></summary>
+    <details class="ex"><summary>经典例题 11-A<span class="tag">建设期利息</span></summary>
       <div class="exbody">
         <div class="q">建设期 2 年，第 1 年借款 500 万元、第 2 年借款 300 万元，年利率 6%，借款均在年中支用。求建设期利息合计。</div>
         <div class="sol">
@@ -572,7 +647,7 @@
         <div class="ans">答：建设期利息合计 54.9 万元（注意第 2 年要含第 1 年利息滚入本金）。</div>
       </div>
     </details>
-    <details class="ex"><summary>经典例题 10-B<span class="tag">基本预备费</span></summary>
+    <details class="ex"><summary>经典例题 11-B<span class="tag">基本预备费</span></summary>
       <div class="exbody">
         <div class="q">某项目工程费用 8000 万元，工程建设其他费 1000 万元，基本预备费率 5%。求基本预备费。</div>
         <div class="sol">
@@ -584,8 +659,117 @@
     </details>
   </section>
 
-  <section id="s11">
-    <h2><span class="no">11</span>工程量清单综合单价与造价合成</h2>
+  <section id="s12">
+    <h2><span class="no">12</span>工程造价构成、设备购置费与取费</h2>
+    <p class="lead">工程费用往下拆：设备购置费（含进口设备抵岸价）、建安费两种划分与取费基数、增值税，以及静态/动态投资口径。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">设备购置费</div>
+        <span class="formula">设备购置费 = 设备原价(或进口抵岸价) + 设备运杂费</span>
+        <div class="vars">设备运杂费 = 设备原价(或抵岸价) × 运杂费率</div>
+        <div class="use">属工程费用中的"设备及工器具购置费"</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">进口设备抵岸价</div>
+        <span class="formula">抵岸价 = 货价 + 国外运费 + 国外运输保险费 + 银行财务费 + 外贸手续费 + 进口关税 + 增值税 + 消费税</span>
+        <div class="vars">关税 = 到岸价CIF×汇率 × 关税率；组成计税价 = CIF×汇率 + 关税 + 消费税；进口增值税 = 组成计税价 × 税率</div>
+        <div class="use">进口设备原价的完整构成</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">建安费两种划分</div>
+        <span class="formula">要素法 = 人工+材料+施工机具使用费+企业管理费+利润+规费+税金<br>造价形成 = 分部分项费+措施项目费+其他项目费+规费+税金</span>
+        <div class="vars">两种口径金额相等，只是归集方式不同</div>
+        <div class="use">措施项目费 = Σ(措施工程量×综合单价)</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">取费基数与增值税</div>
+        <span class="formula">企业管理费 / 利润 = 取费基数 × 费率；税金 = 税前造价 × 9%</span>
+        <div class="vars">取费基数视定额规定取"人工费""人工费+机械费"或"人材机费"；建筑业销项增值税率 9%</div>
+        <div class="use">基数口径不同结果差异大，须按题目定额</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">静态 / 动态投资</div>
+        <span class="formula">静态投资 = 工程费用 + 工程建设其他费 + 基本预备费；动态投资 = 价差预备费 + 建设期利息</span>
+        <div class="vars">基本预备费属<b>静态</b>；价差预备费、建设期利息属<b>动态</b></div>
+        <div class="use">静态/动态基数区分是本篇第一大坑</div>
+      </div>
+    </div>
+    <div class="trap">⚠ ①进口设备<b>关税以到岸价(CIF)为基数</b>，而<b>进口增值税以"组成计税价格"（CIF+关税+消费税）为基数</b>，两者基数不同；②基本预备费算静态、价差预备费算动态，别归错；③管理费/利润的取费基数以题目定额为准，人工费基数与人材机基数结果差别很大。</div>
+    <details class="ex"><summary>经典例题 12-A<span class="tag">进口设备·关税增值税</span></summary>
+      <div class="exbody">
+        <div class="q">某进口设备到岸价(CIF)折人民币 1000 万元，进口关税税率 8%，进口环节增值税率 13%，消费税为 0。求进口关税、进口增值税及税金合计。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">进口关税 = 1000×8% = <b>80 万元</b></span>
+          <span class="step">组成计税价格 = 1000 + 80 + 0 = 1080 万元</span>
+          <span class="step">进口增值税 = 1080×13% = <b>140.4 万元</b>；税金合计 = 80 + 140.4 = <b>220.4 万元</b></span>
+        </div>
+        <div class="ans">答：关税 80 万、增值税 140.4 万，税金合计 220.4 万元（增值税基数是组成计税价格 1080，不是 CIF 1000）。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s13">
+    <h2><span class="no">13</span>人材机消耗定额与工料单价</h2>
+    <p class="lead">定额是计价的"标尺"：先定人工、材料、机械台班的<b>消耗量</b>，再乘各自<b>单价</b>得人材机费。</p>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fname">人工/机械定额（互为倒数）</div>
+        <span class="formula">时间定额 × 产量定额 = 1</span>
+        <div class="vars">时间定额=完成单位产品所需工日(台班)；产量定额=单位工日(台班)产量；<b>综合时间定额先加、后取倒数</b></div>
+        <div class="use">人工与机械台班定额同理</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">材料消耗定额</div>
+        <span class="formula">消耗量 = 净用量 × (1 + 损耗率)</span>
+        <div class="vars"><b>损耗率 = 损耗量 / 净用量 ×100%</b>（基数是净用量！）；反求 净用量 = 消耗量/(1+损耗率)</div>
+        <div class="use">材料消耗定额=净用量+损耗量</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">材料单价（连乘·顺序不能错）</div>
+        <span class="formula">材料单价 = (原价 + 运杂费) × (1+运输损耗率) × (1+采购保管费率)</span>
+        <div class="vars">四块：材料原价、运杂费、运输损耗费、采购及保管费</div>
+        <div class="use">采购保管费在最外层，先算运损再算保管</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">机械台班单价（折旧费）</div>
+        <span class="formula">台班折旧费 = 机械预算价格 × (1−残值率) / 耐用总台班</span>
+        <div class="vars">台班单价七项：折旧费+检修费+维护费+安拆及场外运费+人工费+燃料动力费+其他费；耐用总台班=折旧年限×年工作台班</div>
+        <div class="use">折旧费是台班单价最大头</div>
+      </div>
+      <div class="fcard">
+        <div class="fname">人材机费用汇总</div>
+        <span class="formula">人材机费 = Σ(消耗量 × 相应单价)</span>
+        <div class="vars">人工费=Σ用工×日工资单价；材料费=Σ消耗量×材料单价；机具费=Σ台班×台班单价</div>
+        <div class="use">分部分项工料单价的主体</div>
+      </div>
+    </div>
+    <div class="trap">⚠ ①时间定额与产量定额<b>互为倒数</b>，综合定额只能"先加时间定额、后取倒数"；②材料<b>损耗率以净用量为基数</b>；③材料单价是<b>连乘</b>，采购保管费率在最外层，顺序颠倒即错。</div>
+    <details class="ex"><summary>经典例题 13-A<span class="tag">材料单价</span></summary>
+      <div class="exbody">
+        <div class="q">某材料原价 500 元/t，运杂费 30 元/t，运输损耗率 1%，采购保管费率 2%。求材料单价。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">材料单价 = (500 + 30)×(1+1%)×(1+2%) = 530×1.01×1.02</span>
+          <span class="step">= 530×1.0302 = <b>546.01 元/t</b></span>
+        </div>
+        <div class="ans">答：材料单价 546.01 元/t（先乘运损、再乘采购保管，顺序不可换）。</div>
+      </div>
+    </details>
+    <details class="ex"><summary>经典例题 13-B<span class="tag">台班折旧费</span></summary>
+      <div class="exbody">
+        <div class="q">某施工机械预算价格 90 万元，残值率 4%，耐用总台班 3000 台班。求台班折旧费。</div>
+        <div class="sol">
+          <b>解：</b>
+          <span class="step">台班折旧费 = 900 000×(1−4%)/3000 = 900 000×0.96/3000 = 864 000/3000 = <b>288 元/台班</b></span>
+        </div>
+        <div class="ans">答：台班折旧费 288 元/台班。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s14">
+    <h2><span class="no">14</span>工程量清单综合单价与造价合成</h2>
     <p class="lead">清单计价的核心是"综合单价"，再逐层合成分部分项费、措施费、其他项目费、规费、税金。</p>
     <div class="fgrid">
       <div class="fcard">
@@ -608,7 +792,7 @@
       </div>
     </div>
     <div class="trap">⚠ <b>综合单价 = 五项（人材机管利）＋风险</b>，<b>不含规费、税金</b>（"综合"是综合了管理费和利润，不是综合了规费税金）。规费、税金在最后统一计取。</div>
-    <details class="ex"><summary>经典例题 11-A<span class="tag">造价合成</span></summary>
+    <details class="ex"><summary>经典例题 14-A<span class="tag">造价合成</span></summary>
       <div class="exbody">
         <div class="q">某单位工程：分部分项费 800 万、措施项目费 60 万、其他项目费 40 万、规费 30 万，增值税率 9%。求含税造价。</div>
         <div class="sol">
@@ -622,8 +806,8 @@
     </details>
   </section>
 
-  <section id="s12">
-    <h2><span class="no">12</span>工程计量与支付</h2>
+  <section id="s15">
+    <h2><span class="no">15</span>工程计量与支付</h2>
     <p class="lead">合同价款计算高频区：预付款起扣与进度款、质量保证金，以及物价波动、工程量偏差与清单缺陷引起的价款调整。</p>
 
     <h3>预付款、进度款与质量保证金</h3>
@@ -681,7 +865,7 @@
       </div>
     </div>
     <div class="tip">💡 <b>综合单价偏差调整三情形：</b>① 当 P₀ &lt; P₂(1−L)(1−15%)：P₁ <b>上调</b>至 P₂(1−L)(1−15%)（托底）；② 当 P₀ &gt; P₂(1+15%)：P₁ <b>下调</b>至 P₂(1+15%)（封顶）；③ 当 P₀ 落在 [P₂(1−L)(1−15%)，P₂(1+15%)] 区间内：<b>可不调整</b>。实质是把偏离过大的报价拉回招标控制价附近的合理区间。</div>
-    <details class="ex"><summary>经典例题 12-A<span class="tag">起扣点</span></summary>
+    <details class="ex"><summary>经典例题 15-A<span class="tag">起扣点</span></summary>
       <div class="exbody">
         <div class="q">某工程合同总价 1000 万元，预付款限额 200 万元，主要材料及构件所占比重 60%。求预付款起扣点。</div>
         <div class="sol">
@@ -691,7 +875,7 @@
         <div class="ans">答：当累计完成工程价款达 666.67 万元时开始起扣预付款；之后每期按完成价款×60% 抵扣。</div>
       </div>
     </details>
-    <details class="ex"><summary>经典例题 12-B<span class="tag">调值公式</span></summary>
+    <details class="ex"><summary>经典例题 15-B<span class="tag">调值公式</span></summary>
       <div class="exbody">
         <div class="q">某月完成工程款基期价 500 万元，调值：固定权重 a₀=0.15，人工 a₁=0.35（指数由 100 涨至 110），材料 a₂=0.50（指数由 100 涨至 120）。求调整后结算款。</div>
         <div class="sol">
@@ -702,7 +886,7 @@
         <div class="ans">答：调整后结算款 567.5 万元（较基期增加 67.5 万元）。</div>
       </div>
     </details>
-    <details class="ex"><summary>经典例题 12-C<span class="tag">造价信息法</span></summary>
+    <details class="ex"><summary>经典例题 15-C<span class="tag">造价信息法</span></summary>
       <div class="exbody">
         <div class="q">某工程一批钢筋用量 200 吨，投标报价采用的基准单价 4000 元/吨（等于造价信息基准价），施工期造价信息发布价涨至 4600 元/吨。合同约定材料价格风险幅度 ±5%，超过部分调整。求价差调整额。</div>
         <div class="sol">
@@ -713,7 +897,7 @@
         <div class="ans">答：发包人应补价差 8 万元；5% 幅度以内的 200 元/吨价差由承包人自担。</div>
       </div>
     </details>
-    <details class="ex"><summary>经典例题 12-D<span class="tag">工程量偏差·单价调整</span></summary>
+    <details class="ex"><summary>经典例题 15-D<span class="tag">工程量偏差·单价调整</span></summary>
       <div class="exbody">
         <div class="q">某清单项目最高投标限价综合单价 P₂=100 元，承包人填报 P₀=140 元，承包人报价浮动率 L=5%。施工中该项工程量偏差超过 15%，需调整综合单价。求调整后综合单价 P₁。</div>
         <div class="sol">
@@ -726,8 +910,8 @@
     </details>
   </section>
 
-  <section id="s13">
-    <h2><span class="no">13</span>国际工程投标报价</h2>
+  <section id="s16">
+    <h2><span class="no">16</span>国际工程投标报价</h2>
     <p class="lead">在总报价确定后，用报价技巧调整各子项单价，在不抬高总价的前提下改善现金流与索赔空间。</p>
     <div class="fgrid">
       <div class="fcard">
@@ -747,7 +931,7 @@
   </section>
 
   <footer>
-    建设工程经济 · 计算专题手册 · 覆盖三篇 13 个计算族<br>
+    建设工程经济 · 计算专题手册 · 覆盖三篇 16 个计算族<br>
     公式与例题依据《建设工程经济》教材与历年真题整理，计算结果均为四舍五入示意，应试以最新教材口径为准。
   </footer>
 </main>
