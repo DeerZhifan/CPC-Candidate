@@ -661,7 +661,7 @@
 
   <section id="s12">
     <h2><span class="no">12</span>工程造价构成、设备购置费与取费</h2>
-    <p class="lead">工程费用往下拆：设备购置费（含进口设备抵岸价）、建安费两种划分与取费基数、增值税，以及静态/动态投资口径。</p>
+    <p class="lead">工程费用往下拆：设备购置费（含进口设备抵岸价）、建安费两种划分与取费基数、增值税，静态/动态投资口径，以及设计概算指标的结构变化修正。</p>
     <div class="fgrid">
       <div class="fcard">
         <div class="fname">设备购置费</div>
@@ -693,6 +693,12 @@
         <div class="vars">基本预备费属<b>静态</b>；价差预备费、建设期利息属<b>动态</b></div>
         <div class="use">静态/动态基数区分是本篇第一大坑</div>
       </div>
+      <div class="fcard">
+        <div class="fname">设计概算·结构变化修正（概算指标法）</div>
+        <span class="formula">修正指标 = 原概算指标 + 换入结构工程量×换入单价 − 换出结构工程量×换出单价</span>
+        <div class="vars">套用类似工程概算指标、仅个别结构不同时用；人材机数量同理逐项换算</div>
+        <div class="use">先"减换出、加换入"再得修正后单方造价</div>
+      </div>
     </div>
     <div class="trap">⚠ ①进口设备<b>关税以到岸价(CIF)为基数</b>，而<b>进口增值税以"组成计税价格"（CIF+关税+消费税）为基数</b>，两者基数不同；②基本预备费算静态、价差预备费算动态，别归错；③管理费/利润的取费基数以题目定额为准，人工费基数与人材机基数结果差别很大。</div>
     <details class="ex"><summary>经典例题 12-A<span class="tag">进口设备·关税增值税</span></summary>
@@ -705,6 +711,16 @@
           <span class="step">进口增值税 = 1080×13% = <b>140.4 万元</b>；税金合计 = 80 + 140.4 = <b>220.4 万元</b></span>
         </div>
         <div class="ans">答：关税 80 万、增值税 140.4 万，税金合计 220.4 万元（增值税基数是组成计税价格 1080，不是 CIF 1000）。</div>
+      </div>
+    </details>
+    <details class="ex"><summary>经典例题 12-B<span class="tag">概算指标·结构变化修正</span></summary>
+      <div class="exbody">
+        <div class="q">拟建工程套用类似工程概算指标 1200 元/m²，但需将其中结构 A 换成结构 B：换出 A 工程量 0.3 m³/m²、单价 400 元/m³；换入 B 工程量 0.35 m³/m²、单价 500 元/m³。求修正后概算指标。</div>
+        <div class="sol">
+          <b>解：</b>先减换出、再加换入
+          <span class="step">修正指标 = 1200 − 0.3×400 + 0.35×500 = 1200 − 120 + 175 = <b>1255 元/m²</b></span>
+        </div>
+        <div class="ans">答：修正后概算指标 1255 元/m²。</div>
       </div>
     </details>
   </section>
